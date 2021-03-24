@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p {
+
+        font-size: 16px;
+        line-height: 1.7;
+        position: relative;
+    }
+
+
+    p::first-letter {
+        font-size: 48px;
+        /* float: left; */
+        /* float 本身就是在做文繞圖居多 */
+        line-height: .7;
+        margin: .2em;
+        position: relative;
+        z-index: 1;
+    }
+
+    p::before {
+        content: '';
+        position: absolute;
+        width: 2.5em;
+        height: 2.5em;
+        background-color: #ccc;
+        left: 0;
+        top: -5px;
+        z-index: -1;
+        border-radius: 50%;
+    }
+</style>
+
+<body>
+
+
+    <p>
+        Amos 每次挑戰鐵人賽都一次挑戰兩個主題，曾經有人問 Amos
+        說，為什麼你不一次挑戰一個就好，挑戰兩個不是比較累嗎？況且挑戰鐵人賽又沒有錢，為什麼要這樣挑戰連續三十天發文不中斷？我心想你一定是個很自律的人，所以不用靠鐵人挑戰逼迫自己寫點東西來，另外挑戰雙主題的問題啊，如果今天有兩個主題給你挑，你會想要挑哪一個？傻瓜！小孩子才做選擇，我當然是全都要啊（咦）
+    </p>
+    <p>
+        因為假文的內容實在太難看了，所以我花了一點時間打了這一段廢話，廢話看起來會更像正常的對話，我都這麼有誠意有耐心地把字打完了，你還不訂閱我的文章就太說不過去了，不果獎真的你可以看到這邊也表示妳很有耐心，給你鼓掌一下，然後...訂閱文章給他按下去，知道嗎！那我到底打那麼多字的真正原因是什麼呢？其實我只是想要讓第一個字有中文跟英文的對照可以讓你看而已。
+    </p>
+
+</body>
+
+</html>

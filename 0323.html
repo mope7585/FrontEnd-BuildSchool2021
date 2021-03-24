@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="reset.css">
+
+    <style>
+        .wrap {
+            display: flex;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            padding: 15px;
+            margin: 10px;
+        }
+
+        .box:nth-child(1) {
+            background-color: #faa;
+        }
+
+        .box:nth-child(2) {
+            background-color: cornflowerblue;
+        }
+
+        .box:nth-child(3) {
+            background-color: #0d2;
+        }
+
+        .box:hover.box:nth-child(1) {
+            background-color: #311;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+
+
+    <div class="wrap">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+</body>
+
+</html>
