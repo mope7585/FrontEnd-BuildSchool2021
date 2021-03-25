@@ -21,6 +21,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             margin: auto;
+            background-attachment: fixed;
         }
 
 
@@ -43,7 +44,6 @@
             font-weight: 300;
             font-size: 18px;
             line-height: 1.667;
-
         }
 
         .header-nav a {
@@ -56,6 +56,11 @@
             line-height: 1.667;
         }
 
+        .header-nav a:hover {
+            color: #fff;
+            text-decoration: solid#fff;
+        }
+
         .header-ul ul {
             display: flex;
             justify-content: center;
@@ -64,25 +69,56 @@
 
         .header-ul li {
             margin-left: 30px;
+
         }
 
         .header-title-ThePower {
             font-size: 112px;
             line-height: 120px;
             font-weight: 400;
+            margin-bottom: 10px;
         }
 
+        .head-icon {
+            margin-left: 15px;
+        }
 
         .header-title {
-            padding: 40px 180px;
+            padding: 80px 180px;
         }
+
 
         .header-message {
             display: flex;
+            justify-content: space-around;
+        }
+
+        .header-message-box {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            border-top: 2px solid rgba(194, 182, 151, 0);
+            padding-top: 30px;
+        }
+
+        .header-message-box:hover {
+            border-top: 2px solid #c2b697;
+            transition: 0.25s;
         }
 
         .header-message-title {
             display: flex;
+            margin-bottom: 10px;
+        }
+
+        .header-message-h3 {
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .wrap {
+            height: 400px;
         }
     </style>
 </head>
@@ -105,10 +141,10 @@
             <div class="header-ul">
                 <ul>
                     <li><a href="#">HOME</a></li>
-                    <li><a href="#">PAGES</a></li>
-                    <li><a href="#">FEATURES</a></li>
-                    <li><a href="#">NEWS</a></li>
-                    <li><a href="#">SHOP</a></li>
+                    <li><a href="#">PAGES<i class="jet-dropdown-arrow fa fa-caret-down head-icon"></i></a></li>
+                    <li><a href="#">FEATURES<i class="jet-dropdown-arrow fa fa-caret-down head-icon"></i></a></li>
+                    <li><a href="#">NEWS<i class="jet-dropdown-arrow fa fa-caret-down head-icon"></i></a></li>
+                    <li><a href="#">SHOP<i class="jet-dropdown-arrow fa fa-caret-down head-icon"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -124,7 +160,7 @@
 
         <div class="header-message">
 
-            <div class="header-message-DEVELOPMENT">
+            <div class="header-message-box">
                 <div class="header-message-title">
                     <div class="header-message-icon">
                         <i class="fas fa-arrow-alt-circle-right fa-2x" style="color: #c2b697"></i>
@@ -139,7 +175,7 @@
                 </div>
             </div>
 
-            <div class="header-message-INTEGRATION">
+            <div class="header-message-box">
                 <div class="header-message-title">
                     <div class="header-message-icon">
                         <i class="fas fa-arrow-alt-circle-right fa-2x" style="color: #c2b697"></i>
@@ -153,7 +189,7 @@
                 </div>
             </div>
 
-            <div class="header-message-RESPONSIBILITY">
+            <div class="header-message-box">
                 <div class="header-message-title">
                     <div class="header-message-icon">
                         <i class="fas fa-arrow-alt-circle-right fa-2x" style="color: #c2b697"></i>
@@ -166,10 +202,19 @@
                     <p>Responsible customer relations through clear communication...</p>
                 </div>
             </div>
-
         </div>
 
+        <article>
+            <div class="wrap">
 
+
+
+
+
+            </div>
+
+
+        </article>
 
 
 
