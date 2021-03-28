@@ -1,0 +1,30 @@
+@import'./_colorSetting.scss';
+
+%box{
+    padding: 10px;
+    margin: 5px;
+}
+
+@mixin Text ($size, $borderSize,$bordercolor) {
+font-size:$size;
+border:$borderSize solid $bordercolor;
+
+}
+
+
+.box{
+    @extend %box;
+    background-color:$main-text-color ;
+
+    p{
+        @include Text(20px,5px ,red )
+    }
+
+.box-test{
+    @extend %box;
+    background-color: $main-background-color;
+
+    p{
+        color:$main--text-color;
+    }
+}

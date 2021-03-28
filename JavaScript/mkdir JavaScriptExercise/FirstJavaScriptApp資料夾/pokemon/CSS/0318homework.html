@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        html,
+        body {
+            height: auto;
+            width: 100%;
+            background-image: url("jpg/counter-bg.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+        }
+
+        .header {
+            background-image: url("/jpg/finance-skin-slider-3.jpg");
+
+            width: 100%;
+            background-repeat: no-repeat;
+
+        }
+
+        .header-container {
+            background-color: rgba(43, 44, 50, 0.23);
+            padding: 25px 0;
+        }
+
+        .header a,
+        nav {
+            display: flex;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            margin: 20px;
+            flex-direction: row;
+        }
+
+        .header-countainer-item {
+
+            display: flex;
+            color: #fff;
+            padding-bottom: 10px;
+
+        }
+
+
+        .header-countainer-item-text {
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        .header-countainer-item-text p {
+            padding-top: 10px;
+
+        }
+
+        .strings {
+            color: #fff;
+            box-sizing: border-box;
+            width: 100%;
+            height: auto;
+            padding-left: 300px;
+
+        }
+
+        .strings h1 {
+            font-size: 180px;
+            margin: 50px 0;
+        }
+
+        .strings p {
+            font-size: 20px;
+        }
+
+        section {
+            width: 100%;
+            height: 200px;
+            background-color: #fff;
+            box-sizing: border-box;
+
+        }
+
+        section .plan {
+            display: flex;
+            text-align: left;
+            width: 100%;
+
+        }
+
+        section .plan h2 {
+            width: 33.333333333%;
+            font-size: 25px;
+        }
+
+
+
+        section .plan-text {
+            width: 66.666666666%;
+            border-left: 1px solid #000;
+            column-count: 2;
+            padding: 0 20px;
+
+        }
+
+        .plan-text p:first-child::first-letter {
+            color: #c2b697;
+            font-size: 50px;
+            float: left;
+        }
+
+
+        .content {
+            background-color: #c2b697;
+            height: 300px;
+            display: flex;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .content-h3 {
+            margin: 10px;
+        }
+
+        .content-h3 h3 {
+            font-size: 50px;
+            color: #000;
+            justify-content: center;
+            line-height: 250px;
+            display: inline;
+        }
+
+        .content-h3 p {
+            font-size: 20px;
+            color: #000;
+        }
+
+        .content-touch {
+            background-color: #fff;
+            display: inline;
+            background-color: #c2b697;
+            padding-left: 400px;
+            padding-top: 100px;
+        }
+
+        .content-touch a {
+            text-decoration: none;
+            color: black;
+            border: 1px solid #fff;
+            width: 150px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 6px;
+            padding: 40px 20px 30px 20px;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+
+        .content-touch a:hover {
+            background-color: #c2b697;
+
+        }
+
+        .article {
+            text-align: center;
+            justify-content: center;
+            height: 300px;
+            background-color: #fff;
+
+
+        }
+
+        .article h2 {
+            font-size: 50px;
+            padding-top: 70px;
+
+
+        }
+
+        .article span {
+            font-size: 50px;
+            padding-top: 70px;
+            color: #c2b697;
+
+        }
+
+        .article-p {
+
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+            padding-top: 30px;
+        }
+
+        .article p {
+            text-align: center;
+        }
+
+
+        .wrap {
+            height: 800px;
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            background-color: #fff;
+
+        }
+
+        .wrap .wrap-item1 {
+            width: 33.333333%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            flex-wrap: wrap-reverse;
+        }
+
+        .wrap-item1 .wrap-item1-1 {
+            display: flex;
+            text-align: center;
+            flex-direction: row;
+            justify-content: center;
+
+
+        }
+
+        .wrap-item1 .item1-1text {
+            text-align: end;
+        }
+
+        .wrap-item1-1-pic {
+            padding: 0 20px;
+        }
+
+        .wrap-item2 {
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            width: 33.333333%;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+
+
+
+        .wrap-item3 {
+            width: 33.333333%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+        }
+
+        .wrap-item3-1 {
+            display: flex;
+            text-align: center;
+            flex-direction: row;
+            justify-content: center;
+
+        }
+
+        .item3-1text {
+            flex-direction: column;
+            text-align: start;
+            display: flex;
+        }
+
+        .wrap-item3-1-pic {
+            padding: 0 20px;
+        }
+
+        .section {
+            display: flex;
+            text-align: center;
+            justify-content: space-evenly;
+            height: 300px;
+        }
+
+
+        .section-item {
+            height: 150px;
+            font-weight: bolder;
+            color: #fff;
+
+        }
+
+        .section-item h3 {
+            font-size: 80px;
+            margin: 10px;
+        }
+
+        .section-item p {
+            font-size: 16px;
+        }
+
+        .section-item.section-pic {
+            margin: 10px;
+        }
+
+        .community-item2 {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 50%;
+            height: 400px;
+            text-align: center;
+            justify-content: start;
+        }
+
+        .community-item1 {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-container">
+            <a style="margin: 0 auto;" href="#"><img src="/jpg/invert-logo.png" alt="Imperion"></a>
+            <nav>
+                <a href="#">HOME</a>
+                <a href="#">PAGES</a>
+                <a href="#">FEATURES</a>
+                <a href="#">NEWS</a>
+                <a href="#">SHOP</a>
+            </nav>
+        </div>
+        <div class="strings">
+            <h1>The Power</h1>
+            <p>OF IMAGINATION MAKES US INFINITE</p>
+        </div>
+
+        <div class="header-countainer-item">
+            <div class="header-countainer-item-text">
+                <h5><img src="https://fakeimg.pl/40x40/">EVELOPMENT</h5>
+                <p>We work alongside national and international organizations.</p>
+            </div>
+
+            <div class="header-countainer-item-text">
+                <h5><img src="https://fakeimg.pl/40x40/" alt="">INTEGRATION</h5>
+                <p>Committed to conducting its business according to the highest...</p>
+            </div>
+
+            <div class="header-countainer-item-text">
+                <h5> <img src="https://fakeimg.pl/40x40/" alt="">RESPONSIBILITY</h5>
+                <p>Responsible customer relations through clear communication...</p>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="plan">
+            <div class="plan-h2">
+                <h2>Looking for a First-Class Business Plan</h2>
+            </div>
+            <div class="plan-text">
+                <p>We’re a financial and consulting business company of professional thinkers, strategists, digital
+                    innovators, designers and problem solvers (everyone gets a mention). Our sense of curiosity
+                    brings thinkers, strategists, digital innovators, designers and problem solvers (everyone gets a
+                    mention). Our sense of curiosity brings brands to life, gets them talking, and makes sure
+                    they’re heard above. </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="content">
+        <div class="content-h3">
+            <h3>Unleash Your Team’s Productive Power</h3>
+            <p>The truly scarce resources now are the time, the talent, and the energy of the people.</p>
+        </div>
+        <div class="content-touch">
+            <a href="#">GET IN TOUCH</a>
+        </div>
+    </div>
+
+    <div class="article">
+        <div class="atricle-h2">
+            <h2>WhyTraders<span>ChooseUs</span></h2>
+        </div>
+        <div class="article-p">
+            <p>With a community of over 400 million users (and a majority age group being 18 to 29), wouldn’t you
+                want to make sure you’re monitoring what people are posting on social networks? Especially if the
+                demographic of your audience falls in that age range.</p>
+        </div>
+    </div>
+
+
+    <message>
+        <div class="wrap">
+
+            <div class="wrap-item1">
+
+                <div class="wrap-item1-1">
+                    <div class="item1-1text">
+                        <h5>VISIT</h5>
+                        <p>Our values and ideals are our decision making guide.</p>
+                    </div>
+                    <div class="wrap-item1-1-pic">
+                        <img src="https://fakeimg.pl/100x100/" alt="">
+                    </div>
+
+                </div>
+
+                <div class="wrap-item1-1">
+                    <div class="item1-1text">
+                        <h5>SAVE</h5>
+                        <p>We only release our products when we feel they meet our standards.</p>
+                    </div>
+                    <div class="wrap-item1-1-pic">
+                        <img src="https://fakeimg.pl/100x100/" alt="">
+                    </div>
+
+                </div>
+
+
+                <div class="wrap-item1-1">
+                    <div class="item1-1text">
+                        <h5>EXPLORE</h5>
+                        <p>We rely on the same platform and tools our customers pay us for</p>
+                    </div>
+                    <div class="wrap-item1-1-pic">
+                        <img src="https://fakeimg.pl/100x100/" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="wrap-item2">
+                <img src="/jpg/imperion_finance_phone.png" alt="phone">
+            </div>
+
+            <div class="wrap-item3">
+                <div class="wrap-item3-1">
+                    <div class="wrap-item3-1-pic">
+                        <img src="https://fakeimg.pl/100x100/" alt="">
+                    </div>
+                    <div class="item3-1text">
+                        <h5>ORGANIZE</h5>
+                        <p>Beautiful products to help people with creative ideas succeed</p>
+                    </div>
+                </div>
+
+
+                <div class="wrap-item3-1">
+                    <div class="wrap-item3-1-pic">
+                        <img src="https://fakeimg.pl/100x100/" alt="">
+                    </div>
+                    <div class="item3-1text">
+                        <h5>COMMUNICATE</h5>
+                        <p>Creative, stylish, and easy-to-manage online presence.</p>
+                    </div>
+                </div>
+
+
+                <div class="wrap-item3-1">
+                    <div class="wrap-item3-1-pic">
+                        <img src="https://fakeimg.pl/100x100/" alt="">
+                    </div>
+                    <div class="item3-1text">
+                        <h5>SHARE</h5>
+                        <p>Share stories and create an impactful online presence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </message>
+
+    <section>
+        <div class="section">
+            <div class="section-item">
+                <div class="section-pic">
+                    <img src="https://fakeimg.pl/80x80/" alt="">
+                </div>
+                <div class="section-text">
+                    <h3>2007</h3>
+                    <p>COMPANY</p>
+                    <p>ESTABLISHED</p>
+                </div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-pic">
+                    <img src="https://fakeimg.pl/80x80/" alt="">
+                </div>
+                <div class="section-text">
+                    <h3>426</h3>
+                    <p>PROJECTS</p>
+                    <p>DONE</p>
+                </div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-pic">
+                    <img src="https://fakeimg.pl/80x80/" alt="">
+                </div>
+                <div class="section-text">
+                    <h3>45+</h3>
+                    <p>BUSINESS</p>
+                    <p>PARTHNERS</p>
+                </div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-pic">
+                    <img src="https://fakeimg.pl/80x80/" alt="">
+                </div>
+                <div class="section-text">
+                    <h3>1510</h3>
+                    <p>HAPPY</p>
+                    <p>ESTABLISHED</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <community>
+        <div class="community-item1">
+            <div class="community-item1-text">
+                <h2>What We Are Good At</h2>
+                <p>With a community of over 400 million users (and a majority age group being 18 to 29),
+                    wouldn’t you want to make sure you’re monitoring what people are posting on social
+                    networks?</p>
+            </div>
+            <div class="ul">
+                <li>Article and News research</li>
+                <li>Company and Industry Research</li>
+                <li>Industry Research and Market Research</li>
+                <li>Market Analysis Report</li>
+            </div>
+        </div>
+
+        <div class="community-item2">
+
+
+        </div>
+
+
+    </community>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

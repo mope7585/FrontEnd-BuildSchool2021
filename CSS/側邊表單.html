@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
+        integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+        crossorigin="anonymous"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+        body {
+            background-color: #546377;
+        }
+        .side-menu {
+            width: 300px;
+            height: 100%;
+            background-image: linear-gradient(0deg, #3391b0, #c2196c);
+            /* display: flex;
+            flex-direction: column; */
+            padding: 50px 0;
+            box-sizing: border-box; /*去掉捲軸*/
+            box-shadow: 5px 0px hsla(240, 40%, 15%, 0.6);
+        }
+        .side-menu form {
+            display: flex;
+            margin: 0 10px;
+            border-radius: 100px;
+            border: 1px solid rgb(255,255,255,.4);
+        }
+        .side-menu form input {
+            width: 230px;
+        }
+        .side-menu form button {
+            width: 50px;
+        }
+        .side-menu form input,.side-menu form button{
+            border: none;
+            padding: 5px 10px;
+            background-color: transparent;
+        }
+        .side-menu form button:focus,.side-menu form input{
+            outline: none;
+        }
+        nav a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+        }
+        nav a+a::before {
+            content: '';
+            border-top: 1px solid rgb(255,255,255,.4);
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            top: 0;
+            
+        }
+        nav a .fa-camera-retro{
+            margin-right: -1.1em;
+            transform: scale(0);
+            transition: .3S;
+        }
+
+        nav a:hover .fa-camera-retro{
+            margin-right: 0em;
+            transform: scale(1);
+        }
+        ::placeholder{
+            color: rgba(255, 255, 255, .5);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="side-menu">
+        <form>
+            <input type="search" placeholder="請輸入關鍵字">
+            <button><a href="#"><i class="fa fa-camera-retro"></i></a></button>
+        </form>
+        <nav>
+            <a href="#"><i class="fa fa-camera-retro"></i>
+                第一個</a>
+            <a href="#"><i class="fa fa-camera-retro"></i>
+                第二個</a>
+            <a href="#"><i class="fa fa-camera-retro"></i>
+                第三個</a>
+            <a href="#"><i class="fa fa-camera-retro"></i>
+                第四個</a>
+            <a href="#"><i class="fa fa-camera-retro"></i>
+                第五個</a>
+            <a href="#"><i class="fa fa-camera-retro"></i>
+                第六個</a>
+        </nav>
+    </div>
+</body>
+
+</html>

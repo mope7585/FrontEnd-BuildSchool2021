@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .L1 {
+            border: 5px solid #666;
+            padding: 40px;
+            background-color: red;
+        }
+
+        .L2 {
+            border: 5px solid #666;
+            padding: 40px;
+            background-color: rgb(59, 136, 72);
+        }
+
+        .L3 {
+            border: 5px solid#666;
+            padding: 40px;
+            background-color: rgb(161, 61, 61);
+        }
+
+        .L4 {
+            border: 5px solid#666;
+            padding: 40px;
+            background-color: rgb(138, 23, 23)
+        }
+
+        .L5 {
+            border: 5px solid#666;
+            padding: 40px;
+
+        }
+
+        .L1 div {
+            /*裡面所有div(L2 & L3)*/
+            background-color: rgb(245, 12, 175);
+        }
+
+        .L1>div>div>div {
+            background-color: rgb(25, 235, 224);
+        }
+
+        .L1>div>div {
+            /*L1底下的那一層(only L2)*/
+            background-color: rgb(245, 241, 9);
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="L1" style="background-color: blue;">
+            
+        <div class="L2">
+                
+            <div class="L3">
+                
+                <div class="L4">
+    
+                    <div class="L5">
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

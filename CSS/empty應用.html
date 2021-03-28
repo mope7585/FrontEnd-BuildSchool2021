@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .wrap {
+        width: 900px;
+        margin: auto;
+        display: flex;
+    }
+
+    .sideA {
+        width: 200px;
+        height: 400px;
+        background-color: #AAA;
+
+    }
+
+    .sideB {
+        width: 200px;
+        height: 400px;
+        background-color: #FAA;
+    }
+
+    .sideA:empty,
+    .sideB:empty {
+        display: none;
+    }
+
+    .contain {
+        width: 500px;
+        background-color: #AAF;
+        flex-grow: 1;
+    }
+</style>
+
+<body>
+
+
+
+
+    <div class="wrap">
+        <div class="sideA"></div>
+        <div class="sideB"></div>
+        <div class="contain">我是內容</div>
+    </div>
+
+
+
+</body>
+
+</html>
