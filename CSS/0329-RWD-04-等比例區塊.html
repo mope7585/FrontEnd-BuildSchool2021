@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .wrap {
+            display: flex;
+        }
+
+        .col {
+            width: 50%;
+        }
+
+        .mv {
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            /* 315/560*100% 拿高度除以父層寬度才是等比例*/
+            background-color: #f00;
+            position: relative;
+        }
+
+        .mv iframe {
+            width: 100%;
+            height: 100% ;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="col">
+            <div class="mv"><iframe width="560" height="315" src="https://www.youtube.com/embed/fN1bfJf5v7c"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe></div>
+        </div>
+        <div class="col">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur provident eveniet aspernatur similique
+                porro officiis id dolore quia sit laboriosam nemo magni doloremque nam, excepturi consequuntur
+                voluptatum at quis? Rerum!</p>
+        </div>
+    </div>
+</body>
+
+</html>

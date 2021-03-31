@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        @media screen and (max-width: 767px) {
+            nav .btn-sub-control {
+                width: 40px;
+            }
+
+            nav a {
+                flex-grow: 1;
+            }
+
+            nav li {
+                display: flex;
+            }
+
+            nav > ul ul {
+                display: none;
+                position: absolute;
+            }
+
+            nav li:hover ul {
+                display: block;
+            }
+            nav a {
+            text-decoration: none;
+            color: #000;
+            display: block;
+            padding: 10px 20px;
+            outline: 1px solid #fff;
+        }
+        }
+@media screen and (min-width: 768px){
+    nav a {
+            text-decoration: none;
+            color: #000;
+            display: block;
+            padding: 10px 20px;
+            outline: 1px solid #fff;
+        }
+    nav a:hover {
+            background-color: #aaa;
+        }
+
+        nav {
+            background-color: #ccc;
+        }
+
+        nav>ul {
+            display: flex;
+            justify-content: center;
+        }
+        nav>ul ul {
+            display: none;
+            position: absolute;
+        }
+
+        nav li:hover ul {
+            display: block;
+
+        }
+}
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="#">link</a>
+                <ul>
+                    <li><a href="#">sub link</a></li>
+                    <li><a href="#">sub link</a></li>
+                    <li><a href="#">sub link</a></li>
+                    <li><a href="#">sub link</a></li>
+                    <li><a href="#">sub link</a></li>
+                </ul>
+            </li>
+            <li><a href="#">link</a>
+                <ul>
+                    <li><a href="#">sub link</a></li>
+                    <li><a href="#">sub link</a></li>
+                    <li><a href="#">sub link</a></li>
+                    <li><a href="#">sub link</a></li>
+                    <li><a href="#">sub link</a></li>
+                </ul>
+            </li>
+            <li><a href="#">link</a></li>
+            <li><a href="#">link</a></li>
+            <li><a href="#">link</a></li>
+            </li>
+            </li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>
