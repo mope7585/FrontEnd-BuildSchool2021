@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button1" onclick="Event1(event, this)"></button>
+ <button id="button2"></button>
+ <button id="button3"></button>
+
+
+
+
+
+    <script>
+         window.onload = function(){
+            let h1 = document.createElement("h1");
+            h1.innerHTML="DOM - Docuemnt Object Model";
+
+            // debugger;
+            document.body.appendChild(h1);
+        }
+        function Event1(event , element){
+            alert (`$(event.constructor.name)事件類型的 ${event.type}事件`);
+            alert(element.innerHTML);
+        }
+    
+        let btn2 = document.getElementById("button2");
+        btn2.onclick = function (event) {
+            alert(`${event.constructor.name}事件類型的 ${event.type}事件`); 
+        }
+
+        let btn3 = document.getElementById("button3");
+        btn3.addEventListener('click',function(event){
+            alert(`${event.constructor.name}事件類型的 ${event.type}事件`);
+        })
+        btn3.addEventListener("mousedown", displayMsg);
+        
+            function displayMsg(){
+            alert("Mousedown")
+        }
+  
+        btn3.removeEventListener("mousedown",displayMsg);
+
+    </script>
+</body>
+</html>

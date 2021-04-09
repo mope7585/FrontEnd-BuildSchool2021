@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+    <script>
+        let h1 = document.createElement("h1");
+        h1.innerHTML = "DOM";
+
+        let div = document.createElement("div");
+        let p1 = document.createElement("p");
+        p1.innerHTML = "window";
+        let p2 = document.createElement("p");
+        p2.innerHTML = "document";
+        let p3 = document.createElement("p");
+        p3.innerHTML = "html";
+
+        div.appendChild(p1);
+        div.appendChild(p2);
+        div.appendChild(p3);
+        document.body.append(div);
+
+        // let ul =document.createElement("ul");
+        // let lis = ["Window","document","html"];
+        // lis.forEach((item, index) => {
+        //     let li = document.createElement("li");
+        //     li.innerHTML = item;
+        //     ul.appendChild(li);
+        // })
+
+        let lis = ["Window", "document", "html"];
+        let ul = genUl(lis);
+        document.body.appendChild(ul);
+
+        function genUl(liArray) {
+            let ul = document.createElement("ul");
+
+            liArray.foreach((item, index) => {
+                let li = document.createElement("li");
+                li.innerHTML = item;
+                ul.appendChild(li);
+            });
+            return ul;
+        }
+
+
+        let ul = document.createElement("ul");
+        let li1 = document.createElement("li")
+        li1.innerHTML = "Node";
+        let li2 = document.createElement("li")
+        li2.innerHTML = "NodeList";
+        let li3 = document.createElement("li")
+        li3.innerHTML = "HTMLCollection";
+
+        div.appendChild(li1);
+        div.appendChild(li2);
+        div.appendChild(li3);
+        document.body.append(ul);
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .border-radius-none{
+            border-radius: 0;
+            
+        }
+
+        .bg-pink{
+background-color: rgba(255,200,0,0.5);
+        }
+
+        .modal{
+            background-color: pink;
+            opacity:0.;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+
+<div class="container ">
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#amosModal">
+    點擊我確認
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade " id="amosModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog modal-dialog-centered ">
+      <div class="modal-content modal-dialog border-radius-none bg-pink">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">好東西</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔爽喔
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+          <button type="button" class="btn btn-primary">儲存</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})</script>
+
+  
+  </body>
+</html>

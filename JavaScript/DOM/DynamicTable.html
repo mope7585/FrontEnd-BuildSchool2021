@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+    <table class="table table-bordered">
+        <h1>台灣水庫即時水情</h1>
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<script>
+let Reservoir =[
+    {item:1,name:"新山水庫(基隆)",capacity:"896.58萬立方公尺",percent:"89.4%",days:"----"},
+    {item:2,name:"翡翠水庫(台北、新北)",capacity:"26413.65萬立方公尺",percent:"78.7%",days:"預測剩餘天數：60天以上"},
+    {item:3,name:"石門水庫(新北、桃園、新竹)",capacity:"6791.33萬立方公尺",percent:"34.4%",days:"預測剩餘天數：60天以上"},
+    {item:4,name:"永和山水庫(新竹、苗栗)",capacity:"242.59萬立方公尺",percent:"8.1%",days:"預測剩餘天數：30天-60天"},
+    {item:5,name:"寶山水庫(新竹)",capacity:"94.18萬立方公尺",percent:"18.7%",days:"預測剩餘天數：60天以上"}
+]
+
+
+
+let thead, tbody;
+
+window.onload=function(){
+thead =document.querySelector("table>thead");
+tbody =document.querySelector("table>tbody");
+
+//thead
+let tr = document.createElement("tr");
+
+let col01 = document.createElement("th");
+col01.innerHTML="項目";
+let col02 = document.createElement("th");
+col02.innerHTML="水庫名稱";
+let col03 = document.createElement("th");
+col03.innerHTML="有效蓄水量";
+let col04 = document.createElement("th");
+col04.innerHTML="剩餘百分比";
+let col05 = document.createElement("th");
+col05.innerHTML="預測剩餘天數";
+
+tr.appendChild(col01);
+tr.appendChild(col02);
+tr.appendChild(col03);
+tr.appendChild(col04);
+tr.appendChild(col05);
+
+thead.appendChild(tr);
+
+
+Reservoir.forEach((abc,index)=>{
+let tr2 = document.createElement("tr");
+tbody.appendChild(tr2);
+
+let col01 = document.createElement("td");
+col01.innerHTML=abc.item;
+tr2.appendChild(col01);
+
+let col02 = document.createElement("td");
+col02.innerHTML=abc.name;
+tr2.appendChild(col02);
+
+let col03 = document.createElement("td");
+col03.innerHTML=abc.capacity;
+tr2.appendChild(col03);
+
+let col04 = document.createElement("td");
+col04.innerHTML=abc.percent;
+tr2.appendChild(col04);
+
+let col05 = document.createElement("td");
+col05.innerHTML=abc.days;
+tr2.appendChild(col05);
+
+   
+})}
+</script>
+</body>
+</html>

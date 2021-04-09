@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+
+    <h1>BMI計算器</h1>
+    <label for="height">身高:</label>
+    <input type="text" id="height" name="height">
+    <br/>
+    <label for="height">體重:</label>
+    <input type="text" id="weight" name="weight">
+    <br/>
+    <button onclick="calcBMI()">計算BMI</button>
+    <button onclick="displayBMI()">呼叫Object.bmi()計算BMI</button>
+    
+    <div id="msg"></div>
+    <script>
+        //var height = 178, weight = 75;
+
+        var msg = document.getElementById("msg")
+
+        window.onload
+
+        function calcBMI() {
+            let height = document.getElementById("height").value;
+            let weight = document.querySelector("#weight").value;
+
+            msg.innerHTML = "BMI" + weight / ((height / 100) **2);
+        }
+
+        //3.function constructor 
+        function Person(name, age, height, weight) {
+            this.name = name,
+            this.age = age,
+            this.height = height,
+            this.weight = weight,
+            this.bmi = function(){
+               return weight / ((height / 100) **2);
+            }
+        }
+
+        function displayBMI(){
+          let lady = new Person("Mary" , 26, 168, 52);
+          msg.innerHTML = "BMI = " + lady.bmi();
+        }
+    </script>
+</body>
+
+</html>
