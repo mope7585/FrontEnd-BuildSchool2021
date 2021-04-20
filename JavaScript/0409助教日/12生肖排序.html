@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+//12生肖排序
+//['豬' , '龍' , '鼠' , '狗' , '羊', '雞' , '馬']
+var animal = ['豬' , '龍' , '鼠' , '狗' , '羊', '雞' , '馬'];
+let AllAnimal = ['鼠','牛','虎','兔','龍','蛇','馬','羊','猴','雞','狗','豬'];
+let test = animal.map(x => AllAnimal.indexOf(x)+1);
+
+console.log(test.sort((a,b)=>a-b));
+
+// animal.sort((a,b)=>{
+//     let AllAnimal = ['鼠','牛','虎','兔','龍','蛇','馬','羊','猴','雞','狗','豬'];
+//     return AllAnimal.indexOf(a) - AllAnimal.indexof(b);
+// });
+// console.log(animal);
+
+let Allanimals = [
+     {animal:'鼠',index:1},
+     {animal:'牛',index:2},
+     {animal:'虎',index:3},
+     {animal:'兔',index:4},
+     {animal:'龍',index:5},
+     {animal:'蛇',index:6},
+     {animal:'馬',index:7},
+     {animal:'羊',index:8},
+     {animal:'猴',index:9},
+     {animal:'雞',index:10},
+     {animal:'狗',index:11},
+     {animal:'豬',index:12}
+    ]
+
+let test2 = animal.map(x => Allanimals.find(f => f.animal == x).index);
+
+console.log(test2);
+
+
+
+
+
+
+    </script>
+</body>
+</html>

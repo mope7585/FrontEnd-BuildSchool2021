@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+
+
+
+
+    <script>
+// var map = Array.prototype.map;
+// var a = map.call('Hello World', function(x) {
+//   return x.charCodeAt(0);
+// });
+// console.log(a);
+
+// var elems = document.querySelectorAll('select option:checked');
+// var values = Array.prototype.map.call(elems, function(obj) {
+//   return obj.value;
+// });
+// console.log(values);
+var stringArray = ['Blue', 'Humpback', 'Beluga'];
+var numericStringArray = ['80', '9', '700'];
+var numberArray = [40, 1, 5, 200];
+var mixedNumericArray = ['80', '9', '700', 40, 1, 5, 200];
+console.log('stringArray:', stringArray.join());
+console.log('Sorted:', stringArray.sort());
+console.log('numberArray:', numberArray.join());
+console.log('Sorted without a compare function:', numberArray.sort());
+console.log('Sorted with compareNumbers:', numberArray.sort((a,b)=>(a-b)));
+
+
+
+    </script>
+</body>
+</html>

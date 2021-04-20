@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Fetch API</h1>
+    <input type="text" id="url" size="120">
+    <button>Fetch</button>
+
+
+
+    <script type="module">
+        import { $g, $c } from '../modules/helpers.js';
+
+        let url = '';
+
+        window.onload = function () {
+            $g('input').value = url;
+            $g('button').addEventListener('click', fetchResource);
+        };
+        function fetchResource() {
+            url = $g('input').value;
+            fetch(url)
+                .then(response => response.text())
+                .then(result =>{
+                    $g('body').innerHTML = result;
+                })
+                .catch(ex =>{
+                    $g('body').innerHTML = ex;
+                })
+                .finally(()=>{
+
+                });
+
+        };
+
+
+
+
+
+    </script>
+</body>
+
+</html>

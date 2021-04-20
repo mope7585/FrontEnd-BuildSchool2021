@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="nav-box">
+        <button id="btn1">IPhone</button>
+        <button id="btn2">IPad</button>
+        <button id="btn3">MacPro</button>
+    </div>
+        
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <img id="img" src="">
+        </div>
+        <div class="col-12 col-md-6">
+            <div id="data"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+<script>
+let navbox = document.getElementsByClassName('nav-box')[0].classList.add('text-center');
+
+let img = document.getElementById("img");
+img.setAttribute ('src','https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-family-select-2020?wid=470&amp;amp;hei=556&amp;amp;fmt=jpeg&amp;amp;qlt=95&amp;amp;.v=1604343709000');
+
+
+
+
+let data = document.getElementById('data');
+let p1 = document.createElement('p');
+p1.innerText = "全新";
+data.appendChild(p1);
+
+let h1 = document.createElement('h1');
+h1.innerText ='購買IPhone'
+data.appendChild(h1);
+
+let span1 = document.createElement('span');
+span1.innerText = "選擇機型";
+data.appendChild(span1);
+
+let span2 = document.createElement('span');
+span2.innerText= "哪一款機型最適合你？";
+data.appendChild(span2);
+
+//box
+let box1 = document.createElement('div');
+data.appendChild(box1);
+
+//box1-1
+let box11 = document.createElement('div');
+box11.classList.add('d-flex','justify-content-between','align-items-center','border','border-info')
+box1.appendChild(box11);
+
+//box1-1-1
+let box111 = document.createElement('div');
+box11.appendChild(box111);
+
+let span3 = document.createElement('span');
+span3.innerText = "iPhone 12 mini";
+box111.appendChild(span3);
+let p2 = document.createElement('p');
+p2.innerText = "5.4 吋顯示器1";
+box111.appendChild(p2);
+
+let span4 = document.createElement('span');
+span4.innerText = "NT$23,900 起";
+box111.appendChild(span4);
+
+//box1-1-2
+let box112 = document.createElement('div');
+box11.appendChild(box112);
+box112.classList.add('d-flex','justify-content-between','align-items-center','border','border-info','m-1')
+
+//box1-2
+let box12 = document.createElement('div');
+box1.appendChild(box12);
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+  
+  </body>
+</html>

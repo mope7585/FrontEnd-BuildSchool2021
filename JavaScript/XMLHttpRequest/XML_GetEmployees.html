@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>用XMLHttpRequest請求GitHub JSON資料</h1>
+
+    <button id='button1'>Request JSON1</button>
+    <button id='button2'>Request JSON2</button>
+    <button id='button3'>Request JSON3</button>
+    <button id='button4'>Request JSON4</button>
+    <button id='btnClear'>Clear</button>
+    <div id='EmployeeList'></div>
+
+    <script type="module">
+        import { $g } from "../modules/helpers.js"
+
+        let ul = $g('#EmployeeList');
+
+
+        $g('button').forEach((item) => {
+            item.addEventListener('click', () => { EmployeeList.innerText = ''; })
+        });
+
+        let btn1 = $g('#button1').addEventListener('click', requestJSON1);
+        let btn2 = $g('#button2').addEventListener('click', requestJSON2);
+        let btn3 = $g('#button3').addEventListener('click', requestJSON3);
+        let btn4 = $g('#button4').addEventListener('click', requestJSON4);
+        $g('#btnClear').addEventListener('click', () => { EmployeeList.innerText = ''; })
+
+
+        // const url = 'https://raw.githubusercontent.com/apprunner/FileStorage/master/iPad_DataFixed.json';
+        // // const url = 'http://127.0.0.1:5503/XMLHttpRequest/iPad_DataFixed.json';
+        const url = 'https://raw.githubusercontent.com/mope7585/FileStorage/main/JSON.Array.JSON';
+
+        let employees = [];
+        let xhr = new XMLHttpRequest();
+
+        //Ex1
+        function requestJSON1() {
+            xhr.onload = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) 
+                {
+                    // ul.textContent = this.responseText;
+                    employees = JSON.parse(this.responseText);
+                    employees.forEach((item, index) => {
+                        let ul = document.getElementById('EmployeeList');
+                        let li = document.createElement('li');
+                        li.innerText = `${item.firstName},${item.email},${item.height},${item.phone.行動電話},${item.cars[0]}`;
+                        ul.appendChild(li);
+                    })
+                }
+                else {
+                    ul.textContent = '發⽣錯誤，HTTP response代碼：' + xhr.status;
+                }
+            }
+            xhr.open('GET', url);
+            xhr.send();
+        }
+
+
+
+        //Ex2
+        function requestJSON2() {
+            xhr.onload = responseHandler;
+        }
+        function responseHandler() {
+            msg.innerText = this.responseText;
+        }
+        xhr.open('GET', url);
+        xhr.send();
+
+
+        //Ex3
+        function requestJSON3() {
+            xhr.addEventListener('load', responseHandler);
+            xhr.open('GET', url);
+            xhr.send();
+        }
+
+        //Ex4
+        function requestJSON4() {
+            xhr.onreadystatechange = () => { msg.innerText = this.responseText; }
+            xhr.open('GET', url);
+            xhr.send();
+        }
+
+    </script>
+</body>
+
+</html>

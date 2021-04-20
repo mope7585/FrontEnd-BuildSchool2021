@@ -18,7 +18,7 @@
 
 
     <script type="module">
-        import { $g ,genUl } from '../modules/helpers.js';
+        import { $g, genUl, getRandom } from '../modules/helpers.js';
 
         let h1 = $g('h1');
         h1.innerText = "JavaScript Module";
@@ -30,9 +30,10 @@
         let lis = ["Window", "document", "html"];
         let ul = genUl(lis);
         document.body.appendChild(ul);
-        
 
-    
+        //呼叫getRandom方法
+        document.querySelector("body>div").innerHTML = getRandom(1, 100);
+
     </script>
 </body>
 

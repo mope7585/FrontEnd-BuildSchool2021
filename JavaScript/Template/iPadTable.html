@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            table-layout: fixed;
+            width: 100%;
+            border-collapse: collapse;
+            border: 3px solid purple;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: lightblue;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: aqua;
+        }
+
+        thead th:nth-child(1) {
+            width: 10%;
+            cursor: pointer;
+        }
+
+        thead th:nth-child(2) {
+            width: 10%;
+            cursor: pointer;
+        }
+
+        thead th:nth-child(3) {
+            width: 10%;
+            cursor: pointer;
+        }
+
+        thead th:nth-child(4) {
+            width: 60%;
+        }
+
+        thead th:nth-child(5) {
+            width: 10%;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <div id='msg'></div>
+    <template id="templateTitle">
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </template>
+
+    <template id="templateRow">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </template>
+
+
+    <script>
+        const ipads = [
+            {
+                "sku": "MW762",
+                "price": 10900,
+                "storage": "32GB",
+                "description": "10.2 吋 iPad Wi-Fi 機型 32GB - 金色",
+                "picture": "ipad_gold.png"
+            },
+            {
+                "sku": "MW792",
+                "price": 13900,
+                "storage": "128GB",
+                "description": "10.2 吋 iPad Wi-Fi 機型 128GB - 金色",
+                "picture": "ipad_gold.png"
+            },
+            {
+                "sku": "MW742",
+                "price": 10900,
+                "storage": "32GB",
+                "description": "10.2 吋 iPad Wi-Fi 機型 32GB - 太空灰色",
+                "picture": "ipad_space.png"
+            },
+            {
+                "sku": "MW772",
+                "price": 13900,
+                "storage": "128GB",
+                "description": "10.2 吋 iPad Wi-Fi 機型 128GB - 太空灰色",
+                "picture": "ipad_space.png"
+            },
+            {
+                "sku": "MW752",
+                "price": 10900,
+                "storage": "32GB",
+                "description": "10.2 吋 iPad Wi-Fi 機型 32GB - 銀色",
+                "picture": "ipad_silver.png"
+            },
+            {
+                "sku": "MW782",
+                "price": 13900,
+                "storage": "128GB",
+                "description": "10.2 吋 iPad Wi-Fi 機型 128GB - 銀色",
+                "picture": "ipad_silver.png"
+            },
+            {
+                "sku": "MW6D2",
+                "price": 15400,
+                "storage": "32GB",
+                "description": "10.2 吋 iPad Wi-Fi + 行動網路機型 32GB - 金色",
+                "picture": "ipad_gold.png"
+            },
+            {
+                "sku": "MW6G2",
+                "price": 18400,
+                "storage": "128GB",
+                "description": "10.2 吋 iPad Wi-Fi + 行動網路機型 128GB - 金色",
+                "picture": "ipad_gold.png"
+            },
+            {
+                "sku": "MW6A2",
+                "price": 15400,
+                "storage": "32GB",
+                "description": "10.2 吋 iPad Wi-Fi + 行動網路機型 32GB - 太空灰色",
+                "picture": "ipad_space.png"
+            },
+            {
+                "sku": "MW6E2",
+                "price": 18400,
+                "storage": "128GB",
+                "description": "10.2 吋 iPad Wi-Fi + 行動網路機型 128GB - 太空灰色",
+                "picture": "ipad_space.png"
+            },
+            {
+                "sku": "MW6C2",
+                "price": 15400,
+                "storage": "32GB",
+                "description": "10.2 吋 iPad Wi-Fi + 行動網路機型 32GB - 銀色",
+                "picture": "ipad_silver.png"
+            },
+            {
+                "sku": "MW6F2",
+                "price": 18400,
+                "storage": "128GB",
+                "description": "10.2 吋 iPad Wi-Fi + 行動網路機型 128GB - 銀色",
+                "picture": "ipad_silver.png"
+            }
+        ];
+    </script>
+
+    <script type="module">
+        import { $g, $c } from '../modules/helpers.js';
+
+        $g('h1').innerText = 'Template';
+        $g('#msg').innerText = '模板的應用';
+
+        let table, thead, tbody;
+
+        window.onload = () => {
+            table = $c('table');
+            thead = $c('thead');
+            tbody = $c('tbody');
+            table.appendChild(thead);
+            table.appendChild(tbody);
+            document.body.insertBefore(table, $g('#templateTitle'));
+
+            let titles = ['產品編號', '售價', '儲存容量', '說明','圖片'];
+            addThead(titles);
+
+            // let row = ["MW762", 10900, "32GB", "10.2 吋 iPad Wi-Fi 機型 32GB - 金色"];
+            // addTbody(row);
+            ipads.forEach((item, index) => {
+                //  values:物件轉陣列
+                let values = Object.values(item);
+                // console.log(values);
+                // console.log(item);
+                // values.length=4;
+                values[4]=`<img src="../Template/${values[4]}" alt="${values[4]}">`;
+                console.log(values[4]);
+                addTbody(values);
+            });
+        };
+
+        function addThead(titleArray) {
+            let templateTitle = $g('#templateTitle');
+            let cloneContent = templateTitle.content.cloneNode(true);
+            let ths = cloneContent.querySelectorAll('th');
+
+            titleArray.forEach((item, index) => {
+                ths[index].innerText = item;
+            });
+
+            thead.appendChild(cloneContent);
+        }
+
+        function addTbody(rowArray) {
+            let templateRow = $g('#templateRow');
+            let cloneContent = templateRow.content.cloneNode(true);
+            let tds = cloneContent.querySelectorAll('td');
+
+            rowArray.forEach((item, index) => {
+                tds[index].innerHTML = item;
+            });
+
+            thead.appendChild(cloneContent);
+        }
+
+
+    </script>
+</body>
+
+</html>

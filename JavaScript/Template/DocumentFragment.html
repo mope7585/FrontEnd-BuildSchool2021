@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+<script type="module">
+    import{ $g,$c} from '../modules/helpers.js'
+    //1.Creat DoucumentFragment
+let fragment = new DocumentFragment;
+
+//creat<h1>
+let h1 = $c('h1');
+h1.textContent="DocumentFragment";
+fragment.append(h1);
+document.body.appendChild(fragment);
+
+let productArray = ['iPhone','iPad','Mac','Watch'];
+
+//creat <ul> & <li>
+    let ul =$c('ul');
+    productArray.forEach(item=>{
+        let li = $c('li');
+        li.textContent = item;
+        ul.appendChild(li);
+    });
+
+    fragment.appendChild(ul);
+
+
+
+    </script>
+</body>
+</html>

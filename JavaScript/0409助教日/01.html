@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .box{
+            display: flex;
+        }
+        .box div{
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="box">
+    <div id="div_1"></div>
+    <div class="div_2"></div>
+    <div class="div_1 div_2"></div>
+    <div></div>
+</div>
+
+  
+    <h1 id="h1">Hello, world!</h1>
+    <h1 id ="h1_2"></h1>
+    <input type="text" id="input">
+
+
+<button id="button">click me</button>
+<br>
+<img id="img" src="" alt="">
+<input id="pwd-input" type="text">
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        //innerText
+        let h1 = document.getElementById('h1');
+        h1.innerText = "Hello Hello <input type ='text'/>";
+
+        //innerHTML
+        let h1_2 =document.getElementById("h1_2");
+        h1_2.innerHTML = "Hello Hello <input type ='text'/>";
+
+        let input = document.getElementById('input');
+        input.value ="ABC";
+
+        h1.style.color = '#ff0000';
+
+        let button = document.getElementById('button');
+        // button.classList.add('btn','btn-danger');
+
+
+        console.log(h1);
+        console.dir(h1);
+
+        let array = [
+            { Name: 'Jimmy', Age: 10 },
+            { Name: 'Eric', Age: 20 },
+            { Name: 'Mary', Age: 30 },
+            { Name: 'Andy', Age: 15 }
+        ]
+        //    console.warn('123');
+        //    console.error('456');
+
+        //    console.table(array);
+
+        // for
+        for (let i = 0; i < array.length; i++) {
+            console.log(array[i]);
+        }
+
+        //    for..in.. 取得索引
+        for (let item in array) {
+            console.log(item);
+        }
+
+        //用for..in取得值的方法
+        for (let item in array) {
+            console.log(array[item]);
+        }
+
+        // for..of..取得值
+        for (let item of array) {
+            console.log(item);
+        }
+
+        //for each..
+        array.forEach((x, index) => {
+            console.log(`Value: ${JSON.stringify(x)} ,index: ${index}`);
+        })
+
+        let obj ={
+            Name:'Kevin',
+            Age:0,
+            InSingle:false,
+            sex:'',
+            weight:100,
+            Height:100,
+        };
+
+
+        // for..in除了集合以外可以拿來跑物件
+        for(let item in obj){
+            console.log(`${item}:${obj[item]}`);
+        }
+
+//Selector
+//By ID 回傳的是單一元素
+let div_1 = document.getElementById('div_1');
+console.log(div_1);
+
+//By Class 回傳的是一個集合,那怕只有一個也是回傳一個集合
+let div_2 = document.getElementsByClassName('div_2')[0];
+console.log(div_2);
+
+//By Tag Name
+let div_3 = document.getElementsByTagName('div');
+
+//By Css selector
+let div_4 = document.querySelector('.box');  
+
+//By CSS selector return all
+let div_5 =document.querySelectorAll('.div_2')
+
+console.log(div_1);
+console.log(div_2);
+console.log(div_3);
+console.log(div_4);
+console.log(div_5);
+
+let img = document.getElementById("img");
+img.setAttribute ('src','https://picsum.photos/200/200/?random=1');
+let pwd_input = document.getElementById('pwd-input');
+pwd_input.setAttribute('type','password');
+
+button.setAttribute('custom',`{"Name": "洗手乳", "Price" : 100}`);
+button.onclick = function(){
+    let product = JSON.parse(button.getAttributeNode('custom').value);
+    h1.innerHTML = `名稱: ${product.Name} 價格:${product.Price}`;
+}
+     
+    </script>
+</body>
+
+</html>

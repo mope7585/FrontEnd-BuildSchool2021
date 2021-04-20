@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+var list = [ 
+    {Item:'啤酒',Type:'喝的'},
+    {Item:'汽水',Type:'喝的'},
+    {Item:'火鍋',Type:'吃的'},
+    {Item:'燒烤',Type:'吃的'},
+    {Item:'冰淇淋',Type:'吃的'},
+]
+
+//找第一個"吃的"的東西
+let r1 = list.find(x => x.Type == "吃的");
+//找到第一個"吃的"物件
+console.log(r1);
+//找第一個"吃的"的Item項目(物件取物用".");
+console.log(r1.Item);
+
+//找所有"吃的"的東西
+let r2 = list.filter(x => x.Type =="吃的");
+//是一個陣列
+console.log(r2);
+//陣列取物用方法
+console.log(r2.find(x =>x.Item =="火鍋"))
+
+//找 冰淇淋 在第幾個位置
+//先找到是否有"冰淇淋"
+let ice =  list.find(x => x.Item =="冰淇淋");
+let r3 = list.indexOf(ice);
+console.log(`冰淇淋在第${r3+1}的位置`);
+
+//用list生成新的集合
+//['啤酒','汽水','火鍋'...]
+let r4 = list.map(x => x.Item);
+console.log(r4);
+
+//用list生成新的集合2
+let r5 = list.map(x =>{
+    return{
+        Id: list.length - list.indexOf(x),
+        Name: x.Item
+    }
+});
+console.table(r5);
+
+//排序
+let nums_1 = [9,6,4,2,1];
+let r6 = nums_1.sort();
+console.log(r6);
+
+//排序2
+var nums_2 = [10000,10,100,1,101];
+let r7 = nums_2.sort((a,b)=>a-b);  /*若想要大到小 b-a*/
+console.log(r7);
+
+//排序3 
+let r8 = r5.sort((a,b) => a.Id - b.Id);
+console.table(r8);
+
+//自定義groupBy 方法
+Array.prototype.groupBy = function (prop) {
+    return this.reduce(function (groups, item) {
+        const val = item[prop];
+        groups[val] = groups[val] || [];
+        groups[val].push(item);
+        return groups;
+    },{});
+};
+
+//做分群
+//group by Type
+let r9 = list.groupBy('Type')
+console.log(r9);
+
+
+
+
+    </script>
+</body>
+</html>

@@ -4,12 +4,11 @@ function $g(selector) {
         return document.querySelector(selector);
     }
 
-// 回傳NodeList集合
-let nodelist = document.querySelectorAll(selector);
+    // 回傳NodeList集合
+    let nodelist = document.querySelectorAll(selector);
+    return nodelist.length == 1 ? nodelist[0] : nodelist;
+};
 
-return nodelist.length == 1 ? nodelist[0] : nodelist;
-
-}
 function genUl(liArray) {
     let ul = document.createElement("ul");
 
@@ -21,6 +20,19 @@ function genUl(liArray) {
     return ul;
 }
 
+function getRandom(min, max) {
+    return Math.floor(Math.random() * max + min);
+}
+console.log(getRandom(1, 100));
 
 
-export { $g ,genUl};
+function $c(element, text) {
+    let el = document.createElement(element);
+
+    if (text !== null && text !== undefined && text.length > 0) {
+        el.innerText = text;
+    }
+    return el;
+}
+
+export { $g, genUl, getRandom, $c };

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style type="text/css">
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+        let json = [];
+        let json1 = [];
+
+        let map;
+        const url = "https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%8D%80.json";
+        const url1 = "https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%87%AA%E4%BE%86%E6%B0%B4%E7%94%A8%E9%87%8F.json";
+        const CHU = { lat: 24.760759896419373, lng: 120.9527718965576 }
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: CHU,
+                zoom: 15,
+            });
+
+            //Address
+            let xhr = new XMLHttpRequest();
+            function Address() {
+                xhr.onload = function () {
+                    json = JSON.parse(this.responseText);
+                    json.forEach((item, index) => {
+                        const marker = new google.maps.Marker({
+                            position: { lat: item.Lat, lng: item.Lng },
+                            map,
+                            title: item.City + item.District,
+                        });
+                    });
+                    console.log(json);
+                }
+                xhr.open('GET', url);
+                xhr.send();
+            };
+
+            //Water
+            let xhr1 = new XMLHttpRequest();
+            function Water() {
+                xhr1.onload = function () {
+                    json1 = JSON.parse(this.responseText);
+                    json1.TaiwanWaterExchangingData.StatisticofWaterResourcesClass.StatisticofWaterUsageClass.TheConsumptionOfWater.forEach((item, index) => {
+                        new google.maps.InfoWindow({
+                            content: item.Month + item.TheDailyDomesticConsumptionOfWaterPerPerson + item.Year,
+                        });
+
+                    });
+                    console.log(json1);
+                }
+                xhr1.open('GET', url1);
+                xhr1.send();
+            };
+
+            Address();
+            Water();
+        }
+
+        json2 = json.concat(json1);
+        console.log(json2);
+
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtsixkbrAv4BAeaQ7v7_Vo8gR94MAkCUk&callback=initMap&libraries=&v=weekly"
+        async>
+
+        </script>
+</body>
+
+</html>

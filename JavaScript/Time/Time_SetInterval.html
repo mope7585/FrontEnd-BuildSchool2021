@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>setInterval - 時間間隔時器</h1>
+    <button onclick="Start()">Start</button>
+    <button onclick="Stop()">Stop</button>
+
+
+
+
+    <script>
+        const colors = ['green', 'blue', 'red', 'orange'];
+
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+        let timeoutId;
+        function Start() {
+            IntervalId = setInterval(changeColor, 1000);
+        }
+        function Stop() {
+            clearTimeout(IntervalId);
+        }
+        let body = document.querySelector('body');
+        function changeColor() {
+            body.style.backgroundColor= colors[getRandom(0, 4)];
+            console.log(Math.random());
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

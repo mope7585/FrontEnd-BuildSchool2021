@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style type="text/css">
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtsixkbrAv4BAeaQ7v7_Vo8gR94MAkCUk&callback=initMap&libraries=&v=weekly"
+        async>
+        </script>
+    <script>
+
+        const cityUrl = "https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%8D%80.json";
+        const waterUrl = "https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%87%AA%E4%BE%86%E6%B0%B4%E7%94%A8%E9%87%8F.json";
+        const CHU = { lat: 24.760759896419373, lng: 120.9527718965576 };
+        let city, water, map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: CHU,
+                zoom: 15,
+            });
+            MapResource();
+        };
+        function MapResource() {
+            fetch(cityUrl)
+                .then(response => response.text())
+                .then(citryResult => {
+                    city = JSON.parse(citryResult);
+                    fetch(waterUrl)
+                        .then(response => response.text())
+                        .then(WaterResult => {
+                            water = JSON.parse(WaterResult);
+                            MarkAction();
+                        });
+                });
+        };
+        function MarkAction() {
+            let Array1 = city;
+            let Array2 = water.TaiwanWaterExchangingData.StatisticofWaterResourcesClass.StatisticofWaterUsageClass.TheConsumptionOfWater;
+            let Array3 = Array1.map(m => {
+                let temp = Array2.filter(f => f.County == m.city && f.town == m.District && f.Year == '107').map(m => {
+                    return `${m.Month}月的自來水用水量為${m.TheDailyDomesticConsumptionOfWaterPerPerson}`
+                });
+            });
+            return {
+                City: m.City,
+                Town: m.District,
+                Lat: m.Lat,
+                Lng: m.Lng,
+                Water: temp
+            };
+        };
+        let resultData = Array3.filter(f => f.Water.length > 0)
+        console.log(resultData);
+
+    </script>
+</body>
+
+</html>
+
+</html>
