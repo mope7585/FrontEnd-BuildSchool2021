@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>Hello, world!</title>
+    <style>
+        .square {
+            width: 250px;
+            height: 250px;
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <div class="container d-flex align-items-center flex-column">
+        <div class="row">
+            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2 bg-white"
+                id="d1">1</div>
+            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2 bg-white"
+                id="d2">2</div>
+            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2 bg-white"
+                id="d3">3</div>
+        </div>
+        <div class="row">
+            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2 bg-white"
+                id="d4">4</div>
+            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2 bg-white"
+                id="d5">5</div>
+            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2 bg-white"
+                id="d6">6</div>
+        </div>
+        <div class="row">
+            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2 bg-white"
+                id="d7">7</div>
+            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2 bg-white"
+                id="d8">8</div>
+            <div class="col-4  square d-flex justify-content-center align-items-center fs-1 border-2 bg-primary"
+                id="d9"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+
+
+
+    <script>
+
+        let white = document.querySelectorAll('.bg-white');
+        let primary = document.querySelector('.bg-primary');
+        //獲取總方法
+        var AllofPoisition = function (item) {
+            leftOfPosition(item);
+            rightOfPosition();
+            topOfPosition();
+            bottomOfPosition();
+        }
+
+        // 獲取左方位置
+        var leftOfPosition = function (item) {
+
+            let abc = [];
+            abc = item.innerHTML;
+            primary.innerHTML = item.innerText;
+
+            console.log(item)
+            abc = primary.innerHTML;
+            item.innerHTML = primary.innerText;
+        }
+
+        // 獲取右方位置
+        var rightOfPosition = function () {
+
+        }
+
+        // 獲取上方位置
+        var topOfPosition = function () {
+
+        }
+
+        // 獲取下方位置
+        var bottomOfPosition = function () {
+
+        }
+        function name() {
+
+            /* primary.addEventListener('click', AllofPoisition()); */
+        }
+
+        window.addEventListener('load', () => {
+
+            white.forEach(x => {
+                x.addEventListener('click', () => { AllofPoisition(x)});
+
+            })
+
+        })
+
+
+    </script>
+
+</body>
+
+</html>

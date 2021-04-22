@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Fetch使用Request物件</h1>
+    <input type="text" id="url" size="120">
+    <button>Fecth抓取資料</button>
+    <div id="msg"></div>
+
+    <script type="module">
+        import { $g } from "../modules/helpers.js"
+
+        let url = "https://raw.githubusercontent.com/apprunner/FileStorage/master/iPad_DataFixed.json";
+        // let url ="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg";
+        window.onload = function () {
+            $g("input").value = url;
+            $g("button").addEventListener("click", fetchResponseProperties);
+        }
+
+        //Ex1
+        function fetchRequestGet() {
+            const request = new Request(url);
+            fetch(request)
+                .then(response => response.text())
+                .then(result => { $g('#msg').innerText = result })
+                .catch(ex => {
+                    $g('#msg').innerText = ex;
+                })
+
+
+        }
+
+        //Ex2
+        function fetchRequestPost() {
+            let request = new Request(url, {
+                method: "POST", body: '{"name":"kevin",“email":"kevin@gmail.com"}'
+            });
+            fetch(request)
+                .then(response => {
+                    response.text();
+                })
+                .then(text => {
+                    $g("#msg").innerText = text;
+                })
+                .catch(ex => {
+                    $g("#msg").innerText = ex;
+                });
+        }
+
+             function fetchResponseProperties() {
+            let request = new Request(url, {method:'GET'});
+            fetch(request)
+                .then(response => {
+                    let txt =response.text();
+                    let url = request.url;
+                    let method = request.method;
+                    let bodyUsed =request.bodyUsed;
+                    debugger;
+                })
+                .then(text => {
+                    $g("#msg").innerText = text;
+                })
+                .catch(ex => {
+                    $g("#msg").innerText = ex;
+                });
+        }
+        //Ex - 
+        //url = "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB17hmpQ.img?h=746&w=1119&m=6&q=60&o=f&l=f";
+
+
+
+    </script>
+</body>
+
+</html>

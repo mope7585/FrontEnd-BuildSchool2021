@@ -91,8 +91,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img id="pizzaImage" src="" alt="">
-                    <h1 id="description" class="text-primary"></h1>
+                    <img id="pizzaImage" src="" alt="" class="w-50">
+                    <p id="hp" class="text-primary"></p>
+                    <p id="mp" class="text-primary"></p>
+                    <p id="hpperlevel" class="text-primary"></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -113,41 +115,50 @@
         crossorigin="anonymous"></script>
 
     <script type='module'>
-
         import { $g, $c } from '../modules/helpers.js';
         // 3.複製Card樣板，並設定資料
-        function LOLItem() {
-            let card = $g('#cardLOL');
 
-            let row = $g('.row');
-            let cloneContent = card.content.cloneNode(true);
-            cloneContent.querySelector('h5').innerText = LOLdata.data.name;
-
-            cloneContent.querySelector('img').src = LOLdata.data.image;
-            cloneContent.querySelector('.btn').addEventListener('click', function () {
-                // console.log(this);
-                this.setAttribute('data-toggle', 'modal');
-                this.setAttribute('data-target', '#exampleModal');
-                let modal = $g('#exampleModal');
-
-                modal.querySelector('h5').innerText = LOLdata.data[index].name;
-                modal.querySelector('#pizzaImage').src = LOLdata.data[index].image;
-                modal.querySelector('#description').innerText = LOLdata.data[index].blurb;
-            });
-
-            // 4.將複製的Card加入DOM中
-            row.append(cloneContent);
-
-        };
-
-        let url = 'http://127.0.0.1:5500/LOL/Champion.json'
+        let LOLdata;
+        let url = 'https://raw.githubusercontent.com/mope7585/FrontEnd-BuildSchool2021/main/JavaScript/LOL/Champion.json'
         window.onload = function LOLRequest() {
+            let card = $g('#cardLOL');
+            let row = $g('.row');
             fetch(url)
                 .then(response => response.text())
                 .then(response => {
                     LOLdata = JSON.parse(response);
-                    LOLItem();
-                    console.log(LOLdata);
+                })
+                .then(response => {
+                    // let keys = Object.keys(LOLdata.data);
+                    let values = Object.values(LOLdata.data);
+                    // console.log(values);
+                    values.forEach((item, index) => {
+                     console.log(item.id);
+                        let cloneContent = card.content.cloneNode(true);
+                        cloneContent.querySelector('img').src = `https://cdngarenanow-a.akamaihd.net/games/lol/2020/LOLwebsite/champion/${item.id}_0.jpg`;
+                        cloneContent.querySelector('h5').innerText = `${item.name}`;
+                        cloneContent.querySelector('.btn').addEventListener('click', function () {
+
+                            this.setAttribute('data-toggle', 'modal');
+                            this.setAttribute('data-target', '#exampleModal');
+                            let modal = $g('#exampleModal');
+                            modal.querySelector('h5').innerText = `${item.name}`;
+                            modal.querySelector('#pizzaImage').src = `https://cdngarenanow-a.akamaihd.net/games/lol/2020/LOLwebsite/champion/${item.id}_0.jpg`;
+                            modal.querySelector('#hp').innerText = `HP:${item.stats.hp}`;
+                            modal.querySelector('#mp').innerText = `MP:${item.stats.mp}`;
+                            modal.querySelector('#hpperlevel').innerText = `hpperlevel:${item.stats.hpperlevel}`;
+                            
+                        });
+                        // 4.將複製的Card加入DOM中
+                        row.append(cloneContent);
+                        
+                    });
+
+
+
+
+
+
                 })
         };
 

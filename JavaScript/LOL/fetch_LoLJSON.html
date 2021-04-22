@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="msg"></div>
+
+    <script type='module'>
+        import { $g, $c } from '../modules/helpers.js';
+        let url = 'https://raw.githubusercontent.com/mope7585/FrontEnd-BuildSchool2021/main/JavaScript/LOL/Champion.json'
+        window.onload = function LOLResource() {
+            fetch(url)
+                .then(response => response.text())
+                .then(result => {
+                    $g('#msg').innerHTML = result;
+                })     
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>

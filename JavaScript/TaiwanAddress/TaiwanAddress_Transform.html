@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1>郵遞區號JSON資料格式轉換</h1>
+        <p>
+            [
+            {
+            "City": "臺北市",
+            "Districts": [
+            {
+            "District": "中正區",
+            "ZipCode": "100"
+            },
+            {
+            "District": "大同區",
+            "ZipCode": "103"
+            },
+            ...
+            ]
+            },
+            ...
+            ]
+        </p>
+    </div>
+    <button id='xhr'>以XHR讀取網路郵遞區號JSON檔</button>
+    <button id='fetch'>以Fetch讀取網路郵遞區號JSON檔</button>
+    <button id='transform' disabled>解析並轉換資料</button>
+    <ul id='result'></ul>
+    <div id='msg'></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+
+    <script type='module'>
+        import { $g, $c } from '../modules/helpers.js';
+
+        $g('#xhr').addEventListener('click', getAddressJSON);
+
+        let zipcodeArray = []; //原始
+        let zipcodeNewArray = []; //轉換後的
+        let jsonUrl = 'https://raw.githubusercontent.com/apprunner/FileStorage/master/TaiwanAddress.json';
+
+
+        let xhr = new XMLHttpRequest;
+        function getAddressJSON() {
+            $g('#result').innerText = '';
+            $g('#msg').innerText = '';
+            let idx = 1;
+
+            xhr.onload = function () {
+                zipcodeArray = JSON.parse(this.responseText);
+                zipcodeArray.forEach((city, index) => {
+                    city.AreaList.forEach((district, index) => {
+                        let cityno = idx.toString().padStart(3, '0') + ',' + city.CityName;
+                        let address = cityno + district.AreaName + ',' + district.ZipCode;
+                        let li = $c('li', address);
+                        $g('#result').appendChild(li);
+                        idx++;
+                    })
+                })
+                $g('#transform').disabled = false;
+            }
+            xhr.open('GET', jsonUrl);
+            xhr.send();
+        }
+
+        $g('#fetch').addEventListener('click', fetchJSON);
+        function fetchJSON() {
+            fetch(jsonUrl)
+                .then(response => response.text())
+            // .then(response => )
+
+        }
+
+
+
+        $g('#transform').addEventListener('click', TransformData);
+
+        //解析並轉換資料=> City:"臺北市", Districts:[{District:"中正區", ZipCode:"100"}, {}...] 
+        function TransformData() {
+            zipcodeNewArray = [];
+            $g('ul').innerText = "";
+            zipcodeArray.forEach((city, index) => {
+                let _city = city.CityName;
+                let _districts = [];
+                city.AreaList.forEach((arealist, index) => {
+                    _districts.push({ district: arealist.AreaName, zipcode: arealist.Zipcode });
+                    let _cityObject = { city: _city , districts: _districts };
+                    zipcodeNewArray.push( _cityObject);
+                })
+                $g('msg').innerText = JSON.stringify(zipcodeNewArray);
+            })
+        
+            
+            
+         
+        }
+    </script>
+</body>
+
+</html>
