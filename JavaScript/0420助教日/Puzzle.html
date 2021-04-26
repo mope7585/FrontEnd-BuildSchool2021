@@ -11,6 +11,44 @@
         .square {
             width: 250px;
             height: 250px;
+            background-size: 750px 750px;
+            background-image: url('./img/unnamed.jpg');
+        }
+
+        #d1 {
+            background-position: left top;
+        }
+
+        #d2 {
+            background-position: center top;
+        }
+
+        #d3 {
+            background-position: right top;
+        }
+
+        #d4 {
+            background-position: left center;
+        }
+
+        #d5 {
+            background-position: center;
+        }
+
+        #d6 {
+            background-position: right center;
+        }
+
+        #d7 {
+            background-position: left bottom;
+        }
+
+        #d8 {
+            background-position: center bottom;
+        }
+
+        #d9 {
+            background-image: none;
         }
     </style>
 
@@ -22,28 +60,35 @@
 <body>
     <div class="container d-flex align-items-center flex-column">
         <div class="row">
-            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2 bg-white"
-                id="d1">1</div>
-            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2 bg-white"
-                id="d2">2</div>
-            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2 bg-white"
-                id="d3">3</div>
+            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2"
+                position='d1' id="d1">1
+            </div>
+            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2"
+                position='d2' id="d2">2
+            </div>
+            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2"
+                position='d3' id="d3">3
+            </div>
         </div>
         <div class="row">
-            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2 bg-white"
-                id="d4">4</div>
-            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2 bg-white"
-                id="d5">5</div>
-            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2 bg-white"
-                id="d6">6</div>
+            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2"
+                position='d4' id="d4">4
+            </div>
+            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2"
+                position='d5' id="d5">5
+            </div>
+            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2"
+                position='d6' id="d6">6
+            </div>
         </div>
         <div class="row">
-            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2 bg-white"
-                id="d7">7</div>
-            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2 bg-white"
-                id="d8">8</div>
-            <div class="col-4  square d-flex justify-content-center align-items-center fs-1 border-2 bg-primary"
-                id="d9"></div>
+            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2"
+                position='d7' id="d7">7
+            </div>
+            <div class="col-4 border square d-flex justify-content-center align-items-center fs-1 border-2"
+                position='d8' id="d8">8
+            </div>
+            <div class="col-4  square d-flex justify-content-center align-items-center fs-1 border-2" position='d9' id="d9"></div>
         </div>
     </div>
 
@@ -61,56 +106,15 @@
 
     <script>
 
-        let white = document.querySelectorAll('.bg-white');
-        let primary = document.querySelector('.bg-primary');
-        //獲取總方法
-        var AllofPoisition = function (item) {
-            leftOfPosition(item);
-            rightOfPosition();
-            topOfPosition();
-            bottomOfPosition();
-        }
-
-        // 獲取左方位置
-        var leftOfPosition = function (item) {
-
-            let abc = [];
-            abc = item.innerHTML;
-            primary.innerHTML = item.innerText;
-
-            console.log(item)
-            abc = primary.innerHTML;
-            item.innerHTML = primary.innerText;
-        }
-
-        // 獲取右方位置
-        var rightOfPosition = function () {
-
-        }
-
-        // 獲取上方位置
-        var topOfPosition = function () {
-
-        }
-
-        // 獲取下方位置
-        var bottomOfPosition = function () {
-
-        }
-        function name() {
-
-            /* primary.addEventListener('click', AllofPoisition()); */
-        }
-
-        window.addEventListener('load', () => {
-
-            white.forEach(x => {
-                x.addEventListener('click', () => { AllofPoisition(x)});
-
+        document.querySelectorAll('.col-4').forEach(item => {
+            item.addEventListener('click', function getAttribute(item) {
+                
             })
-
         })
-
+        function clickEvent(item) {
+            let current = item.getAttribute('position');
+            console.log(current)
+        }
 
     </script>
 

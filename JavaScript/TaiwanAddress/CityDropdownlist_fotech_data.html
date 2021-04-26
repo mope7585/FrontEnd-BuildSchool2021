@@ -15,13 +15,6 @@
     <div class='jumbotron'>
         <h1>動態建立Select Option下拉式選單</h1>
     </div>
-    <!--     
-        <select id="citiesExample" name="cities">
-            <option value="taipei">台北</option>
-            <option value="taoyuan">桃園</option>
-            <option value="taichung">台中</option>
-        </select> 
-        -->
 
     <select id='city' name='city'></select>
     <select id='district' name='district'></select>
@@ -39,65 +32,6 @@
         integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
         crossorigin="anonymous"></script>
     <script>
-        //Array陣列元素是Object - 簡單的Array結構- 
-        let allCities = [
-            { id: 'taipei', name: '台北' },
-            { id: 'taoyuan', name: '桃園' },
-            { id: 'taichung', name: '台中' }
-        ];
-
-        //Array陣列元素是Object - 稍複雜的Array結構
-        let cityArray = [
-            { name: 'taipei', ch_name: '台北', districts: [{ id: 'taipei01', district: '中正區' }, { id: 'taipei02', district: '萬華區' }, { id: 'taipei03', district: '信義區' }] },
-            { name: 'taoyuan', ch_name: '桃園', districts: [{ id: 'taoyuan01', district: '桃園市' }, { id: 'taoyuan02', district: '八德市' }, { id: 'taoyuan03', district: '中壢市' }] },
-            { name: 'taichung', ch_name: '台中', districts: [{ id: 'taichung01', district: '台中市' }, { id: 'taichung02', district: '大里市' }, { id: 'taichung03', district: '清水市' }] }
-        ];
-
-
-        cityArray.forEach((city, index) => {
-            console.log(city.name);
-            console.log(city.ch_name);
-            let districts = city.districts;
-            districts.forEach((dt, index) => {
-                console.log(`${dt.id}, ${dt.district}`);
-            });
-            console.log('.'.repeat(40));
-
-        });
-
-        let cityObject = {
-            taipei: [
-                { id: 'taipei01', district: '中正區' },
-                { id: 'taipei02', district: '萬華區' },
-                { id: 'taipei03', district: '信義區' }],
-            taoyuan: [
-                { id: 'taoyuan01', district: '桃園市' },
-                { id: 'taoyuan02', district: '八德市' },
-                { id: 'taoyuan03', district: '中壢市' }],
-            taichung: [
-                { id: 'taichung01', district: '台中市' },
-                { id: 'taichung02', district: '大里市' },
-                { id: 'taichung03', district: '清水市' }]
-        };
-
-        let cities = Object.keys(cityObject);
-
-        cities.forEach((city, index) => {
-            cityObject[city].forEach((ct, index) => {
-                console.log(ct.id + ", " + ct.district)
-            });
-        });
-
-        console.log(cityObject);
-        console.log(JSON.stringify(cityObject));
-
-        console.log(cityArray);
-        console.log(JSON.stringify(cityArray));
-
-        /* for (const prop in employee) {
-          console.log(`employee.${prop}:${employee[prop]}`);
-        } */
-
         const citySelect = document.getElementById('city');
         const districtSelect = document.getElementById('district');
         const submitButton = document.querySelector('input[type=submit]');
@@ -109,17 +43,14 @@
         function createSelectOptions() {
             fetch(url)
             .then(response =>response.json())
-            .them(result =>{
+            .then(result =>{
                 zipcodeArray = result;
-
                     zipcodeArray.forEach((item,index)=>{
                         let option1 = document.createElement('option');
                         option1.value = item.city;
-                        options.text = item.city;
+                        option1.text = item.city;
                         citySelect.add(option1,null);
-                    })
-
-                
+                    })   
             })
         }
 
@@ -133,54 +64,10 @@
         //City選項變更事件
         citySelect.onchange = citySelectedChange;
 
-        function citySelectedChange(event) {
-            //console.log(citySelect.selectedOptions[0]);
-
-            let cityValue = citySelect.selectedOptions[0].value;
-            let cityText = citySelect.selectedOptions[0].text;
+        function citySelectedChange() {
+        
 
 
-            //清除並重新建立District <select>
-            districtSelect.disabled = false;
-            districtSelect.innerHTML = '';
-            let option0 = document.createElement('option');
-            option0.value = '';
-            option0.text = '---請選擇行政區---';
-            districtSelect.add(option0, null);
-
-            //如果未選擇City則return
-            if (cityValue == '') {
-                districtSelect.disabled = true;
-                msg.innerHTML = '';
-                return;
-            }
-
-            console.log(cityValue + ', ' + cityText);
-
-            //從Object[CityName]取得值，其值為陣列
-            let districtArray = cityObject[cityValue];
-            districtArray.forEach(item => {
-                let opt = document.createElement('option');
-                opt.value = item.id;
-                opt.text = item.district;
-                districtSelect.add(opt);
-            });
-
-
-            //以上如同以下一一動態建立option節點 
-            let opt1 = document.createElement('option');
-            opt1.value = 'taipei01';
-            opt1.text = 'taipei01';
-            let opt2 = document.createElement('option');
-            opt2.value = 'taipei02';
-            opt2.text = 'taipei02';
-            let opt3 = document.createElement('option');
-            opt3.value = 'taipei03';
-            opt3.text = 'taipei03';
-
-            /*          districtSelect.add(opt1, null);
-                        districtSelect.add(opt2, null);
-                        districtSelect.add(opt3, null); */
         }
 
         districtSelect.addEventListener('change', function () {
