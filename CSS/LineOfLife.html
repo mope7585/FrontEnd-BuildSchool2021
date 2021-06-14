@@ -14,7 +14,6 @@
     <style>
         body {
             background-image: url(https://line.me/static/934a804ce9643bf673711c7f1a4f2b05/1a900/mv01.jpg);
-            
             width: 100%;
             height: 100%;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
@@ -157,34 +156,112 @@
         }
 
         article {
-            height: 600px;
+            height: 100%;
             background-color: #FFF;
         }
 
         .LineToday {
             display: flex;
+            padding: 40px;
 
         }
 
         .LineToday-Text {
             width: 50%;
+            position: relative;
+            top: 56px;
         }
 
         .LineToday-img {
             width: 50%;
             position: relative;
-            left: -107px;
+            left: -122px;
         }
 
         .LineToday-img img {
-            width: 100%;
+            width: 120%;
             height: 100%;
-            
+          
         }
-        .LineToday-Text-pic img{
-            border-radius: 15px;
-           
 
+        .LineToday-Text-pic img {
+            border-radius: 15px;
+            width: 15%;
+            border: 1px solid #eee;
+        }
+
+
+
+        .LineToday-Text-Text h3 {
+            font-size: 50px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .LineToday-Text-Text span {
+            color: #07b53b;
+            line-height: 2em;
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        .LineToday-Text-Text p {
+            color: #777;
+            line-height: 2em;
+            margin-right: 50px;
+        }
+
+
+
+        .LinePaste {
+            display: flex;
+            padding: 40px;
+
+        }
+
+        .LinePaste-Text {
+            width: 50%;
+            position: relative;
+            top: 56px;
+            margin-left: 90px;
+        }
+
+        .LinePaste-img {
+            width: 50%;
+            position: relative;
+            left: 30px;
+        }
+
+        .LinePaste-img img {
+            width: 120%;
+            height: 100%;
+
+        }
+
+        .LinePaste-Text-pic img {
+            border-radius: 15px;
+        }
+
+        .LinePaste-Text-pic img {
+            width: 15%;
+        }
+
+        .LinePaste-Text-Text h3 {
+            font-size: 50px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .LinePaste-Text-Text span {
+            color: #07b53b;
+            line-height: 2em;
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        .LinePaste-Text-Text p {
+            color: #777;
+            line-height: 2em;
         }
     </style>
 </head>
@@ -263,6 +340,84 @@
             </div>
             <div class="LineToday-img">
                 <img src="https://line.me/static/fc6a34517fc06ee4b2c097f2de95cf17/af5ac/0386be561893eaf8b3f444a3b7206b7a.png"
+                    alt="">
+            </div>
+        </div>
+
+        <div class="LinePaste">
+            <div class="LinePaste-img">
+                <img src="https://line.me/static/29e4f0744025fe17447db54a9b8a845c/af5ac/1bcc8626da1f1f11e331664223c7feba.png"
+                    alt="">
+            </div>
+
+            <div class="LinePaste-Text">
+                <div class="LinePaste-Text-pic">
+                    <img src="https://line.me/static/0aa6d4a6996fd1a74635a632fd10141b/a7c38/3a0ad7b617ee7a9073af5c949562a000.png"
+                        alt="">
+                </div>
+                <div class="LinePaste-Text-Text">
+                    <h3>LINE貼文串</h3>
+                    <span>探索樂趣，分享生活</span>
+                    <p>在貼文串追蹤你的最愛．有感內容不錯過。</p>
+                    <p> 打造你的個人閱知頻道，探索生活大小事。</p>
+                    <p>分享所見所聞，串連人際、啟發創意的無限可能！</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="LineToday">
+            <div class="LineToday-Text">
+                <div class="LineToday-Text-pic">
+                    <img src="https://line.me/static/7ad8d18fd686a002d060b41a28784a62/a7c38/2cf6df095a14652967eeb0512708e7a7.png"
+                        alt="">
+                </div>
+                <div class="LineToday-Text-Text">
+                    <h3>LINE Pay</h3>
+                    <span>付款、轉帳、生活繳費，輕鬆簡單又便利！</span>
+                    <p>付款簡單又便利，還能輕鬆轉帳給LINE好友，動動手指輕鬆完成日常生活各種帳單繳費， 免出門省時又省力。</p>
+                </div>
+
+            </div>
+            <div class="LineToday-img">
+                <img src="https://line.me/static/19dd7975bdc5e84a47db26e8a36159b2/af5ac/91f2093486f63cacb05d3f0475e08153.png"
+                    alt="">
+            </div>
+        </div>
+
+        <div class="LinePaste">
+            <div class="LinePaste-img">
+                <img src="https://line.me/static/c18b76c50015ddb41ecfa6f2c7b23165/af5ac/43f462d7375cd4867e6cd565756b5ac2.png"
+                    alt="">
+            </div>
+
+            <div class="LinePaste-Text">
+                <div class="LinePaste-Text-pic">
+                    <img src="https://line.me/static/fd34143425a272461715b40e0c39770b/a7c38/ab6768bf0847f2800a88be070295a82d.png"
+                        alt="">
+                </div>
+                <div class="LinePaste-Text-Text">
+                    <h3>LINE購物</h3>
+                    <span>先LINE購物再購物</span>
+                    <p>涵蓋各大購物、拍賣、精品、通路、旅遊、及票券商店，輕鬆貨比五百家，一站比價三千萬筆商品，再享LINE POINTS回饋賺不停！</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="LineToday">
+            <div class="LineToday-Text">
+                <div class="LineToday-Text-pic">
+                    <img src="https://line.me/static/24d48714206071fa1917d31fce4db999/a7c38/6cd600c9b5c5e469541620f20996fd7c.png"
+                        alt="">
+                </div>
+                <div class="LineToday-Text-Text">
+                    <h3>LINE TV</h3>
+                    <span>共享追劇生活</span>
+                    <p>和朋友一起追劇，不錯過最新、最熱門、最潮的話題大劇，即時分享娛樂影音，展開精彩生活故事，LINE TV是您的追劇第一選擇！</p>
+                </div>
+
+            </div>
+            <div class="LineToday-img">
+                <img src="https://line.me/static/85cfa8aedaaafafffb894438ad671f73/af5ac/4d57ad23f14cddc09d91ae3fc10886ae.png"
                     alt="">
             </div>
         </div>
