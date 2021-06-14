@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Fetch JSON + localStorage</h1>
+    <!--     
+        <select id="citiesExample" name="cities">
+            <option value="taipei">台北</option>
+            <option value="taoyuan">桃園</option>
+            <option value="taichung">台中</option>
+        </select> 
+        -->
+
+    <select id='city' name='city'></select>
+    <select id='district' name='district'></select>
+    <input type='submit' value='提交資料' disabled>
+
+    <div id='msg'></div>
+
+    <script>
+
+        const citySelect = document.getElementById('city');
+        const districtSelect = document.getElementById('district');
+        const submitButton = document.querySelector('input[type=submit]');
+        const msg = document.getElementById('msg');
+
+        window.onload = createSelectOptions;
+
+        const url = 'https://raw.githubusercontent.com/apprunner/FileStorage/master/SimpleZipCode.json';
+        let zipcodeArray = [];
+        function createSelectOptions() {
+            if (localStorage.getItem('ZipcodeArray') == null) {
+                //抓取網路JSON資料，動態生成City Dropdownlist           
+                fetch(url)
+                    .then(response => response.json())
+                    .then(result => {
+                        zipcodeArray = result;
+                        genSelectOptions(zipcodeArray);
+                    })
+                    .finally(() => {
+                        localStorage.setItem('ZipcodeArray', JSON.stringify(zipcodeArray));
+                        console.log(localStorage.getItem('ZipcodeArray'));
+                    });
+            } else {
+                zipcodeArray = JSON.parse(localStorage.getItem('ZipcodeArray'));
+                getSelectOptions(zipcodeArray);
+            }
+        }
+
+        function getSelectOptions(zipcodeArray){
+            zipcodeArray.forEach((item, index) => {
+                let option1 = document.createElement('option');
+                option1.value = item.city;
+                option1.text = item.city;
+
+                citySelect.add(option1, null);
+            });
+
+            let option2 = document.createElement('option');
+            option2.value = '';
+            option2.text = '---請選擇縣市---';
+            //option2.selected=true;
+            option2.setAttribute('selected', '');    //預設選項
+            citySelect.add(option2, 0);
+
+
+            //產生District Dropdownlist ---請選擇行政區---
+            let option3 = document.createElement('option');
+            option3.value = '';
+            option3.text = '---請選擇行政區---';
+            districtSelect.add(option3, null);
+
+            districtSelect.disabled = true;
+        }
+
+
+        //City選項變更事件
+        citySelect.onchange = citySelectedChange;
+
+        function citySelectedChange(event) {
+            //取得選取的縣市資料
+            let cityValue = citySelect.selectedOptions[0].value;
+            let cityText = citySelect.selectedOptions[0].text;
+
+            //如果未選擇City則return
+            if (cityValue == '') {
+                districtSelect.disabled = true;
+                msg.innerHTML = '';
+                return;
+            }
+
+            //清除並重新建立District <select>
+            districtSelect.disabled = false;
+            districtSelect.innerHTML = '';
+            let option0 = document.createElement('option');
+            option0.value = '';
+            option0.text = '---請選擇行政區---';
+            districtSelect.add(option0, null);
+
+            //取得District資料
+            let cityArray = zipcodeArray.filter(item => item.city == cityText);
+            let districts = cityArray[0].districts;
+
+
+            //產生District Dropdownlist各區選項
+            districts.forEach((item, index) => {
+                let option1 = document.createElement('option');
+                option1.value = item.district;
+                option1.text = item.district + " - " + item.zipcode;
+                districtSelect.add(option1);
+            });
+
+            districtSelect.disabled = false;
+        }
+
+        districtSelect.addEventListener('change', function () {
+            let cityValue = citySelect.selectedOptions[0].value;
+            let cityText = citySelect.selectedOptions[0].text;
+            let districtValue = districtSelect.selectedOptions[0].value;
+            let districtText = districtSelect.selectedOptions[0].text;
+
+            if (cityValue != '' && districtValue != '') {
+                msg.innerText = citySelect.selectedOptions[0].text + ',' + districtSelect.selectedOptions[0].text;
+                console.log(cityText + ', ' + districtText);
+                submitButton.disabled = false;
+            }
+            else {
+                msg.innerHTML = '';
+                submitButton.disabled = true;
+            }
+        });
+
+        submitButton.addEventListener('click', submitData);
+
+        //Submit提交資料
+        function submitData() {
+            alert('你提交了資料');
+
+            //建立FormData
+            let formData = new FormData();
+            formData.append('city', citySelect.selectedOptions[0].value);
+            formData.append('district', districtSelect.selectedOptions[0].text);
+
+            //傳送FormData資料到指定的Server，將資料交由Server處理
+            let request = new XMLHttpRequest();
+            request.open("POST", "https://www.codemagic.com.tw");
+            request.send(formData);
+        }
+    </script>
+</body>
+
+</html>

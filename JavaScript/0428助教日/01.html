@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+//今天
+let today = new Date();
+// console.log(today);
+//年
+let year= today.getFullYear();
+// console.log(year)
+//月
+let month = today.getMonth();//0是一月
+// console.log(month);
+//日
+let date = today.getDate();
+//星期
+let day = today.getDay();//星期日是0
+
+//這個月的第一天是禮拜幾
+let firstDay = new Date(year,month,1).getDay();
+// console.log(firstDay);
+//取這個月有幾天
+let DayOfMonth= new Date(year,month+1,0).getDate();
+console.log(DayOfMonth)
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btnXhr">XHR載入Pokemon & LoL JSON檔</button>
+    <button id="btnPromise">Promise載入Pokemon & LoL JSON檔</button>
+
+    <script>
+
+        let pokemonUrl = "https://raw.githubusercontent.com/apprunner/pokemon.json/master/pokedex.json";
+        let lolUrl = "https://ddragon.leagueoflegends.com/cdn/10.22.1/data/zh_TW/champion.json";
+
+        window.onload = function () {
+            document.querySelector("#btnXhr").addEventListener("click", function () {
+                xhrJson(pokemonUrl, lolUrl);
+            });
+
+            document.querySelector("#btnPromise").addEventListener("click", function () {
+                fetchJSON(pokemonUrl, lolUrl);
+            });
+        }
+
+        function xhrJson(...args) {
+            let argArray = args;
+            let pokemon = argArray[0];
+            let lol = argArray[1];
+
+            let xhr1 = new XMLHttpRequest();
+            xhr1.onload = function () {
+                console.log(this.responseText);  //this為XMLHttpRequest物件
+                alert("Pokemon JSON");
+            }
+
+            xhr1.open('GET', pokemon);
+            xhr1.send();
+
+            let xhr2 = new XMLHttpRequest();
+            xhr2.onload = function () {
+                let text = document.createTextNode(this.responseText);
+                document.body.appendChild(text);
+                alert("LOL JSON");
+            }
+
+            xhr2.open('GET', lol);
+            xhr2.send();
+        }
+
+        function fetchJSON(...args) {
+            let argArray = args;
+            let pokemon = argArray[0];
+            let lol = argArray[1];
+
+            console.log(pokemon, lol);
+
+            fetch(pokemon)
+                .then(response => response.json())
+                .then(result1 => {
+                    console.log(typeof result1);
+                    console.log(result1);
+                    alert("Pokemon JSON");
+                })
+                .then(() => fetch(lol))
+                .then(response => response.text())
+                .then(result2 => {
+                    //console.log(typeof result2);
+                    let text = document.createTextNode(result2);
+                    document.body.appendChild(text);
+                    alert("LOL JSON");
+                })
+        }
+    </script>
+</body>
+
+</html>

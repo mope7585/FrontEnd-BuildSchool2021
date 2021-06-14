@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <h1 id="year-month">0000年-00月</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>日</th>
+                <th>一</th>
+                <th>二</th>
+                <th>三</th>
+                <th>四</th>
+                <th>五</th>
+                <th>六</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" onclick="MinMonth()">往上月</button>
+    <button type="button" class="btn btn-primary" onclick="AddMonth()">往下月</button>
+
+<!-- Modal Add -->
+<div class="modal fade" id="inputModal" tabindex="-1" role="dialog" aria-labelledby="inputModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="inputModalLabel">Add</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div id="input-area" class="modal-body">
+            <input readonly id="date" type="text">
+            <input id="todo-item" type="text">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="SaveTodoItem()">Save</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Modal Info -->
+<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="infoModalLabel">Info</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div id="info-area" class="modal-body">
+            <input readonly id="info-date" type="text">
+            <input id="info-todo-item" type="text">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="EditTodoItem()">修改</button>
+            <button type="button" class="btn btn-primary" onclick="DeleteTodoItem()">刪除</button>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script>
+
+        //今天
+        let today = new Date();
+        //年月日
+        let year = today.getFullYear();
+        let month = today.getMonth();
+        let date = today.getDate();
+        function Init() {
+
+            let tbody = document.getElementsByTagName('tbody')[0];
+            console.log(tbody)
+            tbody.innerHTML = "";
+
+            document.getElementById('year-month').innerText = `${new Date(year, month, 1).getFullYear()}-${new Date(year, month, 1).getMonth() + 1}`
+
+            //第一天禮拜幾
+            let firstDay = new Date(year, month, 1).getDay();
+            //取得這個月有幾天
+            let DateOfMonth = new Date(year, month + 1, 0).getDate();
+            let day = 1;
+            let rows = Math.ceil((DateOfMonth + firstDay) / 7);
+            for (let row = 0; row < rows; row++) {
+                let tr = document.createElement('tr');
+                for (let col = 0; col < 7; col++) {
+                    let td = document.createElement('td');
+                    if (row == 0 && col < firstDay) {
+                        //上個月
+
+                    }
+                    else {
+                        if (day <= DateOfMonth) {
+                            
+                            td.innerText = day;
+                            
+                            if(localStorage.getItem(`${year}-${month}-${day}`!= null)){
+                                let ul = document.createElement('ul');
+                                let todoList = JSON.parse(localStorage.getItem(`${year}-${month}-${day}`));
+
+                                todoList.forEach((item,index)=>{
+                                    let li = document.createElement('li');
+
+                                    li.innerText = item.title;
+                                    ul.appendChild(li)
+                                })
+                            }
+                            td.addEventListener('click', function (e) {
+                                let target;
+                                if(e.target.localName =='li' || e.target.localName =='ul'){
+                                    target = e.target.offsetParent;
+                                }else{
+                                    target = e.target;
+                                }
+                                
+                                $('#inputModal').modal('show');
+
+                                document.getElementById('date').value = `${year}-${month + 1}-${td.innerText}`
+                            })
+                        }
+                        day++;
+                    }
+                    tr.appendChild(td);
+
+                }
+                tbody.appendChild(tr);
+            }
+        }
+        Init();
+
+        function AddMonth() {
+            //下個月
+
+
+            month++;
+            Init();
+        }
+        function MinMonth() {
+            //上個月
+            month--;
+            Init();
+        }
+
+        function SaveTodoItem() {
+            let date = document.getElementById('date').value;
+            let todoItem = document.getElementById('todo-item').value;
+            let todoObj = {
+                title: todoItem
+            }
+            let todoList = [];
+            if (localStorage.getItem(date) == null) {
+                //今天沒有待辦事項
+                todoList.push(todoObj)
+            }
+            else {
+                todoList = JSON.parse(localStorage.getItem(date));
+                todoList.push(todoObj)
+                //今天已有待辦事項
+            }
+            localStorage.setItem(date,JSON.stringify(todoObj))
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="container"></div>
+
+    <script>
+        var storage = window.localStorage;
+        //儲存資料
+        localStorage.setItem('name', 'Kevin');
+        localStorage.setItem('email', 'kevin@gmail.com');
+        let name = localStorage.getItem('name');
+        let email = localStorage.getItem('email');
+        let age = localStorage.getItem('age');
+        console.log(age);
+
+        document.getElementById('container').innerText = name + ',' + email;
+
+        //刪除指定資料
+        localStorage.removeItem('email');
+
+        //清除所有資料
+        // localStorage.clear();
+
+
+
+
+    </script>
+</body>
+
+</html>
