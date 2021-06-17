@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <table width="600" border="3">
+        <caption>BS小學成績單</caption>
+        <thead>
+            <tr>
+                <th scope="col">姓名</th>
+                <th scope="col">國文</th>
+                <th scope="col">英文</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th scope="row">小名</th>
+                <td>20</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <th scope="row">曉華</th>
+                <td>40</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <th scope="row">小美</th>
+                <td>60</td>
+                <td>70</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>平均</th>
+                <td>85</td>
+                <td>65</td>
+            </tr>
+            <tr>
+                <!-- //合併儲存格// -->
+                <!-- 跨列 -->
+                <th rowspan="2">備註</th>
+                <!-- 跨攔 -->
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+    <form action="">
+        <label for="user_Name">姓名</label>
+        <input type="text" id="user_Name">
+
+        <!-- <label>姓名
+            <input  id="user_Name" type="text">
+        </label> -->
+
+       <div>
+           <label for="">年齡</label>
+           <input type="number">
+       </div>
+       <div>
+        <label for="">信箱</label>
+        <input type="email">
+    </div>
+    <div>
+        <label for="">密碼</label>
+        <input type="password">
+    </div>
+    <div>
+        <label for="">生日</label>
+        <input type="date">
+    </div>
+    <div>
+        <label for="">上傳</label>
+        <input type="file">
+    </div>
+    <div>
+        <label for="">電話</label>
+        <input type="tel">
+    </div>
+
+        
+
+    </form>
+</body>
+
+</html>
