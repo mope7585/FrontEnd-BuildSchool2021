@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url(https://line.me/static/934a804ce9643bf673711c7f1a4f2b05/1a900/mv01.jpg);
+            width: 100%;
+            height: 100%;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        header {
+            height: 600px;
+        }
+
+        .nav {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            background-color: #FFF;
+            opacity: 0.95;
+            z-index: 2;
+            position: fixed;
+
+        }
+
+        .logo {
+            padding: 30px;
+        }
+
+
+        .NavItem {
+            margin: auto;
+        }
+
+        .NavItem a {
+            margin: 30px;
+            font-weight: 700;
+        }
+
+        .NavItem a:focus {
+            border-bottom: 4px solid #000;
+
+        }
+
+        .Language {
+            display: flex;
+            padding: 30px;
+        }
+
+        .Main {
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            position: relative;
+            left: -50px;
+            top: 200px;
+        }
+
+        .Main-Text h1 {
+            font-weight: bolder;
+            color: #fff;
+            font-size: 140px;
+        }
+
+        .Main-Text h2 {
+            font-weight: 700;
+            color: #fff;
+            font-size: 40px;
+        }
+
+        .Main-download {
+            padding-top: 30px;
+        }
+
+        .Main-download-text {
+            color: #fff;
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 900;
+        }
+
+        .Main-download-img {
+
+            display: flex;
+        }
+
+        .Main-download-picture {
+            display: flex;
+        }
+
+        .icon-Apple {
+            padding: 15px;
+            border: 1px solid #FFF;
+            border-radius: 5px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+        }
+
+        .icon-Andriod {
+            padding: 15px;
+            border: 1px solid #FFF;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .icon-windows {
+            padding: 15px;
+            border: 1px solid #FFF;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .MainTitleArea {
+            height: 600px;
+            background-color: #FFF;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .MainTitleArea h3 {
+            margin-bottom: 30px;
+            font-size: 100px;
+        }
+
+        .MainTitleArea p {
+            font-size: 20px;
+            color: #616161;
+        }
+
+        article {
+            height: 100%;
+            background-color: #FFF;
+        }
+
+        .LineToday {
+            display: flex;
+            padding: 40px;
+
+        }
+
+        .LineToday-Text {
+            width: 50%;
+            position: relative;
+            top: 56px;
+        }
+
+        .LineToday-img {
+            width: 50%;
+            position: relative;
+            left: -122px;
+        }
+
+        .LineToday-img img {
+            width: 120%;
+            height: 100%;
+          
+        }
+
+        .LineToday-Text-pic img {
+            border-radius: 15px;
+            width: 15%;
+            border: 1px solid #eee;
+        }
+
+
+
+        .LineToday-Text-Text h3 {
+            font-size: 50px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .LineToday-Text-Text span {
+            color: #07b53b;
+            line-height: 2em;
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        .LineToday-Text-Text p {
+            color: #777;
+            line-height: 2em;
+            margin-right: 50px;
+        }
+
+
+
+        .LinePaste {
+            display: flex;
+            padding: 40px;
+
+        }
+
+        .LinePaste-Text {
+            width: 50%;
+            position: relative;
+            top: 56px;
+            margin-left: 90px;
+        }
+
+        .LinePaste-img {
+            width: 50%;
+            position: relative;
+            left: 30px;
+        }
+
+        .LinePaste-img img {
+            width: 120%;
+            height: 100%;
+
+        }
+
+        .LinePaste-Text-pic img {
+            border-radius: 15px;
+        }
+
+        .LinePaste-Text-pic img {
+            width: 15%;
+        }
+
+        .LinePaste-Text-Text h3 {
+            font-size: 50px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .LinePaste-Text-Text span {
+            color: #07b53b;
+            line-height: 2em;
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        .LinePaste-Text-Text p {
+            color: #777;
+            line-height: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <div class="logo">
+                <a href="#"><img src="https://line.me/static/940874c48d2369be137d812b15491843/ff8e8/icon-title-pc.png"
+                        alt="LINE"></a>
+            </div>
+            <div class="NavItem">
+                <a href="#">Life on LINE</a>
+                <a href="#">通訊軟體</a>
+                <a href="#">服務總覽</a>
+            </div>
+            <div class="Language">
+                <div class="Language-Icon">
+                    <a href="#"> <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC5klEQVQ4y11UXYiMYRR+d4fazDKYn8w3//PNjJmmMRdqo1wQUVoil2Rv/ORKsTfiAklxIaJNoSgXlPy0CqXlxq6fvVkpNpuUwhq7NsZa62c9z9fzatqvnt5z3nPe5z3nvOc7Jp1OG8J1XROPx33JZNLww7oGOAX0A3VgFHgIHAbaEokEfQxWXygUMqVSyeMxljAcDtNIeQUcnwBT0KfsauWG/ZupVKpAUgbCIIrFovEiI5njOLyxs4FgQgdPAuPAM+Cq9sZFPgHSdhB6pOTxBIXfKedB4JIOXPD7/bT9ZboqxQBtIOoiofxW2/S9OihNGt5nMhkXa68OOeVyeaZsTxkJ9tZKP4FzyxTEKGQHNmMf4LGclmDTlXyNkWez2QDk37yEhKgTL3gLW5065N0i7YrFYh7ZKhFcl8Me6TsYPQjnWcJCodCs8pyTz9JAIED9DTCJ7BYYtQaN7XI+r3TbmEIul2sV4SNlQ+zSmZ3SD0rfTKUXRCx6IhqNUr+jFFxEZ3BrSIR9qFOLCDaK4Kj09TpznMqQ2mQY8iesP+X8WXs1vfIk7cAw9r/ozHfoH7HWRHiZhC9F8Eqoy3lIttciZO8NYp9779SvI8AL1lCEF0nYQyPSyehRulXDHP8gpD3XPgrkGawr5E0K4hBTxp7VjxhtUtmqRzkjwuU8jD9ptn2UarXapJrZTuiQfto+LJXFUvoU4Xbpe6e3TaVSadKlV+RThu4HvrLWyKjVsBnZg4pqCzbny/kBbSCcYwmpw059jHWMRCL/MwL28TKjGizE+kOkK7HekryoVquZxl8P6zY9wAFmI3kAvi3er8cfWqTrdJDt0S3HHvxqs7D+Au4juqjahq11Wz4j2M+TDGg2wWDQmzi6nVNjTG3zRxfcVb+xpfrtbBTZc5IxVQZGDm/S8rPTmlMD61ngW+NwnTZkPwD7bZqWjDPVm9actJrYPjqo+I7a4hhwD7ih8b+BD8OobJqWLJ/Pm385RVjqHUVKdgAAAABJRU5ErkJggg=="
+                            alt="Earth"></a>
+                </div>
+                <div class="Language-Text">
+                    <a href="#">TW</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="Main">
+            <div class="Main-box">
+                <div class="Main-Text">
+                    <h1>Life on LINE</h1>
+                    <h2>LINE始終陪伴在你身旁。</h2>
+                </div>
+                <div class="Main-download">
+                    <div class="Main-download-img">
+                        <div class="LineImg">
+                            <img src="https://line.me/static/0d83b930b5aea21458844be1f39fdfaf/05112/icon-line-w.png"
+                                alt="123">
+                        </div>
+                        <div class="Main-download-text">
+                            <p>下載</p>
+                        </div>
+                    </div>
+                    <div class="Main-download-picture">
+                        <div class="icon-Apple"><a href="#"><i class="fab fa-apple fa-2x" style="color:#fff"></i></a>
+                        </div>
+                        <div class="icon-Andriod"><a href="#"><i class="fab fa-google-play fa-2x"
+                                    style="color:#fff"></i></a></div>
+                        <div class="icon-windows"><a href="#"><i class="fas fa-tv fa-2x" style="color:#fff"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="MainTitleArea">
+        <h3>Life on LINE</h3>
+        <p>超越通訊軟體，LINE為用戶建構全新的溝通型態與豐富的數位生活，成為用戶生活中不可或缺的平台。</p>
+    </div>
+
+    <article>
+        <div class="LineToday">
+            <div class="LineToday-Text">
+                <div class="LineToday-Text-pic">
+                    <img src="https://line.me/static/a2855b15596c50178323cbd2c3b17a4b/a7c38/589f44e9813cc8afde9c579e35ecdd15.png"
+                        alt="">
+                </div>
+                <div class="LineToday-Text-Text">
+                    <h3>LINE TODAY</h3>
+                    <span>隨點隨看 生活快充</span>
+                    <p>最即時的新聞、影音、運動賽事和娛樂內容直播，讓你話題永不斷線，LINE TODAY陪伴您的每一天！</p>
+                </div>
+
+            </div>
+            <div class="LineToday-img">
+                <img src="https://line.me/static/fc6a34517fc06ee4b2c097f2de95cf17/af5ac/0386be561893eaf8b3f444a3b7206b7a.png"
+                    alt="">
+            </div>
+        </div>
+
+        <div class="LinePaste">
+            <div class="LinePaste-img">
+                <img src="https://line.me/static/29e4f0744025fe17447db54a9b8a845c/af5ac/1bcc8626da1f1f11e331664223c7feba.png"
+                    alt="">
+            </div>
+
+            <div class="LinePaste-Text">
+                <div class="LinePaste-Text-pic">
+                    <img src="https://line.me/static/0aa6d4a6996fd1a74635a632fd10141b/a7c38/3a0ad7b617ee7a9073af5c949562a000.png"
+                        alt="">
+                </div>
+                <div class="LinePaste-Text-Text">
+                    <h3>LINE貼文串</h3>
+                    <span>探索樂趣，分享生活</span>
+                    <p>在貼文串追蹤你的最愛．有感內容不錯過。</p>
+                    <p> 打造你的個人閱知頻道，探索生活大小事。</p>
+                    <p>分享所見所聞，串連人際、啟發創意的無限可能！</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="LineToday">
+            <div class="LineToday-Text">
+                <div class="LineToday-Text-pic">
+                    <img src="https://line.me/static/7ad8d18fd686a002d060b41a28784a62/a7c38/2cf6df095a14652967eeb0512708e7a7.png"
+                        alt="">
+                </div>
+                <div class="LineToday-Text-Text">
+                    <h3>LINE Pay</h3>
+                    <span>付款、轉帳、生活繳費，輕鬆簡單又便利！</span>
+                    <p>付款簡單又便利，還能輕鬆轉帳給LINE好友，動動手指輕鬆完成日常生活各種帳單繳費， 免出門省時又省力。</p>
+                </div>
+
+            </div>
+            <div class="LineToday-img">
+                <img src="https://line.me/static/19dd7975bdc5e84a47db26e8a36159b2/af5ac/91f2093486f63cacb05d3f0475e08153.png"
+                    alt="">
+            </div>
+        </div>
+
+        <div class="LinePaste">
+            <div class="LinePaste-img">
+                <img src="https://line.me/static/c18b76c50015ddb41ecfa6f2c7b23165/af5ac/43f462d7375cd4867e6cd565756b5ac2.png"
+                    alt="">
+            </div>
+
+            <div class="LinePaste-Text">
+                <div class="LinePaste-Text-pic">
+                    <img src="https://line.me/static/fd34143425a272461715b40e0c39770b/a7c38/ab6768bf0847f2800a88be070295a82d.png"
+                        alt="">
+                </div>
+                <div class="LinePaste-Text-Text">
+                    <h3>LINE購物</h3>
+                    <span>先LINE購物再購物</span>
+                    <p>涵蓋各大購物、拍賣、精品、通路、旅遊、及票券商店，輕鬆貨比五百家，一站比價三千萬筆商品，再享LINE POINTS回饋賺不停！</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="LineToday">
+            <div class="LineToday-Text">
+                <div class="LineToday-Text-pic">
+                    <img src="https://line.me/static/24d48714206071fa1917d31fce4db999/a7c38/6cd600c9b5c5e469541620f20996fd7c.png"
+                        alt="">
+                </div>
+                <div class="LineToday-Text-Text">
+                    <h3>LINE TV</h3>
+                    <span>共享追劇生活</span>
+                    <p>和朋友一起追劇，不錯過最新、最熱門、最潮的話題大劇，即時分享娛樂影音，展開精彩生活故事，LINE TV是您的追劇第一選擇！</p>
+                </div>
+
+            </div>
+            <div class="LineToday-img">
+                <img src="https://line.me/static/85cfa8aedaaafafffb894438ad671f73/af5ac/4d57ad23f14cddc09d91ae3fc10886ae.png"
+                    alt="">
+            </div>
+        </div>
+
+
+    </article>
+
+
+</body>
+
+</html>
