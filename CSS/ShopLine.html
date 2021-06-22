@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <style>
+        nav a {
+            text-decoration: none;
+        }
+
+        .Nav-Setting {
+            height: 50px;
+            background-color: #666;
+            display: flex;
+            justify-content: flex-end;
+            background-color: #00142D;
+            color: #fff;
+        }
+
+        .Nav-Setting a {
+            display: flex;
+            text-align: center;
+            color: #fff;
+            margin-right: 20px;
+        }
+
+        .Nav-Setting-Language {
+            padding: 10px;
+            display: flex;
+
+        }
+
+        .Nav-Setting-Direction {
+            border-right: 1px solid #748094;
+        }
+
+        .Nav-Setting-SignIn {
+            display: flex;
+        }
+
+        .Nav-Setting-SignIn a {
+            margin: 13px 20px;
+            font-size: 20px;
+        }
+
+        .box {
+            width: 120px;
+            height: 40px;
+            background-color: blue;
+        }
+
+        .NavBar {
+            display: flex;
+            height: 100px;
+            background-color: #fff;
+        }
+
+        .NavBar-Logo-Item {
+            width: 75%;
+            display: flex;
+            margin: auto;
+        }
+
+        .NavBar-Logo {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .NavBar-Logo-Item a {
+            color: #324255;
+            transition: all 0.1s 0s ease;
+        }
+
+        .btn-primary {
+            width: 200px;
+            margin: 32px;
+            border-radius: 40px;
+            font-size: 20px;
+            height: 40px;
+        }
+
+        .NavBar-Logo-Item a:hover {
+            color: dodgerblue;
+            border-bottom: 3px solid dodgerblue;
+        }
+
+        .NavBar-Logo-Item li {
+            padding: 13px;
+        }
+
+        nav {
+            position: fixed;
+            left: 0;
+            right: 0;
+            opacity: 2;
+        }
+
+        .Header-Main {
+            background-image: url(https://img.shoplineapp.com/media/image_clips/5f069a12dc4d9a00335656c2/original.png?1594268177%22);
+            background-size: cover;
+            width: 100%;
+            display: flex;
+            padding: 300px 100px;
+            height: 800px;
+            color: #fff;
+        }
+
+        .Header-Main-Text {
+            width: 50%;
+        }
+
+        .Header-Main-Picture {
+            width: 50%;
+        }
+
+        .Header-Main-Picture img {
+            width: 100%;
+        }
+
+        .Header-Main-Text h1 {
+            font-size: 3em;
+            font-weight: 900;
+        }
+
+        .Header-Main-Text h2 {
+            font-size: 2.5em;
+            color: #F28040;
+            font-weight: 900;
+        }
+
+        .Header-Main-Text p {
+            font-weight: 900;
+        }
+
+        input {
+            padding: 5px 15px;
+            background: #00142D;
+            border: 0 none;
+            border-radius: 5px;
+            width: 263px;
+            color: #fff;
+        }
+        .Main{
+            height: 100%;
+        }
+        .Main-Title{
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .Main-Title h2,p{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bolder;
+            line-height: inherit;
+        }
+        .Main-Title p{
+            font-weight: normal;
+            color: #324255;
+            line-height: 2;
+        }
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <div class="Nav-Setting">
+                <div class="Nav-Setting-Language">
+                    <a href="#"><i class="fas fa-globe fa-2x"></i></a>
+                    <div class="Nav-Setting-Direction"></div>
+                </div>
+                <div class="Nav-Setting-SignIn">
+                    <a href="#">幫助中心</a>
+                    <a href="#">登入網站</a>
+                </div>
+            </div>
+
+            <div class="NavBar">
+                <div class="NavBar-Logo">
+                    <a href="#">
+                        <img src="https://img.shoplineapp.com/media/image_clips/60811bb98a60d74a03808d4d/original.png?1619073977"
+                            alt="logo"></a>
+                </div>
+
+                <ul class="NavBar-Logo-Item">
+                    <a href="#">
+                        <li class="Service">開店服務</li>
+                    </a>
+                    <a href="#">
+                        <li class="Cost">方案費用</li>
+                    </a>
+                    <a href="#">
+                        <li class="Example">客戶案例</li>
+                    </a>
+                    <a href="#">
+                        <li class="Seminar">開店說明會</li>
+                    </a>
+                    <a href="#">
+                        <li class="advisory">開店諮詢</li>
+                    </a>
+                    <a href="#">
+                        <li class="Solution">更多解決方案</li>
+                    </a>
+                    <a href="#">
+                        <li class="Resources">其他資源</li>
+                    </a>
+                </ul>
+                <button type="button" class="btn-primary">免費使用</button>
+            </div>
+            </div>
+        </nav>
+
+        <div class="Header-Main">
+            <div class="Header-Main-Text">
+                <h1>想在哪開店創業？</h1>
+                <h2>網路開店一站式輕鬆開賣</h2>
+                <p>超過 25 萬品牌使用！從個人賣家到國際品牌，都能以 SHOPLINE 實現全通路零售，快速拓展市場到世界各地，輕鬆開始你的『 店 』商生意！</p>
+                <div class="Header-Main-Text-Email">
+                    <input type="email" placeholder="請在此輸入電子信箱(可隨時替換)">
+                    <button type="button" class="btn-primary" id="Free-Box2">免費使用</button>
+                </div>
+            </div>
+
+            <div class="Header-Main-Picture">
+                <img src="https://img.shoplineapp.com/media/image_clips/609d0e9bdcf71100202f291a/original.png?1620905626"
+                    alt="">
+            </div>
+        </div>
+    </header>
+
+    <article>
+<div class="Main">
+    <div class="Main-Title">
+        <h2>單一平台就能助你<br>在全通路輕鬆開店創業</h2>
+       <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，<br>並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
+    </div>
+
+
+</div>
+
+
+        
+
+
+
+    </article>
+
+
+
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
+        integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

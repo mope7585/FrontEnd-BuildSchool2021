@@ -7,34 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box.box {
-            color: #eee
-        }
 
-        .box {
-            color: #bbb;
+        a:link{
+            background-color: #fff;
+            color: #000;
         }
-
-        .sp {
-            color: #ee2;
-            font-weight: bold;
-            flex: auto;
+        a:focus{
+            background-color: #f00;
         }
-    
-
-    p {
-            color: red;
-            padding: 20px;
-            font-size: 23px;
+        a:hover{
             background-color: #000;
+            color: #fff;
+        }
+
+     
+       .box p:nth-child(3n+1)
+        {
+color:  red;
         }
     </style>
 </head>
 
 <body>
+
+    <a href="#">11</a>
+    <a href="#">22</a>
+    <a href="#">33</a>
     <h1>title</h1>
     <h2>title</h2>
-    <box>
+    <div class="box">
         <p class="sp" id="ryan">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur autem iusto
             reprehenderit accusamus cumque. Incidunt molestias deserusssssssssnt odit asperiores quos atque illum
             recusandae hic
@@ -51,8 +52,14 @@
         <p>Sequi voluptas omnis sit tempora dicta quae, veniam rem iusto saepe magni debitis quisquam reprehenderit
             inventore eaque itaque minima, quaerat quis sed, deserunt ratione facilis. Aliquam suscipit fugit eligendi
             quisquam!</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque ducimus nulla corporis eveniet doloremque id, nemo voluptates dolores incidunt cum.</p>
+        <p>Officia incidunt fugit consectetur quae aliquam saepe eos magni veniam similique, delectus ratione iste dicta officiis ducimus iure dolor vero.</p>
+        <p>Vitae non tenetur dicta odio iste sequi. Nesciunt, impedit iure, obcaecati sequi non, accusantium voluptatibus facilis laboriosam minima tempora possimus.</p>
+        <p>Deleniti animi laudantium cumque libero, culpa molestiae nostrum, delectus rem illo, eaque similique minima aut vitae recusandae ut repudiandae corporis.</p>
+        <p>Autem quae, porro laudantium nemo distinctio quam libero, eos est soluta architecto, facilis officia expedita perspiciatis. Nihil aperiam vitae cum!</p>
+        <p>Tempora voluptate voluptatem, pariatur sapiente nam excepturi ducimus illum laborum praesentium architecto molestiae labore optio nostrum quam aspernatur, suscipit minus.</p>
 
-    </box>
+    </div>
 </body>
 
 </html>
