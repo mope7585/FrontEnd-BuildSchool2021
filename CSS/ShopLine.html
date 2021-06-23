@@ -218,10 +218,11 @@
 
         .More-Service {
             display: flex;
-            height: 100%;
-            width: 100%;
+            height: 740px;
             flex-direction: column;
             justify-content: center;
+            padding-bottom: 200px;
+            background-color: #F4F5F7;
         }
 
         .More-Service h2 {
@@ -253,15 +254,102 @@
             height: 120px;
             margin-bottom: 30px;
         }
-        .More-Service p{
+
+        .More-Service p {
             text-align: start;
         }
-        .More-Service h3{
+
+        .More-Service h3 {
             text-align: center;
+        }
+
+        .Recommend {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .Recommend h2 {
+            color: #0061FF;
+            font-weight: 900;
+            font-size: 40px;
+            margin-top: 40px;
+        }
+
+        .Recommend h2 span {
+            color: #000;
+        }
+
+        .Recommend-LogoBox {
+            padding: 40px 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        .Recommend-LogoItem a {
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            transition: all 0.1s 0s ease;
+        }
+
+        .Recommend-LogoItem:hover {
+            border-bottom: 3px solid #0061FF;
+        }
+
+        .Recommend-LogoItem img {
+            padding: 20px 0;
+        }
+        .Recommend-Main{
+            display: flex;
+        }
+        .Recommend-Main-Text{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            color: #324255;
+            width: 50%;
+            padding: 20px;
+        }
+        .Recommend-Main-Picture{
+            width: 50%;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        .Recommend-Main-Picture img{
+            width: 100%;
+        }
+        .Recommend-Main-Text span{
+            text-align: end;
+            padding: 10px;
+        }
+        .Recommend-Main-Text p{
+            text-align: start;
+            padding: 10px;
+        }
+        .input::placeholder{
+            color: white;
+        }
+        .footer-Map{
+            background-image: url(https://img.shoplineapp.com/media/image_clips/5f069a12dc4d9a00335656c2/original.png?1594268177%22);
+            color: #fff;
+            display: flex;
+        }
+        .footer-Map-Text{
+        margin: auto;
+        }
+        .footer-Map-Picture{
+            width: 50%;
+        }
+        .footer-Map-Picture img{
+            width: 100%;
+        }
+        #footer-Map-Button{
+            margin:  32px 0;
         }
     </style>
 </head>
-
 
 <body>
     <header>
@@ -496,9 +584,74 @@
             </ul>
         </div>
 
-
+        <div class="Recommend">
+            <h2>人氣品牌<span>一致推薦使用</span></h2>
+            <div class="Recommend-LogoBox">
+                <a href="#">
+                    <div class="Recommend-LogoItem">
+                        <img src="https://img.shoplineapp.com/media/image_clips/5f069a12feeae8003fe59f47/original.png?1594268178"
+                            alt="">
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="Recommend-LogoItem">
+                        <img src="https://img.shoplineapp.com/media/image_clips/5f069a13cedc2b0039c4f999/original.png?1594268179"
+                            alt="">
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="Recommend-LogoItem">
+                        <img src="https://img.shoplineapp.com/media/image_clips/5f069a1350582e0033a6799c/original.png?1594268179"
+                            alt="">
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="Recommend-LogoItem">
+                        <img src="https://img.shoplineapp.com/media/image_clips/5f069a1314b23b003f75a2ef/original.png?1594268178"
+                            alt="">
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="Recommend-LogoItem">
+                        <img src="https://img.shoplineapp.com/media/image_clips/5f069a13dc4d9a73765654a9/original.png?1594268178"
+                            alt="">
+                    </div>
+                </a>
+            </div>
+            <div class="Recommend-Main">
+                <div class="Recommend-Main-Text">
+                    <p>SHOPLINE 在行動裝置上操作的順暢度很高；使用者給的建議與意見會採納，處理的速度也不錯；還一直有新功能推出，不斷成長。</p>
+                    <span>- BONNY & READ 店長, Stan</span>
+                </div>
+                <div class="Recommend-Main-Picture">
+                    <img src="https://img.shoplineapp.com/media/image_clips/5f06bed2436e2b86c4471215/original.jpg?1594277585"
+                        alt="">
+                </div>
+            </div>
+        </div>
     </article>
 
+<footer>
+<div class="footer-Map">
+<div class="footer-Map-Text">
+<h2>全亞洲超過<br>250,000 個品牌都在使用 SHOPLINE</h2>
+<button type="button" class="btn-primary" id="footer-Map-Button">免費使用14天</button>
+    
+
+</div>
+<div class="footer-Map-Picture">
+<img src="https://img.shoplineapp.com/media/image_clips/609d0f5c33fdc6001aa95da6/original.png?1620905820" alt="">
+
+
+</div>
+</div>
+
+
+
+
+
+
+</footer>
 
 
 
