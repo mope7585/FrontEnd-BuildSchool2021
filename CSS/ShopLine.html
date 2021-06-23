@@ -301,10 +301,12 @@
         .Recommend-LogoItem img {
             padding: 20px 0;
         }
-        .Recommend-Main{
+
+        .Recommend-Main {
             display: flex;
         }
-        .Recommend-Main-Text{
+
+        .Recommend-Main-Text {
             display: flex;
             justify-content: space-between;
             flex-direction: column;
@@ -312,41 +314,71 @@
             width: 50%;
             padding: 20px;
         }
-        .Recommend-Main-Picture{
+
+        .Recommend-Main-Picture {
             width: 50%;
             box-sizing: border-box;
             padding: 20px;
         }
-        .Recommend-Main-Picture img{
+
+        .Recommend-Main-Picture img {
             width: 100%;
         }
-        .Recommend-Main-Text span{
+
+        .Recommend-Main-Text span {
             text-align: end;
             padding: 10px;
         }
-        .Recommend-Main-Text p{
+
+        .Recommend-Main-Text p {
             text-align: start;
             padding: 10px;
         }
-        .input::placeholder{
+
+        .input::placeholder {
             color: white;
         }
-        .footer-Map{
+
+        .footer-Map {
             background-image: url(https://img.shoplineapp.com/media/image_clips/5f069a12dc4d9a00335656c2/original.png?1594268177%22);
             color: #fff;
             display: flex;
         }
-        .footer-Map-Text{
-        margin: auto;
+
+        .footer-Map-Text {
+            margin: auto;
         }
-        .footer-Map-Picture{
+
+        .footer-Map-Picture {
             width: 50%;
         }
-        .footer-Map-Picture img{
+
+        .footer-Map-Picture img {
             width: 100%;
         }
-        #footer-Map-Button{
-            margin:  32px 0;
+
+        #footer-Map-Button {
+            margin: 32px 0;
+        }
+
+        .footer-List-Wrap{
+            background-color: #00142D;
+            color: #fff;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .footer-nav li{
+            color: #748094;
+            margin-bottom: 15px;
+        }
+        .footer-col h4{
+            font-size: 20px;
+            margin: 50px 0;
+        }
+        .footer-col ul{
+            position: relative;
+            left:-31px;
+            
         }
     </style>
 </head>
@@ -631,27 +663,105 @@
         </div>
     </article>
 
-<footer>
-<div class="footer-Map">
-<div class="footer-Map-Text">
-<h2>全亞洲超過<br>250,000 個品牌都在使用 SHOPLINE</h2>
-<button type="button" class="btn-primary" id="footer-Map-Button">免費使用14天</button>
-    
+    <footer>
+        <div class="footer-Map">
+            <div class="footer-Map-Text">
+                <h2>全亞洲超過<br>250,000 個品牌都在使用 SHOPLINE</h2>
+                <button type="button" class="btn-primary" id="footer-Map-Button">免費使用14天</button>
+            </div>
+            <div class="footer-Map-Picture">
+                <img src="https://img.shoplineapp.com/media/image_clips/609d0f5c33fdc6001aa95da6/original.png?1620905820"
+                    alt="">
+            </div>
+        </div>
 
-</div>
-<div class="footer-Map-Picture">
-<img src="https://img.shoplineapp.com/media/image_clips/609d0f5c33fdc6001aa95da6/original.png?1620905820" alt="">
-
-
-</div>
-</div>
-
-
-
-
-
-
-</footer>
+        <div class="footer-List-Wrap">
+            <div class="footer-col">
+                <h4>SHOPLINE</h4>
+                <ul class="footer-nav">
+                    <li class="footer-item">關於我們</li>
+                    <li class="footer-item">認識團隊</li>
+                    <li class="footer-item">人才招募</li>
+                    <li class="footer-item">合作機會</li>
+                    <li class="footer-item">選夥伴</li>
+                    <li class="footer-item">媒體報導</li>
+                   
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>我要開店</h4>
+                <ul class="footer-nav">
+                    <li class="footer-item">方案費用</li>
+                    <li class="footer-item">功能模組</li>
+                    <li class="footer-item">客戶案例</li>
+                    <li class="footer-item">開店說明會</li>
+                    <li class="footer-item">開店諮詢</li>
+                    <li class="footer-item"></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>功能特色</h4>
+                <ul class="footer-nav">
+                    <li class="footer-item">網路開店</li>
+                    <li class="footer-item">社群購物</li>
+                    <li class="footer-item">零售POS</li>
+                    <li class="footer-item">電商物流</li>
+                    <li class="footer-item">訂單管理</li>
+                    <li class="footer-item">一頁商店</li>
+                    
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>開店資源</h4>
+                <ul class="footer-nav">
+                    <li class="footer-item">開店密技</li>
+                    <li class="footer-item">版型主題</li>
+                    <li class="footer-item">新手問答</li>
+                    <li class="footer-item">POS硬體</li>
+                    <li class="footer-item"></li>
+                    <li class="footer-item"></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>更多解決方案</h4>
+                <ul class="footer-nav">
+                    <li class="footer-item">企業旗艦方案</li>
+                    <li class="footer-item">跨境電商方案</li>
+                    <li class="footer-item">廣告計劃方案</li>
+                    <li class="footer-item"></li>
+                    <li class="footer-item"></li>
+                    <li class="footer-item"></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>其他資源</h4>
+                <ul class="footer-nav">
+                    <li class="footer-item">電商教室</li>
+                    <li class="footer-item">充電工作坊</li>
+                    <li class="footer-item">DreamBig創品牌</li>
+                    <li class="footer-item">電商成長學苑</li>
+                    <li class="footer-item">LINE官方帳號</li>
+                    <li class="footer-item"></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>應用案例</h4>
+                <ul class="footer-nav">
+                    <li class="footer-item">零售實體</li>
+                    <li class="footer-item">020全通路</li>
+                    <li class="footer-item">社交商務</li>
+                    <li class="footer-item">社群電商工具包</li>
+                    <li class="footer-item"></li>
+                    <li class="footer-item"></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </footer>
 
 
 
