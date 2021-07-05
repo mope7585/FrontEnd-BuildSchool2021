@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1>Contructive & amp;Co.</h1>
+
+    <script>
+ var today = new Date();
+var hourNow = today.getHours();
+var greeting;
+if(hourNow>18){
+    greeting = 'Good Evening!'
+}
+else if(hourNow>12){
+    greeting = 'Good Afternoon';
+}
+else if(hourNow>0){
+greeting = 'Good  Morning'
+}
+else{
+    greeting = 'Welcome'
+}
+document.write('<h3>' + greeting + '</h3>')
+    </script>
+</body>
+</html>

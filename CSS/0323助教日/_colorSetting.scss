@@ -1,3 +1,19 @@
-$main-background-color:rgb(0,255,0);
-$main-text-color:tomato;
+$primary: blue;
+$base: 18px;
 
+div {
+    background-color: #ccc;
+    width: 50vw;
+    margin: auto;
+    ul {
+        border: peru 1px solid;
+        li {
+            color: $primary;
+            span {
+                background-color: yellow;
+                color: red;
+                font-size: $base/2;
+            }
+        }
+    }
+}

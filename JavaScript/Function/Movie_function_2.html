@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <img id="image1" src="" alt="">
+    <script>
+        let moviename = "Tron光速戰記";
+        const movieUrl = "https://nofilmschool.com/sites/default/files/styles/article_extra_wide/public/tron.jpg";
+        let h1 = document.querySelector("h1");
+        let img = document.getElementById("image1");
+
+        //C# console專案 Main()
+        window.onload = function(){
+            setMovie(moviename,movieUrl);
+        }
+        //設定電影資料
+        function setMovie(name,url) {
+            h1.innerText = name;
+            h1.innerHTML = `<b>${name}</b>`;
+            img.src = url;
+        }
+    </script>
+</body>
+</html>

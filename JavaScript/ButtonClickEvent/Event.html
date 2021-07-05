@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn2"></button>
+    <script>
+        let btn2 = document.getElementById('btn2');
+        // btn2.onclick = function(event){
+        //     alert(`${event.constructor.name}事件類型的${event.type}事件`)
+        // }
+        btn2.addEventListener('click',function(){
+            alert(`${event.constructor.name}事件類型的${event.type}事件`)
+        })
+    </script>
+</body>
+</html>

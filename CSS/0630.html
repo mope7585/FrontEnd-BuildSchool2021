@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <style>
+            .ooxx{
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+            }
+            .list1{
+                border-radius: 0;
+            }
+            .breadcrumb-item+.breadcrumb-item::before{
+               content: var(--bs-breadcrumb-divider, "|");
+            }
+        </style>
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://picsum.photos/1200/500/?random=1 " class="w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://picsum.photos/1200/500/?random=2 " class="w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img img src="https://picsum.photos/1200/500/?random=3 " class=" w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-6">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://picsum.photos/1200/500/?random=2" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://picsum.photos/1200/500/?random=2" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://picsum.photos/1200/500/?random=2" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://picsum.photos/1200/500/?random=2" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://picsum.photos/1200/500/?random=2" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://picsum.photos/1200/500/?random=2" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://picsum.photos/1200/500/?random=2" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://picsum.photos/1200/500/?random=2" class="card-img-top w-100" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://picsum.photos/1200/500/?random=2" class="card-img-top w-100" alt="..." >
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://picsum.photos/1200/500/?random=2" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://picsum.photos/1200/500/?random=2" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://picsum.photos/1200/500/?random=2" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://picsum.photos/1200/500/?random=2" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination ooxx">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="container">
+          <div class="row">
+              <div class="col-3">
+                <ul class="list-group list1">
+                    <li class="list-group-item active " aria-current="true">An active item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                    <li class="list-group-item">A fourth item</li>
+                    <li class="list-group-item">And a fifth one</li>
+                  </ul>
+              </div>
+              <div class="col-9">
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates tempore, non enim quasi molestiae soluta magnam, dolore pariatur aliquam deleniti consequatur dignissimos vel cum repudiandae iste. Quidem vitae hic velit?</p>
+<p>Veritatis, itaque earum! Vel quisquam expedita quos impedit? Consectetur corporis incidunt dolorum veritatis distinctio praesentium, repudiandae id eos quas fugit nulla voluptatum delectus, aspernatur laudantium debitis eligendi dolorem quaerat placeat?</p>
+<p>Ducimus qui dicta deserunt ex numquam recusandae praesentium eum assumenda, in voluptas quis voluptatibus sed officia molestias enim id, error itaque doloremque ipsum laboriosam iste eaque asperiores perspiciatis? Enim, veritatis.</p>
+<p>Laborum totam temporibus dolores veritatis impedit, voluptatibus dignissimos ipsam dolore, cum id vitae animi at excepturi quisquam! Illum fugit ducimus dignissimos ipsam mollitia laborum quas officia itaque temporibus recusandae? Delectus.</p>
+<p>Voluptas sit laboriosam veniam repudiandae veritatis, provident fugit eos non voluptatem ipsa consequuntur quod blanditiis obcaecati error illum saepe velit? Laudantium culpa impedit aspernatur, laborum hic cumque veniam voluptates sunt?</p>
+<p>A sed dicta molestias velit numquam, quas commodi, tempore debitis aliquam corrupti asperiores reprehenderit sint error ea ipsam eveniet consequatur incidunt, quos pariatur alias quae laudantium! Iure, doloribus? Id, corporis.</p>
+<p>Provident earum suscipit pariatur tenetur quos in reprehenderit quo sint odio sit, rem id dignissimos aut minus officiis. Est ipsum itaque unde debitis necessitatibus nisi saepe nihil nam laboriosam praesentium?</p>
+<p>Sit quasi quo perspiciatis iste aperiam itaque vel dicta quaerat! Nihil quis hic consequatur, aliquam voluptatibus eius quas, doloremque nam dolorem aut molestiae ipsum labore asperiores voluptatum. Illum, rem aspernatur!</p>
+<p>Praesentium nobis quasi ipsa provident repellendus deleniti, quod ipsum harum? Id, sapiente autem totam nemo sit quasi blanditiis aliquam quas, quo vel molestiae magni aliquid dolorem, ullam vitae minima neque.</p>
+<p>Provident vel repellendus mollitia nemo excepturi labore id illo officiis, veniam eum nostrum minima repellat assumenda, quia praesentium eveniet blanditiis voluptas laborum fugiat. Fuga maxime consequatur dolore porro exercitationem nisi.</p>
+<p>Ratione tempore dolore beatae recusandae repellendus doloremque eius iusto obcaecati itaque reprehenderit molestias suscipit quibusdam soluta vitae labore ut qui, nulla quam possimus officia pariatur, corrupti, accusamus quidem? Iusto, velit.</p>
+<p>Sint earum porro exercitationem, rem, facilis hic nisi doloremque architecto nostrum suscipit deserunt quibusdam dolorem fugiat incidunt. Quas asperiores minima aperiam recusandae cumque, voluptas doloribus amet totam ad praesentium blanditiis.</p>
+<p>Possimus assumenda pariatur adipisci! Aliquam, consequuntur cumque repudiandae labore veniam natus, temporibus reprehenderit corrupti impedit eveniet quam esse architecto error? Quae, sint esse. Ipsa culpa provident ipsam vero similique pariatur.</p>
+<p>Cumque nisi voluptatibus aperiam ipsa voluptate, tempore asperiores possimus reiciendis sunt maxime quis magnam beatae recusandae blanditiis itaque aut dignissimos quibusdam tempora exercitationem. Modi consectetur cum dolor porro accusantium pariatur.</p>
+<p>Rerum ratione nam ipsam dolores aspernatur omnis delectus fugiat animi asperiores quibusdam aut eveniet accusamus, nemo cum maxime similique, dicta atque modi tenetur beatae sit perferendis accusantium fugit. Ipsam, consequatur.</p>
+<p>Assumenda, maxime omnis incidunt mollitia nihil suscipit dolore quaerat, molestias voluptatibus temporibus inventore quisquam culpa doloremque porro, dolor perspiciatis modi eligendi autem. Perspiciatis excepturi magnam perferendis consequatur molestias facilis veniam!</p>
+<p>Voluptatibus magni fugiat laborum facilis hic! Tempore, consequatur eius veritatis iure dicta repudiandae. Eveniet vero vel, sed assumenda suscipit inventore voluptatem saepe fugiat sapiente, optio expedita voluptatum alias, officia voluptatibus!</p>
+<p>Officia harum ipsum explicabo. Perspiciatis facere repudiandae consectetur harum obcaecati quasi dolorum nisi mollitia consequatur veritatis totam ea, sequi sint! Esse aliquam atque officiis numquam ab veniam consequatur doloribus porro.</p>
+<p>Hic, molestias reprehenderit dolorem aperiam reiciendis assumenda quo rerum nobis delectus quos illo eius corrupti. A minus ex corporis accusamus explicabo tenetur magnam nostrum commodi nobis! Expedita nulla reprehenderit amet.</p>
+<p>Cum amet incidunt nihil in dignissimos odit non, voluptas perferendis quibusdam nulla quia debitis minima exercitationem, laudantium ipsa voluptatem, necessitatibus aut similique fuga? Consectetur nihil delectus consequatur laboriosam officia voluptatum.</p>
+              </div>
+          </div>
+      </div>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">Home</li>
+        </ol>
+      </nav>
+      
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Library</li>
+        </ol>
+      </nav>
+      
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Library</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
+      </nav>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

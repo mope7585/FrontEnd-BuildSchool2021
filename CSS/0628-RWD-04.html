@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0%;
+        }
+
+        :root {
+            --col-gap: 15px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            box-sizing: border-box;
+            padding: var(--col-gap);
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 calc(var(--col-gap)) * -1;
+        }
+
+        .col {
+            padding: var(--col-gap)*-1;
+        }
+
+        .row-col-1 > .col {
+            width: 100% / 1;
+        }
+        .row-col-2 > .col {
+            width: 100% / 2;
+        }
+        .row-col-3 > .col {
+            width: 100% / 3;
+        }
+        .row-col-3 > .col {
+            width: 100% / 3;
+        }
+        .row-col-2 > .col {
+            width: 100% / 2;
+        }
+        .row-col-1 > .col {
+            width: 100% / 1;
+        }
+
+        .item {
+            background-color: #ccc;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <div class="row row-col-3">
+            <div class="col">
+                <div class="item">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex est vel commodi dolores labore eligendi
+                    beatae temporibus! Animi, vero nesciunt quasi modi praesentium itaque. Ex quis qui repudiandae
+                    pariatur mollitia.
+                </div>
+            </div>
+            <div class="col">
+                <div class="item">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex est vel commodi dolores labore eligendi
+                    beatae temporibus! Animi, vero nesciunt quasi modi praesentium itaque. Ex quis qui repudiandae
+                    pariatur mollitia.
+                </div>
+            </div>
+            <div class="col">
+                <div class="item">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex est vel commodi dolores labore eligendi
+                    beatae temporibus! Animi, vero nesciunt quasi modi praesentium itaque. Ex quis qui repudiandae
+                    pariatur mollitia.
+                </div>
+            </div>
+            <div class="col">
+                <div class="item">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex est vel commodi dolores labore eligendi
+                    beatae temporibus! Animi, vero nesciunt quasi modi praesentium itaque. Ex quis qui repudiandae
+                    pariatur mollitia.
+                </div>
+            </div>
+            <div class="col">
+                <div class="item">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex est vel commodi dolores labore eligendi
+                    beatae temporibus! Animi, vero nesciunt quasi modi praesentium itaque. Ex quis qui repudiandae
+                    pariatur mollitia.
+                </div>
+            </div>
+            <div class="col">
+                <div class="item">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex est vel commodi dolores labore eligendi
+                    beatae temporibus! Animi, vero nesciunt quasi modi praesentium itaque. Ex quis qui repudiandae
+                    pariatur mollitia.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

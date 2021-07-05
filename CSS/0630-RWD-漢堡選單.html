@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        header {
+            /* position: relative; */
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #ccc;
+            position: fixed;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        header .logo {
+            width: 80px;
+        }
+
+        nav a {}
+
+        /* .hb {
+            width: 32px;
+            height: 32px;
+            background-color: #f00;
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; */
+        /* position: relative;
+        } */
+        #menu_check {
+            display: none;
+        }
+
+        @media screen and(max-width:767px) {
+            .hb {
+                width: 32px;
+                height: 32px;
+                background-color: #f00;
+                position: relative;
+            }
+
+            .hb span {
+                width: 80%;
+                height: 2px;
+                background-color: #fff;
+                /* margin: 2px auto; */
+                margin: auto;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                /* transition: 1s; */
+                transform: rotate(0deg);
+                /* transition: top 1s, bottom 1s, transform 0.2s 1s; */
+            }
+
+            .hb span:first-child {
+                top: 12px;
+            }
+
+            .hb span:nth-child(2) {
+                opacity: 1;
+            }
+
+            .hb span:last-child {
+                bottom: 12px;
+            }
+
+            #menu_check:checked~header .hb span:first-child {
+                top: 0;
+                transform: rotate(45deg);
+                transition: top 0.3s;
+                transform: 0.2s 5s;
+            }
+
+            #menu_check:checked~header .hb span:last-child {
+                bottom: 0;
+                transform: rotate(-45deg);
+                transition: opacity 1s;
+            }
+
+            #menu_check:checked~header .hb span:nth-child(2) {
+                /* display: none; */
+                opacity: 0;
+                transition: bottom 0.3s, transform 0.2s 5s;
+            }
+
+            nav {
+                position: absolute;
+                height: calc(100vh - 52px);
+                width: 100vw;
+                top: 100%;
+                left: -100%;
+                opacity: 0;
+                background-color: #aaa;
+                transition: opacity 1s;
+            }
+
+            nav a {
+                display: block;
+                padding: 0 10px;
+                text-decoration: none;
+            }
+
+
+
+            #menu_check:checked~header nav {
+                right: 0;
+                opacity: 1;
+            }
+        }
+
+        @media screen and(min-width:768px) {
+            .hb{
+                display: none;
+            }
+            nav {
+                display: flex;
+                align-items: center;
+            }
+            nav a {
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="menu_check">
+    <header>
+        <a href="#" class="logo">
+            <img src="" alt="">
+        </a>
+        <label class="hb" for="menu_check">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+        </nav>
+    </header>
+
+
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum nemo, magni sint eum veniam fuga tenetur illo,
+        enim autem voluptate quisquam minima, tempora perspiciatis alias. Eius vel fugit nesciunt totam.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum nemo, magni sint eum veniam fuga tenetur illo,
+        enim autem voluptate quisquam minima, tempora perspiciatis alias. Eius vel fugit nesciunt totam.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum nemo, magni sint eum veniam fuga tenetur illo,
+        enim autem voluptate quisquam minima, tempora perspiciatis alias. Eius vel fugit nesciunt totam.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum nemo, magni sint eum veniam fuga tenetur illo,
+        enim autem voluptate quisquam minima, tempora perspiciatis alias. Eius vel fugit nesciunt totam.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum nemo, magni sint eum veniam fuga tenetur illo,
+        enim autem voluptate quisquam minima, tempora perspiciatis alias. Eius vel fugit nesciunt totam.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum nemo, magni sint eum veniam fuga tenetur illo,
+        enim autem voluptate quisquam minima, tempora perspiciatis alias. Eius vel fugit nesciunt totam.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum nemo, magni sint eum veniam fuga tenetur illo,
+        enim autem voluptate quisquam minima, tempora perspiciatis alias. Eius vel fugit nesciunt totam.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum nemo, magni sint eum veniam fuga tenetur illo,
+        enim autem voluptate quisquam minima, tempora perspiciatis alias. Eius vel fugit nesciunt totam.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum nemo, magni sint eum veniam fuga tenetur illo,
+        enim autem voluptate quisquam minima, tempora perspiciatis alias. Eius vel fugit nesciunt totam.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum nemo, magni sint eum veniam fuga tenetur illo,
+        enim autem voluptate quisquam minima, tempora perspiciatis alias. Eius vel fugit nesciunt totam.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum nemo, magni sint eum veniam fuga tenetur illo,
+        enim autem voluptate quisquam minima, tempora perspiciatis alias. Eius vel fugit nesciunt totam.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum nemo, magni sint eum veniam fuga tenetur illo,
+        enim autem voluptate quisquam minima, tempora perspiciatis alias. Eius vel fugit nesciunt totam.</p>
+
+
+
+
+
+
+
+</body>
+
+</html>

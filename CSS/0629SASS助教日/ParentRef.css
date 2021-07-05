@@ -1,0 +1,28 @@
+.product {
+  background-color: #ddd;
+  width: 50vw;
+  margin: auto;
+}
+
+.list {
+  border: peru 1px solid;
+}
+
+.list__item {
+  color: black;
+}
+
+.list__item--active {
+  font-size: 2rem;
+}
+
+.list__item--active:hover {
+  display: none;
+}
+
+.list__item span {
+  background-color: yellow;
+  color: red;
+  font-size: 0.8rem;
+}
+/*# sourceMappingURL=ParentRef.css.map */

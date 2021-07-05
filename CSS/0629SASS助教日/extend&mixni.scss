@@ -1,0 +1,56 @@
+.extend{
+    width: 70vw;
+    height: 40vh;
+    margin: auto;
+    padding: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+
+    %box{
+        background-color: gray;
+        width: 30vw;
+        height: 30vh;
+        text-align: center;
+        line-height: 30vh;
+    }
+
+    .box1{
+        @extend %box;
+        color: red;
+font-size: 2rem;
+    }
+    .box2{
+        @extend %box;
+        color: blue;
+        font-size: 3rem;
+    }
+}
+.mixin{
+    width: 70vw;
+    height: 40vh;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+}
+@mixin Box($color,$fonsize) {
+    background-color: #ccc;
+    width: 30vw;
+    height: 30vh;
+    text-align: center;
+    line-height: 30vh;
+    color: $color;
+    font-size: $fonsize;
+}
+
+.box1{
+    @include Box(red,2rem)
+}
+.box2{
+    @include Box(blue,4rem)
+}

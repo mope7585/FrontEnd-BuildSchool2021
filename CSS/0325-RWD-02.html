@@ -10,9 +10,13 @@
 </head>
 
 <style>
+    :root{
+        --col-gap:15px;
+        --col-count:1;
+    }
     .item {
         height: 200px;
-        margin: 15px;
+        margin: var(--col-gap);
         background-color: #aaa;
     }
 
@@ -25,19 +29,20 @@
         }
 
         .item {
-            width: calc(100% / 2 - 30px);
+            --col-count:2;
+            width: calc(100% / var(--col-count) - var(--col-gap)*2);
         }
     }
 
     @media screen and (min-width: 1024px) {
         .item {
-            width: calc(100% / 3 - 30px);
+            --col-count:3;
         }
     }
 
     @media screen and (min-width: 1200px) {
         .item {
-            width: calc(100% / 6 - 30px);
+            --col-count:6;
         }
     }
 </style>

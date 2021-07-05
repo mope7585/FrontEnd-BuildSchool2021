@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .mv {
+            width: 50%;
+        }
+
+        .mv .iframe-block::before {
+            content: " ";
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* background-color: #0f0; */
+            position: relative;
+        }
+
+        .txt {
+            width: 50%;
+        }
+
+        .mv iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="mv">
+            <div class="iframe-block">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/IHNzOHi8sJs"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="txt">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate vel quo possimus temporibus ut fuga
+                praesentium veniam corporis eligendi quas impedit alias unde, autem laudantium hic quam ex a dolor?
+            </div>
+        </div>
+</body>
+
+</html>
