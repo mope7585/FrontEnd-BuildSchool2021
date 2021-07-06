@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 0, 0, 0.5);
+        }
+
+        .b-color-greenyellow {
+            background-color: greenyellow;
+        }
+
+        .b-color-blue {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+
+    <script>
+        let box = document.querySelector('.box');
+        console.log(box);
+
+        //改變樣式 
+        //方法一，改變style屬性
+        //背景設為黃綠色
+        // box.style.backgroundColor = 'greenyellow';
+
+        //方法二
+        //改變ClassList，透過Class控制樣式
+        //新增
+        box.classList.add('b-color-greenyellow');
+        
+        //移除
+        // box.classList.remove('b-color-greenyellow');
+
+        //替換
+        box.classList.replace('b-color-greenyellow','b-color-blue');
+    </script>
+</body>
+
+</html>

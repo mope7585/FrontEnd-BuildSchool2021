@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="reset.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-        nav a {
+        /* nav a {
             text-decoration: none;
         }
 
@@ -102,25 +102,28 @@
             left: 0;
             right: 0;
             opacity: 2;
+        } */
+        .Header-row {
+            flex-direction: row-reverse;
         }
 
         .Header-Main {
             background-image: url(https://img.shoplineapp.com/media/image_clips/5f069a12dc4d9a00335656c2/original.png?1594268177%22);
             background-size: cover;
-            width: 100%;
-            display: flex;
+            /* display: flex; */
             padding: 300px 100px;
-            height: 800px;
+            /* height: 800px; */
             color: #fff;
         }
 
-        .Header-Main-Text {
+        /* .Header-Main-Text {
             width: 50%;
         }
 
         .Header-Main-Picture {
             width: 50%;
-        }
+        } */
+
 
         .Header-Main-Picture img {
             width: 100%;
@@ -182,13 +185,15 @@
             color: #FABF17;
         }
 
-        .Main-Design {
+        /* .Main-Design {
             height: 500px;
             display: flex;
+        } */
+        .Main-Design-row{
+            flex-direction: row-reverse;
         }
-
         .Main-Design-Text {
-            width: 50%;
+            /* width: 50%; */
             padding: 30px;
         }
 
@@ -208,9 +213,9 @@
         }
 
 
-        .Main-Design-Picture {
+        /* .Main-Design-Picture {
             width: 50%;
-        }
+        } */
 
         .Main-Design-Picture img {
             width: 100%;
@@ -218,7 +223,7 @@
 
         .More-Service {
             display: flex;
-            height: 740px;
+            /* height: 740px; */
             flex-direction: column;
             justify-content: center;
             padding-bottom: 200px;
@@ -231,10 +236,10 @@
             margin-bottom: 50px;
         }
 
-        .More-Service ul {
+        /* .More-Service ul {
             display: flex;
             flex-wrap: wrap;
-        }
+        } */
 
         .More-Service li {
             width: 30%;
@@ -396,7 +401,7 @@
 
 <body>
     <header>
-        <nav>
+        <!-- <nav>
             <div class="Nav-Setting">
                 <div class="Nav-Setting-Language">
                     <a href="#"><i class="fas fa-globe fa-2x"></i></a>
@@ -441,133 +446,153 @@
                 <button type="button" class="btn-primary">免費使用</button>
             </div>
             </div>
-        </nav>
+        </nav> -->
 
-        <div class="Header-Main">
-            <div class="Header-Main-Text">
-                <h1>想在哪開店創業？</h1>
-                <h2>網路開店一站式輕鬆開賣</h2>
-                <p>超過 25 萬品牌使用！從個人賣家到國際品牌，都能以 SHOPLINE 實現全通路零售，快速拓展市場到世界各地，輕鬆開始你的『 店 』商生意！</p>
-                <div class="Header-Main-Text-Email">
-                    <input type="email" placeholder="請在此輸入電子信箱(可隨時替換)">
-                    <button type="button" class="btn-primary" id="Free-Box2">免費使用</button>
+        <div class="Header-Main container-fulid">
+            <div class="row Header-row">
+                <div class="Header-Main-Picture col-12 col-md-6">
+                    <img src="https://img.shoplineapp.com/media/image_clips/609d0e9bdcf71100202f291a/original.png?1620905626"
+                        alt="">
                 </div>
+                <div class="Header-Main-Text col-12 col-md-6">
+                    <h1>想在哪開店創業？</h1>
+                    <h2>網路開店一站式輕鬆開賣</h2>
+                    <p>超過 25 萬品牌使用！從個人賣家到國際品牌，都能以 SHOPLINE 實現全通路零售，快速拓展市場到世界各地，輕鬆開始你的『 店 』商生意！</p>
+                    <div class="Header-Main-Text-Email">
+                        <input type="email" placeholder="請在此輸入電子信箱(可隨時替換)">
+                        <button type="button" class="btn-primary" id="Free-Box2">免費使用</button>
+                    </div>
+                </div>
+
+
             </div>
 
-            <div class="Header-Main-Picture">
-                <img src="https://img.shoplineapp.com/media/image_clips/609d0e9bdcf71100202f291a/original.png?1620905626"
-                    alt="">
-            </div>
         </div>
     </header>
 
     <article>
         <div class="Main">
-            <div class="Main-Title">
-                <h2>單一平台就能助你<br>在全通路輕鬆開店創業</h2>
-                <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，<br>並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
-            </div>
-
-            <div class="Main-Design">
-                <div class="Main-Design-Text">
-                    <h2>免寫程式、多款版型<br>輕鬆打造全能電商網站</h2>
-                    <div class="Main-Design-WaveIcon">
-                        <i class="fab fa-vnv"></i>
-                        <i class="fab fa-vnv"></i>
-                        <i class="fab fa-vnv"></i>
-                    </div>
-                    <div class="Main-Design-List">
-                        <p>不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。</p>
-                        <ul>
-                            <li>豐富版型主題與字型搭配</li>
-                            <li>RWD 響應式網頁設計</li>
-                            <li>獨有網址 ＆ SSL 安全憑證</li>
-                            <li>SEO 搜尋引擎優化</li>
-                            <li>一頁商店</li>
-                            <li>開放 HTML／CSS 編輯</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="Main-Design-Picture">
-                    <img src="https://img.shoplineapp.com/media/image_clips/60b0c566ec23b10026db7112/original.png?1622197605"
-                        alt="">
-                </div>
-            </div>
-
-            <div class="Main-Design">
-                <div class="Main-Design-Picture">
-                    <img src="https://img.shoplineapp.com/media/image_clips/60a4d354a8bff100235bea59/original.png?1621414740"
-                        alt="">
-                </div>
-                <div class="Main-Design-Text">
-                    <h2>支持海內外電商<br>金流、物流一次搞定</h2>
-                    <div class="Main-Design-WaveIcon">
-                        <i class="fab fa-vnv"></i>
-                        <i class="fab fa-vnv"></i>
-                        <i class="fab fa-vnv"></i>
-                    </div>
-                    <div class="Main-Design-List">
-                        <p>支持在地及國際金流、物流串接服務，提供海內外顧客最便利的付款及送貨服務，加速消費者完成下單交易，大幅降低購物車放棄率！</p>
-                        <ul>
-                            <li>線上信用卡刷卡</li>
-                            <li>超商代碼／條碼繳費</li>
-                            <li>超商／宅配貨到付款</li>
-                            <li>第三方金流／行動支付整合</li>
-                            <li>多溫層宅配並指定運費</li>
-                            <li>發票開立與串接</li>
-                        </ul>
+            <div class="Main-Title container">
+                <div class="row">
+                    <div class="col-12 col-md-12">
+                        <h2>單一平台就能助你<br>在全通路輕鬆開店創業</h2>
+                        <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，<br>並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
                     </div>
                 </div>
             </div>
-            <div class="Main-Design">
-                <div class="Main-Design-Text">
-                    <h2>刺激下單，創造回購<br>行銷導流、促購模組任你玩</h2>
-                    <div class="Main-Design-WaveIcon">
-                        <i class="fab fa-vnv"></i>
-                        <i class="fab fa-vnv"></i>
-                        <i class="fab fa-vnv"></i>
+
+            <div class="Main-Design container">
+                <div class="row Main-Design-row">
+                    <div class="Main-Design-Picture col-12 col-md-6">
+                        <img src="https://img.shoplineapp.com/media/image_clips/60b0c566ec23b10026db7112/original.png?1622197605"
+                            alt="">
                     </div>
-                    <div class="Main-Design-List">
-                        <p>多元優惠活動、會員集客機制、網紅分潤以及直播購物等豐富功能，將電商行銷玩法一網打盡，助你成功優化行銷活動成效，刺激顧客下單、吸引鐵粉回購！</p>
-                        <ul>
-                            <li>超過 20 種優惠促銷功能</li>
-                            <li>會員分級／點數／購物金</li>
-                            <li>Instagram 購物功能</li>
-                            <li>社群直播購物系統</li>
-                            <li>Facebook／Google</li>
-                            <li>Facebook／LINE 對話式購物</li>
-                        </ul>
+
+                    <div class="Main-Design-Text col-12 col-md-6">
+                        <h2>免寫程式、多款版型<br>輕鬆打造全能電商網站</h2>
+                        <div class="Main-Design-WaveIcon">
+                            <i class="fab fa-vnv"></i>
+                            <i class="fab fa-vnv"></i>
+                            <i class="fab fa-vnv"></i>
+                        </div>
+                        <div class="Main-Design-List">
+                            <p>不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。</p>
+                            <ul>
+                                <li>豐富版型主題與字型搭配</li>
+                                <li>RWD 響應式網頁設計</li>
+                                <li>獨有網址 ＆ SSL 安全憑證</li>
+                                <li>SEO 搜尋引擎優化</li>
+                                <li>一頁商店</li>
+                                <li>開放 HTML／CSS 編輯</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="Main-Design-Picture">
-                    <img src="https://img.shoplineapp.com/media/image_clips/60a4d354df356c0012a8a223/original.png?1621414740"
-                        alt="">
                 </div>
             </div>
 
             <div class="Main-Design">
-                <div class="Main-Design-Picture">
-                    <img src="https://img.shoplineapp.com/media/image_clips/60a4d3540289ef002f2150cb/original.png?1621414740"
-                        alt="">
-                </div>
-                <div class="Main-Design-Text">
-                    <h2>O2O 全通路無縫整併<br>輕鬆管理網店、門市以及其他通路</h2>
-                    <div class="Main-Design-WaveIcon">
-                        <i class="fab fa-vnv"></i>
-                        <i class="fab fa-vnv"></i>
-                        <i class="fab fa-vnv"></i>
+                <div class="Main-Design-Picture container">
+                    <div class="row">
+                        <div class="Main-Design-Picture col-12 col-md-6">
+                            <img src="https://img.shoplineapp.com/media/image_clips/60a4d354a8bff100235bea59/original.png?1621414740"
+                            alt="">
+                        </div>
+
+                        <div class="Main-Design-Text col-12 col-md-6">
+                            <h2>支持海內外電商<br>金流、物流一次搞定</h2>
+                            <div class="Main-Design-WaveIcon">
+                                <i class="fab fa-vnv"></i>
+                                <i class="fab fa-vnv"></i>
+                                <i class="fab fa-vnv"></i>
+                            </div>
+                            <div class="Main-Design-List col-12 col-md-6">
+                                <p>支持在地及國際金流、物流串接服務，提供海內外顧客最便利的付款及送貨服務，加速消費者完成下單交易，大幅降低購物車放棄率！</p>
+                                <ul>
+                                    <li>線上信用卡刷卡</li>
+                                    <li>超商代碼／條碼繳費</li>
+                                    <li>超商／宅配貨到付款</li>
+                                    <li>第三方金流／行動支付整合</li>
+                                    <li>多溫層宅配並指定運費</li>
+                                    <li>發票開立與串接</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>             
+                </div>         
+            </div>
+
+            <div class="Main-Design container">
+                <div class="row Main-Design-row">
+                    <div class="Main-Design-Picture col-12 col-md-6">
+                        <img src="https://img.shoplineapp.com/media/image_clips/60a4d354df356c0012a8a223/original.png?1621414740"
+                            alt="">
                     </div>
-                    <div class="Main-Design-List">
-                        <p>不論是網店拓展門市，還是門市想發展網路生意，從商品、庫存、訂單等各項虛實店舖的資料都能完善整併，輕鬆實現全通路會員經營到多店營運。</p>
-                        <ul>
-                            <li>門市 POS 系統</li>
-                            <li>門市快速集客工具</li>
-                            <li>進銷庫存／調撥／多店管理</li>
-                            <li>線上線下會員／商品／庫存整合</li>
-                            <li>O2O 即時銷售報表分析</li>
-                            <li>串接 Shopee 蝦皮購物庫存</li>
-                        </ul>
+                    <div class="Main-Design-Text col-12 col-md-6">
+                        <h2>刺激下單，創造回購<br>行銷導流、促購模組任你玩</h2>
+                        <div class="Main-Design-WaveIcon">
+                            <i class="fab fa-vnv"></i>
+                            <i class="fab fa-vnv"></i>
+                            <i class="fab fa-vnv"></i>
+                        </div>
+                        <div class="Main-Design-List">
+                            <p>多元優惠活動、會員集客機制、網紅分潤以及直播購物等豐富功能，將電商行銷玩法一網打盡，助你成功優化行銷活動成效，刺激顧客下單、吸引鐵粉回購！</p>
+                            <ul>
+                                <li>超過 20 種優惠促銷功能</li>
+                                <li>會員分級／點數／購物金</li>
+                                <li>Instagram 購物功能</li>
+                                <li>社群直播購物系統</li>
+                                <li>Facebook／Google</li>
+                                <li>Facebook／LINE 對話式購物</li>
+                            </ul>
+                        </div>
+                    </div>    
+                </div>           
+            </div>
+
+            <div class="Main-Design container">
+                <div class="row">
+                    <div class="Main-Design-Picture col-12 col-md-6">
+                        <img src="https://img.shoplineapp.com/media/image_clips/60a4d3540289ef002f2150cb/original.png?1621414740"
+                            alt="">
+                    </div>
+                    <div class="Main-Design-Text col-12 col-md-6">
+                        <h2>O2O 全通路無縫整併<br>輕鬆管理網店、門市以及其他通路</h2>
+                        <div class="Main-Design-WaveIcon">
+                            <i class="fab fa-vnv"></i>
+                            <i class="fab fa-vnv"></i>
+                            <i class="fab fa-vnv"></i>
+                        </div>
+                        <div class="Main-Design-List">
+                            <p>不論是網店拓展門市，還是門市想發展網路生意，從商品、庫存、訂單等各項虛實店舖的資料都能完善整併，輕鬆實現全通路會員經營到多店營運。</p>
+                            <ul>
+                                <li>門市 POS 系統</li>
+                                <li>門市快速集客工具</li>
+                                <li>進銷庫存／調撥／多店管理</li>
+                                <li>線上線下會員／商品／庫存整合</li>
+                                <li>O2O 即時銷售報表分析</li>
+                                <li>串接 Shopee 蝦皮購物庫存</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -575,56 +600,58 @@
 
         <div class="More-Service">
             <h2>更多功能與服務</h2>
-            <ul>
-                <li>
-                    <div class="More-Service-Img">
-                        <img src="https://img.shoplineapp.com/media/image_clips/5efef5c3b774cf002ab000ce/original.png?1593767363"
-                            alt="">
-                    </div>
-                    <h3>強大庫存及訂單系統</h3>
-                    <p>從商品數量、貨況到訂單付款狀態、物流貨態一目瞭然，提升營運效率超有感。</p>
-                </li>
-                <li>
-                    <div class="More-Service-Img">
-                        <img src="https://img.shoplineapp.com/media/image_clips/5efef5c4b774cf0027b00084/original.png?1593767364"
-                            alt="">
-                    </div>
-                    <h3>即時化商店業績分析</h3>
-                    <p>圖表化報表助你一手掌握商店概況，讓數據助攻企業成長，營運策略更有方向。</p>
-                </li>
-                <li>
-                    <div class="More-Service-Img">
-                        <img src="https://img.shoplineapp.com/media/image_clips/5f34a2e10225e00039a716b9/original.png?1597285089"
-                            alt="">
-                    </div>
-                    <h3>多國語系、幣值切換</h3>
-                    <p>想做跨境電商也ＯＫ！提供語言、幣別、稅金等進階功能，友善應對海外消費需求。</p>
-                </li>
-                <li>
-                    <div class="More-Service-Img">
-                        <img src="https://img.shoplineapp.com/media/image_clips/5f34a2e11468c4003c7aace6/original.png?1597285089"
-                            alt="">
-                    </div>
-                    <h3>專業顧問線上支援</h3>
-                    <p>迅速、透明的溝通管道，協助你快速解決從線上到線下、從在地到海外的網店疑難。</p>
-                </li>
-                <li>
-                    <div class="More-Service-Img">
-                        <img src="https://img.shoplineapp.com/media/image_clips/5f34a2e11468c472e47aa8e9/original.png?1597285089"
-                            alt="">
-                    </div>
-                    <h3>廣告行銷加值服務</h3>
-                    <p>由官方認證的專業投手團隊，協助品牌投遞 Facebook、Google、LINE 等廣告。</p>
-                </li>
-                <li>
-                    <div class="More-Service-Img">
-                        <img src="https://img.shoplineapp.com/media/image_clips/5f34a2e11468c472e47aa8e9/original.png?1597285089"
-                            alt="">
-                    </div>
-                    <h3>老闆專屬成長社群</h3>
-                    <p>致力為品牌店家打造能深度交流且互助的生態體系，是拓展人脈、商機的絕佳場域。</p>
-                </li>
-            </ul>
+            <ul class="container-fulid">
+                    <div class="row justify-content-center">
+                    <li class="col-4 col-md-6">
+                        <div class="More-Service-Img">
+                            <img src="https://img.shoplineapp.com/media/image_clips/5efef5c3b774cf002ab000ce/original.png?1593767363"
+                                alt="">
+                        </div>
+                        <h3>強大庫存及訂單系統</h3>
+                        <p>從商品數量、貨況到訂單付款狀態、物流貨態一目瞭然，提升營運效率超有感。</p>
+                    </li>
+                    <li class="col-4 col-md-6">
+                        <div class="More-Service-Img">
+                            <img src="https://img.shoplineapp.com/media/image_clips/5efef5c4b774cf0027b00084/original.png?1593767364"
+                                alt="">
+                        </div>
+                        <h3>即時化商店業績分析</h3>
+                        <p>圖表化報表助你一手掌握商店概況，讓數據助攻企業成長，營運策略更有方向。</p>
+                    </li>
+                    <li class="col-4 col-md-6">
+                        <div class="More-Service-Img">
+                            <img src="https://img.shoplineapp.com/media/image_clips/5f34a2e10225e00039a716b9/original.png?1597285089"
+                                alt="">
+                        </div>
+                        <h3>多國語系、幣值切換</h3>
+                        <p>想做跨境電商也ＯＫ！提供語言、幣別、稅金等進階功能，友善應對海外消費需求。</p>
+                    </li>
+                    <li class="col-4 col-md-6">
+                        <div class="More-Service-Img">
+                            <img src="https://img.shoplineapp.com/media/image_clips/5f34a2e11468c4003c7aace6/original.png?1597285089"
+                                alt="">
+                        </div>
+                        <h3>專業顧問線上支援</h3>
+                        <p>迅速、透明的溝通管道，協助你快速解決從線上到線下、從在地到海外的網店疑難。</p>
+                    </li>
+                    <li class="col-4 col-md-6">
+                        <div class="More-Service-Img">
+                            <img src="https://img.shoplineapp.com/media/image_clips/5f34a2e11468c472e47aa8e9/original.png?1597285089"
+                                alt="">
+                        </div>
+                        <h3>廣告行銷加值服務</h3>
+                        <p>由官方認證的專業投手團隊，協助品牌投遞 Facebook、Google、LINE 等廣告。</p>
+                    </li>
+                    <li class="col-4 col-md-6">
+                        <div class="More-Service-Img">
+                            <img src="https://img.shoplineapp.com/media/image_clips/5f34a2e11468c472e47aa8e9/original.png?1597285089"
+                                alt="">
+                        </div>
+                        <h3>老闆專屬成長社群</h3>
+                        <p>致力為品牌店家打造能深度交流且互助的生態體系，是拓展人脈、商機的絕佳場域。</p>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <div class="Recommend">

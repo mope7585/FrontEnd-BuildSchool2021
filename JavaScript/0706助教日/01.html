@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+        }
+
+        .box div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box div:nth-child(1) {
+            background-color: red;
+        }
+
+        .box div:nth-child(2) {
+            background-color: blue;
+        }
+
+        .box div:nth-child(3) {
+            background-color: greenyellow
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="red" class="div"></div>
+        <div class="div"></div>
+        <div></div>
+    </div>
+    <script>
+        //By id  單一項目
+        let div_1 = document.getElementById('red');
+        console.log(div_1)
+
+        //By class 多個項目
+        let div_2 = document.getElementsByClassName('div')[1];
+        console.log(div_2);
+
+        //By tagName 多個項目
+        let div_3 = document.getElementsByTagName('div')[3];
+        console.log(div_3)
+
+        //By CSS selector 單一項目//預設為第一個
+        let div_4 = document.querySelector('.box div:nth-child(1)');//# red div > div
+        console.log(div_4);
+
+        //By CSS SelectorAll //多個項目
+        let div_5 = document.querySelectorAll('.div')[0];
+        console.log(div_5);
+        
+    </script>
+</body>
+
+</html>
