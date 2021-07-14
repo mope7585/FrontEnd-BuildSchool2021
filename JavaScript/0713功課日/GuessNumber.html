@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,22 +8,102 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .box {
+            border: 1px solid#000;
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        td {
+            display: flex;
+            align-items: center;
+        }
+
+        td span {
+            padding-left: 20px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="container mt-5">
+        <div class="row">
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-outline-primary">開始</button>
+                <button type="button" class="btn btn-outline-primary">放棄重來</button>
+                <button type="button" class="btn btn-outline-primary">看答案</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <table class="table table-striped my-5">
+                <tbody>
+                    <tr class="table-primary">
+                        <td>
+                            <button type="button" class="btn btn-outline-danger">1A2B</button>
+                            <span>4123</span>
+                        </td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td>
+                            <button type="button" class="btn btn-outline-danger">1A2B</button>
+                            <span>4123</span>
+                        </td>
+                    </tr>
+                    <tr class="table-primary">
+                        <td>
+                            <button type="button" class="btn btn-outline-danger">1A2B</button>
+                            <span>4123</span>
+                        </td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td>
+                            <button type="button" class="btn btn-outline-success">4A0B</button>
+                            <span>4123</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">猜數字</span>
+                <input type="text" class="form-control" placeholder="請填入四位數值" aria-label="請填入四位數值"
+                    aria-describedby="addon-wrapping">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">猜!</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let NubArray = [];
+        function getRandom(x) {
+            return Math.floor(Math.random() * x);
+        };
+        for(let i = 0 ; i < 4; i++) {
+           let RandomNub = 
+        }
+       console.log(NubArray)
+        
 
 
 
 
 
-
-
-
-
-
-
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
