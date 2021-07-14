@@ -1,0 +1,123 @@
+header {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    top: 0;
+}
+header .logo {
+    width: 160px;
+}
+.logo img {
+    vertical-align: middle;
+    width: 100%;
+}
+#menu_check {
+    display: none;
+}
+.btn{
+    border-radius: 20px;
+}
+nav a{
+    color: #000;
+}
+@media screen and (max-width:767px) {
+    .hb {
+        position: relative;
+        width: 42px;
+        height: 42px;
+        /* display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; */
+    }
+    .hb span {
+        margin: auto;
+        display: block;
+        position: absolute;
+        width: 80%;
+        height: 2px;
+        background-color: #000;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: rotate(0deg);
+        /* transition: top 0.5s,
+        bottom 0.5s, 
+        opacity 0.5s,
+        transform 0.1s 0.1s; */
+    }
+    .hb span:first-child {
+        top: 20px;
+    }
+    .hb span:nth-child(2) {
+        opacity: 1;
+    }
+    .hb span:last-child {
+        bottom: 20px;
+        transition: bottom 0.5s;
+    }
+    #menu_check:checked ~ header .hb span:first-child {
+        top: 0;
+        transform: rotate(45deg);
+        transition: top 0.5s, transform 0.5s;
+    }
+    #menu_check:checked ~ header .hb span:nth-child(2) {
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+    #menu_check:checked ~ header .hb span:last-child {
+        bottom: 0;
+        transform: rotate(-45deg);
+        transition: bottom 0.5s, transform 0.5s;
+    }
+    nav {
+        width: 100vw;
+        height: calc(100vh - 82px);
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        transition: 0.5s;
+    }
+    nav a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #000;
+    }
+    #menu_check:checked ~ header nav {
+        right: 0;
+        opacity: 1;
+    }
+    nav .btn{
+        width: 100%;
+    }
+
+}
+@media screen and (min-width:768px) {
+    nav {
+        margin: auto;
+        display: flex;
+        align-items: center;
+    }
+    nav a {
+        padding: 10px 20px;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        
+    }
+    nav .btn{
+        padding: 10px 20px;
+        margin-left: 20px;
+        
+    }
+    nav a:hover{
+        border-bottom: 2px solid #0061FF;
+        color: #0061FF;
+    }
+    
+}

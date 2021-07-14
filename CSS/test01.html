@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:500&display=swap");
+
+        .main-nav {
+            background-color: #f00;
+        }
+
+        .main-nav .menu {
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-nav .menu a {
+            font-family: 'Noto Sans TC',sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            padding: 10px 20px;
+        }
+
+        .menu-nav .menu > li {
+            position: relative;
+        }
+
+        .menu-nav .sub-menu {
+            position: absolute;
+            width: 8em;
+            background-color: #a00;
+            display: none;
+            top: 100%;
+        }
+
+        .main-nav .menu li:hover>a {
+            background-color: #800;
+        }
+
+        .main-nav li:hover>.sub-menu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-nav">
+        <ul class="menu">
+            <li><a href="#">第一層A</a></li>
+            <li>
+                <a href="#">第一層B</a>
+                <ul class="sub-menu">
+                    <li><a href="#">第二層B</a></li>
+                    <li><a href="#">第二層B</a></li>
+                    <li><a href="#">第二層B</a></li>
+                </ul>
+            </li>
+            <li><a href="#">第一層C</a></li>
+            <li>
+                <a href="#">第一層D</a>
+                <ul class="sub-menu">
+                    <li><a href="#">第二層D</a></li>
+                    <li><a href="#">第二層D</a></li>
+                    <li><a href="#">第二層D</a></li>
+                </ul>
+            </li>
+        </ul>
+
+
+    </div>
+
+
+
+</html>

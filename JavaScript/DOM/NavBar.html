@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a,
+        .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: red;
+        }
+
+        li.dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">品牌電腦</a>
+            <div class="dropdown-content" id="pc">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">電腦零件</a>
+            <div class="dropdown-content" id="parts">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </li>
+    </ul>
+
+    <script>
+        const pc = [
+            { pc: "華碩", url: "https://www.asus.com" },
+            { pc: "技嘉", url: "https://www.gigabyte.com" },
+            { pc: "微星", url: "https://tw.msi.com" },
+        ];
+
+        const parts = [
+            { parts: "CPU", url: "https://24h.pchome.com.tw/region/DRAI" },
+            { parts: "GPU", url: "https://24h.pchome.com.tw/region/DRAD" },
+            { parts: "SSD", url: "https://24h.pchome.com.tw/region/DRAH" },
+        ];
+
+        let pcItems, partsItems;
+            window.onload = function () {
+            pcitems = document.querySelectorAll('#pc a');
+            pcitems.forEach((item,index)=>{
+                console.log(item)
+                item.innerText = pc[index].pc;
+                item.setAttribute = ('href',pc[index].url)
+            })
+            
+
+            parts.forEach(item => {
+                partsitems = document.querySelectorAll('#parts a')
+                partsItems.forEach((item,index)=>{
+                    item.innerText = parts[index].parts;
+                    item.setAttribute = ('href',parts[index].url)
+                })
+              
+            })
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>

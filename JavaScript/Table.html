@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let targetBody = document.querySelector('body');
+
+        let table = document.createElement('table');
+        let thead = document.createElement('thead');
+        let tbody = document.createElement('tbody');
+
+        //Thead內容
+        let theadTr = document.createElement('tr');
+        for (i = 0; i < 5; i++) {
+            let th = document.createElement('th');
+            th.innerText = i + 1;
+            theadTr.appendChild(th);
+        }
+        thead.appendChild(theadTr);
+
+        //tBody內容
+        for (i = 0; i < 3; i++) {
+            let tr = document.createElement('tr')
+            for (j = 0; j < 5; j++) {
+                let td = document.createElement('td');
+                td.innerText = j + 1;
+                tr.appendChild(td);
+                td.style.color = 'blue';
+            }
+            tbody.appendChild(tr);
+        }
+
+        //Step 3 
+        //Thead Tbody都準備好了
+        table.appendChild(thead);
+        table.appendChild(tbody)
+
+        //table準備好了
+        targetBody.appendChild(table);
+
+
+
+        // var width = 600;
+        // var shape = { width: 300 };
+
+        // var showWidth = function () {
+        //     document.write(this.width);
+        // };
+        
+        // shape.getWidth = showWidth;
+        // shape.getWidth();
+        
+        // showWidth();
+        let a,b = 2;
+        let c,d = (1,2);
+        console.log(c,d)
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        
+        let districtObject = {
+            taipei: [
+                { id: 'taipei01', district: '中正區' },
+                { id: 'taipei02', district: '萬華區' },
+                { id: 'taipei03', district: '信義區' }],
+            taoyuan: [
+                { id: 'taoyuan01', district: '桃園市' },
+                { id: 'taoyuan02', district: '八德市' },
+                { id: 'taoyuan03', district: '中壢市' }],
+            taichung: [
+                { id: 'taichung01', district: '台中市' },
+                { id: 'taichung02', district: '大⾥市' },
+                { id: 'taichung03', district: '清水市' }]
+        };
+
+        let cities = Object.keys(districtObject);
+        let values = Object.values(districtObject);
+
+        let index =1;
+        cities.forEach((city) => {
+            let districtArray = districtObject[city];
+
+            districtArray.forEach(dtRow => {
+                document.write(`${index++}. city = ${city}, id =${dtRow.id}, 
+                               district= ${dtRow.district}<br>`);
+            });
+        });
+
+    </script>
+</body>
+
+</html>

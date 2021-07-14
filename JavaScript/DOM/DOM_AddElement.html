@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div ID="result"></div>
     <h1>寶可夢圖鑑列表</h1>
-    <button onclick='AddElement()'>加入寶可夢圖片元素</button>
+    <button>加入寶可夢圖片元素</button>
     <div id='container'></div>
     <script>
-    function AddElement() {
- //1.創建與設定HTML元素
-    let img = document.createElement('img');
-    img.setAttribute('src', 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png'); 
-    //2.選取HTML元素
-    let container = document.getElementById("container");
-    let div = document.querySelector("body div");
-    //3.加入元素旗下
-    container.appendChild(img);
-    div.appendChild(img);
-    }
-    //4.如果HTML畫⾯要加入第⼆張張圖應該如做？
-    let img2 = img.cloneNote();
-    document.getElementById("result").appendChild(img2);
+
+        let btn1, container;
+        //window.onload = DOM Ready + 所有資源下載完成
+        window.onload = function () {
+            btn1 = document.querySelector('button');
+            container = document.querySelector('#container');
+
+            btn1.addEventListener('click', function () {
+                AddElement();
+            });
+        }
+
+        function AddElement(){
+            //1.
+            let img = document.createElement('img');
+            img.setAttribute('src','https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png')
+            container.appendChild(img);
+            
+        }
+
+
     </script>
-   </body>
+</body>
+
 </html>
