@@ -110,23 +110,22 @@
         let inputArray = [];
         function Input() {
             inputArray = Array.from(input.value);
-            if(inputArray.length == 4){
+            let inputSet = new Set(inputArray);
+            if(inputArray.length == 4 && inputSet.size ==4){
                 AB();
+                CreatItem();
                 input.value = '';
             }
             else{
                 alert('輸入格式不正確')
                 input.value = '';
             }
-            
         }
 
         //輸入btn
         let Confirmbtn = document.getElementById('button-addon2');
         Confirmbtn.addEventListener('click', () => {
             Input();
-            CreatItem();
-            console.dir(inputArray)
         })
 
         //生成tbody
