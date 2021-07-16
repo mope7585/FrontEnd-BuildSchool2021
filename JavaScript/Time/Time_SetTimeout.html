@@ -1,45 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
     <h1>setTimeout() - 定時器</h1>
     <button onclick="Start()">Start</button>
-    <button onclick="Stop()">Stop</button>
-
-
-
+    <button onclick="Stop()">Clear</button>
 
     <script>
-        const colors = ['green', 'blue', 'red', 'orange'];
+        const colors = ["green", "blue", "yellow", "red", "orange", "pink", "purple", "white", "black"];
 
-        function getRandom(min, max) {
-            return Math.floor(Math.random() * (max - min) + min);
+        let timeoutId;
+        function Start(){
+            timeoutId = setTimeout(changeColor, 1000); 
         }
-        // let timeoutId;
-        function Start() {
 
-           let timeoutId = setTimeout(changeColor, 500);
-        }
-        function Stop() {
+        function Stop(){
             clearTimeout(timeoutId);
         }
-        let body = document.querySelector('body');
-        function changeColor() {
-            body.style.backgroundColor= colors[getRandom(0, 4)];
-            console.log(Math.random());
+        let body = document.querySelector("body"); 
+        function changeColor(){
+          let random = getRandom(0,colors.length);
+          document.body.style.backgroundColor = colors[random]; 
         }
 
-
-
+        function getRandom(min, max){
+            return Math.floor(Math.random() * (max - min) + min); 
+        }
 
     </script>
 </body>
-
 </html>

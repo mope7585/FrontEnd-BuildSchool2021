@@ -17,22 +17,22 @@
 
 
     <script>
-        const colors = ['green', 'blue', 'red', 'orange'];
-
-        function getRandom(min, max) {
-            return Math.floor(Math.random() * (max - min) + min);
-        }
-        let timeoutId;
+        const colors = ["green", "blue", "red", "orange"];
+        const poem = ["春花秋⽉何時了", "往事知多少", "⼩樓昨夜⼜東風", "故國不堪回⾸⽉明中"];
+        let body = document.querySelector("body");
+        let intervalId;
         function Start() {
-            IntervalId = setInterval(changeColor, 1000);
+            intervalId = setInterval(changeColor, 1000);
         }
         function Stop() {
-            clearTimeout(IntervalId);
+            clearInterval(intervalId);
         }
-        let body = document.querySelector('body');
         function changeColor() {
-            body.style.backgroundColor= colors[getRandom(0, 4)];
+            body.style.backgroundColor = colors[getRandom(0, 4)];
             console.log(Math.random());
+        }
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
         }
 
 
