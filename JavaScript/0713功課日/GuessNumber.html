@@ -162,6 +162,8 @@
         let B = 0;
         let result = [];
         function AB() {
+            A = 0;
+            B = 0;
             result = inputArray.filter(nub => AnswerArray.includes(nub));
             result.forEach(item => {
                 if(inputArray.indexOf(item) == AnswerArray.indexOf(item)){
