@@ -96,6 +96,7 @@
         let Resetbtn = document.querySelector('.btn-group button:nth-child(2)')
         Resetbtn.addEventListener('click',()=>{
             Clean();
+            AnswerArray = [];
         })
 
         //看答案
@@ -103,6 +104,7 @@
         Answerbtn.addEventListener('click', () => {
             alert(`答案是: ${AnswerArray}`);
             Clean();
+            AnswerArray = [];
         })
 
         //輸入input
@@ -149,6 +151,7 @@
                 btn.classList.add('btn','btn-outline-success');
                 btn.innerText = `${A}A${B}B`;
                 span.innerText = inputArray;
+                alert('恭喜你答對了')
             }
             else{
                 btn.classList.add('btn','btn-outline-danger');
