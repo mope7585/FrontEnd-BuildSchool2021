@@ -95,6 +95,7 @@
         //放棄重來
         let Resetbtn = document.querySelector('.btn-group button:nth-child(2)')
         Resetbtn.addEventListener('click',()=>{
+            alert(`答案是: ${AnswerArray}`);
             Clean();
             AnswerArray = [];
         })
