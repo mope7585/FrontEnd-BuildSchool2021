@@ -1,107 +1,109 @@
-var Product = {
-    Iphone: {
-        iPhone12: {
-            productName: 'iPhone12',
-            size: '5.4 吋顯示器1',
-            baseImgUrl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-mini-select-2020?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;.v=1604343708000',
-            OutWard: [
-                { color: '白色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-white-202010?wid=204&amp;hei=204&amp;fmt=jpeg&amp;qlt=80&amp;.v=1601072989000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-mini-white-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343707000' },
-                { color: '黑色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-black-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072988000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-mini-black-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343705000' },
-                { color: '藍色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-blue-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072988000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-mini-blue-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343706000' },
-                { color: '綠色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-green-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072990000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-mini-green-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343706000' },
-                { color: '紅色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-red-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072989000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-mini-red-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343707000' },
-            ],
-            spec: [
-                { size: '64GB', fit: 'NT$23,900' },
-                { size: '128GB', fit: 'NT$25,500' },
-                { size: '256GB', fit: 'NT$29,000' },
-            ]
-        },
-        
-        iPhone12pro: {
-            productName: 'iPhone12 Pro',
-            size: '6.1 吋顯示器1',
-            baseImgUrl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-select-2021?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;.v=1617130318000',
-            OutWard: [
-                { color: '白色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-white-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072989000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-white-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343705000' },
-                { color: '黑色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-black-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072988000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-black-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343702000' },
-                { color: '藍色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-blue-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072988000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-blue-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343704000' },
-                { color: '綠色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-green-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072990000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-green-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343704000' },
-                { color: '紅色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-red-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072989000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-red-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343703000' },
-            ],
-            spec: [
-                { size: '64GB', fit: 'NT$26,900' },
-                { size: '128GB', fit: 'NT$28,500' },
-                { size: '256GB', fit: 'NT$32,000' },
-            ]
-        },
+  var Product = {
+                Iphone: {
+                    iPhone12: {
+                        productName: 'iPhone12',
+                        size: '5.4 吋顯示器1',
+                        baseImgUrl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-mini-select-2020?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;.v=1604343708000',
+                        OutWard: [
+                            { color: '白色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-white-202010?wid=204&amp;hei=204&amp;fmt=jpeg&amp;qlt=80&amp;.v=1601072989000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-mini-white-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343707000' },
+                            { color: '黑色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-black-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072988000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-mini-black-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343705000' },
+                            { color: '藍色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-blue-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072988000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-mini-blue-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343706000' },
+                            { color: '綠色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-green-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072990000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-mini-green-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343706000' },
+                            { color: '紅色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-red-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072989000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-mini-red-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343707000' },
+                        ],
+                        spec: [
+                            { size: '64GB', fit: 'NT$23,900' },
+                            { size: '128GB', fit: 'NT$25,500' },
+                            { size: '256GB', fit: 'NT$29,000' },
+                        ]
+                    },
+                    
+                    iPhone12pro: {
+                        productName: 'iPhone12 Pro',
+                        size: '6.1 吋顯示器1',
+                        baseImgUrl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-select-2021?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;.v=1617130318000',
+                        OutWard: [
+                            { color: '白色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-white-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072989000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-white-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343705000' },
+                            { color: '黑色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-black-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072988000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-black-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343702000' },
+                            { color: '藍色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-blue-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072988000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-blue-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343704000' },
+                            { color: '綠色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-green-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072990000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-green-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343704000' },
+                            { color: '紅色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-red-202010?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1601072989000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-red-select-2020?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1604343703000' },
+                        ],
+                        spec: [
+                            { size: '64GB', fit: 'NT$26,900' },
+                            { size: '128GB', fit: 'NT$28,500' },
+                            { size: '256GB', fit: 'NT$32,000' },
+                        ]
+                    },
 
-    },
-
-    IPad: {
-        iPadAir: {
-            productName: 'iPadAir',
-            baseImgUrl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-202009?wid=886&amp;hei=1070&amp;fmt=jpeg&amp;qlt=80&amp;.v=1599066777000',
-            OutWard: [
-                { color: '太空灰色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-spacegray-201903?wid=204&amp;amp;hei=204&amp;amp;fmt=png-alpha&amp;amp;qlt=80&amp;amp;.v=1552422652805', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-spacegray-202009?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1598650646000' },
-                { color: '銀色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-silver-201903?wid=204&amp;amp;hei=204&amp;amp;fmt=png-alpha&amp;amp;qlt=80&amp;amp;.v=1552422655664', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-silver-202009?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1598650645000' },
-                { color: '玫瑰金色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-gold-202009?wid=204&amp;amp;hei=204&amp;amp;fmt=jpeg&amp;amp;qlt=80&amp;amp;.v=1599240136000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-gold-202009?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1598650644000' },
-                { color: '綠色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-green-202009?wid=204&amp;amp;hei=204&amp;amp;fmt=jpeg&amp;amp;qlt=80&amp;amp;.v=1599240136000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-green-202009?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1598650644000' },
-                { color: '天藍色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-blue-202009?wid=204&amp;amp;hei=204&amp;amp;fmt=png-alpha&amp;amp;qlt=80&amp;amp;.v=1599240136000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-blue-202009?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1598650644000' }
-            ],
-            spec: [
-                { size: '64GB', connect: 'Wifi', fit: 'NT$18,900' },
-                { size: '64GB', connect: 'wifi+network', fit: 'NT$23,200' },
-                { size: '256GB', connect: 'wifi', fit: 'NT$23,900' },
-                { size: '256GB', connect: 'wifi+network', fit: 'NT$28,200' }
-            ],
-        },
-    },
-
-    Mac: {
-        MacBookAir: {
-            productName: 'MacBookAir',
-            baseImgUrl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-space-gray-select-201810?wid=452&amp;hei=420&amp;fmt=jpeg&amp;qlt=95&amp;.v=1603332211000',
-            OutWard: [
-                { color: '太空灰色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-space-gray-select-201810_SW_COLOR?wid=32&amp;hei=32&amp;fmt=jpeg&amp;qlt=95&amp;.v=1539303180315', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-space-gray-select-201810?wid=452&amp;hei=420&amp;fmt=jpeg&amp;qlt=95&amp;.v=1603332211000' },
-                { color: '金色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-gold-select-201810_SW_COLOR?wid=32&amp;hei=32&amp;fmt=jpeg&amp;qlt=95&amp;.v=1539370797855', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-gold-select-201810?wid=452&amp;hei=420&amp;fmt=jpeg&amp;qlt=95&amp;.v=1603332211000' },
-                { color: '銀色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-silver-select-201810_SW_COLOR?wid=32&amp;hei=32&amp;fmt=jpeg&amp;qlt=95&amp;.v=1539303180473', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-silver-select-201810?wid=452&amp;hei=420&amp;fmt=jpeg&amp;qlt=95&amp;.v=1603332212000' }
-            ],
-            spec: [
-                { size: '8G', SSD: '256G', fit: 'NT$30,900' },
-                { size: '8G', SSD: '512G', fit: 'NT$36,900' },
-                { size: '8G', SSD: '1TB', fit: 'NT$42,900' },
-                { size: '8G', SSD: '2TB', fit: 'NT$54,900' },
-                { size: '16G', SSD: '256G', fit: 'NT$36,900' },
-                { size: '16G', SSD: '512G', fit: 'NT$42,900' },
-                { size: '16G', SSD: '1TB', fit: 'NT$48,900' },
-                { size: '16G', SSD: '2TB', fit: 'NT$60,900' }
-            ]
-        },
-
-        MacBookPro: {
-            productName: 'MacBookPro',
-            baseImgUrl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-space-gray-select-201810?wid=452&amp;hei=420&amp;fmt=jpeg&amp;qlt=95&amp;.v=1603332211000',
-            OutWard: [
-                {
-                    color: '太空灰色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp13touch-space-select-202005_SW_COLOR?wid=64&amp;hei=64&amp;fmt=jpeg&amp;qlt=80&amp;.v=1587086857506 ',
-                    imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-spacegray-select-202011_GEO_TW?wid=1280&amp;hei=1190&amp;fmt=jpeg&amp;qlt=80&amp;.v=1613672892000'
                 },
-                {
-                    color: '銀色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-silver-select-202011_SW_COLOR?wid=64&amp;hei=64&amp;fmt=jpeg&amp;qlt=80&amp;.v=1603902883000',
-                    imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-silver-select-202011_GEO_TW?wid=1280&amp;hei=1190&amp;fmt=jpeg&amp;qlt=80&amp;.v=1613673937000'
+
+                IPad: {
+                    iPadAir: {
+                        productName: 'iPadAir',
+                        baseImgUrl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-202009?wid=886&amp;hei=1070&amp;fmt=jpeg&amp;qlt=80&amp;.v=1599066777000',
+                        OutWard: [
+                            { color: '太空灰色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-spacegray-201903?wid=204&amp;amp;hei=204&amp;amp;fmt=png-alpha&amp;amp;qlt=80&amp;amp;.v=1552422652805', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-spacegray-202009?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1598650646000' },
+                            { color: '銀色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-silver-201903?wid=204&amp;amp;hei=204&amp;amp;fmt=png-alpha&amp;amp;qlt=80&amp;amp;.v=1552422655664', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-silver-202009?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1598650645000' },
+                            { color: '玫瑰金色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-gold-202009?wid=204&amp;amp;hei=204&amp;amp;fmt=jpeg&amp;amp;qlt=80&amp;amp;.v=1599240136000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-gold-202009?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1598650644000' },
+                            { color: '綠色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-green-202009?wid=204&amp;amp;hei=204&amp;amp;fmt=jpeg&amp;amp;qlt=80&amp;amp;.v=1599240136000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-green-202009?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1598650644000' },
+                            { color: '天藍色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-blue-202009?wid=204&amp;amp;hei=204&amp;amp;fmt=png-alpha&amp;amp;qlt=80&amp;amp;.v=1599240136000', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-blue-202009?wid=940&amp;hei=1112&amp;fmt=png-alpha&amp;qlt=80&amp;.v=1598650644000' }
+                        ],
+                        spec: [
+                            { size: '64GB', connect: 'Wifi', fit: 'NT$18,900' },
+                            { size: '64GB', connect: 'wifi+network', fit: 'NT$23,200' },
+                            { size: '256GB', connect: 'wifi', fit: 'NT$23,900' },
+                            { size: '256GB', connect: 'wifi+network', fit: 'NT$28,200' }
+                        ],
+                    },
+                },
+
+                Mac: {
+                    MacBookAir: {
+                        productName: 'MacBookAir',
+                        baseImgUrl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-space-gray-select-201810?wid=452&amp;hei=420&amp;fmt=jpeg&amp;qlt=95&amp;.v=1603332211000',
+                        OutWard: [
+                            { color: '太空灰色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-space-gray-select-201810_SW_COLOR?wid=32&amp;hei=32&amp;fmt=jpeg&amp;qlt=95&amp;.v=1539303180315', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-space-gray-select-201810?wid=452&amp;hei=420&amp;fmt=jpeg&amp;qlt=95&amp;.v=1603332211000' },
+                            { color: '金色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-gold-select-201810_SW_COLOR?wid=32&amp;hei=32&amp;fmt=jpeg&amp;qlt=95&amp;.v=1539370797855', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-gold-select-201810?wid=452&amp;hei=420&amp;fmt=jpeg&amp;qlt=95&amp;.v=1603332211000' },
+                            { color: '銀色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-silver-select-201810_SW_COLOR?wid=32&amp;hei=32&amp;fmt=jpeg&amp;qlt=95&amp;.v=1539303180473', imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-silver-select-201810?wid=452&amp;hei=420&amp;fmt=jpeg&amp;qlt=95&amp;.v=1603332212000' }
+                        ],
+                        spec: [
+                            { size: '8G', SSD: '256G', fit: 'NT$30,900' },
+                            { size: '8G', SSD: '512G', fit: 'NT$36,900' },
+                            { size: '8G', SSD: '1TB', fit: 'NT$42,900' },
+                            { size: '8G', SSD: '2TB', fit: 'NT$54,900' },
+                            { size: '16G', SSD: '256G', fit: 'NT$36,900' },
+                            { size: '16G', SSD: '512G', fit: 'NT$42,900' },
+                            { size: '16G', SSD: '1TB', fit: 'NT$48,900' },
+                            { size: '16G', SSD: '2TB', fit: 'NT$60,900' }
+                        ]
+                    },
+
+                    MacBookPro: {
+                        productName: 'MacBookPro',
+                        baseImgUrl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-space-gray-select-201810?wid=452&amp;hei=420&amp;fmt=jpeg&amp;qlt=95&amp;.v=1603332211000',
+                        OutWard: [
+                            {
+                                color: '太空灰色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp13touch-space-select-202005_SW_COLOR?wid=64&amp;hei=64&amp;fmt=jpeg&amp;qlt=80&amp;.v=1587086857506 ',
+                                imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-spacegray-select-202011_GEO_TW?wid=1280&amp;hei=1190&amp;fmt=jpeg&amp;qlt=80&amp;.v=1613672892000'
+                            },
+                            {
+                                color: '銀色', colorValue: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-silver-select-202011_SW_COLOR?wid=64&amp;hei=64&amp;fmt=jpeg&amp;qlt=80&amp;.v=1603902883000',
+                                imagerurl: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-silver-select-202011_GEO_TW?wid=1280&amp;hei=1190&amp;fmt=jpeg&amp;qlt=80&amp;.v=1613673937000'
+                            }
+                        ],
+                        spec: [
+                            { size: '8G', SSD: '256G', fit: 'NT$39,900' },
+                            { size: '8G', SSD: '512G', fit: 'NT$45,900' },
+                            { size: '8G', SSD: '1TB', fit: 'NT$51,900' },
+                            { size: '8G', SSD: '2TB', fit: 'NT$63,900' },
+                            { size: '16G', SSD: '256G', fit: 'NT$45,900' },
+                            { size: '16G', SSD: '512G', fit: 'NT$51,900' },
+                            { size: '16G', SSD: '1TB', fit: 'NT$57,900' },
+                            { size: '16G', SSD: '2TB', fit: 'NT$69,900' }
+                        ]
+                    },
                 }
-            ],
-            spec: [
-                { size: '8G', SSD: '256G', fit: 'NT$39,900' },
-                { size: '8G', SSD: '512G', fit: 'NT$45,900' },
-                { size: '8G', SSD: '1TB', fit: 'NT$51,900' },
-                { size: '8G', SSD: '2TB', fit: 'NT$63,900' },
-                { size: '16G', SSD: '256G', fit: 'NT$45,900' },
-                { size: '16G', SSD: '512G', fit: 'NT$51,900' },
-                { size: '16G', SSD: '1TB', fit: 'NT$57,900' },
-                { size: '16G', SSD: '2TB', fit: 'NT$69,900' }
-            ]
-        },
-    }
-};
+            };
+            var Productjson = JSON.stringify(Product)
+            console.log(Productjson)
