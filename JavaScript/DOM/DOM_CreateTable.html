@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            table-layout: fixed;
+            width: 100%;
+            border-collapse: collapse;
+            border: 3px solid purple;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: lightblue;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: aqua;
+        }
+
+        thead th:nth-child(1) {
+            width: 10%;
+            cursor: pointer;
+        }
+
+        thead th:nth-child(2) {
+            width: 10%;
+            cursor: pointer;
+        }
+
+        thead th:nth-child(3) {
+            width: 10%;
+            cursor: pointer;
+        }
+
+        thead th:nth-child(4) {
+            width: 60%;
+        }
+
+        thead th:nth-child(5) {
+            width: 10%;
+        }
+
+        img {
+            /* width: auto; */
+            height: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <div id='msg'></div>
+
+    <script>
+        //Create a table dynamically
+        let table = document.createElement('table');
+        let thead = document.createElement('thead');
+        let tbody = document.createElement('tbody')
+        table.append(thead);
+        table.append(tbody)
+
+        
+        //body
+        document.body.appendChild(table)
+        document.body.insertBefore(table,document.querySelector('h1')) //逗號後方代表插入什麼之前
+
+        //create element & innerText
+        
+        function CreatElement(element,text) {
+            let el = document.createElement(element);
+            el.innerText = text ;
+
+            return el;
+        }
+        
+        let tr1 = document.createElement('tr');
+        tr1.append(CreatElement('th','產品編號'));
+        tr1.append(CreatElement('th','售價'));
+        tr1.append(CreatElement('th','儲存容量'));
+        tr1.append(CreatElement('th','說明'));
+        thead.appendChild(tr1);
+
+       function $ce(element,text) {
+           let el = document.createElement(element)
+           if(text !== "" && text !== null){
+               el.innerText = text ;
+           }
+           return el;
+       }
+
+       let tr2 = $ce('tr',null);
+       tr2.append($ce('td','MW762'));
+       tr2.append($ce('td','10900'));
+       tr2.append($ce('td','32GB'));
+       tr2.append($ce('td','10.2 吋 iPad Wi - Fi 機型 32GB - 金色'));
+       tbody.append(tr2);
+    </script>
+</body>
+
+</html>

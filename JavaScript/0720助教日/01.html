@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        let list = [
+            { item: '啤酒', type: '喝的' },
+            { item: '汽水', type: '喝的' },
+            { item: '火鍋', type: '吃的' },
+            { item: '燒烤', type: '吃的' },
+            { item: '冰淇淋', type: '吃的' },
+        ];
+
+
+        //找第一個"吃的"東西
+        let r1 = list.find(x => x.type == '吃的');
+        console.log(r1)
+
+        let r1_1 = list.filter(x => x.type == '吃的')[0];
+        console.log(r1_1)
+
+        //找所有"吃的"東西
+        let r2 = list.filter(x => x.type == '吃的')
+        console.log(r2)
+
+        //找"冰淇淋"在第幾個位置
+        let ice = list.find(x => x.item == '冰淇淋');
+        let r3 = list.indexOf(ice)
+        console.log(`冰淇淋在第${r3 + 1}個位置`)
+
+        let r3_1 = list.findIndex(x => x.item == '冰淇淋');
+        console.log(`冰淇淋在第${r3_1 + 1}個位置`)
+
+        //用list產生新的集合(map)
+        //['啤酒','汽水','火鍋'....]
+        let r4 = list.map(x => x.item);
+        console.log(r4)
+
+        //用List產生新的集合
+        let r5 = list.map((x, index) => {
+            return {
+                Id: list.length - index,
+                Name: x.item
+            }
+        })
+        console.log(r5);
+
+        //排序
+        let nums_1 = [9, 6, 4, 2, 1];
+        let r6 = nums_1.sort();
+        console.log(r6)
+
+        //排序v2
+        let nums_2 = [10000, 10, 100, 1, 101]
+        let r7 = nums_2.sort((a, b) => a - b);
+        console.log(r7);
+
+        //自訂排序
+        //['豬','龍','鼠','狗','羊','雞','馬']
+        var animal = ['豬' , '龍' , '鼠' , '狗' , '羊', '雞' , '馬'];
+        animal.sort((a,b)=>{
+            let AllAnimal = ['鼠', '牛', '虎', '兔', '龍', '蛇', '馬', '羊', '猴', '雞', '狗', '豬'];
+            return AllAnimal.indexOf(a) - AllAnimal.indexOf(b);
+        })
+        console.log(animal);
+
+        //自訂義GroupBy
+        Array.prototype.groupBy = function(prop) {
+            return this.reduce(function (groups,item) {
+                const val = item[prop];
+                groups[val] = groups[val] || [];
+                groups[val].push(item);
+                return groups;
+            },{});
+        }
+        let r9 = list.groupBy('type');
+        console.log(r9)
+
+        //reduce 多維攤成一維
+        let arr = [
+            [1,2],
+            [3,4]
+        ]
+        let r10 = arr.reduce((a,b)=>a.concat(b))
+        console.log(r10)
+
+        //reduce 加總
+        let arr2 = [1,2,3,4,5]
+        let r11 = arr2.reduce((a,b)=>a+b);
+        console.log(r11)
+
+        //includes 包含
+        let arr3 = [1,2,3];
+        let r12 = arr3.includes(4);
+        let r13 = arr3.includes(3);
+        console.log(r12)
+        console.log(r13)
+
+        //join 
+        let arr4 = ['Build','School','Dann'];
+        let r14 = arr4.join('-');
+        console.log(r14)
+    </script>
+</body>
+
+</html>

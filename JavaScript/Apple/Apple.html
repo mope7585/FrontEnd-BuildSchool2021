@@ -97,7 +97,7 @@
         let specList = document.querySelector("#selection");
         function ListIpads(){
             let br = document.createElement("br"); 
-            filterArray = ipadArray.filter(x => x.storage == _storage && x.network == _network);
+            filterArray = ipadArray.filter(x => x.storage == _storage && x.network == _network && x.color == _color);
             specList.innerHTML="";
             filterArray.forEach((item, index) => {
                 let ipad = document.createTextNode(`${index + 1}. ${JSON.stringify(item)}`);

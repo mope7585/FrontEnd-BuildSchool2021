@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let empsObject = {
+                employees: [{
+                    firstname: "Kevin",
+                    height: 180,
+                    email: "kevin@gmail.com",
+                    city: {
+                        通訊地址: "台北",
+                        戶籍地址: "桃園"
+                    },
+                    phone: {
+                        市話: "02-29881055",
+                        行動電話: "0933-852177"
+                    },
+                    cars: [
+                        "BMW",
+                        "Nissan GT-R",
+                        "Audi"
+                    ]
+                },
+                {
+                    firstname: "Mary",
+                    height: 168,
+                    email: "mary@gmail.com",
+                    city: {
+                        通訊地址: "台北",
+                        戶籍地址: "桃園"
+                    },
+                    phone: {
+                        市話: "02-29881055",
+                        行動電話: "0933-852177"
+                    },
+                    cars: [
+                        "BMW",
+                        "Nissan GT-R",
+                        "Audi"
+                    ]
+                }]
+            };
+
+        console.log(empsObject.employees[0].phone.市話)
+        //編碼
+        let jsontext = JSON.stringify(empsObject)
+        console.log(typeof jsontext)
+        console.log(jsontext)
+            console.log("*_".repeat(30))
+        let jsonparse = JSON.parse(jsontext);
+        console.log(jsonparse)
+        console.log(typeof jsonparse)
+        console.log(Array.isArray(jsonparse.employees))
+    </script>
+</body>
+
+</html>

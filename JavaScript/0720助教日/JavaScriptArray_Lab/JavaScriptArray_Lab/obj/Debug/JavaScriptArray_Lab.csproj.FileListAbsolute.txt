@@ -1,0 +1,7 @@
+C:\Users\User\OneDrive\文件\BuildSchool作業上傳\FrontEnd-BuildSchool2021\JavaScript\0720助教日\JavaScriptArray_Lab\JavaScriptArray_Lab\bin\Debug\JavaScriptArray_Lab.exe.config
+C:\Users\User\OneDrive\文件\BuildSchool作業上傳\FrontEnd-BuildSchool2021\JavaScript\0720助教日\JavaScriptArray_Lab\JavaScriptArray_Lab\bin\Debug\JavaScriptArray_Lab.exe
+C:\Users\User\OneDrive\文件\BuildSchool作業上傳\FrontEnd-BuildSchool2021\JavaScript\0720助教日\JavaScriptArray_Lab\JavaScriptArray_Lab\bin\Debug\JavaScriptArray_Lab.pdb
+C:\Users\User\OneDrive\文件\BuildSchool作業上傳\FrontEnd-BuildSchool2021\JavaScript\0720助教日\JavaScriptArray_Lab\JavaScriptArray_Lab\obj\Debug\JavaScriptArray_Lab.csprojAssemblyReference.cache
+C:\Users\User\OneDrive\文件\BuildSchool作業上傳\FrontEnd-BuildSchool2021\JavaScript\0720助教日\JavaScriptArray_Lab\JavaScriptArray_Lab\obj\Debug\JavaScriptArray_Lab.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\文件\BuildSchool作業上傳\FrontEnd-BuildSchool2021\JavaScript\0720助教日\JavaScriptArray_Lab\JavaScriptArray_Lab\obj\Debug\JavaScriptArray_Lab.exe
+C:\Users\User\OneDrive\文件\BuildSchool作業上傳\FrontEnd-BuildSchool2021\JavaScript\0720助教日\JavaScriptArray_Lab\JavaScriptArray_Lab\obj\Debug\JavaScriptArray_Lab.pdb

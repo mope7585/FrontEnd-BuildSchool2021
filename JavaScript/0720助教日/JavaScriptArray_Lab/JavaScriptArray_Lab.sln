@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaScriptArray_Lab", "JavaScriptArray_Lab\JavaScriptArray_Lab.csproj", "{4D6D3288-09D5-414F-A4C8-AD2DEA41BAEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D6D3288-09D5-414F-A4C8-AD2DEA41BAEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D6D3288-09D5-414F-A4C8-AD2DEA41BAEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D6D3288-09D5-414F-A4C8-AD2DEA41BAEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D6D3288-09D5-414F-A4C8-AD2DEA41BAEE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D71FCDE3-D799-48A6-A403-DAA73F38989A}
+	EndGlobalSection
+EndGlobal

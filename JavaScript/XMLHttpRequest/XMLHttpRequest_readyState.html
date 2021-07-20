@@ -42,6 +42,7 @@
         //Ex1
         function requestJSON1() {
             xhr.onload = function () {
+                if(xhr.readyState == 4 && xhr.status == 200){
                 let iPadArray = JSON.parse(this.responseText);
                 iPadArray.forEach((item, index) => {
                     let newArray = [];
@@ -57,8 +58,12 @@
                     console.log(newArray.join(':'))
                 })
             }
+            else{
+                msg.textContent ='發⽣錯誤，HTTP response代碼：' + xhr.status;     
+            }
             xhr.open('GET', url);
             xhr.send();
+        }
         }
 
         //Ex2
