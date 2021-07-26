@@ -10,17 +10,22 @@
 <body>
     <h1>Fetch使用Request物件</h1>
     <input type="text" id="url" size="120">
-    <button>Fecth抓取資料</button>
+    <button id="get">Fecth抓取資料</button>
+    <button id="post">Fecth提交資料</button>
     <div id="msg"></div>
 
+    <script>let btnGet,btnPost;</script>
     <script type="module">
         import { $g } from "../modules/helpers.js"
+        btnGet = $g("#get");
+        btnPost = $g("#post");
 
         let url = "https://raw.githubusercontent.com/apprunner/FileStorage/master/iPad_DataFixed.json";
         // let url ="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg";
         window.onload = function () {
             $g("input").value = url;
-            $g("button").addEventListener("click", fetchResponseProperties);
+            btnGet.addEventListener("click", fetchRequestGet);
+            btnPost.addEventListener("click", fetchRequestPost);
         }
 
         //Ex1

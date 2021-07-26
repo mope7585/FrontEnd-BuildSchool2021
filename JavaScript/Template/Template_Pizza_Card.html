@@ -136,6 +136,7 @@
         let row = $g('.row');
         window.onload = function () {
             let card = $g('#cardPizza');
+            console.log(card)
             pizzaArray.forEach((item, index) => {
                 let cloneContent = card.content.cloneNode(true);
                 cloneContent.querySelector('h5').innerText = item.name;
@@ -151,25 +152,10 @@
                     modal.querySelector('#pizzaImage').src = pizzaArray[index].imageurl;
                     modal.querySelector('#description').innerText = pizzaArray[index].name;
                 });
-
                 // 4.將複製的Card加入DOM中
                 row.append(cloneContent);
-
             });
-
-
-
-
         };
-
-
-
-
-
-
-
-
-
     </script>
 </body>
 

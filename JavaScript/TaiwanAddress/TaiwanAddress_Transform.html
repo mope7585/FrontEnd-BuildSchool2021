@@ -84,11 +84,20 @@
         $g('#fetch').addEventListener('click', fetchJSON);
         function fetchJSON() {
             fetch(jsonUrl)
-                .then(response => response.text())
-            // .then(response => )
-
-        }
-
+            .then(response => response.text())
+            .then(result =>{
+                zipcodeArray = result;
+                zipcodeArray.forEach((city, index) => {
+                    city.AreaList.forEach((district, index) => {
+                        let cityno = idx.toString().padStart(3, '0') + ',' + city.CityName;
+                        let address = cityno + district.AreaName + ',' + district.ZipCode;
+                        let li = $c('li', address);
+                        $g('#result').appendChild(li);
+                        idx++;
+                    })
+                })
+            }
+            )}   
 
 
         $g('#transform').addEventListener('click', TransformData);
@@ -105,12 +114,8 @@
                     let _cityObject = { city: _city , districts: _districts };
                     zipcodeNewArray.push( _cityObject);
                 })
-                $g('msg').innerText = JSON.stringify(zipcodeNewArray);
+                $g('#msg').innerText = JSON.stringify(zipcodeNewArray);
             })
-        
-            
-            
-         
         }
     </script>
 </body>

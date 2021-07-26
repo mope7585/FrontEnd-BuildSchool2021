@@ -9,6 +9,7 @@ function $g(selector) {
     return nodelist.length == 1 ? nodelist[0] : nodelist;
 };
 
+
 function genUl(liArray) {
     let ul = document.createElement("ul");
 
@@ -35,4 +36,12 @@ function $c(element, text) {
     return el;
 }
 
-export { $g, genUl, getRandom, $c };
+function $ce(element, text){
+    let el = document.createElement(element);
+    if(text !== "" && text !== null){
+        el.innerText = text ;
+    }
+    return el;
+}
+
+export { $g, genUl, getRandom, $c , $ce };

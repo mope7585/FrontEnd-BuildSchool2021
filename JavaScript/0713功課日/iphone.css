@@ -1,0 +1,39 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.opacity-0 {
+    opacity: 0;
+}
+nav ul li{
+    margin-right: 30px;
+}
+nav{
+    width: 100%;
+    background-color: rgba(0,0,0,0.9);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+body{
+    padding-top: 80px;
+}
+.radio-row-1,
+.radio-row-2 {
+    border-radius: 5px;
+}
+
+.fit span {
+    padding-right: 10px;
+}
+.form-check input:checked ~ label{
+    border: 4px solid#0061FF;
+}
+.label-text{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.card-body > p{
+text-align: center;
+}

@@ -95,7 +95,7 @@
         // console.log(JSON.stringify(cityArray));
 
         /* for (const prop in employee) {
-          console.log(`employee.${prop}:${employee[prop]}`);
+        console.log(`employee.${prop}:${employee[prop]}`);
         } */
 
         const citySelect = document.getElementById('city');
@@ -184,7 +184,7 @@
                         districtSelect.add(opt2, null);
                         districtSelect.add(opt3, null); */
         }
-
+        //事件名稱用change/input皆可
         districtSelect.addEventListener('change', function () {
             let cityValue = citySelect.selectedOptions[0].value;
             let cityText = citySelect.selectedOptions[0].text;

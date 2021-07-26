@@ -34,12 +34,20 @@
             justify-content: center;
         }
 
-        .img img {
+        img{
             width: 100%;
         }
 
-        .radio-row-1:visited {
-            background-color: #000;
+        .radio-row-1,
+        .radio-row-2 {
+            border-radius: 5px;
+        }
+
+        .fit span {
+            padding-right: 10px;
+        }
+        .form-check input:checked ~ label{
+            border: 4px solid#0061FF;
         }
     </style>
 </head>
@@ -57,7 +65,7 @@
     </div>
 
 
-    <div class="container">
+    <div class="container-fulid">
         <div class="row">
             <div class="col-12 col-md-6">
                 <img id="img" src="">
@@ -77,39 +85,42 @@
                     </div>
 
                     <div class="radio-row pb-4 border-3 border-bottom">
-                        <div
-                            class="radio-row-1 d-flex justify-content-between align-items-center border border-dark mt-3">
-                            <div class="form-check">
+                        <div class="radio-row-1 d-flex justify-content-between align-items-center mt-3">
+                            <div class="form-check w-100">
                                 <input class="form-check-input opacity-0" type="radio" name="abc"
                                     id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    <span>iPhone 12</span>
-                                    <p>5.4 吋顯示器1</p>
+                                <label class="form-check-label d-flex justify-content-between" for="flexRadioDefault1">
+                                    <div class="label-text">
+                                        <span>iPhone 12</span>
+                                        <p>5.4 吋顯示器1</p>
+                                    </div>
+                                    <div class="fit">
+                                        <span>NT$23,900 起</span>
+                                    </div>
                                 </label>
-                            </div>
-                            <div class="fit">
-                                <span>NT$23,900 起</span>
                             </div>
                         </div>
 
-                        <div
-                            class="radio-row-2 d-flex justify-content-between align-items-center border border-dark mt-3">
-                            <div class="form-check">
+                        <div class="radio-row-2 d-flex justify-content-between align-items-center mt-3">
+                            <div class="form-check w-100">
                                 <input class="form-check-input opacity-0" type="radio" name="abc" id="flexRadioDefault2"
                                     checked>
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    <span>iPhone 12 pro</span>
-                                    <p>6.1 吋顯示器1</p>
+                                <label class="form-check-label d-flex justify-content-between" for="flexRadioDefault2">
+                                    <div class="label-text">
+                                        <span>iPhone 12 pro</span>
+                                        <p>6.1 吋顯示器1</p>
+                                    </div>
+                                    <div class="fit">
+                                        <span>NT$26,900 起</span>
+                                    </div>
                                 </label>
-                            </div>
-                            <div class="fit">
-                                <span>NT$26,900 起</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row py-4 text-center border-3 border-bottom">
+                    <div class="row py-4 text-center border-3 border-bottom" id="color">
                         <b class="text-start">選擇外觀。</b>
+
                         <div class="col-6">
                             <div class="form-check flex-column  d-flex border p-5 m-2 ">
                                 <input class="form-check-input opacity-0" type="radio" name="flexRadioDefault"
@@ -121,6 +132,7 @@
                                 <label for="flexRadioDefault1 my-3">白色</label>
                             </div>
                         </div>
+
                         <div class="col-6">
                             <div class="form-check flex-column  d-flex border p-5 m-2 ">
                                 <input class="form-check-input opacity-0" type="radio" name="flexRadioDefault"
@@ -235,97 +247,143 @@
             integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
             crossorigin="anonymous"></script>
         <script>
-            let Product;
-            const url = 'https://mope7585.github.io/FrontEnd-BuildSchool2021/JavaScript/0713%E5%8A%9F%E8%AA%B2%E6%97%A5/Apple.js'
+            const url = 'https://mope7585.github.io/FrontEnd-BuildSchool2021/JavaScript/0713%E5%8A%9F%E8%AA%B2%E6%97%A5/Apple.json'
             window.onload = () => {
                 fetch(url)
-                .then(response=>response.text())
-                .then(result =>{
-                    console.log(result)
+                    .then(response => response.json())
+                    .then(result => {
+                        //set window onload img area
+                        let img = document.getElementById('img');
+                        window.onload = img.setAttribute('src', result.Iphone.iPhone12.baseImgUrl);
+                        let option1 = document.getElementById('option1');
+                        window.onload = Color();
+                        function Color() {
+                            //colorArray
+                            let colorArray = result.Iphone.iPhone12.OutWard;
+                            //準備colorBody
+                            let colorBody = document.getElementById('color'); 
+                            colorBody.innerText='';   
+                            colorArray.forEach(item => {
+                                let colorPicture = item.imagerurl;
+                                
+                                //準備col-6
+                                    let colorDiv = document.createElement('div');
+                                    colorDiv.classList.add('col-6');
+                                    colorBody.append(colorDiv);
+                                    //準備form-check
+                                    let formCheck = document.createElement('div');
+                                    formCheck.classList.add('form-check', 'flex-column', 'd-flex', 'border', 'p-5', 'm-2')
+                                    colorDiv.append(formCheck);
+                                    //準備input
+                                    let input = document.createElement('input');
+                                    input.classList.add('form-check-input', 'opacity-0')
+                                    input.setAttribute('type', 'radio');
+                                    input.setAttribute('name', 'flexRadioDefault');
+                                    formCheck.append(input)
+                                    //準備img
+                                    let Picture = document.createElement('div');
+                                    Picture.classList.add('img');
+                                    formCheck.append(Picture);
+                                    let Colorimg = document.createElement('img');
+                                    Picture.append(Colorimg);
+                                    Colorimg.setAttribute('src', item.colorValue);
+                                    Colorimg.classList.add('form-selector', 'm-auto', 'form-check-label')
+                                    //準備label
+                                    let label = document.createElement('label');
+                                    label.innerText = item.color;
+                                    formCheck.append(label);
+                                    //更換手機圖片
+                                    colorDiv.addEventListener('click',()=>{
+                                    img.setAttribute('src',colorPicture);
+                                })
+                                })
+                                console.log(colorBody)
+                            }
+                        
+                        //nav 
+                        //iphone
+                        option1.addEventListener('click', function () {
+                            Color();
+                            img.setAttribute('src', result.Iphone.iPhone12.OutWard[0].imagerurl);
+                            //Total Price
+                            let TotalPrice = document.querySelector('.total-price h1');
 
-                })
+                            //GB
+                            let IphoneGB = document.querySelectorAll('.GBbox > .col-6')
+                            let IphoneGBspan = document.querySelectorAll('.GBbox .col-6 .form-check > span')
+                            console.log(IphoneGBspan[0]);
+
+                            //Iphone
+                            //size 5.4
+                            let IphoneSpan1 = document.querySelector('.radio-row-1 .form-check span')
+                            IphoneSpan1.innerText = 'iPhone 12';
+                            let IphoneP1 = document.querySelector('.radio-row-1 .form-check-label p')
+                            IphoneP1.innerText = '5.4 吋顯示器1';
+                            let fitSpan = document.querySelectorAll('.fit span');
+                            fitSpan[0].innerText = 'NT$23,900 起';
+
+                            
+                            let IphoneSize54 = document.querySelector(".radio-row-1")
+                            IphoneSize54.addEventListener('click', () => {
+                                img.setAttribute('src', result.Iphone.iPhone12.baseImgUrl);
+                                TotalPrice.innerText = "";
+                                IphoneGB[0].addEventListener('click', () => {
+                                    TotalPrice.innerText = result.Iphone.iPhone12.spec[0].fit;
+                                })
+                                IphoneGB[1].addEventListener('click', () => {
+                                    TotalPrice.innerText = result.Iphone.iPhone12.spec[1].fit;
+                                })
+                                IphoneGB[2].addEventListener('click', () => {
+                                    TotalPrice.innerText = result.Iphone.iPhone12.spec[2].fit;
+                                })
+                                IphoneGBspan[0].innerText = result.Iphone.iPhone12.spec[0].fit;
+                                IphoneGBspan[1].innerText = result.Iphone.iPhone12.spec[1].fit;
+                                IphoneGBspan[2].innerText = result.Iphone.iPhone12.spec[2].fit;
+                            })
+
+
+                            //size 6.1
+                            let IphoneSpan2 = document.querySelector('.radio-row-2 .form-check span')
+                            IphoneSpan2.innerText = 'iPhone 12 pro';
+                            let IphoneP2 = document.querySelector('.radio-row-2 .form-check-label p')
+                            IphoneP2.innerText = '6.1 吋顯示器1';
+                            fitSpan[1].innerText = 'NT$26,900 起';
+                            let IphoneSize61 = document.querySelector(".radio-row-2")
+                            IphoneSize61.addEventListener('click', () => {
+                                img.setAttribute('src', result.Iphone.iPhone12pro.baseImgUrl);
+                                TotalPrice.innerText = "";
+                                IphoneGB[0].addEventListener('click', () => {
+                                    TotalPrice.innerText = result.Iphone.iPhone12pro.spec[0].fit;
+                                })
+                                IphoneGB[1].addEventListener('click', () => {
+                                    TotalPrice.innerText = result.Iphone.iPhone12pro.spec[1].fit;
+                                })
+                                IphoneGB[2].addEventListener('click', () => {
+                                    TotalPrice.innerText = result.Iphone.iPhone12pro.spec[2].fit;
+                                })
+                                IphoneGBspan[0].innerText = result.Iphone.iPhone12pro.spec[0].fit;
+                                IphoneGBspan[1].innerText = result.Iphone.iPhone12pro.spec[1].fit;
+                                IphoneGBspan[2].innerText = result.Iphone.iPhone12pro.spec[2].fit;
+                            })
+                        });
+                        //ipad
+                        let opition2 = document.getElementById('option2');
+                        opition2.addEventListener('click', function () {
+                            img.setAttribute('src', result.IPad.iPadAir.OutWard[0].imagerurl);
+                        });
+                        //Mac
+                        let opition3 = document.getElementById('option3');
+                        opition3.addEventListener('click', function () {
+                            img.setAttribute('src', result.Mac.MacBookPro.OutWard[0].imagerurl);
+                        });
+                        img.classList.add('w-100');
+
+
+
+                    })
             }
 
-            
-            //set window onload img area
-            let img = document.getElementById('img');
-            window.onload = img.setAttribute('src', Product.Iphone.iPhone12.baseImgUrl);
-            let option1 = document.getElementById('option1');
-            //nav 
-            //iphone
-            option1.addEventListener('click', function () {
-                img.setAttribute('src', Product.Iphone.iPhone12.OutWard[0].imagerurl);
-                //Total Price
-                let TotalPrice = document.querySelector('.total-price h1');
 
-                //GB
-                let IphoneGB = document.querySelectorAll('.GBbox > .col-6')
-                let IphoneGBspan = document.querySelectorAll('.GBbox .col-6 .form-check > span')
-                console.log(IphoneGBspan[0]);
-
-                //Iphone
-                //size 5.4
-                let IphoneSpan1 = document.querySelector('.radio-row-1 .form-check span')
-                IphoneSpan1.innerText = 'iPhone 12';
-                let IphoneP1 = document.querySelector('.radio-row-1 .form-check-label p')
-                IphoneP1.innerText = '5.4 吋顯示器1';
-                let fitSpan = document.querySelectorAll('.fit span');
-                fitSpan[0].innerText = 'NT$23,900 起';
-
-                let IphoneSize54 = document.querySelector(".radio-row-1")
-                IphoneSize54.addEventListener('click', () => {
-                    img.setAttribute('src', Product.Iphone.iPhone12.baseImgUrl);
-                    TotalPrice.innerText = "";
-                    IphoneGB[0].addEventListener('click', () => {
-                        TotalPrice.innerText = Product.Iphone.iPhone12.spec[0].fit;
-                    })
-                    IphoneGB[1].addEventListener('click', () => {
-                        TotalPrice.innerText = Product.Iphone.iPhone12.spec[1].fit;
-                    })
-                    IphoneGB[2].addEventListener('click', () => {
-                        TotalPrice.innerText = Product.Iphone.iPhone12.spec[2].fit;
-                    })
-                    IphoneGBspan[0].innerText = Product.Iphone.iPhone12.spec[0].fit;
-                    IphoneGBspan[1].innerText = Product.Iphone.iPhone12.spec[1].fit;
-                    IphoneGBspan[2].innerText = Product.Iphone.iPhone12.spec[2].fit;
-                })
-
-
-                //size 6.1
-                let IphoneSpan2 = document.querySelector('.radio-row-2 .form-check span')
-                IphoneSpan2.innerText = 'iPhone 12 pro';
-                let IphoneP2 = document.querySelector('.radio-row-2 .form-check-label p')
-                IphoneP2.innerText = '6.1 吋顯示器1';
-                fitSpan[1].innerText = 'NT$26,900 起';
-                let IphoneSize61 = document.querySelector(".radio-row-2")
-                IphoneSize61.addEventListener('click', () => {
-                    img.setAttribute('src', Product.Iphone.iPhone12pro.baseImgUrl);
-                    TotalPrice.innerText = "";
-                    IphoneGB[0].addEventListener('click', () => {
-                        TotalPrice.innerText = Product.Iphone.iPhone12pro.spec[0].fit;
-                    })
-                    IphoneGB[1].addEventListener('click', () => {
-                        TotalPrice.innerText = Product.Iphone.iPhone12pro.spec[1].fit;
-                    })
-                    IphoneGB[2].addEventListener('click', () => {
-                        TotalPrice.innerText = Product.Iphone.iPhone12pro.spec[2].fit;
-                    })
-                    IphoneGBspan[0].innerText = Product.Iphone.iPhone12pro.spec[0].fit;
-                    IphoneGBspan[1].innerText = Product.Iphone.iPhone12pro.spec[1].fit;
-                    IphoneGBspan[2].innerText = Product.Iphone.iPhone12pro.spec[2].fit;
-                })
-            });
-            //ipad
-            let opition2 = document.getElementById('option2');
-            opition2.addEventListener('click', function () {
-                img.setAttribute('src', Product.IPad.iPadAir.OutWard[0].imagerurl);
-            });
-            //Mac
-            let opition3 = document.getElementById('option3');
-            opition3.addEventListener('click', function () {
-                img.setAttribute('src', Product.Mac.MacBookPro.OutWard[0].imagerurl);
-            });
-            img.classList.add('w-100');
 
 
 
