@@ -66,6 +66,7 @@ window.onload = () => {
 
             //iPad function
             function iPad() {
+                clean();
                 let iPadObject = appleItem[1].iPadAir;
                 let OutWardArray = iPadObject.OutWard;
                 let MemoryArray = iPadObject.spec;
@@ -75,10 +76,24 @@ window.onload = () => {
             }
             //Mac functuion
             function Mac() {
+                clean();
                 let MacObject = appleItem[2]
-                console.log(MacObject)
-                Color();
-                Memory();
+                img.setAttribute('src', MacObject.MacBookAir.baseImgUrl);
+                let MacKeys = Object.keys(MacObject);
+                let modelFit = [];
+                let modelSize = [];
+                let modelImg = [];
+                let OutWardArray = [];
+                let specArray = [];
+                MacKeys.forEach(item=>{
+                    modelFit.push(MacObject[item].spec[0].fit);
+                    modelImg.push(MacObject[item].baseImgUrl);
+                    OutWardArray.push(MacObject[item].OutWard);
+                    specArray.push(MacObject[item].spec)
+                })
+                Model(modelFit, modelSize, MacKeys, modelImg, OutWardArray,specArray);
+                Color(OutWardArray[1])
+                Memory(specArray[0])
             }
             // ------------------------------------------------------------------------------------------------------------------
             //選擇機型(Model) function
@@ -105,9 +120,11 @@ window.onload = () => {
                     labelText.classList.add('label-text');
                     label.append(labelText);
                     //建立 label span 並append至label-text
-                    let labelSpan = document.createElement('span');
-                    labelSpan.innerText = modelSize[index];
-                    labelText.append(labelSpan);
+                    if(modelSize[index] !== undefined){
+                        let labelSpan = document.createElement('span');
+                        labelSpan.innerText = modelSize[index];
+                        labelText.append(labelSpan);
+                    }
                     //建立 label p 並append至label-text
                     let labelP = document.createElement('p');
                     labelP.innerText = iPhone;
@@ -121,6 +138,7 @@ window.onload = () => {
                     labelFit.append(fitSpan);
                     fitSpan.innerText = `${modelFit[index]} 起`;
                     formCheck.addEventListener('click', () => {
+
                         img.setAttribute('src', modelImg[index]);
                         if (input.id == 'iPhone12' && input.checked == true) {
                             rowColor.innerHTML = "";
@@ -151,7 +169,7 @@ window.onload = () => {
                     rowColor.appendChild(formCheck);
                     //建立input 並append至formCheck 
                     let input = document.createElement('input');
-                    input.classList.add('form-check-input', 'opacity-0');
+                    input.classList.add('form-check-input', 'd-none');
                     input.setAttribute('type', 'radio');
                     input.setAttribute('name', 'Color');
                     input.setAttribute('id', item.color);
@@ -189,11 +207,11 @@ window.onload = () => {
                 specArray.forEach((item, index) => {
                     //建立formCheck 並apend至rowMemory
                     let formCheck = document.createElement('div');
-                    formCheck.classList.add('form-check', 'col-6');
+                    formCheck.classList.add('form-check', 'col-6','justify-content-center', 'my-3');
                     rowMemory.append(formCheck);
                     //建立input 並append至formCheck 
                     let input = document.createElement('input');
-                    input.classList.add('form-check-input', 'opacity-0');
+                    input.classList.add('form-check-input', 'd-none');
                     input.setAttribute('type', 'radio');
                     input.setAttribute('name', 'Memory');
                     input.setAttribute('id',index);
@@ -208,11 +226,17 @@ window.onload = () => {
                     span.classList.add('my-2')
                     span.innerText = item.size;
                     label.append(span);
-
-                    let span2 = document.createElement('span');
-                    span2.innerText = item.connect;
-                    label.append(span2)
-                    //建立P 並append至label
+                    if(item.connect !== undefined){
+                        let span2 = document.createElement('span');
+                        span2.innerText = item.connect;
+                        label.append(span2)
+                    }
+                    if(item.SSD !== undefined){
+                        let span2 = document.createElement('span');
+                        span2.innerText = item.SSD;
+                        label.append(span2)
+                    }
+                    // 建立P 並append至label
                     let p = document.createElement('p');
                     p.innerHTML = item.fit;
                     label.append(p)
@@ -232,7 +256,6 @@ window.onload = () => {
                 navPrice.innerText = "";
             }
             iPhone();
-            
         })
     // ------------------------------------------------------------------------------------------------------------------
     //通用區
@@ -249,6 +272,4 @@ window.onload = () => {
     let totalPrice = document.getElementById('total-price');
     //選取nav totalPrice
     let navPrice = document.getElementById('navPrice');
-    //選取main-Model
-    let mainModel = document.querySelector('.main-Model');
 }
