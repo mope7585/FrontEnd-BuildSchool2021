@@ -273,3 +273,4 @@ window.onload = () => {
     //選取nav totalPrice
     let navPrice = document.getElementById('navPrice');
 }
+
