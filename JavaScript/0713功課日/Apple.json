@@ -34,15 +34,18 @@
             "spec": [
                 {
                     "size": "64GB",
-                    "fit": "NT$23,900"
+                    "fit": "NT$23,900",
+                    "connect": ""
                 },
                 {
                     "size": "128GB",
-                    "fit": "NT$25,500"
+                    "fit": "NT$25,500",
+                    "connect": ""
                 },
                 {
                     "size": "256GB",
-                    "fit": "NT$29,000"
+                    "fit": "NT$29,000",
+                    "connect": ""
                 }
             ]
         },
@@ -80,16 +83,19 @@
             "spec": [
                 {
                     "size": "64GB",
-                    "fit": "NT$26,900"
+                    "fit": "NT$26,900",
+                    "connect": ""
                 },
                 {
                     "size": "128GB",
-                    "fit": "NT$28,500"
+                    "fit": "NT$28,500",
+                    "connect": ""
                 },
                 
                 {
                     "size": "256GB",
-                    "fit": "NT$32,000"
+                    "fit": "NT$32,000",
+                    "connect": ""
                 }
             ]
         }

@@ -37,6 +37,7 @@
                         </li>
                     </ul>
                     <div class="search d-flex">
+                        <h1 id="navPrice"></h1>
                         <a class="nav-link" href="#"><i class="fas fa-search fa-lg text-white-50"></i></a>
                         <a class="nav-link" href="#"><i class="fas fa-shopping-bag fa-lg text-white-50"></i></a>
                     </div>
@@ -55,8 +56,8 @@
             <!-- main Components area(右) -->
             <div class="col-12 col-md-6 main-Components">
                 <!-- main Modal area -->
-                <div class="main-Model contaier">
-                    <div class="row modelRow">
+                <div class="main-Model contaier my-5">
+                    <div class="row rowModel">
                         <!-- <div class="form-check w-100">
                             <input class="form-check-input opacity-0" type="radio" name="model" id="model-1">
                             <label class="form-check-label d-flex justify-content-between" for="model-1">
@@ -85,9 +86,9 @@
                     </div>
                 </div>
                 <!--main Color area -->
-                <div class="components-Color container">
+                <div class="components-Color container my-5">
                     <div class="row rowColor">
-                        <div class="form-check col-6">
+                        <!-- <div class="form-check col-6">
                             <input class="form-check-input opacity-0" type="radio" id="color1" name="Color">
                             <label for="color1">
                                 <div class="card ">
@@ -109,33 +110,34 @@
                                     </div>
                                 </div>
                             </label>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
                 <!-- main Memory area -->
-                <div class="components-Memory container">
-                    <div class="row">
-                        <div class="form-check col-6">
+                <div class="components-Memory container my-5">
+                    <div class="row rowMemory">
+                        <!-- <div class="form-check col-6">
                             <input class="form-check-input opacity-0" type="radio" id="memory-1" name="memory">
-                            <label class="form-check-label" for="memory-1">
+                            <label class="form-check-label d-flex justify-content-center" for="memory-1">
                                 Gb
                             </label>
                         </div>
                         <div class="form-check col-6">
                             <input class="form-check-input opacity-0" type="radio" id="memory-2" name="memory">
-                            <label class="form-check-label" for="memory-2">
+                            <label class="form-check-label d-flex justify-content-center" for="memory-2">
                                 Gb
                             </label>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
+                
                 <!-- main Total -->
                 <div class="components-Total bg-gray container">
                     <div class="row">
                         <div class="total-price d-flex flex-column border-3 border-bottom">
-                            <h1></h1>
+                            <h1 id="total-price"></h1>
                             <span>含加值型營業稅：約 NT$1,357*。</span>
                             <a href="#" class="text-decoration-none">最低月付 NT$2,375，12 個月，0% 利率</a>
                         </div>
@@ -147,12 +149,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
         integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
         crossorigin="anonymous"></script>
@@ -160,6 +156,7 @@
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
     <script src="iphone.js"></script>
+    
 
 </body>
 

@@ -18,6 +18,7 @@ nav{
 }
 body{
     padding-top: 80px;
+    
 }
 .radio-row-1,
 .radio-row-2 {
@@ -36,4 +37,18 @@ body{
 }
 .card-body > p{
 text-align: center;
+}
+.rowColor>.form-check > label{
+    padding: 20px 84px;
+}
+.total-price h1{
+    font-size: 50px;
+}
+nav h1{
+    color: white;
+    margin: auto;
+}
+.main-Picture img{
+    position: sticky;
+    top: 0;
 }

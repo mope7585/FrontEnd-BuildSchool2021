@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <style>
+        /* .row > div{
+            border: 1px solid #000;
+            height: 100px;
+            height: 100px;
+        } */
+        [box-id] {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            transition: .3s;
+        }
+
+        [box-id].active {
+            border: solid 5px red;
+            box-shadow: 0 0 20px red;
+            transition: 0s;
+        }
+
+        i {
+            font-size: 48px;
+        }
+
+        #msg {
+            font-size: 36px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-1" box-id="1"></div>
+            <div class="col-1" box-id="2"></div>
+            <div class="col-1" box-id="3"></div>
+            <div class="col-1" box-id="4"></div>
+            <div class="col-1" box-id="5"></div>
+            <div class="col-1" box-id="6"></div>
+            <div class="col-1" box-id="7"></div>
+            <div class="col-1" box-id="8"></div>
+            <div class="col-1" box-id="9"></div>
+            <div class="col-1" box-id="10"></div>
+            <div class="col-1" box-id="11"></div>
+            <div class="col-1" box-id="12"></div>
+        </div>
+        <div class="row">
+            <div class="col-1" box-id="13"></div>
+            <div class="col-10 border-0"></div>
+            <div class="col-1" box-id="14"></div>
+        </div>
+        <div class="row">
+            <div class="col-1" box-id="15"></div>
+            <div class="col-10 m-auto" id = "msg"></div>
+            <div class="col-1" box-id="16"></div>
+        </div>
+        <div class="row">
+            <div class="col-1" box-id="17"></div>
+            <div class="col-10 border-0"></div>
+            <div class="col-1" box-id="18"></div>
+        </div>
+        <div class="row">
+            <div class="col-1" box-id="19"></div>
+            <div class="col-10 border-0"></div>
+            <div class="col-1" box-id="20"></div>
+        </div>
+        <div class="row">
+            <div class="col-1" box-id="21"></div>
+            <div class="col-1" box-id="22"></div>
+            <div class="col-1" box-id="23"></div>
+            <div class="col-1" box-id="24"></div>
+            <div class="col-1" box-id="25"></div>
+            <div class="col-1" box-id="26"></div>
+            <div class="col-1" box-id="27"></div>
+            <div class="col-1" box-id="28"></div>
+            <div class="col-1" box-id="29"></div>
+            <div class="col-1" box-id="30"></div>
+            <div class="col-1" box-id="31"></div>
+            <div class="col-1" box-id="32"></div>
+        </div>
+        <button type="button">Start</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script>
+        let brickData = [
+            {
+                id: '1',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '2',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '3',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '4',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '5',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '6',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '7',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '8',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '9',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '10',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '11',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '12',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '13',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '14',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '15',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '16',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '17',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '18',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '19',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '20',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '21',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '22',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '23',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '24',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '25',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '26',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '27',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '28',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '29',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '30',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '31',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+            {
+                id: '32',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return this.icon.split('-')[1];
+                }
+            },
+        ];
+        let step = 0;//剩餘的步數
+        let allSteps = 0; //全部的步數
+        let current = 0; //目前走到哪一格
+        let speed; //速率(越大代表走越慢)
+
+        //渲染畫面
+        let bricks = document.querySelectorAll('[box-id]');
+        bricks = Array.from(bricks).sort((a , b) => {
+            return a.getAttributeNode('box-id').value - b.getAttributeNode('box-id').value;
+        });
+        console.log(bricks)
+        bricks.forEach((x, index) => {
+            let id = index + 1;
+            let data = brickData.find(x => x.id == id);
+            let icon = document.createElement('i');
+            icon.setAttribute('class', data.icon);
+            icon.style.color = data.color;
+            x.appendChild(icon);
+        })
+
+        //Start Button
+        document.querySelector('button').addEventListener('click',()=>{
+            speed = 50;
+            let random = Math.floor(Math.random() * brickData.length) + 1;
+            steps = random + (3*brickData.length);
+            allSteps = steps;
+            trunAround();
+        })
+        function trunAround(){
+            bricks[current].classList.remove('active');
+            current++;
+
+            if(current >= bricks.length) {current = 0;}
+
+            bricks[current].classList.add('active');
+            steps--;
+
+            //一般版本
+            // if(steps > 0){
+            //     //還沒跑完
+            //     setTimeout(trunAround,speed);
+            // }else{
+            //     //跑完了
+            //     let msgBox = document.querySelector('#msg')
+            //     let val = brickData[current].target();
+            //     msgBox.innerText = `接下來30分鐘-> ${val}`
+            // }
+
+            //變數版本
+            if(steps > 0){
+                setTimeout(trunAround,speed);
+                if(steps < Math.floor((allSteps/3))) speed += 7;
+            }
+            else{
+                let msgBox = document.querySelector('#msg');
+                let val = brickData[current].target();
+                msgBox.innerText = `接下來30分鐘-> ${val}`
+            }
+        }
+    </script>
+</body>
+
+</html>
