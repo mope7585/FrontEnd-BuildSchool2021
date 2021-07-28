@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        const pokemonUrl = "https://raw.githubusercontent.com/apprunner/pokemon.json/master/pokedex.json";
+        const lolUrl="https://ddragon.leagueoflegends.com/cdn/10.22.1/data/zh_TW/champion.json"
+        let xhr1 = new XMLHttpRequest();
+        xhr1.onload = function () {
+            console.log(this); //this為XMLHttpRequest物件
+            alert("Pokemon JSON");
+        }
+        xhr1.open('GET', pokemonUrl);
+        xhr1.send();
+        
+        let xhr2 = new XMLHttpRequest();
+        xhr2.onload = function () {
+            let text = document.createTextNode(this.responseText);
+            document.body.appendChild(text);
+            alert("LOL JSON");
+        }
+        xhr2.open('GET', lolUrl);
+        xhr2.send();
+    </script>
+</body>
+
+</html>

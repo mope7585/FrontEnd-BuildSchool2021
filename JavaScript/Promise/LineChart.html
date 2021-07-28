@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+     <!-- Include all compiled plugins (below), or include individual files as needed -->
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron alert-success">
+            <h2>以Line Chart折線圖繪製月均溫趨勢變化</h2>
+        </div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <script>
+        var ctx = document.getElementById("myChart");
+        var chart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
+                datasets: [{
+                    label: "臺北",
+                    data: [16, 15, 18, 21, 25, 27],
+                    fill: false,
+                    backgroundColor: 'rgba(255,165,0,0.3)',
+                    borderColor: 'rgb(255,165,0)',
+                    pointStyle: "circle",
+                    pointBackgroundColor: 'rgb(0,255,0)',
+                    pointRadius: 5,
+                    pointHoverRadius: 10,                    
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    fontSize: 26,
+                    text: '台北1 - 6月氣溫平均值'
+                },
+                tooltips: {
+                    mode: 'point',
+                    intersect: true,
+                },
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        fontColor: 'black',
+                    }
+                }
+            }
+        });
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>XHR with Promise</h1>
+    <button>XHR</button>
+
+    <script>
+        const pokemonUrl = "https://raw.githubusercontent.com/apprunner/pokemon.json/master/pokedex.json";
+        const lolUrl="https://ddragon.leagueoflegends.com/cdn/10.22.1/data/zh_TW/champion.json"
+
+        let btnXhr;
+        window.onload = () =>{
+            btnXhr = document.querySelector('button');
+            btnXhr.addEventListener('click',XhrCall.bind(event,pokemonUrl))
+            
+        }
+        
+        function XhrCall(url){
+            let promise1 = new Promise((resolve,reject)=>{
+                const xhr = new XMLHttpRequest();
+                xhr.onload = () =>resolve(xhr.responseText);
+                xhr.onerror = () =>reject(xhr.status);
+                xhr.open('GET',url);
+                xhr.send();
+            })
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>

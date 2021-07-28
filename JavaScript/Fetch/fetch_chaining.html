@@ -22,8 +22,9 @@
             .then(()=> fetch(lolUrl))
             .then(r =>r.text())
             .then(result=>{
-                let text = document.createTextNode(result);
-                document.body.appendChild(text);
+                let br = document.createTextNode("br");
+                document.body.append(br.cloneNode(true), br.cloneNode(true),"*".repeat(200), br.cloneNode(true),br.cloneNode(true));
+                document.body.appendChild(br);
                 alert('LOL Json')
             });
         }
