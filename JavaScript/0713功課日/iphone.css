@@ -59,8 +59,12 @@ nav h1 {
 .label-text span,
 .label-text p {
     margin: 10px 0;
+    white-space: nowrap;
 }
 .fit{
     display: flex;
     align-items: center;
+}
+.whitespace{
+    white-space: nowrap;
 }

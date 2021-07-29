@@ -54,31 +54,47 @@
             border: 2px solid #0071e3;
             transition: 0.2s;
         }
-        .color-imgArea ~ p{
+
+        .color-imgArea~p {
             margin-top: 4px;
         }
-        .form-check label span{
+
+        .form-check label span {
             font-size: 30px;
         }
-        .form-check label p{
+
+        .form-check label p {
             position: relative;
             font-weight: 900;
         }
-        .form-check label small{
+
+        .form-check label small {
             position: absolute;
             top: 6px;
             right: -5px;
         }
-        .network-box .form-check .form-check-label span{
+
+        .network-box .form-check .form-check-label span {
             font-size: 25px;
-            white-space:nowrap;
+            white-space: nowrap;
         }
-        legend  {
+
+        legend {
             margin-bottom: 0;
         }
-        body{
+
+        body {
             width: 80%;
             margin: auto;
+        }
+
+        .price-Total-Text {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .price-Total-Text span {
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -211,7 +227,7 @@
                 </div>
                 <div class="price-Total">
                     <div class="row">
-                        <div class="proce-Total-Text col-12">
+                        <div class="price-Total-Text col-12">
                             <span>NT$23,090</span>
                         </div>
                     </div>
@@ -221,7 +237,45 @@
         </div>
     </div>
 
-    
+    <script>
+
+        const url = 'https://raw.githubusercontent.com/apprunner/FileStorage/master/iPadAir2020_Data.json';
+        fetch(url)
+            .then(response => response.json())
+            .then(iPadObj => {
+                iPadObj.forEach(item => {
+                    let img = document.querySelector('.Picture-area img')
+                    let labelArray = document.querySelectorAll('input ~ label');
+                    labelArray[0].addEventListener('click', () => {
+                        img.setAttribute('src', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-spacegray-202009?wid=940&hei=1112&fmt=png-alpha&.v=1598650646000')
+                    })
+                    labelArray[1].addEventListener('click', () => {
+                        img.setAttribute('src', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-silver-202009?wid=940&hei=1112&fmt=png-alpha&.v=1598650645000')
+                    })
+                    labelArray[2].addEventListener('click', () => {
+                        img.setAttribute('src', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-gold-202009?wid=940&hei=1112&fmt=png-alpha&.v=1598650644000')
+                    })
+                    labelArray[3].addEventListener('click', () => {
+                        img.setAttribute('src', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-green-202009?wid=940&hei=1112&fmt=png-alpha&.v=1598650644000')
+                    })
+                    labelArray[4].addEventListener('click', () => {
+                        img.setAttribute('src', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-blue-202009?wid=940&hei=1112&fmt=png-alpha&.v=1598650644000')
+                    })
+
+                    
+
+
+
+
+                })
+            })
+
+
+
+
+
+    </script>
+
 
 
 

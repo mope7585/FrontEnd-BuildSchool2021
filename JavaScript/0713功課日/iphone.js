@@ -193,7 +193,7 @@ window.onload = () => {
                     Card.append(cardBody);
                     //建立 cardBody-P 並append至 cardBody
                     let CardP = document.createElement('p');
-                    CardP.classList.add('card-text')
+                    CardP.classList.add('card-text','whitespace')
                     CardP.innerText = item.color;
                     cardBody.append(CardP);
                     formCheck.addEventListener('click', () => {

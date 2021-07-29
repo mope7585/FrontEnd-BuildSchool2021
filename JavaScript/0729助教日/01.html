@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        let url = 'https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%8D%80.json';
+        //xhr
+        // xhr= new XMLHttpRequest();
+        // xhr.open('GET',url);
+        // xhr.onload = function(){
+        //     console.log(JSON.parse(this.responseText));
+        // }
+        // xhr.send();
+
+        //fetch
+        // let req = new Request(url,{method : "GET"});
+        // fetch(req)
+        //     .then(res => res.json())
+        //     .then(responseObj =>{
+        //     console.log(responseObj)
+        // })
+
+        //---Ajax---
+        // $.ajax({
+        //     url:url,
+        //     method:'GET',
+        //     //dataType:'text',
+        //     dataType:'json',
+        //     success:function(res){
+        //         console.log(typeof(res))
+        //         console.log(res);
+        //     },
+        //     error:function(err){
+        //         console.log(err)
+        //         alert('錯誤')
+        //     }
+        // })
+
+        //---axios---
+            axios.get(url)
+            .then(res=>{
+                console.log(res)
+            })
+            .catch(err=>{
+                    console.log(err)
+                    alert('錯誤')
+            })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 600px;
+            height: 600px;
+            background-color: rgba(255,0,0,0.3);
+            position: relative;
+        }
+        .box .block{
+            width: 200px;
+            height: 200px;
+            background-color: greenyellow;
+            position: absolute;
+        }
+        .btn-group{
+            margin: 10px;
+        }
+        .btn-group button{
+            padding: 20px;
+            margin: 5px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div style="top:0 ;left:0" class="block" id="b1"></div>
+    </div>
+    <div class="btn-group">
+        <button id="y1-btn">上移動</button>
+        <button id="y2-btn">下移動</button>
+        <button id="x1-btn">左移動</button>
+        <button id="x2-btn">右移動</button>
+    </div>
+
+    <script>
+        document.querySelector('#x2-btn').addEventListener('click',()=>moveX('b1',200).then(res =>{
+            console.log(res);
+            //移動完成要做什麼事...
+        }));
+        document.querySelector('#x1-btn').addEventListener('click',()=>moveX('b1',-200).then(res =>{
+            console.log(res);
+            //移動完成要做什麼事...
+        }));
+
+        document.querySelector('#y1-btn').addEventListener('click',()=>moveY('b1',-200).then(res =>{
+            console.log(res)
+            //移動完成要做什麼事...
+        }));
+
+        document.querySelector('#y2-btn').addEventListener('click',()=>moveY('b1',200).then(res =>{
+            console.log(res)
+            //移動完成要做什麼事...
+        }));
+
+        function moveX(id,x){
+            let box = document.getElementById(id);
+            let target = parseInt(box.style.left, 10 )+ x ;
+            let time = 100;
+            //v = s / t 速率 = 距離 / 時間
+            let perMove = x / time;
+
+            return new Promise((resolve,reject) =>{
+                for(let i = 1; i <= time; i++){
+                    setTimeout(()=>{
+                        box.style.left = parseInt(box.style.left) + perMove + 'px';
+                        if(parseInt(box.style.left, 10) == target){
+                            resolve('X移動完成');
+                        }
+                    },10 * i)
+                }
+            })
+        }
+        function moveY(id,x){
+            let box = document.getElementById(id);
+            let target = parseInt(box.style.top,10) + x;
+            let time = 100;
+            //v = s / t 速率 = 距離 / 時間
+            let perMove = x / time;
+
+            return new Promise((resolve,reject) =>{
+                for(let i = 1; i <= time; i++){
+                    setTimeout(()=>{
+                        box.style.top = parseInt(box.style.top) + perMove + 'px';
+                        if(parseInt(box.style.top, 10) == target){
+                            resolve('Y移動完成');
+                        }
+                    },10 * i)
+                }
+            })
+        }
+    </script>
+</body>
+</html>
