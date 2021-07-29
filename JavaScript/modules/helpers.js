@@ -45,7 +45,7 @@ function $ce(element, text){
 }
 
 function $drawChart(ctx,xArray,yArray){
-    chart = new Chart(ctx, {
+    let chart = new Chart(ctx, {
         type: "line",
         data: {
             labels: xArray,
