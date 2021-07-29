@@ -23,35 +23,205 @@
             position: sticky;
             top: 0;
         }
+
+        .color-imgArea img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .form-check {
+            margin: 10px 0;
+            padding-left: 0;
+        }
+
+        .color-imgArea {
+            margin-top: 1rem;
+        }
+
+        .form-check label {
+            border: 2px solid rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            min-height: 6.05882rem;
+            padding: 14px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .form-check input:checked~label {
+            border: 2px solid #0071e3;
+            transition: 0.2s;
+        }
+        .color-imgArea ~ p{
+            margin-top: 4px;
+        }
+        .form-check label span{
+            font-size: 30px;
+        }
+        .form-check label p{
+            position: relative;
+            font-weight: 900;
+        }
+        .form-check label small{
+            position: absolute;
+            top: 6px;
+            right: -5px;
+        }
+        .network-box .form-check .form-check-label span{
+            font-size: 25px;
+            white-space:nowrap;
+        }
+        legend  {
+            margin-bottom: 0;
+        }
+        body{
+            width: 80%;
+            margin: auto;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6 Picture-area">
+            <div class="col-12 col-md-6 Picture-area pe-5">
                 <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-202009?wid=886&amp;hei=1070&amp;fmt=jpeg&amp;qlt=80&amp;.v=1599066777000"
                     alt="" class="w-100">
             </div>
-            <div class="col-12 col-md-6 Main-area">
+            <div class="col-12 col-md-6 Main-area ps-5">
                 <h1>購買 iPad Air</h1>
                 <div class="product-iPad">
-                    <div class="color"></div>
-                    <div class="storage"></div>
-                    <div class="network"></div>
+                    <fieldset class="color">
+                        <legend>
+                            <h2><span class="fs-6 fw-bold">外觀</span></h2>
+                        </legend>
+                        <div class="row border-bottom pb-4">
+                            <div class="color-box col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input d-none" type="radio" name="color" id="color1">
+                                    <label class="form-check-label" for="color1">
+                                        <div class="color-imgArea">
+                                            <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-spacegray-201903?wid=204&amp;hei=204&amp;fmt=png-alpha&amp;.v=1552422652805"
+                                                alt="">
+                                        </div>
+                                        <p>太空灰色</p>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="color-box col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input d-none" type="radio" name="color" id="color2">
+                                    <label class="form-check-label" for="color2">
+                                        <div class="color-imgArea">
+                                            <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-silver-201903?wid=204&amp;hei=204&amp;fmt=png-alpha&amp;.v=1552422655664"
+                                                alt="">
+                                        </div>
+                                        <p>銀色</p>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="color-box col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input d-none" type="radio" name="color" id="color3">
+                                    <label class="form-check-label" for="color3">
+                                        <div class="color-imgArea">
+                                            <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-gold-202009?wid=204&amp;hei=204&amp;fmt=jpeg&amp;qlt=80&amp;.v=1599240136000"
+                                                alt="">
+                                        </div>
+                                        <p>玫瑰金色</p>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="color-box col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input d-none" type="radio" name="color" id="color4">
+                                    <label class="form-check-label" for="color4">
+                                        <div class="color-imgArea">
+                                            <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-green-202009?wid=204&amp;hei=204&amp;fmt=jpeg&amp;qlt=80&amp;.v=1599240136000"
+                                                alt="">
+                                        </div>
+                                        <p>綠色</p>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="color-box col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input d-none" type="radio" name="color" id="color5">
+                                    <label class="form-check-label" for="color5">
+                                        <div class="color-imgArea">
+                                            <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-blue-202009?wid=204&amp;hei=204&amp;fmt=png-alpha&amp;.v=1599240136000"
+                                                alt="">
+                                        </div>
+                                        <p>天藍色</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="storage">
+                        <h2><span class="fs-6 fw-bold">儲存裝置</span></h2>
+                        <div class="row border-bottom pb-4">
+                            <div class="storage-box col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input d-none" type="radio" name="storage" id="storage1">
+                                    <label class="form-check-label" for="storage1">
+                                        <p><span>64</span>GB<small>1</small></p>
+                                        <p>NT$18,900 起</p>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="storage-box col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input d-none" type="radio" name="storage" id="storage2">
+                                    <label class="form-check-label" for="storage2">
+                                        <p><span>256</span>GB<small>1</small></p>
+                                        <p>NT$18,900 起</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="network">
+                        <h2><span class="fs-6 fw-bold">連線能力</span></h2>
+                        <div class="row border-bottom pb-4">
+                            <div class="network-box col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input d-none" type="radio" name="network" id="network1">
+                                    <label class="form-check-label" for="network1">
+                                        <p><span>Wi-Fi</span></p>
+                                        <p>NT$18,900 起</p>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="network-box col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input d-none" type="radio" name="network" id="network2">
+                                    <label class="form-check-label" for="network2">
+                                        <p><span>Wi-Fi + 行動網路</span></p>
+                                        <p>NT$18,900 起</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
                 </div>
-                <div class="price-Total"></div>
+                <div class="price-Total">
+                    <div class="row">
+                        <div class="proce-Total-Text col-12">
+                            <span>NT$23,090</span>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
 
-<!-- <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                    <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                    <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                  </ul> -->
+    
 
 
 

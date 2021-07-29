@@ -44,4 +44,41 @@ function $ce(element, text){
     return el;
 }
 
-export { $g, genUl, getRandom, $c , $ce };
+function $drawChart(ctx,xArray,yArray){
+    chart = new Chart(ctx, {
+        type: "line",
+        data: {
+            labels: xArray,
+            datasets: [{
+                label: "臺機電",
+                data: yArray,
+                fill: false,
+                backgroundColor: 'rgba(255,165,0,0.3)',
+                borderColor: 'rgb(255,165,0)',
+                pointStyle: "circle",
+                pointBackgroundColor: 'rgb(0,255,0)',
+                pointRadius: 5,
+                pointHoverRadius: 10,
+            }]
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                fontSize: 26,
+                text: '2020台積電股價'
+            },
+            tooltips: {
+                mode: 'point',
+                intersect: true,
+            },
+            legend: {
+                position: 'bottom',
+                labels: {
+                    fontColor: 'black',
+                }
+            }
+        }
+    });
+}
+export { $g, genUl, getRandom, $c , $ce, $drawChart };
