@@ -1,0 +1,70 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+.opacity-0 {
+    opacity: 0;
+}
+nav ul li {
+    margin-right: 30px;
+}
+nav {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+body {
+    padding-top: 80px;
+}
+.radio-row-1,
+.radio-row-2 {
+    border-radius: 5px;
+}
+
+.fit span {
+    padding-right: 10px;
+}
+.form-check label {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+.form-check input:checked ~ label {
+    border: 3px solid#0061FF;
+    transition: all 0.1s linear;
+}
+.label-text {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.card-body > p {
+    text-align: center;
+}
+.rowColor > .form-check > label {
+    padding: 20px 84px;
+}
+.total-price h1 {
+    font-size: 50px;
+}
+nav h1 {
+    color: white;
+    margin: auto;
+}
+.main-Picture img {
+    position: sticky;
+    top: 0;
+}
+.label-text span,
+.label-text p {
+    margin: 10px 0;
+    white-space: nowrap;
+}
+.fit{
+    display: flex;
+    align-items: center;
+}
+.whitespace{
+    white-space: nowrap;
+}
