@@ -182,8 +182,9 @@
                         <div class="row border-bottom pb-4">
                             <div class="storage-box col-6">
                                 <div class="form-check">
-                                    <input class="form-check-input d-none" type="radio" name="storage" id="storage1" disabled>
-                                    <label class="form-check-label" for="storage1" >
+                                    <input class="form-check-input d-none" type="radio" name="storage" id="storage1"
+                                        disabled>
+                                    <label class="form-check-label" for="storage1">
                                         <p><span>64</span>GB<small>1</small></p>
                                         <p>NT$18,900 起</p>
                                     </label>
@@ -191,7 +192,8 @@
                             </div>
                             <div class="storage-box col-6">
                                 <div class="form-check">
-                                    <input class="form-check-input d-none" type="radio" name="storage" id="storage2" disabled>
+                                    <input class="form-check-input d-none" type="radio" name="storage" id="storage2"
+                                        disabled>
                                     <label class="form-check-label" for="storage2">
                                         <p><span>256</span>GB<small>1</small></p>
                                         <p>NT$23,900 起</p>
@@ -206,7 +208,8 @@
                         <div class="row border-bottom pb-4">
                             <div class="network-box col-6">
                                 <div class="form-check">
-                                    <input class="form-check-input d-none" type="radio" name="network" id="network1" disabled>
+                                    <input class="form-check-input d-none" type="radio" name="network" id="network1"
+                                        disabled>
                                     <label class="form-check-label" for="network1">
                                         <p><span>Wi-Fi</span></p>
                                         <p class="network-price">NT$18,900起</p>
@@ -215,7 +218,8 @@
                             </div>
                             <div class="network-box col-6">
                                 <div class="form-check">
-                                    <input class="form-check-input d-none" type="radio" name="network" id="network2" disabled>
+                                    <input class="form-check-input d-none" type="radio" name="network" id="network2"
+                                        disabled>
                                     <label class="form-check-label" for="network2">
                                         <p><span>Wi-Fi + 行動網路</span></p>
                                         <p class="network-price">NT$23,200起</p>
@@ -259,7 +263,7 @@
                 function storage() {
                     inputArray[6].disabled = false;
                     inputArray[5].disabled = false;
-                    
+
                     storageBtn1.addEventListener('click', () => {
                         storageResult = ColorResult.filter(item => item.storage == "64GB")
                         networkPrice[0].innerText = `NT$${storageResult[0].price}`;
@@ -273,55 +277,44 @@
                         network()
                     })
                 }
-                function network(){
+                function network() {
                     inputArray[7].disabled = false;
                     inputArray[8].disabled = false;
                     newworkBtn1.addEventListener('click', () => {
-                            networkResult = storageResult.filter(item => item.network == "Wi-Fi")
-                            totalPrice.innerText = `NT ${networkResult[0].price}`;
-                        })
+                        networkResult = storageResult.filter(item => item.network == "Wi-Fi")
+                        totalPrice.innerText = `NT ${networkResult[0].price}`;
+                    })
                     newworkBtn2.addEventListener('click', () => {
-                            networkResult = storageResult.filter(item => item.network == "Cellular")
-                            totalPrice.innerText = `NT ${networkResult[0].price}`;
-                        })
+                        networkResult = storageResult.filter(item => item.network == "Cellular")
+                        totalPrice.innerText = `NT ${networkResult[0].price}`;
+                    })
                 }
 
                 labelArray[0].addEventListener('click', () => {
-                    if(inputArray[0].checked == true){
-                        img.setAttribute('src', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-spacegray-202009?wid=940&hei=1112&fmt=png-alpha&.v=1598650646000')
+                    img.setAttribute('src', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-spacegray-202009?wid=940&hei=1112&fmt=png-alpha&.v=1598650646000')
                     ColorResult = iPadObj.filter(item => item.color == "太空灰色");
                     storage();
-                    }
-
-                    
                 })
+
                 labelArray[1].addEventListener('click', () => {
-                    if(inputArray[1].checked== true){
-                        img.setAttribute('src', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-silver-202009?wid=940&hei=1112&fmt=png-alpha&.v=1598650645000')
-                        ColorResult = iPadObj.filter(item => item.color == "銀色")
-                        storage();
-                    }
+                    img.setAttribute('src', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-silver-202009?wid=940&hei=1112&fmt=png-alpha&.v=1598650645000')
+                    ColorResult = iPadObj.filter(item => item.color == "銀色")
+                    storage();
                 })
                 labelArray[2].addEventListener('click', () => {
-                    if(inputArray[2].checked== true){
                     img.setAttribute('src', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-gold-202009?wid=940&hei=1112&fmt=png-alpha&.v=1598650644000')
                     ColorResult = iPadObj.filter(item => item.color == "玫瑰金色")
                     storage();
-                    }
                 })
                 labelArray[3].addEventListener('click', () => {
-                    if(inputArray[3].checked== true){
                     img.setAttribute('src', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-green-202009?wid=940&hei=1112&fmt=png-alpha&.v=1598650644000')
                     ColorResult = iPadObj.filter(item => item.color == "綠色")
                     storage();
-                    }
                 })
                 labelArray[4].addEventListener('click', () => {
-                    if(inputArray[4].checked== true){
                     img.setAttribute('src', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-blue-202009?wid=940&hei=1112&fmt=png-alpha&.v=1598650644000')
                     ColorResult = iPadObj.filter(item => item.color == "天藍色")
                     storage();
-                    }
                 })
             })
     </script>
