@@ -209,7 +209,7 @@
                                     <input class="form-check-input d-none" type="radio" name="network" id="network1" disabled>
                                     <label class="form-check-label" for="network1">
                                         <p><span>Wi-Fi</span></p>
-                                        <p>NT$18,900 </p>
+                                        <p class="network-price">NT$18,900起</p>
                                     </label>
                                 </div>
                             </div>
@@ -218,7 +218,7 @@
                                     <input class="form-check-input d-none" type="radio" name="network" id="network2" disabled>
                                     <label class="form-check-label" for="network2">
                                         <p><span>Wi-Fi + 行動網路</span></p>
-                                        <p>NT$23,200 </p>
+                                        <p class="network-price">NT$23,200起</p>
                                     </label>
                                 </div>
                             </div>
@@ -252,17 +252,24 @@
                 let storageBtn2 = labelArray[6];
                 let newworkBtn1 = labelArray[7];
                 let newworkBtn2 = labelArray[8];
-                let totalPrice = document.querySelector('.price-Total-Text span')
-                let inputArray = document.querySelectorAll('input')
+                let totalPrice = document.querySelector('.price-Total-Text span');
+                let inputArray = document.querySelectorAll('input');
+                let networkPrice = document.querySelectorAll('.network-price');
+
                 function storage() {
                     inputArray[6].disabled = false;
                     inputArray[5].disabled = false;
+                    
                     storageBtn1.addEventListener('click', () => {
                         storageResult = ColorResult.filter(item => item.storage == "64GB")
+                        networkPrice[0].innerText = `NT$${storageResult[0].price}`;
+                        networkPrice[1].innerText = `NT$${storageResult[1].price}`;
                         network()
                     })
                     storageBtn2.addEventListener('click', () => {
                         storageResult = ColorResult.filter(item => item.storage == "256GB")
+                        networkPrice[0].innerText = `NT$${storageResult[0].price}`;
+                        networkPrice[1].innerText = `NT$${storageResult[1].price}`;
                         network()
                     })
                 }
