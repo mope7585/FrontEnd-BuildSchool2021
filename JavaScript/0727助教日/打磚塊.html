@@ -21,36 +21,109 @@
 </head>
 
 <body>
-        <canvas id="myCanvas" width="480" height="320"></canvas>
+    <canvas id="myCanvas" width="480" height="320"></canvas>
     <script>
+        //抓取畫布
         var canvas = document.getElementById("myCanvas");
+        //抓取畫布2d屬性 存取至ctx變數
         var ctx = canvas.getContext("2d");
-        var x = canvas.width / 2;
-        var y = canvas.height - 30;
-        var dx = 2;
-        var dy = -2;
+        //球半徑
         var ballRadius = 10;
+        //球初始x座標
+        var x = canvas.width / 2;
+        //球初始y座標
+        var y = canvas.height - 30;
+        //因每10毫秒 改變x距離+2(往右)
+        var dx = 2;
+         //因每10毫秒 改變y距離-2(往上)
+        var dy = -2;
+        //槳厚度
+        var paddleHeight = 10;
+        var paddleWidth = 75;
+        //槳寬度
+        var paddleX = (canvas.width - paddleWidth) / 2;
+        //鍵盤左
+        var rightPressed = false;
+        //鍵盤右
+        var leftPressed = false;
+
+        //增加監聽事件('事件',function,bool)
+        //鍵盤按下
+        document.addEventListener("keydown", keyDownHandler, false);
+        //鍵盤升起
+        document.addEventListener("keyup", keyUpHandler, false);
+
+        //當按下時 將rightPressed, leftPressed回傳為True
+        function keyDownHandler(e) {
+            if (e.key == "Right" || e.key == "ArrowRight" || e.key == "d") {
+                return rightPressed = true;
+            }
+            else if (e.key == "Left" || e.key == "ArrowLeft" || e.key == "a") {
+                return leftPressed = true;
+            }
+        }
+        //當升起時 將rightPressed, leftPressed回傳為fasle
+        function keyUpHandler(e) {
+            if (e.key == "Right" || e.key == "ArrowRight" || e.key == "d") {
+                return rightPressed = false;
+            }
+            else if (e.key == "Left" || e.key == "ArrowLeft" || e.key == "a") {
+                return leftPressed = false;
+            }
+        }
+
+        //繪製圓形
         function drawBall() {
+            //canvas 2d 語法
+            //開始
             ctx.beginPath();
+            //arc(x座標,y座標,半徑,開始角度,結束角度,繪圖方向(fasle順時鐘,true逆時鐘))
             ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
             ctx.fillStyle = "#0095DD";
             ctx.fill();
+            //結束
             ctx.closePath();
+        }
+        //繪製矩形
+        function drawPaddle() {
+            ctx.beginPath();
+            //rect(x座標,y座標,寬度,高度)
+            ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+            ctx.fillStyle = "#0095DD";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        //開始繪製
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawBall();
+            drawPaddle();
+
             if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
                 dx = -dx;
             }
             if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
                 dy = -dy;
             }
-        }
 
-        function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawBall();
+            if (rightPressed) {
+                paddleX += 7;
+                if (paddleX + paddleWidth > canvas.width) {
+                    paddleX = canvas.width - paddleWidth;
+                }
+            }
+            else if (leftPressed) {
+                paddleX -= 7;
+                if (paddleX < 0) {
+                    paddleX = 0;
+                }
+            }
+
             x += dx;
             y += dy;
         }
-        //因為 setInterval 無限循環的特性， draw() 函數將會每 10 毫秒被呼叫一次除非我們將它停止。
+
         setInterval(draw, 10);
     </script>
 </body>
