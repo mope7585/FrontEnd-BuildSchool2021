@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/Splidejs/splide/master/dist/css/themes/splide-default.min.css"><link rel="stylesheet" href="https://raw.githubusercontent.com/Splidejs/splide/master/dist/css/themes/splide-default.min.css">
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    
+    <style>
+        .sliderbody{
+            background-color: #d4e735;
+            border-radius: 10px;
+            padding: 20px;;
+        }
+
+        .splide__slide img {
+            width : 100%;
+            height: auto;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="sliderbody">
+        <div id="image-slider" class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <img src="image01.jpg">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="image02.jpg">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="image03.jpg">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener( 'DOMContentLoaded', function () {
+            new Splide( '#image-slider' ).mount();
+        } );
+    </script>
+</body>
+</html>

@@ -47,7 +47,7 @@
         //鍵盤右
         var leftPressed = false;
 
-        //增加監聽事件('事件',function,bool)
+        //增加監聽事件('事件',function,預設bool)
         //鍵盤按下
         document.addEventListener("keydown", keyDownHandler, false);
         //鍵盤升起
@@ -55,19 +55,19 @@
 
         //當按下時 將rightPressed, leftPressed回傳為True
         function keyDownHandler(e) {
-            if (e.key == "Right" || e.key == "ArrowRight" || e.key == "d") {
+            if (e.key == "Right" || e.key == "ArrowRight" || e.key == "d" ||  e.key == "D") {
                 return rightPressed = true;
             }
-            else if (e.key == "Left" || e.key == "ArrowLeft" || e.key == "a") {
+            else if (e.key == "Left" || e.key == "ArrowLeft" || e.key == "a" || e.key == "A") {
                 return leftPressed = true;
             }
         }
         //當升起時 將rightPressed, leftPressed回傳為fasle
         function keyUpHandler(e) {
-            if (e.key == "Right" || e.key == "ArrowRight" || e.key == "d") {
+            if (e.key == "Right" || e.key == "ArrowRight" || e.key == "d" ||  e.key == "D") {
                 return rightPressed = false;
             }
-            else if (e.key == "Left" || e.key == "ArrowLeft" || e.key == "a") {
+            else if (e.key == "Left" || e.key == "ArrowLeft" || e.key == "a" || e.key == "A") {
                 return leftPressed = false;
             }
         }
@@ -99,7 +99,7 @@
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawBall();
             drawPaddle();
-
+            //當往右移動時 座標位置 > 畫布寬度-球半徑 || 當往左移動時 座標位置 < 球半徑 (代表碰壁時 往反向移動)
             if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
                 dx = -dx;
             }

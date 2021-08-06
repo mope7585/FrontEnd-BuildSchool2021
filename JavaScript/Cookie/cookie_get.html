@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        document.write(getCookie('name'));
+        document.write(getCookie('email'));
+
+        function getCookie(cookieName) {
+            //讀取cookies
+            let cookies = document.cookie;
+            //⽤;分號將字串拆分為陣列元素
+            let cookieArray = cookies.split(';');
+            //找尋陣列中含有cookieName的元素
+            let result = cookieArray.find(item => item.indexOf(cookieName) != -1);
+            //檢測cookie找不到時為undefined
+            if (result === undefined) 
+            { 
+                return "Can't find the cookie"
+            }
+                //取得=等號右側字串
+                let cookieValue = result.substring(result.indexOf("=") + 1,
+                    result.length);
+                return cookieValue;
+            }
+            
+    </script>
+</body>
+
+</html>

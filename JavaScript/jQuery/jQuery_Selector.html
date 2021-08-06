@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>js .innerHTML</button>
+    <button>jQuery .html()</button>
+    <div id="Msg"></div>
+    <div id="jqMsg"></div>
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="module">
+    import {$g} from "../modules/helpers.js"
+    $g("button:first-child").addEventListener('click',()=>{
+        $g('#Msg').innerText = 'JavaScript Module'
+    })
+    $('button').last().click(function(){
+        $('#jqMsg').html('<h1>This is jQuery</h1>')
+    })
+    let h1 = $('h1');
+    let ps = $('div p')
+    //h1
+    console.log(h1.text())
+    //ps
+    ps.each(function(){
+        console.log($(this).text())
+    })
+    ps.each(function(index,item){
+        console.log(index + ". " + $(item).text())
+        console.log(index + ". " + item.innerText)
+    })
+    var $jq = jQuery.noConflict();
+
+    $jq('button').last().click(function(){
+        $jq('#jqMsg').html('<h1>This is jQuery</h1>')
+    })
+</script>
+</body>
+</html>
