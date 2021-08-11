@@ -116,7 +116,6 @@ function Init() {
                         document.getElementById('Info-file').value = d.File;
                     })
 
-
                 }
                 else {
                     target = date.target;
