@@ -16,6 +16,11 @@
             background: #eee;
             display: block;
             margin: 0 auto;
+            position: fixed;
+            left: 0px;
+            right: 0;
+            top: 100px;
+            bottom: 0;
         }
     </style>
 </head>
@@ -35,12 +40,13 @@
         var y = canvas.height - 30;
         //因每10毫秒 改變x距離+2(往右)
         var dx = 2;
-         //因每10毫秒 改變y距離-2(往上)
+        //因每10毫秒 改變y距離-2(往上)
         var dy = -2;
         //槳厚度
         var paddleHeight = 10;
-        var paddleWidth = 75;
         //槳寬度
+        var paddleWidth = 75;
+        //槳座標
         var paddleX = (canvas.width - paddleWidth) / 2;
         //鍵盤左
         var rightPressed = false;
@@ -55,7 +61,7 @@
 
         //當按下時 將rightPressed, leftPressed回傳為True
         function keyDownHandler(e) {
-            if (e.key == "Right" || e.key == "ArrowRight" || e.key == "d" ||  e.key == "D") {
+            if (e.key == "Right" || e.key == "ArrowRight" || e.key == "d" || e.key == "D") {
                 return rightPressed = true;
             }
             else if (e.key == "Left" || e.key == "ArrowLeft" || e.key == "a" || e.key == "A") {
@@ -64,7 +70,7 @@
         }
         //當升起時 將rightPressed, leftPressed回傳為fasle
         function keyUpHandler(e) {
-            if (e.key == "Right" || e.key == "ArrowRight" || e.key == "d" ||  e.key == "D") {
+            if (e.key == "Right" || e.key == "ArrowRight" || e.key == "d" || e.key == "D") {
                 return rightPressed = false;
             }
             else if (e.key == "Left" || e.key == "ArrowLeft" || e.key == "a" || e.key == "A") {
@@ -89,7 +95,6 @@
             ctx.beginPath();
             //rect(x座標,y座標,寬度,高度)
             ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-            ctx.fillStyle = "#0095DD";
             ctx.fill();
             ctx.closePath();
         }
@@ -103,8 +108,23 @@
             if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
                 dx = -dx;
             }
-            if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
+            if (y + dy < ballRadius) {
                 dy = -dy;
+            }
+            //檢查是否球擊中底牆將結束遊戲
+            //如果y移動座標 > 畫布高度-球的半徑
+            else if (y + dy > canvas.height - ballRadius) {
+                //檢查球的中心是否在球拍的左右邊緣之間
+                //如果 球X座標 > 槳X座標(右) && 球X座標 < 槳X座標 + 槳寬度(左)
+                if (x > paddleX && x < paddleX + paddleWidth) {
+                    //y座標反彈
+                    dy = -dy;
+                }
+                else {
+                    alert("GAME OVER");
+                    document.location.reload();
+                    clearInterval(interval);
+                }
             }
 
             if (rightPressed) {
@@ -124,7 +144,7 @@
             y += dy;
         }
 
-        setInterval(draw, 10);
+        var interval = setInterval(draw, 10);
     </script>
 </body>
 
