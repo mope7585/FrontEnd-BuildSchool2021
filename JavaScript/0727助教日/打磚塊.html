@@ -52,7 +52,8 @@
         var rightPressed = false;
         //鍵盤右
         var leftPressed = false;
-
+        //速度
+        var speed = 10;
         //增加監聽事件('事件',function,預設bool)
         //鍵盤按下
         document.addEventListener("keydown", keyDownHandler, false);
@@ -93,7 +94,7 @@
         //繪製矩形
         function drawPaddle() {
             ctx.beginPath();
-            //rect(x座標,y座標,寬度,高度)
+            //rect(x座標,y座標,槳寬度,槳高度)
             ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
             ctx.fill();
             ctx.closePath();
@@ -119,12 +120,14 @@
                 if (x > paddleX && x < paddleX + paddleWidth) {
                     //y座標反彈
                     dy = -dy;
+                    
                 }
                 else {
                     alert("GAME OVER");
                     document.location.reload();
                     clearInterval(interval);
                 }
+                
             }
 
             if (rightPressed) {
@@ -144,7 +147,7 @@
             y += dy;
         }
 
-        var interval = setInterval(draw, 10);
+        var interval = setInterval(draw, speed);
     </script>
 </body>
 
