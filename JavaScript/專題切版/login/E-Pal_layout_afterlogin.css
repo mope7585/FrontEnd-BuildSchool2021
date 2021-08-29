@@ -1,0 +1,374 @@
+body {
+    font-family: Poppins, Roobert, Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: white;
+    font-size: large;
+    font-weight: 600;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    background-color: #302F3D;
+    padding: 6px 0 0;
+}
+
+.navbar .logo {
+    display: inline-block;
+    width: 150px;
+}
+.navbar .logo img {
+    width: 80%;
+    vertical-align: middle;
+    padding-bottom: 6px;
+}
+
+
+.navbar .navbar-left .nav-item:not(:last-child) > a {
+    border-bottom: 6px solid transparent;
+    height: 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transition: color .3s;
+
+}
+.navbar .navbar-left .nav-item:hover:not(:last-child) > a {
+    border-bottom: 6px solid #7041e6;
+    color: #7041e6 !important;
+}
+.purple-text-border {
+    color: #7041e6 !important;
+    border-color: #7041e6 !important;
+}
+
+
+
+.navbar #dropdown-about {
+    display: block;
+    line-height: 1;
+    padding: 10px 6px;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+.navbar #dropdown-about:hover{
+    background-color: #21212C;
+    border-radius: 5px;
+    
+}
+.navbar #dropdown-about-ul{
+    position: absolute;
+    top: 50px;
+}
+
+.navbar .dropdown-about-list .ultitle{
+    font-size: 12px;
+    font-weight: 300;
+    padding: 10px 0 10px 15px;
+    color: #a4a4d1;
+}
+.navbar .dropdown-about-list .dropdown-item{
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px 0 10px 15px;
+}
+.navbar .dropdown-about-list .dropdown-item:hover{
+    background-color: #21212C;
+}
+
+
+
+.navbar-right {
+    align-items: center;
+    padding-bottom: 6px;
+}
+.navbar-right .search {
+    text-align: center;
+    margin-left: 24px;
+    height: 30px;
+    position: relative;
+    display: inline-block;
+    border: none;
+}
+.navbar-right .search i {
+    position: absolute;
+    left: 30px;
+    top: calc(50% - 0.5em);
+    color: #4e4d61;
+    font-size: 12px;
+}
+.navbar-right .search input{
+    font-size: 12px;
+    border-radius: 100px;
+    margin-left: 24px;
+    text-indent: 18px;
+    outline: none;
+    height: 30px;
+    width: 100px;
+    background-color: #21212C;
+
+    &.ellipsis
+    position: absolute;
+    top: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* .search input::-webkit-input-placeholder {
+    font-size: 12px;
+    position: absolute;
+    top: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+} */
+.navbar-right .search input:hover {
+    border-color: #302F3D;
+}
+.navbar-right .search input:focus {
+    border-color: #302F3D;
+}
+
+.navbar-right #dropdown-message-ul{
+    position: absolute;
+    top: 35px;
+}
+
+.navbar-right .personal-account {
+    display: flex;
+    box-sizing: border-box;
+    margin-left: 24px;
+}
+.navbar-right #menu-check{
+    display: none;
+}
+.navbar-right .hb {
+    height: 50px;
+    width: 50px;
+    position: relative;
+}
+.navbar-right .hb img {
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 50%;
+}
+.navbar-right .personal-account .aside-Menu {
+    position: absolute;
+    width: 20vw;
+    height: 100vh;
+    top: 0%;
+    right: -100%;
+    /* opacity: 0; */
+    background-color: #21212C;
+    transition: 1s;
+}
+.navbar-right #menu-check:checked~.personal-account>.aside-Menu {
+    top: 0%;
+    right: 0%;
+    /* opacity: 1; */
+}
+
+
+
+footer{
+    position: relative;
+    bottom: 0;
+    background-color: #302F3D;
+    width: 100%;
+    padding: 50px 0;
+}
+footer .container{
+    display: flex;
+}
+footer img{
+    width: 80%;
+}
+footer h4{
+    font-size: 12px;
+    font-weight: 300;
+    padding-bottom: 20px;
+}
+footer p{
+    font-size: 10px;
+    font-weight: 100;
+    line-height: 1.5;
+}
+footer #company{
+    width: 300px;
+}
+footer #address{
+    padding-left: 50px;
+}
+
+
+
+
+
+@media screen and (max-width:767px) {
+    .navbar{
+        display: none;
+    }
+    .navbar-sm{
+        background-color:#302F3D;
+        padding: 10px 0 5px;
+        position: absolute;
+        bottom: 0;
+        /* margin: auto;/ */
+        width: 100%;
+    }
+    .navbar-sm i{
+        color: white;
+        text-align: center;
+        display: block;
+        font-size: 24px;
+    }
+    .navbar-sm p{
+        font-weight: 100;
+        text-align: center;
+        padding-top: 10px;
+    }
+    .navbar-sm i:hover{
+        color: purple;
+    }
+
+    footer{
+        display: none;
+    }
+
+
+}
+
+@media screen and (min-width:768px) {
+    .navbar-sm{
+        display: none;
+    }
+
+    .becomeEPal-button{
+        display: none;
+    }
+    .message.dropdown{
+        display: none;
+    }
+
+    
+    #gotop {
+        position: fixed;
+        z-index: 10;
+        right: 30px;
+        bottom: 80px;
+        display: none;
+        width: 50px;
+        height: 50px;
+        color: #fff;
+        background: #302F3D;
+        line-height: 50px;
+        border-radius: 5px;
+        transition: all 0.5s;
+        text-align: center;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    }
+
+
+    .chatbot{
+        position: fixed;
+        bottom: 3vh;
+        right: 6vw;
+        width: 80px;
+        height: 80px;
+        background-color: #7460F6;
+        border-color: transparent;
+        border-radius: 50%;
+    }
+    .chatbot i{
+        position: absolute;
+        top: 17%;
+        left: 19%;
+        font-size: 50px;
+        vertical-align: middle;
+        color: white;
+    }
+    .chatbox{
+        display: none;
+        position: fixed;
+        bottom: 15vh;
+        right: 3vw;
+        width: 20vw;
+        height: 65vh;
+        background-color: #21212C;
+        /* box-shadow: 5px 5px 19px #8F8B8B; */
+        border-radius: 10px;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .becomeEPal-button{
+        display: block;
+    }
+    .message.dropdown{
+        display: block;
+    }
+    .becomeEPal-button {
+        width: 150px;
+        border-radius: 100px;
+        background-color: #7041e6;
+        height: 30px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 30px;
+        margin-left: 24px;
+    }
+    
+    .becomeEPal-button a {
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+    }
+    
+    .message.dropdown {
+        margin-left: 24px;
+        position: relative;
+    }
+    
+    .message.dropdown i {
+        font-size: 24px;
+    }
+    
+    .message.dropdown ul {
+        position: absolute;
+        top: 50px;
+    }
+    
+
+
+    footer img{
+        width: 50%;
+    }
+
+    footer #company{
+        width: 350px;
+    }
+    footer #address{
+        padding-left: 50px;
+    }
+
+}
+
+@media screen and (min-width:1200px) {
+
+    footer img{
+        width: 50%;
+    }
+    footer #company{
+        width: 450px;
+    }
+    footer #address{
+        padding-left: 150px;
+    }
+    
+}

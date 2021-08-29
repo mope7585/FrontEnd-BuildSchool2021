@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <style>
         .card {
@@ -14,11 +13,11 @@
             margin-bottom: 30px;
             overflow: hidden;
         }
-
+        
         .headshot {
             overflow: hidden;
         }
-
+        
         .card-title {
             color: white;
             background-color: black;
@@ -26,30 +25,30 @@
             border-radius: 5px;
             padding: 5px 15px 5px 15px;
         }
-
+        
         .card-body {
             background-color: #ffbf67;
         }
-
+        
         .card:hover {
             box-shadow: 8px 8px 15px #808080;
             transform: translate(5px, 5px);
         }
-
+        
         .card:hover img {
             transform: scale(1.2);
             transition: transform 0.5s;
         }
-
+        
         .card:not(:hover) img {
             transform: scale(1, 1);
             transition: transform 0.3s;
         }
-
+        
         .card:hover .card-body {
             background-color: lightgreen !important;
         }
-
+        
         .card:hover .card-title {
             color: black;
             background-color: white !important;
@@ -104,56 +103,17 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
     <script type='module'>
-        import { $g, $c } from '../modules/helpers.js';
-        // 3.複製Card樣板，並設定資料
-
-        let LOLdata;
-        let url = 'https://raw.githubusercontent.com/mope7585/FrontEnd-BuildSchool2021/main/JavaScript/LOL/Champion.json'
-        window.onload = function LOLRequest() {
-            let card = $g('#cardLOL');
-            let row = $g('.row');
-            fetch(url)
-                .then(response => response.text())
-                .then(response => {
-                    LOLdata = JSON.parse(response);
-                })
-                .then(response => {
-                    // let keys = Object.keys(LOLdata.data);
-                    let values = Object.values(LOLdata.data);
-                    // console.log(values);
-                    values.forEach((item, index) => {
-                     console.log(item.id);
-                        let cloneContent = card.content.cloneNode(true);
-                        cloneContent.querySelector('img').src = `https://cdngarenanow-a.akamaihd.net/games/lol/2020/LOLwebsite/champion/${item.id}_0.jpg`;
-                        cloneContent.querySelector('h5').innerText = `${item.name}`;
-                        cloneContent.querySelector('.btn').addEventListener('click', function () {
-
-                            this.setAttribute('data-toggle', 'modal');
-                            this.setAttribute('data-target', '#exampleModal');
-                            let modal = $g('#exampleModal');
-                            modal.querySelector('h5').innerText = `${item.name}`;
-                            modal.querySelector('#pizzaImage').src = `https://cdngarenanow-a.akamaihd.net/games/lol/2020/LOLwebsite/champion/${item.id}_0.jpg`;
-                            modal.querySelector('#hp').innerText = `HP:${item.stats.hp}`;
-                            modal.querySelector('#mp').innerText = `MP:${item.stats.mp}`;
-                            modal.querySelector('#hpperlevel').innerText = `hpperlevel:${item.stats.hpperlevel}`;
-                            
-                        });
-                        // 4.將複製的Card加入DOM中
-                        row.append(cloneContent);        
-                    });
-                })
-        };
+        import { $g, $c } from '../modules/helpers.js'; // 3.複製Card樣板，並設定資料 let LOLdata; let url = 'https://raw.githubusercontent.com/mope7585/FrontEnd-BuildSchool2021/main/JavaScript/LOL/Champion.json' window.onload = function LOLRequest() { let card = $g('#cardLOL');
+        let row = $g('.row'); fetch(url) .then(response => response.text()) .then(response => { LOLdata = JSON.parse(response); }) .then(response => { // let keys = Object.keys(LOLdata.data); let values = Object.values(LOLdata.data); // console.log(values);
+        values.forEach((item, index) => { console.log(item.id); let cloneContent = card.content.cloneNode(true); cloneContent.querySelector('img').src = `https://cdngarenanow-a.akamaihd.net/games/lol/2020/LOLwebsite/champion/${item.id}_0.jpg`; cloneContent.querySelector('h5').innerText
+        = `${item.name}`; cloneContent.querySelector('.btn').addEventListener('click', function () { this.setAttribute('data-toggle', 'modal'); this.setAttribute('data-target', '#exampleModal'); let modal = $g('#exampleModal'); modal.querySelector('h5').innerText
+        = `${item.name}`; modal.querySelector('#pizzaImage').src = `https://cdngarenanow-a.akamaihd.net/games/lol/2020/LOLwebsite/champion/${item.id}_0.jpg`; modal.querySelector('#hp').innerText = `HP:${item.stats.hp}`; modal.querySelector('#mp').innerText
+        = `MP:${item.stats.mp}`; modal.querySelector('#hpperlevel').innerText = `hpperlevel:${item.stats.hpperlevel}`; }); // 4.將複製的Card加入DOM中 row.append(cloneContent); }); }) };
     </script>
 
 
@@ -161,7 +121,6 @@
     <script>
         //Pseudo code虛擬碼
         //1.準備好pizza資料陣列
-
     </script>
 
 

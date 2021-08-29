@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="E-Pal_layout_afterlogin.css">
+    <title>E-Pal</title>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container-fluid">
+                <a class="logo" href="#">
+                    <img src="logo.png" alt="E-Pal">
+                </a>
+                <ul class="me-auto d-flex navbar-left">
+                    <li class="nav-item">
+                        <a class="nav-link text-white navItem" aria-current="page" href="#">ePal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white navItem" href="#">Chill</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link text-white navItem" href="#">Posts</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white navItem" href="#">Creator Project</a>
+                    </li>
+
+                    <li class="dropdown nav-item dropdown-about-list">
+                        <a type="button" class="nav-link text-white" id="dropdown-about" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            • • •
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown-about"
+                            id="dropdown-about-ul">
+                            <li class="ultitle">Helper Center</li>
+                            <li class="ulitem"><a class="dropdown-item" href="#">FAQ</a></li>
+                            <li class="ulitem"><a class="dropdown-item" href="#">Report</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="ultitle">Contact Us</li>
+                            <li class="ulitem"><a class="dropdown-item" href="#">Business Inquiry</a></li>
+                            <li class="ulitem"><a class="dropdown-item" href="#">Twitter</a></li>
+                            <li class="ulitem"><a class="dropdown-item" href="#">Facebook</a></li>
+                            <li class="ulitem"><a class="dropdown-item" href="#">Instagram</a></li>
+                            <li class="ulitem"><a class="dropdown-item" href="#">Discord</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="ultitle">User Agreement</li>
+                            <li class="ulitem"><a class="dropdown-item" href="#">Terms of Service</a></li>
+                            <li class="ulitem"><a class="dropdown-item" href="#">Privacy Policy</a></li>
+                            <li class="ulitem"><a class="dropdown-item" href="#">Community</a></li>
+                            <li class="ulitem"><a class="dropdown-item" href="#">Multimedia Policy</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="ulitem"><a class="dropdown-item" href="#">Download App</a></li>
+                            <li class="ulitem"><a class="dropdown-item" href="#">About Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- right navbar -->
+                <div class="navbar-right d-flex">
+                    <div class="search">
+                        <i class="fas fa-search"></i>
+                        <input class="ellipsis" type="text" placeholder="Search by Service, ePal name or ID" />
+                    </div>
+                    <div class="becomeEPal-button">
+                        <a href="#" role="button">Become an ePal</a>
+                    </div>
+                    <div class="message dropdown">
+                        <i class="far fa-envelope" type="button" id="dropdown-message" data-bs-toggle="dropdown"></i>
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end"
+                            aria-labelledby="dropdown-message" id="dropdown-message-ul">
+                            <li><a class="dropdown-item" href="#">Order Messages</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#"></a></li>
+                            <li><a class="dropdown-item" href="#"></a></li>
+                            <li><a class="dropdown-item" href="#"></a></li>
+                        </ul>
+                    </div>
+                    <input type="checkbox" name="" id="menu-check">
+                    <div class="personal-account">
+                        <label class="hb" for="menu-check">
+                            <img src="avatar.png">
+                        </label>
+                        <nav class="aside-Menu">
+                            <!-- <a href="#">link</a> -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 手機navbar置底 -->
+        <nav class="navbar-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="item">
+                            <i class="fas fa-gamepad"></i>
+                            <p>ePal</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="item">
+                            <i class="fas fa-desktop"></i>
+                            <p>Chill</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="item">
+                            <i class="fas fa-coins"></i>
+                            <p>Creator</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="item">
+                            <i class="far fa-comment-dots"></i>
+                            <p>Chat</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="item">
+                            <i class="fas fa-user"></i>
+                            <p>Me</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- 測試用，塞入內容後可刪除 -->
+    <div class="test">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio suscipit nam nihil illum animi vel, iure
+            pariatur quidem, dolor, architecto perferendis voluptatem eligendi molestias culpa nobis doloribus!
+            Laboriosam, ratione modi?</p>
+        <p>Quia doloribus incidunt dicta totam reiciendis! Cumque, omnis sapiente. Quae culpa illo nobis, debitis
+            cupiditate animi, voluptatem qui repellat id commodi beatae. Tempore consectetur a illum architecto, at
+            nostrum obcaecati.</p>
+        <p>Fugit enim, porro, quisquam asperiores amet dolore non corrupti fuga illo mollitia iure neque assumenda?
+            Harum quos adipisci fugit nesciunt fugiat, provident voluptate suscipit unde vel, veniam modi officia
+            doloribus.</p>
+        <p>Repudiandae quo illum eius iste nam, molestiae dolorum magni eveniet quis magnam facilis repellat quasi
+            voluptatum fugiat velit, libero labore doloremque accusamus porro neque harum eligendi tempore! Repellendus,
+            quos corporis.</p>
+        <p>Odit excepturi magni id, reprehenderit dignissimos expedita, sunt voluptatum perferendis eaque repudiandae
+            cum quisquam laborum vel nam, laudantium dolore. Dicta tenetur dolorum nostrum, fugiat molestias iure!
+            Praesentium magnam rem nostrum.</p>
+        <p>Harum debitis accusamus odio animi minus ipsa tempore dignissimos voluptatem. Rerum nesciunt quisquam iste,
+            ea incidunt aspernatur praesentium, dolorum sed soluta deserunt excepturi! Optio dolorum, inventore
+            exercitationem voluptas nulla eum.</p>
+        <p>Unde nulla perspiciatis vel provident excepturi, consequuntur adipisci corporis. Totam a autem quidem
+            corrupti blanditiis et, sapiente debitis nobis consequatur, impedit at reprehenderit soluta. Omnis
+            perferendis iure deleniti ipsum nobis.</p>
+        <p>Sed fugit, omnis mollitia numquam necessitatibus molestias cupiditate eum voluptatum animi molestiae
+            aspernatur amet, eaque excepturi. Eius doloremque iusto maxime ipsam corrupti omnis nemo, rem recusandae
+            assumenda maiores cumque officiis?</p>
+        <p>Expedita, perferendis. Alias et assumenda vitae, debitis voluptate voluptas placeat repellat error quia quasi
+            eum veniam, officia, quos mollitia. Aliquam nulla voluptatibus quae doloribus ea dignissimos quis, veritatis
+            officiis eos!</p>
+        <p>Unde recusandae labore modi quasi voluptas officia sunt adipisci nisi optio quam natus necessitatibus quae
+            repellendus accusamus aperiam, doloremque, consequuntur eaque aliquid, quis vitae velit. Unde necessitatibus
+            magnam repellat iste.</p>
+        <p>Veniam at sed neque beatae nemo delectus quod sapiente labore harum maxime mollitia aspernatur obcaecati,
+            dignissimos reprehenderit nam fugiat. Aliquam sed molestiae quis enim odit quos perspiciatis veniam
+            doloremque necessitatibus?</p>
+        <p>Amet repellat, numquam dolores harum rem deserunt est veniam quasi aperiam facere officiis voluptate
+            excepturi quis. Veritatis iusto nulla eveniet, maxime atque officiis quae ea odio. Sint qui harum ab?</p>
+        <p>Ipsam eligendi incidunt perferendis blanditiis hic assumenda dolorem et, quos accusantium in similique id
+            illo rem, est doloremque soluta repudiandae voluptatem. Itaque ipsa at perferendis nemo unde laborum
+            officiis deleniti.</p>
+        <p>Nostrum voluptatem ad aperiam, quasi neque culpa fugiat aspernatur ipsam id ipsum sunt iure at molestias odio
+            distinctio autem eos dicta reprehenderit dolorum expedita magni quibusdam? Illo maiores nemo recusandae.</p>
+        <p>Accusantium porro dolorum molestiae, quo perspiciatis illo atque inventore distinctio similique obcaecati
+            provident soluta ipsum modi dicta. Modi obcaecati, eaque in assumenda voluptatem ullam eligendi explicabo,
+            unde id harum nihil!</p>
+        <p>Distinctio atque quasi assumenda? Fuga recusandae, fugiat suscipit sit culpa vitae officiis, natus ut quae
+            rerum iure veniam vero in, alias autem asperiores. Dolore quos distinctio repellendus, consectetur nemo et!
+        </p>
+        <p>Voluptatem porro esse repellendus sint alias. Inventore, quis. Perferendis sequi quos voluptatibus sit ut
+            harum ducimus doloremque, recusandae asperiores. Molestias nam ipsum, nisi suscipit ducimus inventore amet
+            facere eum commodi.</p>
+        <p>Harum cumque rem aut a expedita officiis deleniti repellendus cupiditate corrupti voluptates officia vitae,
+            praesentium ipsa, excepturi ea exercitationem quia non voluptatibus placeat vel. Voluptatem in iste
+            accusantium eaque iusto?</p>
+        <p>Est quasi tempore vel id enim eaque doloribus, sequi temporibus perspiciatis aliquid illo eum alias deserunt
+            suscipit pariatur voluptates obcaecati sunt, praesentium at dignissimos dolorum. Officiis quos quia aut
+            molestiae.</p>
+        <p>Minus omnis ad, qui quae fuga at nostrum a hic. Fuga officiis quo iure debitis numquam nemo enim, harum ut
+            repudiandae voluptate quod laborum assumenda architecto, consequuntur ipsa nulla voluptatem.</p>
+        <p>Porro iusto corrupti sed magnam aspernatur cupiditate inventore provident sit quae maiores a illo possimus
+            placeat, nostrum harum molestiae beatae sunt voluptates, dolor architecto facere. Ipsum eaque pariatur
+            eveniet dignissimos?</p>
+        <p>Natus excepturi quas neque debitis perspiciatis non expedita aspernatur, deserunt praesentium obcaecati esse
+            rerum, reprehenderit iure nobis officia possimus hic at atque repellat quisquam dicta minima tempore.
+            Praesentium, iste dolor!</p>
+        <p>Culpa error sit non odio amet est modi quam, exercitationem sed et voluptatem eius explicabo ducimus
+            obcaecati molestias, totam reiciendis placeat alias facilis! Ad, in. Aut quod rem beatae molestiae.</p>
+        <p>Sint aperiam reiciendis temporibus deserunt expedita, mollitia nisi accusamus error dignissimos accusantium
+            optio ipsam quas? Obcaecati quidem a eaque! Commodi doloremque libero ducimus vel ratione repudiandae
+            voluptatibus voluptate, assumenda itaque!</p>
+        <p>Vero, corrupti excepturi suscipit eum necessitatibus eius ex beatae nulla quae, consectetur ea. Itaque
+            suscipit accusantium doloremque, praesentium corrupti facere fuga ut! Quo consequuntur consectetur molestiae
+            praesentium illum inventore doloribus.</p>
+        <p>Beatae facere facilis quae, atque illum vitae eaque, quibusdam accusantium quod neque et. Quaerat
+            reprehenderit enim, totam corrupti eligendi expedita unde, adipisci debitis illo pariatur error nemo
+            blanditiis officia alias!</p>
+        <p>Itaque ut ducimus error atque vel alias, aliquid unde repellendus saepe nemo? Nesciunt doloribus quos minima
+            esse, illo quam modi amet sit totam aspernatur rerum debitis autem quod, nihil adipisci!</p>
+        <p>Aperiam laboriosam, temporibus veritatis ipsam cupiditate inventore veniam doloribus et consequuntur dicta,
+            nam quibusdam saepe labore. Earum, quia a, suscipit mollitia eos, totam dicta aliquid voluptas unde
+            asperiores recusandae temporibus!</p>
+        <p>Repellendus nihil culpa inventore optio est ab nostrum iusto voluptate eum aperiam reprehenderit tenetur
+            ullam quaerat eius esse, a pariatur neque. A aliquam recusandae magnam tempore maxime modi maiores
+            voluptatem!</p>
+        <p>Eveniet velit placeat veritatis facilis iusto error! Consequuntur vel eos laboriosam pariatur magni ea
+            dolorem qui, temporibus ipsum voluptate similique fuga dolor ab veritatis maiores veniam totam voluptatem
+            eum optio?</p>
+        <p>Velit culpa temporibus, molestias quo a, repellendus officiis ipsum vero voluptatibus consectetur impedit
+            commodi? Ex officiis autem et nihil expedita, aspernatur hic provident accusantium in voluptatem rem at,
+            molestiae dolor?</p>
+        <p>Sed, ipsam! Placeat facilis enim odit illum unde. Doloribus, quidem alias, impedit incidunt distinctio porro
+            architecto quod nemo iste quis facilis officia. Atque dolorem est amet deleniti dolore rem expedita?</p>
+        <p>Quasi eos numquam cum itaque dolorum officiis veniam, corrupti exercitationem quibusdam libero atque ut
+            explicabo adipisci sunt ullam. Consequatur atque libero voluptatum voluptas dolores deleniti perferendis eum
+            quod quis velit?</p>
+        <p>Cum quod expedita, qui accusantium dicta natus inventore esse voluptatum, unde eligendi rerum. Optio,
+            voluptatum hic doloribus obcaecati laudantium quia ab, pariatur repellendus aut sapiente molestiae sit!
+            Consequuntur, ex sint.</p>
+        <p>Sint molestias doloremque repellat ab odit fugit, nihil optio expedita delectus provident ea, neque ducimus
+            temporibus. Harum molestias earum a repellat quae, eaque modi sed enim voluptate ipsa sequi dolores!</p>
+        <p>Laboriosam nulla tenetur ullam a nihil! Eos reiciendis, quos maxime distinctio unde rem? Deleniti nesciunt
+            dicta, nam quibusdam tenetur assumenda vitae temporibus similique amet eius error nemo aliquam voluptatem
+            ea.</p>
+        <p>Quisquam iure consequatur neque itaque adipisci animi, delectus velit quis magnam eveniet expedita ea?
+            Nostrum enim dicta veniam temporibus, reprehenderit nisi eos placeat quam nihil dolorum vero porro
+            necessitatibus qui?</p>
+        <p>Error earum hic repellat molestiae eveniet dolor facere accusantium quidem officiis placeat non debitis
+            magnam vero repudiandae quisquam porro distinctio alias, aperiam possimus dolores ea! Sit nisi reiciendis
+            quasi reprehenderit?</p>
+        <p>Sint repellat quam nam tempora. Nobis similique reiciendis vitae. Maxime doloribus nisi, vitae eum, repellat
+            inventore molestias nesciunt quibusdam voluptas corporis porro eaque quis aperiam consequuntur neque dolores
+            modi officiis.</p>
+        <p>Eos officia sunt dolore laudantium earum sint, quos, pariatur dolorem blanditiis fuga quibusdam ipsa
+            voluptatem harum, voluptas repellendus consequatur! Labore, iusto asperiores. Architecto dignissimos fugiat,
+            voluptate quia sint porro facilis?</p>
+        <p>Eos exercitationem at dignissimos sapiente assumenda, pariatur nemo impedit ducimus laudantium quisquam
+            tempora deserunt alias, incidunt cupiditate laborum delectus iste eum maiores iusto voluptate illo itaque
+            non dolor! Pariatur, voluptates.</p>
+        <p>Nihil voluptates officiis corporis, architecto voluptate consectetur quam itaque expedita. Fugit eos ducimus
+            dolorum similique consequatur dolores impedit voluptate labore at quis eveniet eum qui tenetur, consequuntur
+            necessitatibus facere? Repellat!</p>
+        <p>Soluta, iusto? Placeat saepe natus sint. Fuga laborum fugit tempora tenetur quis ducimus cumque laudantium
+            expedita? Dolorem, molestiae porro quia in placeat magni nihil voluptatum corporis consequuntur magnam,
+            architecto reiciendis?</p>
+        <p>Laudantium iure, reprehenderit quidem facere incidunt dolorem maxime, tempore tenetur dolorum deserunt
+            repellat! Officiis, laborum esse distinctio, ratione doloribus harum ab placeat corrupti eius deleniti animi
+            ipsa velit culpa cumque.</p>
+        <p>Asperiores natus nobis molestiae, ducimus et quasi deserunt quod. Autem enim tempora sint animi est ipsum
+            neque eligendi nemo quae distinctio eum a in, aliquam non. Recusandae rem eligendi obcaecati?</p>
+        <p>Maxime neque accusantium expedita! Beatae recusandae voluptatem non reprehenderit mollitia ipsam quos
+            possimus illum itaque iure reiciendis esse, laborum modi cupiditate illo dicta a autem dolorem eveniet, eos
+            aut voluptas.</p>
+        <p>Perspiciatis, necessitatibus natus provident quod, veniam reprehenderit quisquam a itaque repellat doloribus
+            facilis reiciendis nisi. Non, eos dolorem, fugiat perspiciatis quia adipisci beatae minus voluptate suscipit
+            dolor dignissimos eligendi illo.</p>
+        <p>Inventore aspernatur ullam esse repellendus saepe voluptate, eum facilis quaerat quos veritatis corrupti
+            commodi impedit dolores tempore quae tenetur omnis sit laborum aperiam obcaecati maiores excepturi. Pariatur
+            ducimus recusandae consectetur.</p>
+        <p>Laborum, a recusandae. Incidunt fugiat, earum quam nihil harum impedit. Quia quos eaque quod veritatis
+            facilis omnis est doloribus incidunt similique recusandae sint rerum, maxime nesciunt, quo commodi
+            voluptatum. Libero.</p>
+        <p>Id nulla inventore ab facilis mollitia perferendis sed repudiandae voluptatem ut corporis sapiente adipisci
+            magni facere minima voluptatibus, commodi provident voluptates velit autem accusamus ipsa. Dolorum nostrum
+            quia modi vero!</p>
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="item">
+                        <img src="footericon.png" alt="footer-icon">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="item" id="company">
+                        <h4>EPAL,INC</h4>
+                        <p>E-Pal is the largest freelancing platform for gaming companionship. Find you new friend and
+                            get paid while playing! Never Battle Alone!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="item" id="address">
+                        <p>Address: 25 Barberry,Lake Forest,California - 92630 United States.</p>
+                        <p>Email: &emsp&emsp support@epal.gg</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- gotop -->
+    <a href="#" id="gotop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- chatroom -->
+    <button class="chatbot">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+    <div class="chatbox">
+        <!-- <img src="chatbox.JPG" alt="chatbox-content"> -->
+    </div>
+
+
+
+
+
+    <!-- axios CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+        integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+
+
+    <script>
+
+        let html = document.queryCommandValue("html")
+        window.onload = function () {
+            var navItems = document.querySelectorAll('.navItem');
+            navItems.forEach(ele => {
+                ele.classList.remove('purple-text-border');
+                ele.addEventListener('click', function (event) {
+                    navItems.forEach(e => {
+                        e.classList.remove('purple-text-border');
+                    })
+                    event.srcElement.classList.add('purple-text-border');
+                })
+            })
+        }
+
+
+
+        //gotop
+        $(function () {
+            // 按下gotop按鈕事件 
+            $('#gotop').click(function () {
+                $('html,body').animate({ scrollTop: 0 }, 'fast');   //返回到最頂 
+                return false;
+            });
+
+            //卷軸滑動時，往下滑超過200px就讓gotop按鈕出現 
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 200) {
+                    $('#gotop').fadeIn();
+                } else {
+                    $('#gotop').fadeOut();
+                }
+            });
+        });
+
+
+        // chatroom
+        $(document).ready(function () {
+            $(".chatbot").click(function () {
+                // $(".chatbox").fadeIn(),
+                // $(".chat-icon").fadeOut(),
+                // $(".chatbot i").fadeIn();
+                $(".chatbox").toggle("fast");
+                // $(".chat-icon").toggle("slow"),
+                // $(".chatbot i").toggle("slow");
+            })
+        })
+
+    </script>
+
+</body>
+
+</html>
