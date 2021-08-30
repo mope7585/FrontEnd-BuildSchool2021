@@ -113,6 +113,7 @@ body {
     padding-top: 8px;
     font-size: 12px;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .gameFilter-Title {
@@ -126,6 +127,7 @@ body {
 
 .gameFilter-Left {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .gameFilter-Item {
