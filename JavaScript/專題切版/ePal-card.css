@@ -9,8 +9,9 @@
 }
 
 .item-Card {
-    width: 313px;
-    margin: auto;
+    width: auto;
+    height: auto;
+    margin: 0 10px;
     border-radius: 8px;
 }
 
@@ -48,6 +49,8 @@
     width: 100%;
     height: 100%;
 }
+
+
 /* cardBody */
 
 .user-Info {
@@ -137,6 +140,8 @@
     font-size: 12px;
     margin: auto;
 }
+
+
 /* cardFooter */
 
 .card-Footer {

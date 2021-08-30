@@ -16,11 +16,12 @@
     <div class="wrapper">
         <div class="section">
             <div class="top_navbar">
+
                 <div class="left">
                     <a href="#">
                         <i class="fas fa-arrow-left"></i>
                     </a>
-                </div> 
+                </div>
             </div>
             <div class="container">
                 <p>title</p>
@@ -81,7 +82,9 @@
     </div>
     <script>
         var left = document.querySelector(".left");
-        left.addEventListener("click", function() {
+        let navBar = document.querySelector('.top_navbar');
+        console.log(navBar)
+        navBar.addEventListener("click", function() {
             document.querySelector("body").classList.toggle("active");
             left.classList.toggle('turn-right');
         })
