@@ -5,12 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="ePal-card.css">
+    <link rel="stylesheet" href="ePal-card copy.css">
     <title>Hello, world!</title>
     <style>
 
@@ -49,9 +48,9 @@
                     </div>
                     <div class="user-Voice">
                         <div class="voice-Left">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                            <span class="w-60"></span>
+                            <span class="w-80"></span>
+                            <span class="w-60"></span>
                         </div>
                         <div class="voice-Right">
                             <i class="fas fa-play"></i>
@@ -88,8 +87,28 @@
     </div>
 
 
-
-
+    <script>
+        let VoiceBtn = document.querySelector('.user-Voice')
+        let spanOdd = document.querySelectorAll('.voice-Left span:nth-child(odd)')
+        let spanEven = document.querySelectorAll('.voice-Left span:nth-child(even)')
+        console.log(spanEven[0])
+        spanOdd.forEach(item => {
+            VoiceBtn.addEventListener('click', () => {
+                setInterval(() => {
+                    item.classList.toggle('w-80')
+                    item.classList.toggle('w-60')
+                }, 400)
+            })
+        })
+        spanEven.forEach(item => {
+            VoiceBtn.addEventListener('click', () => {
+                setInterval(() => {
+                    item.classList.toggle('w-60')
+                    item.classList.toggle('w-80')
+                }, 400)
+            })
+        })
+    </script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

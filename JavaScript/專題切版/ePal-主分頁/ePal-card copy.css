@@ -125,14 +125,18 @@
 }
 
 .voice-Left span {
-    width: 60%;
     height: 1.5px;
     background-color: #fff;
 }
 
-.voice-Left span:nth-child(2) {
-    height: 1.5px;
-    width: 80%;
+.w-15 {
+    width: 15px;
+    transition: 0.5s ease-in;
+}
+
+.w-10 {
+    width: 10px;
+    transition: 0.5s ease-in;
 }
 
 .voice-Right {

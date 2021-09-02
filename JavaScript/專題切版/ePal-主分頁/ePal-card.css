@@ -1,6 +1,5 @@
 #card {
     text-decoration: none;
-    margin: 50px 0;
 }
 
 .card {
@@ -124,26 +123,20 @@
     margin: auto;
 }
 
-.voice-Left span {
-    width: 60%;
-    height: 1.5px;
-    background-color: #fff;
-    transition: 0.5s;
-}
-
-.w-80 {
-    width: 80%;
-}
-
-.w-60 {
-    width: 0;
-    background-color: #aaa;
+.w-15 {
+    width: 15px;
     transition: 0.5s ease-in;
 }
 
-.voice-Left span:nth-child(2) {
-    width: 80%;
-    transition: 0.5s;
+.w-10 {
+    width: 10px;
+    transition: 0.5s ease-in;
+}
+
+.voice-Left span {
+    height: 1.5px;
+    background-color: #fff;
+    /* width: 15px; */
 }
 
 .voice-Right {
@@ -157,7 +150,7 @@
 
 .card-Footer {
     background-color: #21212C;
-    padding: 16px;
+    padding: 5px 16px;/* * */
     color: #fff;
     border-radius: 8px;
 }

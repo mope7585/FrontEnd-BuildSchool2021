@@ -1,0 +1,150 @@
+* {
+    font-family: Poppins, Roobert, Helvetica Neue, Helvetica, Arial, sans-serif;
+    ;
+}
+
+
+/* 手機直向 xs*/
+
+@media screen and (max-width: 767px) {
+    .main-Header {
+        height: 80px;
+        background-position: 54%;
+    }
+    .header-Title {
+        font-size: 32px;
+        line-height: 2px;
+        padding-top: 24px;
+    }
+    .select-Box {
+        margin-top: 17px;
+    }
+}
+
+
+/* 手機橫向 md*/
+
+@media screen and (min-width: 768px) {
+    .main-Header {
+        height: 100px;
+        background-position: 50%;
+    }
+    .header-Title {
+        font-size: 35px;
+        line-height: 0px;
+        padding-top: 35px;
+    }
+    .select-Box {
+        margin-top: 25px;
+    }
+}
+
+
+/* iPad橫向 lg*/
+
+@media screen and (min-width: 1024px) {
+    .main-Header {
+        height: 150px;
+    }
+    .header-Title {
+        font-size: 48px;
+        line-height: 48px;
+    }
+    .select-Box {
+        margin-top: 10px;
+    }
+}
+
+
+/* iPad Pro橫向 & 桌機 xl*/
+
+@media screen and (min-width: 1366px) {
+    .main-Header {
+        height: 200px;
+    }
+    .header-Title {
+        font-size: 48px;
+        line-height: 48px;
+    }
+    .select-Box {
+        margin-top: 30px;
+    }
+}
+
+body {
+    background-color: #120E1B;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+.main-Box {
+    max-width: 1300px;
+    margin: auto;
+}
+
+.main-Header {
+    background-image: url("https://g.epal.gg/entry/us/static/discountBig.ef7c2639.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.select-Box {
+    width: 176px;
+    height: 30px;
+}
+
+.select-Box select {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 16px;
+    background-color: #21212C;
+    font-size: 14px;
+    font-weight: 500;
+    color: #7041e6;
+    outline: none;
+    -moz-appearance: none;
+    padding: 5px 3px;
+}
+
+.select-Box select option {
+    font-size: 14px;
+    font-weight: 500;
+    color: #7041e6;
+    text-align: center;
+    border-radius: 5px;
+}
+
+select option:hover {
+    background: #ff9500 -webkit-linear-gradient(bottom, #ff9500 0%, #ff9500 100%);
+    color: #fff;
+}
+
+.header-Title {
+    font-weight: 900;
+    color: #fff;
+}
+
+.navBar {
+    width: 100%;
+    height: 60px;
+}
+
+.main-Card {
+    width: 100%;
+    background-color: goldenrod;
+}
+
+.row {
+    --bs-gutter-x: 0px
+}
+
+.main-Card-Area {
+    max-width: 1300px;
+    margin: 20px auto 0;
+}

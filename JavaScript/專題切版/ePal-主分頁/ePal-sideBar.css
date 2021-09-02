@@ -1,6 +1,7 @@
 * {
     font-family: Poppins, Roobert, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
+
 .wrapper .sidebar {
     background: #21212C;
     position: fixed;
@@ -18,12 +19,20 @@
 
 .wrapper .section {
     width: 100%;
-    margin-left: 280px;
     transition: all 0.5s ease;
     height: 100%;
 }
 
-.wrapper .section .top_navbar {
+@media screen and (min-width:768px) {
+    .wrapper .section {
+        width: 100%;
+        margin-left: 280px;
+        transition: all 0.5s ease;
+        height: 100%;
+    }
+}
+
+.top_navbar {
     background: #302F3D;
     width: 40px;
     height: 40px;
@@ -33,13 +42,16 @@
     cursor: pointer;
     position: fixed;
     top: 16px;
-    z-index: 10;
+    z-index: 100;
     margin-left: 30px;
     border-radius: 5px;
     box-shadow: 0 0 8px 0;
+    position: absolute;
+    top: 10px;
+    right: -50px;
 }
 
-.wrapper .section .top_navbar .left a {
+.top_navbar .left a {
     color: #C4C3E6;
     font-size: 18px;
 }
