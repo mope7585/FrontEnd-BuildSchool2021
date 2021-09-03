@@ -1,0 +1,431 @@
+* {
+    font-family: Poppins, Roobert, Helvetica Neue, Helvetica, Arial, sans-serif;
+    ;
+}
+
+
+/* 手機直向 */
+
+@media screen and (max-width:767px) {
+    .main {
+        width: 100%;
+    }
+    h1 {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .start-Icon img {
+        width: 20px;
+        height: 20px;
+    }
+    .body-Header-Title {
+        padding: 32px 0;
+    }
+    .filter-Person-Item {
+        margin: auto;
+    }
+    .filter-Game-Item {
+        display: flex;
+        border-radius: 50px;
+        position: relative;
+        margin: 10px;
+        width: 115px;
+    }
+    .filter-Game-Right .filter-Game-Item {
+        margin-left: 36px;
+    }
+    .filter-Game-Group {
+        justify-content: space-around;
+    }
+}
+
+
+/* 手機橫向 */
+
+@media screen and (min-width:768px) {
+    .main {
+        width: 90%;
+    }
+    h1 {
+        font-size: 40px;
+        line-height: 40px;
+    }
+    .start-Icon img {
+        width: 24px;
+        height: 24px;
+    }
+    .filter-Person-Item {
+        margin: auto;
+    }
+    .filter-Game-Left,
+    .filter-Game-Right {
+        display: flex;
+    }
+    .filter-Game-Left .filter-Game-Text {
+        margin-right: 18PX;
+        padding: 8px;
+    }
+    .body-Header-Title {
+        padding: 42px 0;
+    }
+    .filter-Game-Group {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: auto;
+    }
+    .filter-Game-Item {
+        color: #fff;
+        display: flex;
+        border-radius: 50px;
+        position: relative;
+        width: 116px;
+        margin: 10px 0;
+    }
+    .filter-Game-Right .filter-Game-Item {
+        margin-left: 16px;
+    }
+}
+
+
+/* 平板直向 */
+
+@media screen and (min-width:991px) {
+    .main {
+        width: 80%;
+    }
+    h1 {
+        font-size: 48px;
+        line-height: 48px;
+    }
+    .body-Header-Title {
+        padding: 52px 0;
+    }
+    .filter-Person-Item {
+        margin: 0;
+    }
+}
+
+
+/* 平板橫向 */
+
+@media screen and (min-width:1200px) {
+    .body-Header-Title {
+        padding: 62px 0;
+    }
+    .main {
+        width: 70%;
+    }
+    .filter-Game {
+        display: flex;
+        justify-content: space-between;
+    }
+    .filter-Game-Group {
+        display: flex;
+    }
+    .filter-Game-Item {
+        color: #fff;
+        display: flex;
+        border-radius: 50px;
+        position: relative;
+        margin: 10px 0;
+        white-space: nowrap;
+    }
+    .filter-Game {
+        display: flex;
+        justify-content: space-between;
+    }
+    .filter-Game-Group {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    /* .filter-Game-Item label {
+        width: 100%;
+    } */
+    .filter-Game-Right {
+        display: flex;
+        justify-content: flex-end;
+        width: 20%;
+        align-items: center;
+    }
+}
+
+body {
+    height: 100%;
+    background-color: #120E1B;
+}
+
+.main {
+    margin: auto;
+    height: 300px;
+    background-image: url("https://static-oss.epal.gg/data/static/bg_LOL_img_0114_2.png");
+    background-size: cover;
+    background-position: center center;
+}
+
+
+/* NavBar */
+
+.navBar {
+    width: 100%;
+    height: 60px;
+    background-color: #aaa;
+}
+
+
+/* main-Header */
+
+h1 {
+    margin-bottom: 0;
+    margin: auto;
+    padding: 0px 10px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.title-Text {
+    display: flex;
+    align-items: center;
+}
+
+.start-Icon {
+    width: 40px;
+    height: 40px;
+    background-color: #302F3D;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.body-Header-Title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-Match {
+    margin: 10px;
+}
+
+#group-Btn {
+    background: linear-gradient(90deg, #625cff, #8d65ea);
+    border-radius: 20px;
+    color: #fff;
+}
+
+.btn-Box {
+    display: flex;
+    justify-content: center;
+}
+
+.title-Match button {
+    background: linear-gradient(90deg, #625cff, #8d65ea);
+    border-radius: 20px;
+}
+
+.title-Match button:hover {
+    background: linear-gradient(180deg, #625cff, #8d65ea);
+    ;
+}
+
+.title-Match button span {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0px 5px;
+}
+
+.title-Match button:active,
+.title-Match button:focus {
+    box-shadow: none;
+}
+
+
+/* Filter */
+
+
+/* people */
+
+.filter-Person {
+    display: flex;
+    padding: 0 10px;
+    margin-bottom: 30px;
+}
+
+.filter-Person {
+    margin-left: 8px;
+}
+
+.filter-Person a {
+    border-bottom: 5px solid rgba(0, 0, 0, 0);
+}
+
+.filter-Person-Item p {
+    padding: 0 10px;
+    cursor: pointer;
+    padding-bottom: 8px;
+}
+
+.filter-Person a {
+    text-decoration: none;
+    color: #C4C3E6;
+}
+
+.filter-Person a:focus {
+    border-bottom: 5px solid#966bf2;
+    color: #fff;
+}
+
+.filter-Person a:hover {
+    color: #fff;
+}
+
+.filter-Person-Item p {
+    font-size: 18px;
+    font-weight: 600;
+    margin: auto;
+    padding: auto;
+}
+
+.filter-Person-Item+.filter-Person-Item {
+    margin-left: 20px;
+}
+
+
+/* Game */
+
+.filter-Game-Text {
+    color: #fff;
+    margin-left: 10px;
+}
+
+.filter-Game-Text {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.filter-Item-Text,
+.filter-Icon {
+    color: #C4C3E6;
+}
+
+.filter-Game-Group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: auto;
+}
+
+.filter-Game-Item {
+    display: flex;
+    background-color: #302F3D;
+    position: relative;
+    border-radius: 50px;
+    padding: 4px 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    height: 33px;
+}
+
+.selectWrapper-List {
+    background-color: #302F3D;
+    font-size: 14px;
+    border-radius: 10px;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    color: #fff;
+    z-index: 3;
+}
+
+.filter-Icon {
+    margin: 0 5px;
+}
+
+.selectWrapper-List .list-Item {
+    list-style: none;
+    width: 118px;
+    padding: 5px 12px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+#filter-Item-check-1,
+#filter-Item-check-2,
+#filter-Item-check-3,
+#filter-Item-check-4,
+#filter-Item-check-5,
+#filter-Item-check-6,
+#filter-Item-check-7,
+#filter-Item-check-8,
+#filter-Item-check-9,
+#filter-Item-check-10 {
+    position: absolute;
+    opacity: 0;
+}
+
+#filter-Item-check-1~label,
+#filter-Item-check-2~label,
+#filter-Item-check-3~label,
+#filter-Item-check-4~label,
+#filter-Item-check-5~label,
+#filter-Item-check-6~label,
+#filter-Item-check-7~label,
+#filter-Item-check-8~label,
+#filter-Item-check-9~label,
+#filter-Item-check-10~label {
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.gameFilter-Item-SelectWrapper {
+    display: none;
+}
+
+.selectWrapper-List a {
+    text-decoration: none;
+}
+
+.selectWrapper-List a:hover .list-Item {
+    background-color: #120E1B;
+}
+
+#filter-Item-check-1:checked~label .gameFilter-Item-SelectWrapper,
+#filter-Item-check-2:checked~label .gameFilter-Item-SelectWrapper,
+#filter-Item-check-3:checked~label .gameFilter-Item-SelectWrapper,
+#filter-Item-check-4:checked~label .gameFilter-Item-SelectWrapper,
+#filter-Item-check-5:checked~label .gameFilter-Item-SelectWrapper,
+#filter-Item-check-6:checked~label .gameFilter-Item-SelectWrapper,
+#filter-Item-check-7:checked~label .gameFilter-Item-SelectWrapper,
+#filter-Item-check-8:checked~label .gameFilter-Item-SelectWrapper,
+#filter-Item-check-9:checked~label .gameFilter-Item-SelectWrapper,
+#filter-Item-check-10:checked~label .gameFilter-Item-SelectWrapper {
+    display: block;
+}
+
+#filter-Item-check-1:checked~label .filter-Icon .fas,
+#filter-Item-check-2:checked~label .filter-Icon .fas,
+#filter-Item-check-3:checked~label .filter-Icon .fas,
+#filter-Item-check-4:checked~label .filter-Icon .fas,
+#filter-Item-check-5:checked~label .filter-Icon .fas,
+#filter-Item-check-6:checked~label .filter-Icon .fas,
+#filter-Item-check-7:checked~label .filter-Icon .fas,
+#filter-Item-check-8:checked~label .filter-Icon .fas,
+#filter-Item-check-9:checked~label .filter-Icon .fas,
+#filter-Item-check-10:checked~label .filter-Icon .fas {
+    transform: scaleY(-1);
+    transition: 0.3s;
+}
+
+.list-Item p {
+    color: #fff;
+    margin: 5px 0;
+}
+
+.body-Header-Filter {
+    margin-bottom: 30px;
+}

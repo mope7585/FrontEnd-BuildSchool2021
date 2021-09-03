@@ -11,16 +11,32 @@ spanOdd.forEach(item => {
     })
 })
 spanEven.forEach(item => {
-    VoiceBtn.addEventListener('click', () => {
-        setInterval(() => {
-            item.classList.toggle('w-10')
-            item.classList.toggle('w-15')
-        }, 400)
+        VoiceBtn.addEventListener('click', () => {
+            setInterval(() => {
+                item.classList.toggle('w-10')
+                item.classList.toggle('w-15')
+            }, 400)
+        })
     })
-})
+    // sideBar
 var left = document.querySelector(".left");
 let navBar = document.querySelector('.top_navbar');
 navBar.addEventListener("click", function() {
     document.querySelector("body").classList.toggle("active");
     left.classList.toggle('turn-right');
 })
+
+
+var w = window.innerWidth;
+let button = document.getElementById('group-Btn')
+let list = document.querySelector('.filter-Game-Group')
+
+if (w > 375) {
+    button.classList.toggle('d-none');
+} else {
+    list.classList.add('d-none');
+    button.addEventListener('click', () => {
+        list.classList.toggle('d-none')
+        list.classList.toggle('d-flex');
+    })
+}
