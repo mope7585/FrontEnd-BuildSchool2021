@@ -471,7 +471,7 @@ h1 {
 }
 
 .recommendWapper-Left {
-    margin-left: 93px;
+    margin-left: 105px;
 }
 
 .left-Title h3 {
@@ -541,5 +541,5 @@ h1 {
     font-size: 14px;
     font-weight: 400;
     line-height: 21px;
-    margin: auto auto;
+    margin: auto;
 }
