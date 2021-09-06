@@ -429,3 +429,117 @@ h1 {
 .body-Header-Filter {
     margin-bottom: 30px;
 }
+
+
+/* 推薦區 */
+
+.recommendWapper {
+    background: linear-gradient(90deg, rgb(255, 39, 26) 0%, rgb(255, 129, 117) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 100%;
+    height: 80px;
+    border-radius: 40px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.recommendWapper img {
+    width: auto;
+    height: 100%;
+    margin-right: auto;
+}
+
+.recommendWapper-Left,
+.recommendWapper-Right {
+    color: #fff;
+}
+
+.recommendWapper-Left {
+    margin-left: 93px;
+}
+
+.left-Title h3 {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 24px;
+}
+
+.recommendWapper-Right {
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+}
+
+.picture-Box {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 18px;
+    margin-top: -24px;
+    border: 2px solid#fff;
+    border-radius: 50%;
+}
+
+.picture-Box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.right-Picture .right-Picture-Item {
+    position: absolute;
+    right: 0;
+}
+
+.right-Picture {
+    position: relative;
+}
+
+.right-Picture :first-child {
+    margin-right: 48px;
+    z-index: 1;
+}
+
+.right-Picture :nth-child(2) {
+    margin-right: 24px;
+    z-index: 2;
+}
+
+.right-Picture :nth-child(3) {
+    z-index: 3;
+}
+
+.right-More {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.right-More-text {
+    margin-right: 5px;
+}
+
+.right-More-text p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    margin: auto;
+}
