@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='/fav.png' rel='shortcut icon'>
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="Emoji searcher" property="og:title">
+    <meta content="Emoji searcher" property="title">
+    <meta content="Find the emoji that echoes your heart using keywords! No need to remember all the names of emoji." property="description">
+    <meta content="Find the emoji that echoes your heart using keywords! No need to remember all the names of emoji." property="og:description">
+    <meta content="https://emoji.muan.co/appicon.png" property="og:image">
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Emoji searcher" />
+    <title>Emoji searcher</title>
+    <link rel="apple-touch-icon-precomposed" sizes="64x64" href="/appicon.png">
+
+    <style>
+        form {
+            margin: 0;
+        }
+        
+        .pull-right {
+            float: right;
+            position: relative;
+        }
+        
+        input:invalid {
+            visibility: hidden;
+        }
+        
+        [data-clipboard-text] {
+            cursor: pointer;
+        }
+        
+        .text-big {
+            font-size: 20px;
+        }
+        
+        [hidden] {
+            display: none !important;
+        }
+        
+        body,
+        input,
+        button {
+            font-family: andalemono, menlo, monospace;
+            font-size: 12px;
+        }
+        
+        body {
+            line-height: 1.6em;
+            padding: 10px;
+            margin: 0;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        input,
+        div,
+        a,
+        footer {
+            box-sizing: border-box;
+        }
+        
+        .container,
+        .list,
+        .site-header,
+        .site-footer {
+            width: 100%;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        
+        .site-header {
+            white-space: nowrap;
+            position: relative;
+            line-height: 1;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .site-footer {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .list {
+            overflow: hidden;
+        }
+        
+        .loading {
+            background-color: #fff;
+            padding: 100px 0 120px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #999;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+        
+        .loading+.no-results {
+            display: none;
+        }
+        
+        .mojigroup {
+            margin: 0 0 10px 5px;
+            padding: 3px 4px 1px;
+        }
+        
+        .mojigroup.active {
+            background-color: #f9f9f9;
+            border-color: #58b2ee;
+        }
+        
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: #08c;
+        }
+        
+        ul {
+            text-align: left;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .plain {
+            appearance: none;
+            -webkit-appearance: none;
+            border: 0;
+            box-shadow: none;
+            background-color: transparent;
+        }
+        
+        .plain:focus {
+            box-shadow: none;
+            outline: none;
+        }
+        
+        .emoji-group {
+            display: block;
+            width: 100%;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 10px 0;
+        }
+        
+        .emojis-container {
+            font-size: 0;
+            line-height: 0;
+        }
+        
+        .emoji-code {
+            cursor: pointer;
+            padding: 10px;
+        }
+        /* Twemoji */
+        
+        .emoji {
+            width: 18px;
+            height: 18px;
+        }
+        
+        .emoji-wrapper {
+            display: inline-block;
+            width: 25%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        .keywords {
+            font-size: 0;
+        }
+        
+         ::selection {
+            background-color: transparent;
+        }
+        
+        .emoji-wrapper:hover {
+            background: #f5f5f5;
+        }
+        
+        .emoji-wrapper {
+            width: auto;
+            padding: 8px;
+            position: relative;
+        }
+        
+        ul,
+        li {
+            list-style-type: none;
+        }
+        
+        .button {
+            background: none;
+            line-height: 1;
+            padding: 10px 10px 9px;
+            margin-left: 5px;
+            display: inline-block;
+            vertical-align: top;
+            border-radius: 35px;
+            border: 1px solid #ccc;
+            font-size: 11px;
+            color: #777;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        .button:hover {
+            border-color: #36a;
+        }
+        
+        .button.clear-search {
+            color: #ee9d9d;
+        }
+        
+        .button.clear-search:hover {
+            border-color: #ee9d9d;
+        }
+        
+        .input-search {
+            min-height: 32px;
+            padding: 7px 15px;
+            outline: none;
+            color: #333;
+            border: 1px solid #ddd;
+            margin: 0;
+            width: 150px;
+            border-radius: 15px;
+            appearance: textfield;
+        }
+        
+        .input-search::-webkit-search-cancel-button,
+        .input-search::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+        
+        .input-search:focus {
+            border-color: #51a7e8;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(81, 167, 232, 0.5);
+        }
+        
+        .alert {
+            font-size: 13px;
+            white-space: nowrap;
+            overflow: hidden;
+            position: fixed;
+            margin: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 10px;
+            background: rgba(0, 0, 0, .8);
+            color: #fff;
+            font-weight: bold;
+            padding: 7px 20px;
+            text-align: center;
+            border-radius: 50px;
+        }
+        
+        .native-emoji {
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        
+        .twemojified .native-emoji {
+            padding: 0;
+        }
+        
+        .twemojified .mojigroup,
+        .twemojified .clear-search {
+            padding: 5px 7px;
+        }
+        
+        .native-emoji {
+            font-size: 19px;
+            padding: 10px 2px;
+            font-family: AppleColorEmoji;
+        }
+        
+        .no-results {
+            background-color: #f9f9f9;
+            padding: 50px 30px;
+            text-align: center;
+            border-radius: 3px;
+        }
+        
+        .no-results-text {
+            font-weight: bold;
+            color: #555;
+            border-bottom: 1px solid #aaa;
+            display: inline-block;
+            padding-bottom: 2px;
+            text-transform: uppercase;
+        }
+        
+        .contribute-button {
+            background-color: #36a;
+            border-color: #36a;
+            color: #fff;
+        }
+        
+        code {
+            background-color: #f8f8f8;
+            border: 1px solid #aaa;
+            padding: 0 2px;
+            border-radius: 3px;
+            color: #666;
+            font-family: Monaco, monospace;
+            font-size: 11px;
+        }
+        
+        .tips {
+            color: #777;
+        }
+        
+        @media (max-width: 480px) {
+            .input-search {
+                width: 100%;
+            }
+            .clear-search,
+            .mojigroup {
+                display: none;
+            }
+            input {
+                font-size: 14px;
+            }
+            ul {
+                padding: 0;
+            }
+            .emoji-wrapper {
+                padding: 0;
+            }
+        }
+    </style>
+    <script>
+        if (location.hostname === "muan.co") {
+            location.href = "https://emoji.muan.co/" + location.hash
+        }
+    </script>
+</head>
+
+<body>
+    <header class="site-header">
+        <button type="button" class="button pull-right js-twemoji">Twemoji</button>
+        <button type="button" class="button pull-right js-remove-twemoji">Remove Twemoji</button>
+        <input type="search" class="input-search speedy-filter" placeholder="Search" autofocus aria-label="Search emoji">
+        <a href="#" class="button js-clear-search clear-search">❌</a>
+        <a href="#cats" class="mojigroup button">
+        🐈
+      </a>
+        <a href="#transportation" class="mojigroup button">
+        🚗
+      </a>
+        <a href="#food" class="mojigroup button">
+        🍱
+      </a>
+        <a href="#fruit" class="mojigroup button">
+        🍎
+      </a>
+        <a href="#photo" class="mojigroup button">
+        🎉
+      </a>
+    </header>
+
+    <main class="list">
+        <ul class="emojis-container">
+        </ul>
+
+        <div class="loading">
+            Loading
+            <noscript>but not really, becasue this needs JavaScript.</noscript>
+        </div>
+
+        <div class="no-results">
+            <span class="text-big">😭</span>
+            <br>
+            <div class="no-results-text">No results</div>
+            <p>
+                Help your future self by adding
+                <strong class="keyword"></strong> to the library.
+            </p>
+            <p>
+                <a class="button js-contribute contribute-button" href="https://github.com/muan/emojilib/edit/master/emojis.json" target="_blank">Contribute to emojilib</a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <a href="https://twitter.com/muanchiou" target="_blank">@muanchiou</a> |
+        <a href="https://github.com/muan/emoji/" target="_blank">Site source</a> |
+        <a href="https://github.com/muan/emojilib" target="_blank">Data source</a>
+    </footer>
+    <script type="text/javascript" src="javascripts/stuff.js"></script>
+    <script type="text/javascript" src="javascripts/search.js"></script>
+    <script>
+        var filter = document.querySelector('.speedy-filter')
+
+        function searchHash() {
+            if (window.location.hash.length) {
+                filter.value = window.location.hash.substr(1)
+                search(filter.value)
+            } else {
+                search()
+            }
+        }
+        document.addEventListener('emoji:ready', searchHash)
+
+        function search(keyword) {
+            keyword = typeof keyword === 'undefined' ? '' : keyword
+            document.querySelector('.keyword').textContent = keyword
+            keyword = keyword.trim()
+
+            if (window.speedyKeyword !== keyword) {
+                window.speedyKeyword = keyword
+                for (const result of document.querySelectorAll('.result')) {
+                    result.hidden = keyword.length > 0 ? result.getAttribute('title').toLowerCase().indexOf(keyword.toLowerCase()) < 0 : false
+                }
+            }
+            setRelatedDOMVisibility(keyword)
+        }
+
+        function setRelatedDOMVisibility(keyword) {
+            var foundSomething = !!document.querySelector('.result:not([hidden])')
+            document.querySelector('.no-results').hidden = foundSomething
+        }
+
+        function updateHashWithInputValue() {
+            window.location.hash = filter.value.replace(' ', '_')
+        }
+
+        filter.addEventListener('input', updateHashWithInputValue)
+
+        document.addEventListener('click', event => {
+            if (event.target.classList.contains('group')) {
+                filter.value = event.target.href.substr(1)
+                search(filter.value)
+            } else if (event.target.classList.contains('js-clear-search')) {
+                filter.value = ''
+            }
+        })
+
+        window.onhashchange = function() {
+                searchHash()
+                for (const link of document.querySelectorAll('.active[href^="#"]')) {
+                    link.classList.remove('active')
+                }
+                var active = document.querySelector("[href='#{window.location.hash}']")
+                if (active) active.classList.add('active')
+            }
+            /* global $, localStorage */
+        var searchField = document.querySelector('.input-search')
+        var container = document.querySelector('.emojis-container')
+        var url = '//unpkg.com/emojilib@^3.0.0'
+
+        document.addEventListener('click', function(evt) {
+            const emoji = evt.target.closest('.js-emoji')
+            if (emoji) {
+                getSelection().removeAllRanges()
+                var range = document.createRange()
+                const node = emoji.querySelector('.js-emoji-char')
+                range.selectNodeContents(node)
+                getSelection().addRange(range)
+                document.execCommand('copy')
+                alertCopied(node.getAttribute('data-emoji'))
+            } else if (evt.target.classList.contains('js-twemoji')) {
+                prepareTwemoji()
+                evt.target.hidden = true
+                document.querySelector('.js-remove-twemoji').hidden = false
+                localStorage.setItem('twemoji-display', 'true')
+            } else if (evt.target.classList.contains('js-remove-twemoji')) {
+                localStorage.setItem('twemoji-display', 'false')
+                window.location.reload()
+            }
+        })
+
+        function prepareTwemoji() {
+            var twemojiScript = document.createElement('script')
+            twemojiScript.src = '//twemoji.maxcdn.com/2/twemoji.min.js?2.2.3'
+            twemojiScript.onload = function() {
+                twemoji.parse(document.body)
+                document.body.classList.add('twemojified')
+            }
+            document.head.append(twemojiScript)
+        }
+
+        function alertCopied(emoji) {
+            var alert = document.createElement('div')
+            alert.classList.add('alert')
+            alert.textContent = `Copied ${emoji}`
+            document.body.append(alert)
+            setTimeout(function() {
+                alert.remove()
+            }, 1000)
+        }
+
+        document.addEventListener('keydown', event => {
+            if (event.key === '/' && searchField) {
+                if (searchField.value.length) {
+                    searchField.selectionStart = 0
+                    searchField.selectionEnd = searchField.value.length
+                }
+                searchField.focus()
+                event.preventDefault()
+            }
+        })
+
+        const showingTwemoji = localStorage.getItem('twemoji-display') === 'true'
+        document.querySelector('.js-remove-twemoji').hidden = !showingTwemoji
+        document.querySelector('.js-twemoji').hidden = showingTwemoji
+
+        fetch(url).then(data => data.json()).then(json => {
+            var html
+            if (showingTwemoji) prepareTwemoji()
+            for (emoji in json) {
+                html += `<li class="result emoji-wrapper js-emoji" title="${json[emoji]}">
+      <div class="js-emoji-char native-emoji" data-emoji="${emoji}" >${emoji}</div></li>`
+            }
+            container.innerHTML = html
+            document.querySelector('.loading').remove()
+            document.dispatchEvent(new CustomEvent('emoji:ready'))
+        })
+    </script>
+</body>
+
+</html>

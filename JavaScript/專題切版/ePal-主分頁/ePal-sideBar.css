@@ -1,15 +1,16 @@
-* {
+/* * {
     font-family: Poppins, Roobert, Helvetica Neue, Helvetica, Arial, sans-serif;
-}
+} */
 
 .wrapper .sidebar {
     background: #21212C;
     position: fixed;
-    top: 0;
+    top: 60px;
     left: 0;
     width: 280px;
     height: 100%;
     transition: all 0.5s ease;
+    /* margin-top: 60px; */
 }
 
 .wrapper .sidebar .profile {
@@ -103,4 +104,8 @@ body.active .wrapper .section {
 .accordion-button span {
     font-size: 14px;
     font-weight: 700;
+}
+
+.accordion-button:after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
 }
