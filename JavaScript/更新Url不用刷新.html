@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>按下Button後會更新URL,但不刷新瀏覽器畫面 ,會產生三筆history記錄, 按瀏覽器可返回上一頁/下一頁</h1>
+    <button id="btnChangeUrl">Change Url without refresh</button>
+    <script>
+        let btn;
+        window.onload = () => {
+            btn = document.getElementById("btnChangeUrl");
+            btn.addEventListener("click", function() {
+                history.pushState({
+                    page: 1
+                }, "page1", "?page=1");
+                history.pushState({
+                    page: 2
+                }, "page2", "?page=2");
+                history.pushState({
+                    page: 3
+                }, "page3", "?page=3");
+            })
+        }
+    </script>
+</body>
+
+</html>

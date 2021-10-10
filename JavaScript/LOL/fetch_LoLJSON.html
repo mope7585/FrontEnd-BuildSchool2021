@@ -12,15 +12,8 @@
     <div id="msg"></div>
 
     <script type='module'>
-        import { $g, $c } from '../modules/helpers.js';
-        let url = 'https://raw.githubusercontent.com/mope7585/FrontEnd-BuildSchool2021/main/JavaScript/LOL/Champion.json'
-        window.onload = function LOLResource() {
-            fetch(url)
-                .then(response => response.text())
-                .then(result => {
-                    $g('#msg').innerHTML = result;
-                })     
-        }
+        import { $g, $c } from '../modules/helpers.js'; let url = 'https://raw.githubusercontent.com/mope7585/FrontEnd-BuildSchool2021/main/JavaScript/LOL/Champion.json' window.onload = function LOLResource() { fetch(url) .then(response => response.text()) .then(result
+        => { console.log(result) $g('#msg').innerHTML = result; }) }
 
 
     </script>

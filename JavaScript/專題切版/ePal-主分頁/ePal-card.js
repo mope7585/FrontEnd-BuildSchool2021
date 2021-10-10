@@ -1,22 +1,28 @@
 let VoiceBtn = document.querySelector('.user-Voice')
 let spanOdd = document.querySelectorAll('.voice-Left span:nth-child(odd)')
 let spanEven = document.querySelectorAll('.voice-Left span:nth-child(even)')
+let audio = document.getElementById('audio')
 console.log(spanEven[0])
 spanOdd.forEach(item => {
     VoiceBtn.addEventListener('click', () => {
-        setInterval(() => {
+        let abc = setInterval(() => {
             item.classList.toggle('w-15')
             item.classList.toggle('w-10')
         }, 400)
     })
 })
+
 spanEven.forEach(item => {
-        VoiceBtn.addEventListener('click', () => {
-            setInterval(() => {
-                item.classList.toggle('w-10')
-                item.classList.toggle('w-15')
-            }, 400)
-        })
+    VoiceBtn.addEventListener('click', () => {
+        setInterval(() => {
+            item.classList.toggle('w-10')
+            item.classList.toggle('w-15')
+        }, 400)
+    })
+})
+
+VoiceBtn.addEventListener('click', () => {
+        audio.setAttribute('src', "https://res.cloudinary.com/drh5ybnss/video/upload/v1631779467/Independent%20Study/Audio/1603849213483_y0udld.wav")
     })
     // sideBar
 var left = document.querySelector(".left");

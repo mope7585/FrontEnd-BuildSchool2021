@@ -170,7 +170,19 @@ body {
 }
 
 
-/* NavBar */
+/* filter */
+
+.form-select {
+    border-radius: 10px;
+    background-color: #302F3D;
+    color: #C4C3E6;
+    border: 0;
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='rgb(196,195,230)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>");
+}
+
+.form-select:focus {
+    box-shadow: none;
+}
 
 
 /* main-Header */

@@ -1,0 +1,73 @@
+{
+    "CategoryId": 1,
+    "ProductCards": [
+      {
+        "CreatorName": "✶ 🎀 𝒜𝓈𝒾𝒶𝓃 𝐵𝑒𝓁𝓁 🎀 ✶",
+        "CreatorImg": "https://res.cloudinary.com/drh5ybnss/image/upload/v1632576586/Independent%20Study/Creator%20Img/6_avoaof.jpg",
+        "Introduction": "jus a regular egghead crewmate nothing suspicious here",
+        "LineStatus": "https://res.cloudinary.com/dlg73uwod/image/upload/v1633349879/OFFLINE_nyvbwc.png",
+        "RecommendationVoice": "https://res.cloudinary.com/drh5ybnss/video/upload/v1631779467/Independent%20Study/Audio/1603849213483_y0udld.wav",
+        "Rank": "Gold  ",
+        "Position": "Top",
+        "UnitPrice": 5,
+        "StarLevel": 5,
+        "ProductId": 1,
+        "Server": "NA",
+        "Language": "English",
+        "GenderId": 0,
+        "StatusName": "OFFLINE                                           ",
+        "Age": 29
+      },
+      {
+        "CreatorName": "Mawy ♥",
+        "CreatorImg": "https://res.cloudinary.com/drh5ybnss/image/upload/v1632576587/Independent%20Study/Creator%20Img/10_binknz.jpg",
+        "Introduction": "Hi..i'm a good guy~~",
+        "LineStatus": "https://res.cloudinary.com/dlg73uwod/image/upload/v1633349879/online_qmnfoy.png",
+        "RecommendationVoice": "https://res.cloudinary.com/drh5ybnss/video/upload/v1631779467/Independent%20Study/Audio/1603849213483_y0udld.wav",
+        "Rank": "Silver ",
+        "Position": "Top",
+        "UnitPrice": 7,
+        "StarLevel": 5,
+        "ProductId": 6,
+        "Server": "OCE",
+        "Language": "簡體中文",
+        "GenderId": 0,
+        "StatusName": "ONLINE                                            ",
+        "Age": 25
+      },
+      {
+        "CreatorName": "Risiyana\r\n",
+        "CreatorImg": "https://res.cloudinary.com/drh5ybnss/image/upload/v1632576586/Independent%20Study/Creator%20Img/5_f1pjyz.jpg",
+        "Introduction": "Hi~~~",
+        "LineStatus": "https://res.cloudinary.com/dlg73uwod/image/upload/v1633349879/online_qmnfoy.png",
+        "RecommendationVoice": "https://res.cloudinary.com/drh5ybnss/video/upload/v1631779467/Independent%20Study/Audio/1603849213483_y0udld.wav",
+        "Rank": "Diamond ",
+        "Position": "Jungler",
+        "UnitPrice": 8,
+        "StarLevel": 5,
+        "ProductId": 7,
+        "Server": "NA",
+        "Language": "簡體中文",
+        "GenderId": 0,
+        "StatusName": "ONLINE                                            ",
+        "Age": 23
+      },
+      {
+        "CreatorName": "Brandy",
+        "CreatorImg": "https://res.cloudinary.com/drh5ybnss/image/upload/v1632576586/Independent%20Study/Creator%20Img/4_popvcr.jpg",
+        "Introduction": "Hi~~yoyoy",
+        "LineStatus": "https://res.cloudinary.com/dlg73uwod/image/upload/v1633349879/OFFLINE_nyvbwc.png",
+        "RecommendationVoice": "https://res.cloudinary.com/drh5ybnss/video/upload/v1632585892/Independent%20Study/Audio/sonia_juuyrl.wav",
+        "Rank": "Bronze ",
+        "Position": "Top",
+        "UnitPrice": 3,
+        "StarLevel": 2,
+        "ProductId": 11,
+        "Server": "NA",
+        "Language": "Korean",
+        "GenderId": 1,
+        "StatusName": "OFFLINE                                           ",
+        "Age": 24
+      }
+    ]
+  }
