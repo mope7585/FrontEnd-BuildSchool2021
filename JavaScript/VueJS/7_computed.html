@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- VueJS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <!-- 購物車，監聽異動時間以及內容並回傳運算結果值 -->
+    <div id="app">
+        <ul>
+            <li v-for="item in cart">
+                商品:{{item.productName}} 單價:{{item.price}} 
+                數量:<input type="number" v-model="item.amount">              
+            </li>
+            <p>總計:{{cartTotal}}</p>
+            <p>{{msg}}</p>
+        </ul>
+    </div>
+
+
+
+
+    <script>
+      let app = new Vue({
+          el:'#app',
+          data:{
+              cart:[
+                  {productName:'牛奶',price:50,amount:10},
+                  {productName:'咖啡',price:20,amount:2},
+                  {productName:'奶茶',price:10,amount:3},
+                  {productName:'奶粉',price:12,amount:5},
+                  {productName:'麥片',price:15,amount:1},
+              ],
+            //   先設定空字串，當呼叫cartTotal時把msg的結果塞入msg裡，並回傳至HTML
+              msg:''
+          },
+          watch:{
+            cartTotal(){
+                this.msg = `購物車異動${new Date()}`
+            }
+          },
+          computed:{
+            cartTotal(){
+                let sum = this.cart.map(x =>x.price * x.amount)
+                                .reduce((a,b)=>a+b)
+                return sum
+            }
+          }
+      })
+    </script>
+</body>
+</html>

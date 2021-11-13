@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Add this to <head> -->
+
+    <!-- Load required Bootstrap and BootstrapVue CSS -->
+    <!-- <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" /> -->
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Load polyfills to support older browsers -->
+    <script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver"
+        crossorigin="anonymous"></script>
+
+    <!-- Load Vue followed by BootstrapVue -->
+    <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+
+    <!-- Load the following for BootstrapVueIcons support -->
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <b-card no-body>
+            <b-tabs v-model="tabIndex" card>
+                <b-tab title="Tab 1" :title-link-class="linkClass(0)">Tab contents 1</b-tab>
+                <b-tab title="Tab 2" :title-link-class="linkClass(1)">Tab contents 2</b-tab>
+                <b-tab title="Tab 3" :title-link-class="linkClass(2)">Tab contents 3</b-tab>
+            </b-tabs>
+        </b-card>
+    </div>
+
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                tabIndex: 0
+            },
+            methods: {
+                linkClass(idx) {
+                    if (this.tabIndex === idx) {
+                        return ['bg-primary', 'text-light']
+                    } else {
+                        return ['bg-light', 'text-info']
+                    }
+                }
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>

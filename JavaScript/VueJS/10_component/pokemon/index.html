@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寶可夢圖鑑</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- VueJS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="./css/all.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container-fluid bg-white loading position-fixed w-100 h-100 d-flex  justify-content-center m-auto">
+            <div class="spinner-border m-auto" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <div class="container-fluid px-0 overflow-hidden">
+            <div class="jumbotron position-relative mb-0">
+                <h1 class="text-center py-3 display-5 display-3 font-weight-bold">
+                    寶可夢圖鑑
+                </h1>
+                <img :src="headerSetting.mainImg" alt="" class="position-absolute">
+                <img :src="headerSetting.mainImg" alt="" class="position-absolute">
+                <img :src="headerSetting.mainImg" alt="" class="position-absolute">
+                <img :src="headerSetting.subImg" alt="" class="position-absolute">
+                <span></span>
+            </div>
+        </div>
+        <div class="container-lg p-0">
+            <div class="row m-0 ">
+                <div class="col-12">
+                    <div class="btn-group">
+                        <button id="addOne" class="btn m-2" @click="addOneCard"><span class="h3">加入一張</span></button>
+                        <button id="removeOne" class="btn m-2" @click="removeOneCard"><span
+                                class="h3">移除一張</span></button>
+                        <button id="addAll" @click="addAllCards" class="btn m-2"><span class="h3">加入全部</span></button>
+                        <button id="reset" class="btn m-2" @click="resetCards"><span class="h3">重置</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container-lg p-0">
+            <div class="row m-0 render">
+                <!-- 放寶可夢卡片的地方 -->
+                <pokemon v-for="abc in pokemonData.cardArray" :pokemon="abc" v-on:show-modal="showModalData(abc.index)">
+                </pokemon>
+            </div>
+        </div>
+        <!-- 寶可夢詳情Modal -->
+        <div class="modal fade pt-md-5" tabindex="-1">
+            <div class="modal-dialog mt-md-5">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                        <h5 class="modal-title text-center text-white">{{pokemonData.currentPokemon.name}}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="text-white">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center p-0 d-md-flex">
+                        <div
+                            class="col-12 col-md-5 border-right border-secondary  flex-md-column justify-content-center px-0 modal-pic">
+                            <img :src="pokemonData.currentPokemon.img" alt="" id="pokemonImage" class="d-block mx-auto">
+                            <div class="d-flex flex-md-column align-items-center justify-content-center">
+                                <div class="types my-3"></div>
+                                <div class="genus my-3">
+                                    <span class="py-2 px-4 bg-secondary text-white rounded-pill h6"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-7 px-0">
+                            <div class="modal-base">
+                                <h3
+                                    class="modal-title my-3 text-white bg-dark w-25 border-right rounded-right text-right pr-1">
+                                    能力值
+                                </h3>
+                                <table class="table mb-0 mx-5 w-80">
+                                    <thead class="thead-light border border-secondary">
+                                        <tr>
+                                            <th scope="col" class="border border-secondary">生命</th>
+                                            <th scope="col" class="border border-secondary">攻擊</th>
+                                            <th scope="col" class="border border-secondary">防禦</th>
+                                            <th scope="col" class="border border-secondary">特攻</th>
+                                            <th scope="col" class="border border-secondary">特防</th>
+                                            <th scope="col" class="border border-secondary">速度</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="border border-light">
+                                            <td id="hp" class="border border-secondary">
+                                                {{pokemonData.currentPokemon.hp}}</td>
+                                            <td id="attack" class="border border-secondary">
+                                                {{pokemonData.currentPokemon.attack}}</td>
+                                            <td id="defense" class="border border-secondary">
+                                                {{pokemonData.currentPokemon.defense}}</td>
+                                            <td id="spAttack" class="border border-secondary">
+                                                {{pokemonData.currentPokemon.sp_attack}}</td>
+                                            <td id="spDefense" class="border border-secondary">
+                                                {{pokemonData.currentPokemon.sp_defense}}</td>
+                                            <td id="speed" class="border border-secondary">
+                                                {{pokemonData.currentPokemon.speed}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-evolution">
+                                <h3
+                                    class="modal-title mt-3 mb-3 text-white bg-dark w-25 border-right rounded-right text-right pr-1">
+                                    進化
+                                </h3>
+                                <div class="evolution d-flex"></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <template id="pokemonTemplate">
+        <div class="col-6 col-md-4 col-lg-3 my-3">
+            <div class="card bg-light">
+                <div class="card-body p-0">
+                    <div class="card-img">
+                        <img src="" class="card-img-top">
+                    </div>
+                    <h5 class="card-title rounded bg-dark text-light d-flex p-1 mx-3">
+                        <span class="pokemon-id pl-2"></span>
+                        <span>．</span>
+                        <span class="pokemon-name"></span>
+                    </h5>
+                </div>
+                <div class="card-footer text-center bg-light border-0">
+                    <a href="#" class="btn btn-secondary">詳細資訊</a>
+                </div>
+            </div>
+        </div>
+    </template> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/all.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+
+    <!-- Add this to <head> -->
+
+    <!-- Load required Bootstrap and BootstrapVue CSS -->
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+
+    <!-- Load polyfills to support older browsers -->
+    <script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver"
+        crossorigin="anonymous"></script>
+
+    <!-- Load Vue followed by BootstrapVue -->
+    <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+
+    <!-- Load the following for BootstrapVueIcons support -->
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+
+    <style>
+        .tab-content {
+            height: 500px;
+            overflow-y: auto;
+        }
+
+        .none-click {
+            pointer-events: none;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- https://bootstrap-vue.org/docs/components/tabs  -> Advanced examples -->
+    <div id="app" class="container">
+
+        <h1>註冊會員</h1>
+
+        <!-- Tabs with card integration -->
+        <b-card no-body>
+            <b-tabs v-model="tabIndex" small card fill>
+                <b-tab title="隱私政策" title-item-class="none-click">
+                    <b-card>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime rerum deleniti deserunt repellat
+                        neque, odio tempora quae veniam aliquam sequi pariatur reprehenderit totam voluptate assumenda
+                        asperiores hic voluptatum ipsum excepturi! Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Enim hic accusantium labore corporis animi aspernatur fuga alias expedita numquam, maxime,
+                        iure cum ducimus obcaecati perferendis at eaque reprehenderit! Ratione, omnis. Lorem ipsum dolor
+                        sit amet, consectetur adipisicing elit. Aut rerum omnis ab consequuntur praesentium est quaerat
+                        aperiam iusto et commodi, delectus adipisci, vel debitis nisi, eaque doloremque laborum quos
+                        facilis.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime rerum deleniti deserunt repellat
+                        neque, odio tempora quae veniam aliquam sequi pariatur reprehenderit totam voluptate assumenda
+                        asperiores hic voluptatum ipsum excepturi! Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Enim hic accusantium labore corporis animi aspernatur fuga alias expedita numquam, maxime,
+                        iure cum ducimus obcaecati perferendis at eaque reprehenderit! Ratione, omnis. Lorem ipsum dolor
+                        sit amet, consectetur adipisicing elit. Aut rerum omnis ab consequuntur praesentium est quaerat
+                        aperiam iusto et commodi, delectus adipisci, vel debitis nisi, eaque doloremque laborum quos
+                        facilis.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime rerum deleniti deserunt repellat
+                        neque, odio tempora quae veniam aliquam sequi pariatur reprehenderit totam voluptate assumenda
+                        asperiores hic voluptatum ipsum excepturi! Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Enim hic accusantium labore corporis animi aspernatur fuga alias expedita numquam, maxime,
+                        iure cum ducimus obcaecati perferendis at eaque reprehenderit! Ratione, omnis. Lorem ipsum dolor
+                        sit amet, consectetur adipisicing elit. Aut rerum omnis ab consequuntur praesentium est quaerat
+                        aperiam iusto et commodi, delectus adipisci, vel debitis nisi, eaque doloremque laborum quos
+                        facilis.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime rerum deleniti deserunt repellat
+                        neque, odio tempora quae veniam aliquam sequi pariatur reprehenderit totam voluptate assumenda
+                        asperiores hic voluptatum ipsum excepturi! Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Enim hic accusantium labore corporis animi aspernatur fuga alias expedita numquam, maxime,
+                        iure cum ducimus obcaecati perferendis at eaque reprehenderit! Ratione, omnis. Lorem ipsum dolor
+                        sit amet, consectetur adipisicing elit. Aut rerum omnis ab consequuntur praesentium est quaerat
+                        aperiam iusto et commodi, delectus adipisci, vel debitis nisi, eaque doloremque laborum quos
+                        facilis.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime rerum deleniti deserunt repellat
+                        neque, odio tempora quae veniam aliquam sequi pariatur reprehenderit totam voluptate assumenda
+                        asperiores hic voluptatum ipsum excepturi! Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Enim hic accusantium labore corporis animi aspernatur fuga alias expedita numquam, maxime,
+                        iure cum ducimus obcaecati perferendis at eaque reprehenderit! Ratione, omnis. Lorem ipsum dolor
+                        sit amet, consectetur adipisicing elit. Aut rerum omnis ab consequuntur praesentium est quaerat
+                        aperiam iusto et commodi, delectus adipisci, vel debitis nisi, eaque doloremque laborum quos
+                        facilis.
+                    </b-card>
+                    <div class="form-group form-check d-flex justify-content-center mt-3">
+                        <input v-model="signupData.alreadyRead" type="checkbox" class="form-check-input">
+                        <label class="form-check-label" for="exampleCheck1">我已詳細閱讀</label>
+                    </div>
+                </b-tab>
+
+                <b-tab title="填寫基本資料" title-item-class="none-click">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-md-6 mb-3">
+                                <label>帳號</label>
+                                <input v-model="signupData.memberInfo.account"
+                                    :class="{'is-invaild':signupData.memberInfoCheck.accountError}" type="text"
+                                    class="form-control">
+                                <div class="text-danger small mt-1">
+                                    {{signupData.memberInfoCheck.accountErrorMsg}}
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </b-tab>
+
+                <b-tab title="大頭貼上傳" title-item-class="none-click">
+                    ...
+                </b-tab>
+
+                <b-tab title="確認會員資料" title-item-class="none-click">
+                    ...
+                </b-tab>
+
+                <!-- <b-tab title="Premium Plan" disabled>Sibzamini!</b-tab>
+                <b-tab title="Info">I'm the last tab</b-tab> -->
+            </b-tabs>
+        </b-card>
+
+        <!-- Control buttons-->
+        <div class="d-flex justify-content-between mt-3">
+            <b-button @click="tabIndex--">上一步</b-button>
+            <!-- &lt "<" -->
+            <b-button v-if="tabIndex &lt 3" @click="tabIndex++" :disabled="!nextable">下一步</b-button>
+            <b-button v-if="tabIndex == 3" @click="tabIndex++" :disabled="!nextable" variant="success">註冊會員</b-button>
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        let app = new Vue({
+            el: '#app',
+            data: {
+                tabIndex: 0,
+                signupData: {
+                    //隱私政策
+                    alreadyRead: false,
+                    //基本資料填寫
+                    memberInfo: {
+                        account: ''
+                    },
+                    memberInfoCheck: {
+                        accountError: false,
+                        accountErrorMsg: ''
+                    }
+                }
+            },
+            watch: {
+                //在輸入時，呼叫methods的checkMemberInfo()
+                'signupData.memberInfo': {
+                    immediate: true,
+                    deep: true,
+                    handler() {
+                        this.checkMemberInfo();
+                    }
+                }
+            },
+            computed: {
+                nextable() {
+                    //隱私政策
+                    if (this.tabIndex == 0) {
+                        if (this.signupData.alreadyRead == false) {
+                            return false;
+                        }
+                    }
+                    //基本資料填寫
+                    if (this.tabIndex == 1) {
+                        return this.checkMemberInfoVerify();
+                    }
+
+                    return true;
+                }
+            },
+            methods: {
+                //之前都寫在watch，這次改寫在methods
+                checkMemberInfo() {
+                    //account
+                    if (this.signupData.memberInfo.account == '') {
+                        this.signupData.memberInfoCheck.accountError = true;
+                        this.signupData.memberInfoCheck.accountErrorMsg = '帳號為必填';
+                    }
+                    else {
+                        this.signupData.memberInfoCheck.accountError = false;
+                        this.signupData.memberInfoCheck.accountErrorMsg = '';
+                    }
+                },
+                //檢查填寫基本資料是否已全部填寫完成
+                checkMemberInfoVerify() {
+                    for (let prop in this.signupData.memberInfoCheck) {
+                        if (this.signupData.memberInfoCheck[prop] == true) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            }
+        })
+
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

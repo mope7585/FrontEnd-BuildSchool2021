@@ -12,7 +12,7 @@ table {
     width: 77%;
     margin: auto;
     margin-bottom: 20px;
-    height: 100vh;
+    height: auto;
 }
 
 th {

@@ -1,0 +1,70 @@
+[
+    {
+        "GroupId": 1,
+        "Message": [
+            {
+                "senderId": 2,
+                "datetime": 202110240923,
+                "messageContent": "Hi~~~No.2",
+                "MessageTypeId": "text"
+            },
+            {
+                "senderId": 3,
+                "datetime": 202110240924,
+                "messageContent": "Hi~~~No.3",
+                "MessageTypeId": "text"
+            }
+        ]
+    },
+    {
+        "GroupId": 2,
+        "Message": [
+            {
+                "ReceiverId": 1,
+                "datetime": 202110240923,
+                "messageContent": "Hi~~~No.1",
+                "MessageTypeId": "text"
+            },
+            {
+                "ReceiverId": 3,
+                "datetime": 202110240924,
+                "messageContent": "Hi~~~No.3",
+                "MessageTypeId": "text"
+            }
+        ]
+    },
+    {
+        "GroupId": 3,
+        "Message": [
+            {
+                "ReceiverId": 1,
+                "datetime": 202110240923,
+                "messageContent": "Hi~~~No.1",
+                "MessageTypeId": "text"
+            },
+            {
+                "ReceiverId": 2,
+                "datetime": 202110240924,
+                "messageContent": "Hi~~~No.2",
+                "MessageTypeId": "text"
+            }
+        ]
+    },
+    {
+        "GroupId": 4,
+        "Message": [
+            {
+                "ReceiverId": 1,
+                "datetime": 202110240923,
+                "messageContent": "Hi~~~No.1",
+                "MessageTypeId": "text"
+            },
+            {
+                "ReceiverId": 3,
+                "datetime": 202110240924,
+                "messageContent": "Hi~~~No.3",
+                "MessageTypeId": "text"
+            }
+        ]
+    }
+]

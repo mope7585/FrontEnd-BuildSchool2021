@@ -15,6 +15,74 @@
     <link rel="stylesheet" href="ePal-New.css">
     <link rel="stylesheet" href="ePal-sideBar.css">
     <link rel="stylesheet" href="ePal-card.css">
+    <style>
+        .dropdown .btn {
+            padding: 0 10px;
+            font-size: 14px;
+            margin-right: 10px;
+            border-radius: 10px;
+            color: #c4c3e6;
+            background-color: #302F3D;
+            border: none;
+        }
+
+
+        .dropdown .btn:focus,
+        .btn-check:active+.btn-secondary:focus,
+        .btn-check:checked+.btn-secondary:focus,
+        .btn-secondary.active:focus,
+        .btn-secondary:active:focus,
+        .show>.btn-secondary.dropdown-toggle:focus {
+            box-shadow: none;
+
+        }
+
+        .btn-check:active+.btn-secondary,
+        .btn-check:checked+.btn-secondary,
+        .btn-secondary.active,
+        .btn-secondary:active,
+        .show>.btn-secondary.dropdown-toggle {
+            background-color: #302F3D;
+        }
+
+
+        .dropdown-toggle::after {
+            vertical-align: 0.155em;
+        }
+
+        .dropdown-menu span {
+            padding: 10px;
+            color: #fff;
+            margin: 0 5px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            background-color: #302F3D;
+            border-radius: 10px;
+        }
+
+        .dropdown-item {
+            width: auto;
+        }
+
+        .dropdown-item:active {
+            background-color: #120E1B;
+        }
+
+        .dropdown-item:hover {
+            background-color: #120E1B;
+            color: #fff;
+        }
+
+        .bg-black1 {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAeFBMVEUAAACqgP+Sbf+VavSOZu6Qae6QaO2NZuuOZ+qNZuuOZeuOZeqNZeuOZeuOZuuNZeuOZuqNZeqNZeqPaOqQaeqUbuuWceubeOyefe2ffe2lhe6lhu7GsvTPvvbQv/bUxffZy/jd0fjq4/vx7Pz08P308f349f3///9W78FDAAAAEnRSTlMABgcYLS5HgpWWv8fZ4/Hy8/TT2gOVAAAA7UlEQVQ4y4WT20LDIBBEl6AECIlhvNQLXmqr+/9/6AM0DQnIPHIGWJZZokVCaevm2VmtBO0lzYRFk5Eb3PUemXzfZdsH7DSsDrkdUdB4s+wvcmBMZ3QDKhpiHT2q6omIpK8bvCQig39kiMRUJPepY4JUkX8ck0ORLnLm4wMAQJMtc+ZPAIAlV+HnZwCAozmtHr7fChzzxXA48e/rnuMuXfF4Yo6OnMNdigwcHe85h12eGR1fzMznl2vB+tqowEk/Kw61anUo8EmsPyvsOEz+3WHLvdwEJuQ8BiaL3FMpcs3QtmPfHpz26LWHtz7+f42dP2nUknWiAAAAAElFTkSuQmCC');
+            background-repeat: no-repeat;
+            background-position: 120px;
+            background-size: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,247 +124,103 @@
                                 <div class="filter-Game">
                                     <div class="filter-Game-Left">
                                         <div class="filter-Game-Text">Filter</div>
-                                        <div class="btn-Box">
-                                            <button id="group-Btn" class="btn" type="button">Click me</button>
-                                        </div>
+
                                         <div class="filter-Game-Group">
-                                            <div>
+                                            <div class="dropdown">
+                                                <div class="btn btn-secondary dropdown-toggle" role="button" id="server"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Server
+                                                </div>
 
-                                                <select class="form-select" aria-label="Default select example">
+                                                <ul class="dropdown-menu server-list" aria-labelledby="server" id="abc">
+                                                    <li><span class="dropdown-item">OCE</span></li>
+                                                    <li><span class="dropdown-item">NA</span></li>
+                                                    <li><span class="dropdown-item">LAN</span></li>
+                                                    <li><span class="dropdown-item">BR</span></li>
+                                                    <li><span class="dropdown-item">EU_West</span></li>
+                                                    <li><span class="dropdown-item">EU_NorthEast</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="dropdown">
+                                                <div class="btn btn-secondary dropdown-toggle" role="button" id="server"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Language
+                                                </div>
 
-                                                    <option selected>service</option>
-                                                    <option value="1" id="option">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
+                                                <ul class="dropdown-menu language-list" aria-labelledby="server"
+                                                    id="abc">
+                                                    <li><span class="dropdown-item">Nederlands</span></li>
+                                                    <li><span class="dropdown-item">Deutsch</span></li>
+                                                    <li><span class="dropdown-item">English</span></li>
+                                                    <li><span class="dropdown-item">Français</span></li>
+                                                    <li><span class="dropdown-item">Español_AR</span></li>
+                                                    <li><span class="dropdown-item">日本語</span></li>
+                                                    <li><span class="dropdown-item">繁體中文</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="dropdown">
+                                                <div class="btn btn-secondary dropdown-toggle" role="button" id="server"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Gender
+                                                </div>
+                                                <ul class="dropdown-menu" aria-labelledby="server" id="abc">
+                                                    <li><span class="dropdown-item">Male</span></li>
+                                                    <li><span class="dropdown-item">Female</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="dropdown">
+                                                <div class="btn btn-secondary dropdown-toggle" role="button" id="server"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Status
+                                                </div>
 
-                                                </select>
+                                                <ul class="dropdown-menu" aria-labelledby="server" id="abc">
+                                                    <li><span class="dropdown-item">OnLine</span></li>
+                                                    <li><span class="dropdown-item">OffLine</span></li>
+                                                </ul>
                                             </div>
+                                            <div class="dropdown">
+                                                <div class="btn btn-secondary dropdown-toggle" role="button" id="server"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Level
+                                                </div>
 
-                                            <!-- <div class="f
-                                                ilter-Game-Item">
-                                                <input type="checkbox" id="filter-Item-check-1">
-                                                <label for="filter-Item-check-1">
-                                                    <div class="filter-Item-Text">Server</div>
-                                                    <div class="filter-Icon">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </div>
-                                                    <div class="gameFilter-Item-SelectWrapper">
-                                                        <div class="selectWrapper-List">
-                                                            <a href="#">
-                                                                <div class="list-Item">
-                                                                    <p>OCE</p>
-                                                                </div>
-                                                            </a>
-                                                            <a href="#">
-                                                                <div class="list-Item">
-                                                                    <p>NA</p>
-                                                                </div>
-                                                            </a>
-                                                           <a href="#">
-                                                               <div class="list-Item">
-                                                                   <p>LAN</p>
-                                                               </div>
-                                                           </a>
-                                                        </div>
-                                                    </div>
-                                                </label>
-                                            </div> -->
-                                            <!-- <div class="filter-Game-Item">
-                                                <input type="checkbox" id="filter-Item-check-2">
-                                                <label for="filter-Item-check-2">
-                                                    <div class="filter-Item-Text">Language</div>
-                                                    <div class="filter-Icon">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </div>
-                                                    <div class="gameFilter-Item-SelectWrapper">
-                                                        <div class="selectWrapper-List">
-                                                            <a href="#">
-                                                                <div class="list-Item">
-                                                                    <p>OCE</p>
-                                                                </div>
-                                                            </a>
-                                                            <a href="#">
-                                                                <div class="list-Item">
-                                                                    <p>NA</p>
-                                                                </div>
-                                                            </a>
-                                                           <a href="#">
-                                                               <div class="list-Item">
-                                                                   <p>LAN</p>
-                                                               </div>
-                                                           </a>
-                                                        </div>
-                                                    </div>
-                                                </label>
+                                                <ul class="dropdown-menu" aria-labelledby="server" id="abc">
+                                                    <li><span class="dropdown-item">Iron</span></li>
+                                                    <li><span class="dropdown-item">Bronze</span></li>
+                                                    <li><span class="dropdown-item">Silver</span></li>
+                                                    <li><span class="dropdown-item">Gold</span></li>
+                                                    <li><span class="dropdown-item">Platinum</span></li>
+                                                    <li><span class="dropdown-item">Diamond</span></li>
+                                                </ul>
                                             </div>
-                                            <div class="filter-Game-Item">
-                                                <input type="checkbox" id="filter-Item-check-3">
-                                                <label for="filter-Item-check-3">
-                                                    <div class="filter-Item-Text">Gender</div>
-                                                    <div class="filter-Icon">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </div>
-                                                    <div class="gameFilter-Item-SelectWrapper">
-                                                        <div class="selectWrapper-List">
-                                                            <a href="#">
-                                                                <div class="list-Item">
-                                                                    <p>OCE</p>
-                                                                </div>
-                                                            </a>
-                                                            <a href="#">
-                                                                <div class="list-Item">
-                                                                    <p>NA</p>
-                                                                </div>
-                                                            </a>
-                                                           <a href="#">
-                                                               <div class="list-Item">
-                                                                   <p>LAN</p>
-                                                               </div>
-                                                           </a>
-                                                        </div>
-                                                    </div>
-                                                </label>
+                                            <div class="dropdown">
+                                                <div class="btn btn-secondary dropdown-toggle" role="button" id="server"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Price
+                                                </div>
+
+                                                <ul class="dropdown-menu" aria-labelledby="server" id="abc">
+                                                    <li><span class="dropdown-item">1-5</span></li>
+                                                    <li><span class="dropdown-item">5.0 - 10</span></li>
+                                                    <li><span class="dropdown-item">10.0 - 20</span></li>
+                                                    <li><span class="dropdown-item">20.0 - 999</span></li>
+                                                    <li><span class="dropdown-item">Platinum</span></li>
+                                                    <li><span class="dropdown-item">Diamond</span></li>
+                                                </ul>
                                             </div>
-                                            <div class="filter-Game-Item">
-                                                <input type="checkbox" id="filter-Item-check-4">
-                                                <label for="filter-Item-check-4">
-                                                    <div class="filter-Item-Text">All Status</div>
-                                                    <div class="filter-Icon">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </div>
-                                                    <div class="gameFilter-Item-SelectWrapper">
-                                                        <div class="selectWrapper-List">
-                                                            <a href="#">
-                                                                <div class="list-Item">
-                                                                    <p>OCE</p>
-                                                                </div>
-                                                            </a>
-                                                            <a href="#">
-                                                                <div class="list-Item">
-                                                                    <p>NA</p>
-                                                                </div>
-                                                            </a>
-                                                           <a href="#">
-                                                               <div class="list-Item">
-                                                                   <p>LAN</p>
-                                                               </div>
-                                                           </a>
-                                                        </div>
-                                                    </div>
-                                                </label>
+                                            <div class="dropdown">
+                                                <div class="btn btn-secondary dropdown-toggle" role="button" id="server"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Age
+                                                </div>
+
+                                                <ul class="dropdown-menu" aria-labelledby="server" id="abc">
+                                                    <li><span class="dropdown-item">18 - 25</span></li>
+                                                    <li><span class="dropdown-item">26 - 30</span></li>
+                                                    <li><span class="dropdown-item">30 - 60</span></li>
+                                                </ul>
                                             </div>
-                                            <div class="filter-Game-Item">
-                                                <input type="checkbox" id="filter-Item-check-5">
-                                                <label for="filter-Item-check-5">
-                                                    <div class="filter-Item-Text">Promotion</div>
-                                                    <div class="filter-Icon">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </div>
-                                                    <div class="gameFilter-Item-SelectWrapper">
-                                                        <div class="selectWrapper-List">
-                                                            <a href="#">
-                                                                <div class="list-Item">
-                                                                    <p>OCE</p>
-                                                                </div>
-                                                            </a>
-                                                            <a href="#">
-                                                                <div class="list-Item">
-                                                                    <p>NA</p>
-                                                                </div>
-                                                            </a>
-                                                           <a href="#">
-                                                               <div class="list-Item">
-                                                                   <p>LAN</p>
-                                                               </div>
-                                                           </a>
-                                                        </div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                            <div class="filter-Game-Item">
-                                                <input type="checkbox" id="filter-Item-check-6">
-                                                <label for="filter-Item-check-6">
-                                                    <div class="filter-Item-Text">Price</div>
-                                                    <div class="filter-Icon">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </div>
-                                                    <div class="gameFilter-Item-SelectWrapper">
-                                                        <div class="selectWrapper-List">
-                                                            <a href="#">
-                                                                <div class="list-Item">
-                                                                    <p>OCE</p>
-                                                                </div>
-                                                            </a>
-                                                            <a href="#">
-                                                                <div class="list-Item">
-                                                                    <p>NA</p>
-                                                                </div>
-                                                            </a>
-                                                           <a href="#">
-                                                               <div class="list-Item">
-                                                                   <p>LAN</p>
-                                                               </div>
-                                                           </a>
-                                                        </div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                            <div class="filter-Game-Item">
-                                                <input type="checkbox" id="filter-Item-check-7">
-                                                <label for="filter-Item-check-7">
-                                                    <div class="filter-Item-Text">Role</div>
-                                                    <div class="filter-Icon">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </div>
-                                                    <div class="gameFilter-Item-SelectWrapper">
-                                                        <div class="selectWrapper-List">
-                                                            <a href="#">
-                                                                <div class="list-Item">
-                                                                    <p>OCE</p>
-                                                                </div>
-                                                            </a>
-                                                            <a href="#">
-                                                                <div class="list-Item">
-                                                                    <p>NA</p>
-                                                                </div>
-                                                            </a>
-                                                           <a href="#">
-                                                               <div class="list-Item">
-                                                                   <p>LAN</p>
-                                                               </div>
-                                                           </a>
-                                                        </div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                            <div class="filter-Game-Item">
-                                                <input type="checkbox" id="filter-Item-check-8">
-                                                <label for="filter-Item-check-8">
-                                                    <div class="filter-Item-Text">Age</div>
-                                                    <div class="filter-Icon">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </div>
-                                                    <div class="gameFilter-Item-SelectWrapper">
-                                                        <div class="selectWrapper-List">
-                                                            <a href="#">
-                                                                <div class="list-Item">
-                                                                    <p>OCE</p>
-                                                                </div>
-                                                            </a>
-                                                            <a href="#">
-                                                                <div class="list-Item">
-                                                                    <p>NA</p>
-                                                                </div>
-                                                            </a>
-                                                           <a href="#">
-                                                               <div class="list-Item">
-                                                                   <p>LAN</p>
-                                                               </div>
-                                                           </a>
-                                                        </div>
-                                                    </div>
-                                                </label>
-                                            </div> -->
                                         </div>
                                     </div>
                                     <div class="filter-Game-Right">
@@ -537,27 +461,23 @@
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-        
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script>
-        let id = 2;
-        let apiurl = `https://localhost:44322/api/jsonapi/${id}`
+        let apiurl = `https://mope7585.github.io/FrontEnd-BuildSchool2021/JavaScript/%E5%B0%88%E9%A1%8C%E5%88%87%E7%89%88/ePal-%E4%B8%BB%E5%88%86%E9%A0%81/ProductCards.json`
         let JsonObj = {};
-  
+
         // get
         window.onload = function JsonResource() {
             fetch(apiurl)
                 .then(response => response.json())
                 .then(result => {
-                    let abc = JSON.parse(result)
-                   let CardArray = abc.JSON.parse(result)
-                   let CategoryId = abc.CategoryId
-                    // console.log(CategoryId)
-                    // console.log(CardArray)
+                    let CardArray = result.ProductCards
+                    console.log(CardArray)
+                    let CategoryId = abc.CategoryId
                     CardArray.forEach(item => {
-                        // console.log(item)
                         let row = document.querySelector('.card-Row');
                         let card = document.querySelector('#cardCreator')
                         let cloneContent = card.content.cloneNode(true);
@@ -572,36 +492,122 @@
                     console.log(ex)
                 })
         }
-       
 
-        let abc = axios.get('https://localhost:44322/api/jsonapi/2')
-            .then(function (response) {
-                console.log(response.data)
-                
+
+        var filterObj = {};
+
+        var ageArr = [];
+        var serverArr = [];
+        var genderArr = [];
+        var languageArr = [];
+        var priceArr = [];
+        var statusArr = [];
+        filterObj = {
+            CategoryId: 1,
+            ageArr,
+            serverArr,
+            genderArr,
+            languageArr,
+            priceArr,
+            statusArr,
+        }
+
+        let status = document.querySelectorAll('.status-list li > .dropdown-item')
+        let language = document.querySelectorAll('.language-listli > .dropdown-item')
+        let age = document.querySelectorAll('.age-list li > .dropdown-item')
+        let price = document.querySelectorAll('.price-list li > .dropdown-item')
+        let server = document.querySelectorAll('.server-list li > .dropdown-item')
+        console.log(server)
+
+        let gender = document.querySelectorAll('.gender-list li > .dropdown-item')
+        status.forEach(x => {
+            x.addEventListener('click', () => {
+
+                x.classList.toggle('bg-black1')
+                updateVegetablesCollection(statusArr, x.innerText)
+                console.log(JSON.stringify(filterObj))
             })
-            .catch(ex =>{
-                console.log(ex)
+        })
+
+        language.forEach(x => {
+            x.addEventListener('click', () => {
+                updateVegetablesCollection(languageArr, x.innerText)
+                x.classList.toggle('bg-black1')
             })
-          
-
-
-        axios({
-            method:'post',
-            url:'https://localhost:44322/api/jsonapi',
-            params: { id: 3 },
         })
-        .then(function(response){
-            if(response.request.readyState === 4 && response.status === 200){
-                console.log(response.data)
-                console.log(JSON.parse(response.data))
-            }
-            else{
-                console.log("error");
-            }
+        age.forEach(x => {
+            x.addEventListener('click', () => {
+                updateVegetablesCollection(ageArr, x.innerText)
+                x.classList.toggle('bg-black1')
+            })
+        })
+        price.forEach(x => {
+            x.addEventListener('click', () => {
+                updateVegetablesCollection(priceArr, x.innerText)
+                x.classList.toggle('bg-black1')
+            })
         })
 
-        var x = location.href;
-        console.log(x.split('/'))
+        var response = [{ id: 1, name: "text1" }, { id: 2, name: "text2" }];
+
+        var exists = (id, arr) => arr.some(e => e.id === true);
+
+        var id1Exists = exists(1, response);
+        var id2Exists = exists(2, response);
+        var id3Exists = exists(3, response);
+
+
+        server.forEach((x, index) => {
+
+            x.addEventListener('click', () => {
+
+                console.log(index)
+                let serverbox = document.getElementById('server')
+                if (server[0].classList.contains('bg-black1')) {
+                    server[0].classList.toggle('bg-black1')
+                }
+                if (server[1].classList.contains('bg-black1')) {
+                    server[1].classList.toggle('bg-black1')
+                }
+                if (server[2].classList.contains('bg-black1')) {
+                    server[2].classList.toggle('bg-black1')
+                }
+                if (server[3].classList.contains('bg-black1')) {
+                    server[3].classList.toggle('bg-black1')
+                }
+                if (server[4].classList.contains('bg-black1')) {
+                    server[4].classList.toggle('bg-black1')
+                }
+                if (server[5].classList.contains('bg-black1')) {
+                    server[5].classList.toggle('bg-black1')
+                }
+                else if (filterObj.serverArr !== undefined) {
+
+                    x.classList.toggle('bg-black1')
+                    serverbox.setAttribute('style', 'background-Color:red')
+                }
+
+
+
+            })
+        })
+        gender.forEach(x => {
+            x.addEventListener('click', () => {
+                updateVegetablesCollection(genderArr, x.innerText)
+                x.classList.toggle('bg-black1')
+            })
+        })
+
+        // 檢查陣列內容無重複就加入
+        function updateVegetablesCollection(veggies, veggie) {
+            if (veggies.indexOf(veggie) === -1) {
+                veggies.push(veggie);
+            } else if (veggies.indexOf(veggie) > -1) {
+                console.log(veggie + ' already exists in the veggies collection.');
+            }
+        }
+
+
     </script>
 
 </body>

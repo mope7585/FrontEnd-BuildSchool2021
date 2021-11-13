@@ -1,0 +1,392 @@
+
+.loading{
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+    transition: .3s ease-in-out;
+}
+.loading.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.loading .spinner-border{
+    width: 5rem;
+    height: 5rem;
+}
+
+.jumbotron:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(225deg,#e91e63,#03a9f4);
+    z-index: 1;
+    mix-blend-mode: screen;
+}
+.jumbotron img:nth-of-type(1){
+    z-index: 2;
+    top: -130%;
+    left: -65%;
+    transform: rotate(100deg);
+    transform-origin: 100% 100%;    
+    transition: .1s cubic-bezier(0, 1.15, 0.86, 1.18);
+    animation: hide 3s ease-in-out infinite alternate-reverse;
+}
+.jumbotron img:nth-of-type(2){
+    z-index: 2;
+    bottom: -96%;
+    left: 0;
+    transition: .1s cubic-bezier(0, 1.15, 0.86, 1.18);
+}
+.jumbotron img:nth-of-type(3){
+    z-index: 2;
+    top: -50%;
+    right: -22%;
+    transform: rotate(180deg);
+    cursor: pointer;
+    transition: .1s cubic-bezier(0, 1.15, 0.86, 1.18);
+}
+.jumbotron img:nth-of-type(4){
+    z-index: 2;
+    bottom: -105%;
+    right: -40%;
+    cursor: pointer;
+    transition: .1s cubic-bezier(0, 1.15, 0.86, 1.18);
+    transform: scale(.5) translateY(490px);
+}
+.jumbotron img:nth-of-type(4).active{
+    transform: scale(1) translateY(90px) translateX(-100px);
+}
+
+
+@keyframes hide{
+    0%{
+        transform: rotate(100deg);
+    }
+    100%{
+        transform: rotate(150deg);
+    }
+}
+.jumbotron span{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #b1b1b1;
+    border-radius: 50% 50% 50% 10%;
+    border:1px solid #000;
+    left: 25%;
+    bottom: -5%;
+    animation: growup 2s infinite alternate-reverse;
+}
+.jumbotron span:after{
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ffffff80;
+    border: 1px solid #000;
+    position: absolute;
+    top: 4px;
+    left: 25px;
+}
+@keyframes growup{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.5) rotate(30deg);
+    }
+}
+
+.btn-group button {
+    position: relative;
+    overflow: hidden;
+    border: 0;
+}
+
+.btn-group button:after {
+    content: "";
+    width: 120%;
+    height: 120%;
+    background: #000;
+    position: absolute;
+    z-index: 1;
+    top: 90%;
+    left: 0;
+    transition: .2s ease;
+}
+
+.btn-group button span {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-group button:nth-child(1) {
+    color: #03a9f4;
+    background: #fff;
+    transition: .3s;
+    border-radius: 0;
+}
+
+.btn-group button:nth-child(1):after {
+    background: #03a9f4;
+}
+
+.btn-group button:hover:nth-child(1) span {
+    color: #fff;
+}
+
+.btn-group button:nth-child(2) {
+    color: #ff9600;
+    background: #fff;
+    transition: .3s;
+}
+
+.btn-group button:nth-child(2):after {
+    background: #ff9600;
+}
+
+.btn-group button:hover:nth-child(2) span {
+    color: #fff;
+}
+
+.btn-group button:nth-child(3) {
+    color: #4caf50;
+    background: #fff;
+    transition: .3s;
+}
+
+.btn-group button:nth-child(3):after {
+    background: #4caf50;
+}
+
+.btn-group button:hover:nth-child(3) span {
+    color: #fff;
+}
+
+.btn-group button:nth-child(4) {
+    color: #f44336;
+    background: #fff;
+    transition: .3s;
+    border-radius: 0;
+}
+
+.btn-group button:nth-child(4):after {
+    background: #f44336;
+}
+
+.btn-group button:hover:nth-child(4) span {
+    color: #fff;
+}
+
+.btn-group button:hover:after {
+    top: 0;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+.types {
+    text-align: right;
+    text-shadow: 1px 1px 1px #000000ce;
+}
+
+.Grass {
+    background: #9BCC50;
+}
+
+.Poison {
+    background: #B97FC9;
+}
+
+.Fire {
+    background: #FD7D24;
+}
+
+.Water {
+    background: #4693C5;
+}
+
+.Flying {
+    background: linear-gradient(180deg, #3DC7EF 50%, #BDB9B8 50%);
+}
+
+.Bug {
+    background: #729F3F;
+}
+
+.Normal {
+    background: #A5ADB0;
+}
+
+.Electric {
+    background: #EED535;
+}
+
+.Ground {
+    background: linear-gradient(180deg, #AB9842 50%, #F7DE3F 50%);
+}
+
+.Fairy {
+    background: #FDB9E9;
+}
+
+.Rock {
+    background: #A38C21;
+}
+
+.Psychic {
+    background: #F366B9;
+}
+
+.Fighting {
+    background: #D66824;
+}
+
+.Dark {
+    background: #707070;
+}
+
+.Ice {
+    background: #51C4E7;
+}
+
+.Steel {
+    background: #9EB7B8;
+}
+
+.Ghost {
+    background: #7B62A3;
+}
+
+.Dragon {
+    background: linear-gradient(180deg, #53A4CF 50%, #F16E57 50%);
+}
+
+.w-80 {
+    width: 80%;
+}
+.w-75{
+    width: 75%;
+}
+
+#pokemonImage{
+    width: 50%;
+}
+.evolution{
+    overflow-y: hidden;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(187, 187, 187);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(to right,#fff,#eee,#fff);
+}
+
+
+@media screen and (max-width:575px){
+    .display-5{
+        font-size: 3rem!important;
+    }
+    .jumbotron img:nth-of-type(1){
+        top: -170%;
+        left: -114%;
+    }
+    .jumbotron img:nth-of-type(2){
+        bottom: -96%;
+        left: -20%;
+    }
+    .jumbotron img:nth-of-type(3){
+        top: -85%;
+        right: -34%;
+    }
+    .jumbotron img:nth-of-type(4){
+        bottom: -105%;
+        right: -80%;
+        transform: scale(.5) translateY(500px);
+    }
+    .jumbotron img:nth-of-type(4).active{
+        transform: scale(.5) translateY(180px) translateX(-100px);
+    }
+    .btn-group{
+        display: flex;
+        flex-direction: column;
+    }
+    .card-body h5{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card-footer a{
+        font-size: .9rem;
+    }
+    .w-25{
+        width: 50%!important;
+    }
+    table.mx-5{
+        margin: 0 1rem!important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .h3 {
+        font-size: 20px;
+    }
+    .border-right{
+        border-color: transparent!important;
+    }
+    
+}
+
+@media screen and (min-width:576px){
+    .jumbotron img:nth-of-type(1){
+        top: -95%;
+        left: -56%;
+    }
+    .jumbotron img:nth-of-type(2){
+        bottom: -70%;
+    }
+    .jumbotron img:nth-of-type(3){
+        top: -50%;
+        right: 0;
+    }
+    .jumbotron img:nth-of-type(4){
+        bottom: -75%;
+        right: -30%;
+    }
+    .h6{
+        font-size: 1.5rem;
+    }
+
+}
+@media screen and (min-width:768px){
+    .jumbotron img:nth-of-type(1){
+        left: -17%;
+    }
+    .jumbotron img:nth-of-type(4){
+        bottom: -75%;
+        right: 0;
+    }
+    .jumbotron span{
+        left: 7%;
+    }
+    .modal-dialog{
+        max-width: 800px;
+    }
+    .modal-content{
+        max-height: 550px;
+        overflow: hidden;
+    }
+    #pokemonImage{
+        width: 100%;
+    }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Add this to <head> -->
+
+    <!-- Load required Bootstrap and BootstrapVue CSS -->
+    <!-- <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" /> -->
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Load polyfills to support older browsers -->
+    <script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver"
+        crossorigin="anonymous"></script>
+
+    <!-- Load Vue followed by BootstrapVue -->
+    <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+
+    <!-- Load the following for BootstrapVueIcons support -->
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <b-table striped hover :items="items"></b-table>
+    </div>
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                items: [
+                    {
+                        Id: 1,
+                        Name: "皮卡丘",
+                        NickName: "皮皮",
+                        Type: "鼠寶可夢",
+                        Image: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
+                        Hp: 35,
+                        Speed: 90,
+                        Attack: 55,
+                        Defanse: 40,
+                        SpAttack: 50,
+                        SpDefense: 50,
+                    },
+                    {
+                        Id: 2,
+                        Name: "皮卡丘",
+                        NickName: "皮皮",
+                        Type: "鼠寶可夢",
+                        Image: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png",
+                        Hp: 35,
+                        Speed: 90,
+                        Attack: 55,
+                        Defanse: 40,
+                        SpAttack: 50,
+                        SpDefense: 50,
+                    },
+                    {
+                        Id: 3,
+                        Name: "皮卡丘",
+                        NickName: "皮皮",
+                        Type: "鼠寶可夢",
+                        Image: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png",
+                        Hp: 35,
+                        Speed: 90,
+                        Attack: 55,
+                        Defanse: 40,
+                        SpAttack: 50,
+                        SpDefense: 50,
+                    },
+                    {
+                        Id: 4,
+                        Name: "皮卡丘",
+                        NickName: "皮皮",
+                        Type: "鼠寶可夢",
+                        Image: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png",
+                        Hp: 35,
+                        Speed: 90,
+                        Attack: 55,
+                        Defanse: 40,
+                        SpAttack: 50,
+                        SpDefense: 50,
+                    },
+                    {
+                        Id: 5,
+                        Name: "皮卡丘",
+                        NickName: "皮皮",
+                        Type: "鼠寶可夢",
+                        Image: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/035.png",
+                        Hp: 35,
+                        Speed: 90,
+                        Attack: 55,
+                        Defanse: 40,
+                        SpAttack: 50,
+                        SpDefense: 50,
+                    }
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>

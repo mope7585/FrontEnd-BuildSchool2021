@@ -11,6 +11,7 @@
 
 <body>
     <div id="app">
+        <!-- 觸發 v-on 後面包方法名稱  v-on的縮小是@-->
         <button v-on:click="sayHello">ClickMe1</button>
         <button v-on:mouseleave="sayHello">ClickMe2</button>
         <input type="text" v-model="inputData.name">
@@ -44,6 +45,7 @@
                     //     password: this.inputData.password
                     // }
                     // this.todo.push(data)
+                    // this代表離最近的物件 -->app
                     this.todo.push(JSON.parse(JSON.stringify(this.inputData)))
                     this.input.name = ''
                     this.input.password = ''

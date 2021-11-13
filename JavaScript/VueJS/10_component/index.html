@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+        <h1>hello world Jimmy</h1>
+        <h1>hello world Dy</h1>
+        <h1>hello world JAA</h1>
+        <h1>hello world JDDDDy</h1>
+        <h1>hello world DDsss</h1>
+    </div>
+
+    主件元件的概念，你有一個通用的東西，有可能一直被拿出來用(Componus)，今天我有一個h1的標籤齁。一直被重複使用(只有部分文字不同)，就適合拉出來做Componus!
+
+    step1:開啟一個名叫 title.js file
+    <!-- 拉出去做Componus -->
+
+    step2: export default{
+        <!-- Vue裡面的物件 -->
+        data:() => ({
+            
+        }),
+        <!-- 建造一個Template -->
+        template:'<h1>hello world Jimmy</h1>'
+    }
+    step3: 我要怎麼使用它呢?
+
+    import Title from './Title.js'
+    跑下去應該會報錯，我的Script要改變他的type變成一個module的形式，才不會報錯
+    增加components的屬性 裡面的'app-title'的屬性
+
+    1.改寫成 
+    <div id="app">
+        <app-title></app-title>
+        <app-title></app-title>
+        <app-title></app-title>
+        <app-title></app-title>
+        <app-title></app-title>
+    </div>
+
+    2.Final
+    <div id="app">
+        <app-title v-for="item in 3"></app-title>
+    </div>
+
+    step3.
+    如果要改變那"一點點"不一樣的部分呢?該怎麼傳值呢?他要怎麼接的到?
+
+    export default {
+        prop:{
+            name:{
+                <!-- 傳入形式 -->
+                type:string,
+                <!-- 如果沒有傳值，預設是什麼 -->
+                default:'BuildSchool'
+            }
+    }
+
+    // < !--建造一個Template -->
+    template: '<h1>hello world Jimmy</h1>'
+    }
+
+    step4:
+    <div id="app">
+        <!-- 使用v-bind  :name 父子件要怎麼傳值給子子件?就是用v-bind-->
+        <app-title :name = "nameArr[0]"></app-title>
+        <app-title :name = "nameArr[1]"></app-title>
+        <app-title :name = "nameArr[2]"></app-title>
+    </div>
+
+    step5:
+    重複使用所以改成v-for使用
+    <div id="app">
+        <!-- 使用v-bind  :name 父子件要怎麼傳值給子子件?就是用v-bind-->
+        <app-title v-for="item in nameArr" :name = nameArr></app-title>
+    </div>
+
+
+
+
+
+
+    <script type="module">
+        import Title from './Title.js'
+        let app = new Vue({
+            el:'#app',
+            data:{
+                nameArr:['Jimmy','Andy','Jim']
+            },
+            // 把外面的Componus注入近來
+            components:{
+                'app-title':Title
+            }
+        })
+    </script>
+</body>
+</html>

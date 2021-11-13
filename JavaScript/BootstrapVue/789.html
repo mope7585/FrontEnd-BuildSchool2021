@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&#x5546;&#x54C1;&#x5217;&#x8868; | OHwOw</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="icon" href="/img/OHwOw.ico" />
+
+    <link href="/lib/bootstrap-vue/dist/bootstrap-vue.css" rel="stylesheet" />
+
+    <!-- Required scripts -->
+    <script src="/lib/vue/dist/vue.js"></script>
+    <script src="/lib/bootstrap-vue/dist/bootstrap-vue.js"></script>
+
+    <!-- Load the following for BootstrapVueIcons support -->
+    <script src="/lib/bootstrap-vue/dist/bootstrap-vue-icons.min.js"></script>
+
+    <link rel="stylesheet" href="/css/site.css" />
+    <!-- Custom fonts for this template-->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Axios plugin -->
+    <script src="/lib/axios/axios.js"></script>
+    <script src="/js/Common.js"></script>
+    <script src="/js/statecheck.js"></script>
+
+    <link href="/css/common.css" rel="stylesheet" />
+    <link href="/css/productlist.css" rel="stylesheet" />
+
+
+    <style>
+        #pagemask {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            position: fixed;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <div id="pagemask"></div>
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/Home/Index">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">OHwOw<sup>Admin</sup></div>
+            </a>
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - 儀錶板 -->
+            <li class="nav-item active">
+                <a class="nav-link " href="/Home/Index">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>儀錶板</span>
+                </a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse-memberindex"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-users-cog"></i>
+                    <span>會員管理</span>
+                </a>
+                <div id="collapse-memberindex" class="collapse" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/Member/Index">會員查詢</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse-productindex"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-book"></i>
+                    <span>商品管理</span>
+                </a>
+                <div id="collapse-productindex" class="collapse" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/Product/Index">商品列表</a>
+                        <a class="collapse-item" href="/Product/Create">商品新增</a>
+
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse-promotionindex"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-percent"></i>
+                    <span>促銷管理</span>
+                </a>
+                <div id="collapse-promotionindex" class="collapse" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/Promotion/Index">優惠券管理</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse-orderindex"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>訂單管理</span>
+                </a>
+                <div id="collapse-orderindex" class="collapse" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/Order/Index">訂單列表</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="/Chart/Index">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>圖表總覽</span>
+                </a>
+            </li>
+
+
+
+            <!--<!-- Divider -->
+            <!--<hr class="sidebar-divider">-->
+            <!-- Heading -->
+            <!--<div class="sidebar-heading">
+        範例頁面
+    </div>-->
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <!--<li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+           aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>公用元件</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+             data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">自定義實用程序:</h6>
+                <a class="collapse-item" asp-area="" asp-controller="Template" asp-action="Buttons">按鈕</a>
+                <a class="collapse-item" asp-area="" asp-controller="Template" asp-action="Cards">卡片</a>
+                <a class="collapse-item" asp-area="" asp-controller="Template" asp-action="Color">顏色</a>
+                <a class="collapse-item" asp-area="" asp-controller="Template" asp-action="Border">邊框線</a>
+                <a class="collapse-item" asp-area="" asp-controller="Template" asp-action="Animation">動畫</a>
+                <a class="collapse-item" asp-area="" asp-controller="Template" asp-action="Other">其他</a>
+            </div>
+        </div>
+    </li>-->
+            <!-- Nav Item - Pages Collapse Menu -->
+            <!--<li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+           aria-expanded="true" aria-controls="collapsePages">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>樣板頁</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">頁面:</h6>
+                <a class="collapse-item" href="~/startbootstrap/login.html">登入</a>
+                <a class="collapse-item" asp-area="" asp-controller="Template" asp-action="Error404">404 Page</a>
+            </div>
+        </div>
+    </li>-->
+            <!-- Nav Item - Charts -->
+            <!--<li class="nav-item">
+        <a class="nav-link" asp-area="" asp-controller="Template" asp-action="Charts">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>圖表樣板</span>
+        </a>
+    </li>-->
+            <!-- Nav Item - Tables -->
+            <!--<li class="nav-item">
+        <a class="nav-link" asp-area="" asp-controller="Template" asp-action="Tables">
+            <i class="fas fa-fw fa-table"></i>
+            <span>表格樣板</span>
+        </a>
+    </li>-->
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+            <!-- Sidebar Message -->
+            <!--<div class="sidebar-card d-none d-lg-flex">
+        <img class="sidebar-card-illustration mb-2" src="~/img/undraw_rocket.svg" alt="...">
+        <p class="text-center mb-2">
+            區塊
+        </p>
+        <a class="btn btn-success btn-sm" href="#">
+            區塊按鈕
+        </a>
+    </div>-->
+
+        </ul>
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <div class="w-100 d-flex justify-content-between">
+                        <h1 class="h3 m-2 text-gray-800">&#x5546;&#x54C1;&#x5217;&#x8868;</h1>
+                        <!--<div>-->
+                        <!-- Topbar Search -->
+                        <!--<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                           aria-label="Search" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fas fa-search fa-sm"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>-->
+                    </div>
+                    <!-- Topbar Navbar -->
+                    <!--<ul class="navbar-nav ml-auto">-->
+                    <!-- Nav Item - User Information -->
+                    <!--<li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+                                <img class="img-profile rounded-circle" src="~/img/undraw_profile.svg">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                 aria-labelledby="userDropdown">
+                                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/">
+                                    <button type="submit" class="dropdown-item">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout
+                                    </button>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>-->
+
+                </nav>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <main role="main" class="pb-3">
+
+
+                        <div class="container-fluid">
+                            <div id="productlist" v-cloak>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <template>
+                                            <b-breadcrumb :items="breadCrumbItems"></b-breadcrumb>
+                                        </template>
+                                    </div>
+                                    <div class="col-12">
+                                        <b-tabs content-class="pt-2 pb-2 px-2" fill v-model="tabIndex">
+                                            <b-tab active>
+                                                <template #title>
+                                                    <b-icon icon="arrow-up-square-fill" aria-hidden="true"></b-icon>
+                                                    <strong>上架中商品</strong>
+                                                </template>
+                                                <b-row>
+                                                    <b-col lg="9" class="my-1">
+                                                        <b-button-group>
+                                                            <b-button variant="success" v-on:click="ProductCreate">
+                                                                <b-icon icon="plus-square" aria-hidden="true"></b-icon>
+                                                                新增商品
+                                                            </b-button>
+                                                        </b-button-group>
+                                                    </b-col>
+                                                    <b-col lg="3" class="my-1">
+                                                        <b-form-group label="關鍵字搜尋" label-for="filter-input"
+                                                            label-cols-sm="4" label-align-sm="right" label-size="sm"
+                                                            class="mb-0">
+                                                            <b-input-group size="sm">
+                                                                <b-form-input id="filter-input" v-model="filter"
+                                                                    type="search" placeholder="請輸入關鍵字"></b-form-input>
+
+                                                            </b-input-group>
+                                                        </b-form-group>
+
+                                                    </b-col>
+                                                </b-row>
+                                                <!-- Main table element -->
+                                                <b-table v-if="tabIndex==0" :items="items" :fields="fields"
+                                                    :current-page="currentPage" :per-page="perPage" :filter="filter"
+                                                    :filter-included-fields="filterOn" :sort-by.sync="sortBy"
+                                                    :sort-desc.sync="sortDesc" responsive="sm"
+                                                    :sort-direction="sortDirection" stacked="md" show-empty small
+                                                    :busy="isOnSaleBusy.PageBusy" v-on:filtered="onFiltered">
+                                                    <template #table-busy>
+                                                        <div class="text-center text-danger my-2">
+                                                            <b-spinner class="align-middle"></b-spinner>
+                                                            <strong>Loading...</strong>
+                                                        </div>
+                                                    </template>
+
+                                                    <template #cell(productImg)="row">
+                                                        <b-img-lazy v-bind="simplifyproductimgProps" class="pdlistimg"
+                                                            :src="row.item.productImg" thumbnail></b-img-lazy>
+                                                    </template>
+
+                                                    <template #cell(actions)="row">
+                                                        <b-button variant="info" size="sm"
+                                                            v-on:click="info(row.item, row.index, $event.target)"
+                                                            class="mr-1">
+                                                            商品明細
+                                                        </b-button>
+                                                        <b-button size="sm"
+                                                            v-on:click="ShowUpdateSaleConfirm(row.item.productId,SalesConfirmBoxProps.nonSale)"
+                                                            class="mr-1">
+                                                            商品下架
+                                                        </b-button>
+                                                    </template>
+                                                </b-table>
+                                                <b-row class="">
+                                                    <b-col lg="6" class="ml-auto">
+                                                        <b-pagination v-model="currentPage" :total-rows="totalRows"
+                                                            :per-page="perPage" align="fill" size="md" class="my-0">
+                                                        </b-pagination>
+                                                    </b-col>
+                                                    <b-col lg="3" class="my-1">
+                                                        <b-form-group label="每頁顯示筆數" label-for="per-page-select"
+                                                            label-cols-sm="3" label-cols-lg="9" content-cols="3"
+                                                            label-align-sm="right" label-size="sm" class="mb-0">
+                                                            <b-form-select id="per-page-select" v-model="perPage"
+                                                                :options="pageOptions" size="sm"></b-form-select>
+                                                        </b-form-group>
+                                                    </b-col>
+                                                </b-row>
+                                                <!-- Info modal -->
+                                                <b-modal :id="productDetailsModel.id" :title="productDetailsModel.title"
+                                                    header-bg-variant="info" header-text-variant="light" hide-footer
+                                                    size="lg" v-on:hidden="resetProductDetailsModel" scrollable>
+                                                    <!-- <template #default> -->
+                                                    <div v-if="isOnSaleBusy.DetailsBusy"
+                                                        class="busy text-center text-danger my-2">
+                                                        <b-spinner class="align-middle"></b-spinner>
+                                                        <strong>Loading...</strong>
+                                                    </div>
+                                                    <div class="details-body" v-if="!isOnSaleBusy.DetailsBusy">
+                                                        <div class="row">
+                                                            <div v-for="item in productDetailsModel.fields"
+                                                                :class="['field','mb-3',((item.key==='imagePath' || item.key==='description')?'col-12':'col-6')]">
+                                                                <h2 class="title">{{item.title}}</h2>
+                                                                <div v-if="item.key==='imagePath'">
+                                                                    <b-img-lazy v-bind="productDetailsimgProps"
+                                                                        :src="item.value" class="pddetailsimg" thumbnail
+                                                                        center>
+                                                                    </b-img-lazy>
+                                                                </div>
+                                                                <div class="content"
+                                                                    v-else-if="item.key==='description'"
+                                                                    v-html="item.value"></div>
+                                                                <p v-else class="content">{{item.value}}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- </template> -->
+                                                </b-modal>
+                                            </b-tab>
+                                            <b-tab>
+                                                <template #title>
+                                                    <b-icon icon="arrow-down-square-fill" aria-hidden="true"></b-icon>
+                                                    <strong>已下架商品</strong>
+                                                </template>
+                                                <b-row>
+                                                    <b-col lg="9" class="my-1">
+                                                    </b-col>
+                                                    <b-col lg="3" class="my-1">
+                                                        <b-form-group label="關鍵字搜尋" label-for="filter-input"
+                                                            label-cols-sm="4" label-align-sm="right" label-size="sm"
+                                                            class="mb-0">
+                                                            <b-input-group size="sm">
+                                                                <b-form-input id="filter-input" v-model="filter"
+                                                                    type="search" placeholder="請輸入關鍵字"></b-form-input>
+
+                                                                <b-input-group-append>
+                                                                    <b-button :disabled="!filter"
+                                                                        v-on:click="filter = ''">
+                                                                        Clear
+                                                                    </b-button>
+                                                                </b-input-group-append>
+                                                            </b-input-group>
+                                                        </b-form-group>
+
+                                                    </b-col>
+                                                </b-row>
+                                                <!-- Main table element -->
+                                                <b-table v-if="tabIndex==1" :items="items" :fields="fields"
+                                                    :current-page="currentPage" :per-page="perPage" :filter="filter"
+                                                    :filter-included-fields="filterOn" :sort-by.sync="sortBy"
+                                                    :sort-desc.sync="sortDesc" responsive="sm"
+                                                    :sort-direction="sortDirection" stacked="md" show-empty small
+                                                    :busy="isNonSaleBusy.PageBusy" v-on:filtered="onFiltered">
+                                                    <template #table-busy>
+                                                        <div class="text-center text-danger my-2">
+                                                            <b-spinner class="align-middle"></b-spinner>
+                                                            <strong>Loading...</strong>
+                                                        </div>
+                                                    </template>
+
+                                                    <template #cell(productImg)="row">
+                                                        <b-img-lazy v-bind="simplifyproductimgProps" class="pdlistimg"
+                                                            :src="row.item.productImg" thumbnail></b-img-lazy>
+                                                    </template>
+
+                                                    <template #cell(actions)="row">
+                                                        <b-button variant="primary" size="sm"
+                                                            v-on:click="ProductModify(row.item.productId)" class="mr-1">
+                                                            商品編輯
+                                                        </b-button>
+                                                        <b-button variant="success" size="sm"
+                                                            v-on:click="ShowUpdateSaleConfirm(row.item.productId,SalesConfirmBoxProps.onSale)"
+                                                            class="mr-1">
+                                                            商品上架
+                                                        </b-button>
+                                                    </template>
+                                                </b-table>
+                                                <b-row class="">
+                                                    <b-col lg="6" class="ml-auto">
+                                                        <b-pagination v-model="currentPage" :total-rows="totalRows"
+                                                            :per-page="perPage" align="fill" size="md" class="my-0">
+                                                        </b-pagination>
+                                                    </b-col>
+                                                    <b-col lg="3" class="my-1">
+                                                        <b-form-group label="每頁顯示筆數" label-for="per-page-select"
+                                                            label-cols-sm="3" label-cols-lg="9" content-cols="3"
+                                                            label-align-sm="right" label-size="sm" class="mb-0">
+                                                            <b-form-select id="per-page-select" v-model="perPage"
+                                                                :options="pageOptions" size="sm"></b-form-select>
+                                                        </b-form-group>
+                                                    </b-col>
+                                                </b-row>
+                                            </b-tab>
+                                        </b-tabs>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>
+                            &copy; 2021 - OHwOwAdmin -
+                        </span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+            <script src="/lib/jquery/dist/jquery.min.js"></script>
+            <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0"></script>
+
+            <!-- Bootstrap core JavaScript-->
+
+            <!-- Core plugin JavaScript-->
+            <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+            <!-- Custom scripts for all pages-->
+            <script src="/js/sb-admin-2.min.js"></script>
+
+
+
+
+            <!-- Axios plugin -->
+            <!--<script src="~/lib/axios/axios.js"></script>-->
+
+            <!-- mountjs plugin -->
+            <script src="/lib/moment.js/moment.min.js"></script>
+            <script src="/js/helpers.js"></script>
+            <script src="/js/productlist.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&#x5100;&#x9336;&#x677F; | OHwOw</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="icon" href="/img/OHwOw.ico" />
+
+    <link href="/lib/bootstrap-vue/dist/bootstrap-vue.css" rel="stylesheet" />
+
+    <!-- Required scripts -->
+    <script src="/lib/vue/dist/vue.js"></script>
+    <script src="/lib/bootstrap-vue/dist/bootstrap-vue.js"></script>
+
+    <!-- Load the following for BootstrapVueIcons support -->
+    <script src="/lib/bootstrap-vue/dist/bootstrap-vue-icons.min.js"></script>
+
+    <link rel="stylesheet" href="/css/site.css" />
+    <!-- Custom fonts for this template-->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Axios plugin -->
+    <script src="/lib/axios/axios.js"></script>
+    <script src="/js/Common.js"></script>
+    <script src="/js/statecheck.js"></script>
+
+    <link href="/css/common.css" rel="stylesheet" />
+
+
+    <style>
+        #pagemask {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            position: fixed;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <div id="pagemask"></div>
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/Home/Index">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">OHwOw<sup>Admin</sup></div>
+            </a>
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - 儀錶板 -->
+            <li class="nav-item active">
+                <a class="nav-link " href="/Home/Index">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>儀錶板</span>
+                </a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse-memberindex"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-users-cog"></i>
+                    <span>會員管理</span>
+                </a>
+                <div id="collapse-memberindex" class="collapse" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/Member/Index">會員查詢</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse-productindex"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-book"></i>
+                    <span>商品管理</span>
+                </a>
+                <div id="collapse-productindex" class="collapse" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/Product/Index">商品列表</a>
+                        <a class="collapse-item" href="/Product/Create">商品新增</a>
+
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse-promotionindex"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-percent"></i>
+                    <span>促銷管理</span>
+                </a>
+                <div id="collapse-promotionindex" class="collapse" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/Promotion/Index">優惠券管理</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse-orderindex"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>訂單管理</span>
+                </a>
+                <div id="collapse-orderindex" class="collapse" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/Order/Index">訂單列表</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="/Chart/Index">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>圖表總覽</span>
+                </a>
+            </li>
+
+
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <div class="w-100 d-flex justify-content-between">
+                        <h1 class="h3 m-2 text-gray-800">&#x5100;&#x9336;&#x677F;</h1>
+                    </div>
+
+                </nav>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <main role="main" class="pb-3">
+
+                        <!-- Page Heading -->
+
+                        <!-- Content Row -->
+                        <div id="vue-home" v-cloak>
+                            <div>
+                                <div class="row">
+                                    <!-- Content Column -->
+                                    <div class="col-lg-3 col-md-6 mb-4">
+                                        <div class="card bg-success text-white shadow">
+                                            <div class="card-body">
+                                                產品總數
+                                                <div class=" d-flex justify-content-end align-items-end">
+                                                    <div class="text-white h1 mb-0">{{StatisticsInfo.productTotal}}
+                                                    </div>
+                                                    <div class="text-white">/筆</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 mb-4">
+                                        <div class="card bg-info text-white shadow">
+                                            <div class="card-body">
+                                                訂單總數
+                                                <div class=" d-flex justify-content-end align-items-end">
+                                                    <div class="text-white h1 mb-0">{{StatisticsInfo.orderTotal}}</div>
+                                                    <div class="text-white">/筆</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 mb-4">
+                                        <div class="card bg-warning text-white shadow">
+                                            <div class="card-body">
+                                                會員總數
+                                                <div class=" d-flex justify-content-end align-items-end">
+                                                    <div class="text-white h1 mb-0">{{StatisticsInfo.memberTotal}}</div>
+                                                    <div class="text-white">/筆</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 mb-4">
+                                        <div class="card bg-danger text-white shadow">
+                                            <div class="card-body">
+                                                優惠券使用總數
+                                                <div class=" d-flex justify-content-end align-items-end">
+                                                    <div class="text-white h1 mb-0">{{StatisticsInfo.promocodeUseTotal}}
+                                                    </div>
+                                                    <div class="text-white">/筆</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- Content Row -->
+                                <div class="row">
+                                    <!-- Earnings (Monthly) Card Example -->
+                                    <div class="col-xl-3 col-md-6 mb-4">
+                                        <div class="card border-left-primary shadow h-100 py-2">
+                                            <div class="card-body">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div
+                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                            收益 (本月)
+                                                        </div>
+                                                        <div class="h4 mb-0 font-weight-bold text-gray-800">
+                                                            ${{StatisticsInfo.earningsMonthTotal | CurrencyString}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Earnings (Monthly) Card Example -->
+                                    <div class="col-xl-3 col-md-6 mb-4">
+                                        <div class="card border-left-success shadow h-100 py-2">
+                                            <div class="card-body">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div
+                                                            class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                            收益 (年度)
+                                                        </div>
+                                                        <div class="h4 mb-0 font-weight-bold text-gray-800">
+                                                            ${{StatisticsInfo.earningsYearTotal | CurrencyString}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Earnings (Monthly) Card Example -->
+                                    <div class="col-xl-3 col-md-6 mb-4">
+                                        <div class="card border-left-info shadow h-100 py-2">
+                                            <div class="card-body">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div
+                                                            class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                            訂單數 (本月)
+                                                        </div>
+                                                        <div class="h4 mb-0 font-weight-bold text-gray-800">
+                                                            {{StatisticsInfo.orderMonthTotal}}
+                                                            <span class="small"> /筆</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pending Requests Card Example -->
+                                    <div class="col-xl-3 col-md-6 mb-4">
+                                        <div class="card border-left-warning shadow h-100 py-2">
+                                            <div class="card-body">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div
+                                                            class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                            訂單數 (年度)
+                                                        </div>
+                                                        <div class="h4 mb-0 font-weight-bold text-gray-800">
+                                                            {{StatisticsInfo.orderYearTotal}}
+                                                            <span class="small"> /筆</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <b-overlay :show="isEarningsAreaBusy" rounded="sm" class="text-primary">
+                                        <template #overlay>
+                                            <div class="text-center text-primary my-2" style="opacity:0.6;">
+                                                <b-spinner class="align-middle"></b-spinner>
+                                                <strong>Loading...</strong>
+                                            </div>
+                                        </template>
+                                        <div class="card shadow mb-4">
+                                            <div
+                                                class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                <h6 class="m-0 font-weight-bold text-primary">收益成長</h6>
+
+                                            </div>
+                                            <div class="card-body">
+                                                <line-chart v-on:is-busy="ChartBusyState('isEarningsAreaBusy',$event)">
+                                                </line-chart>
+                                            </div>
+                                        </div>
+                                    </b-overlay>
+                                </div>
+                                <div class="col-lg-6">
+                                    <b-overlay :show="isGeUserAreaBusy" rounded="sm" class="text-primary">
+                                        <template #overlay>
+                                            <div class="text-center text-primary my-2" style="opacity:0.6;">
+                                                <b-spinner class="align-middle"></b-spinner>
+                                                <strong>Loading...</strong>
+                                            </div>
+                                        </template>
+                                        <div class="card shadow mb-4">
+                                            <div
+                                                class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                <h6 class="m-0 font-weight-bold text-primary">會員成長</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <bar-chart v-on:is-busy="ChartBusyState('isGeUserAreaBusy',$event)">
+                                                </bar-chart>
+                                            </div>
+                                        </div>
+                                    </b-overlay>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <!-- Pie Chart -->
+                                <div class="col-lg-5" id="productPieChart">
+                                    <b-overlay :show="isGetMainCategoryPieBusy" rounded="sm">
+                                        <template #overlay>
+                                            <div class="text-center text-primary my-2" style="opacity:0.6;">
+                                                <b-spinner class="align-middle"></b-spinner>
+                                                <strong>Loading...</strong>
+                                            </div>
+                                        </template>
+                                        <div class="card shadow mb-4">
+                                            <div
+                                                class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                <h6 class="m-0 font-weight-bold text-primary">產品分類分布</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <pie-chart
+                                                    v-on:is-busy="ChartBusyState('isGetMainCategoryPieBusy',$event)">
+                                                </pie-chart>
+                                            </div>
+                                        </div>
+                                    </b-overlay>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="card shadow mb-4">
+                                        <!-- Card Header - Dropdown -->
+                                        <div
+                                            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                            <h6 class="m-0 font-weight-bold text-primary">Top5熱銷產品</h6>
+                                        </div>
+                                        <!-- Card Body -->
+                                        <div class="card-body">
+                                            <b-table striped hover :items="TopProductTable" :fields="fields"
+                                                :busy="TopProductTableBusy.PageBusy">
+                                                <template #table-busy>
+                                                    <div class="text-center text-primary my-2">
+                                                        <b-spinner class="align-middle"></b-spinner>
+                                                        <strong>Loading...</strong>
+                                                    </div>
+                                                </template>
+
+                                                <template #cell(index)="row">
+                                                    <p>
+                                                        {{ row.index+1 }}
+                                                    </p>
+                                                </template>
+                                            </b-table>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </main>
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>
+                            &copy; 2021 - OHwOwAdmin -
+                        </span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+            <script src="/lib/jquery/dist/jquery.min.js"></script>
+            <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0"></script>
+
+            <!-- Bootstrap core JavaScript-->
+
+            <!-- Core plugin JavaScript-->
+            <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+            <!-- Custom scripts for all pages-->
+            <script src="/js/sb-admin-2.min.js"></script>
+
+
+
+
+
+            <!-- Page level plugins -->
+            <script src="/vendor/chart.js/Chart.min.js"></script>
+            <script src="/vendor/vue-chart/vue-chartjs.min.js"></script>
+
+            <!-- Page level custom scripts -->
+            <script src="/js/home/chart-line-demo.js"></script>
+            <script src="/js/home/chart-bar-demo.js"></script>
+            <script src="/js/home/chart-pie-demo.js"></script>
+
+            <!-- Axios plugin -->
+            <!--<script src="~/lib/axios/axios.js"></script>-->
+            <script src="/js/helpers.js"></script>
+            <script>
+                let thevue = new Vue({
+                    el: "#vue-home",
+                    data() {
+                        return {
+                            StatisticsInfo: [],
+                            TopProductTable: [],
+                            fields: [
+                                { key: 'index', label: '排名', class: 'text-center' },
+                                { key: 'productName', label: '商品名稱' },
+                                {
+                                    key: 'sales', label: '銷售額',
+                                    formatter: (value) => {
+                                        return (value == null) ? 0 : CurrencyFormat(value);
+                                    },
+                                    class: 'text-center'
+                                },
+                                { key: 'total', label: '銷售數', class: 'text-center' }
+                            ],
+                            //url列表
+                            //for live server
+                            urllist: {
+                                getStatisticsInfo: '/api/Home/GetHomeInfo',
+                                getTopProduct: '/api/Home/GetTopProductTable',
+                            },
+                            //描述頁面是否忙碌中，EX:進行非同步作業
+
+                            StatisticsBusy: { PageBusy: false },
+                            CatePieBusy: { PageBusy: false },
+                            TopProductTableBusy: { PageBusy: false },
+                            AreaBusy: { PageBusy: false },
+
+                            isEarningsAreaBusy: false,
+                            isGeUserAreaBusy: false,
+                            isGetMainCategoryPieBusy: false,
+
+                        }
+                    },
+                    computed: {
+                    },
+                    watch: {
+                    },
+                    created() {
+                        //初始化頁面
+                        this.getStatisticsInfoData(this.urllist.getStatisticsInfo, this.StatisticsBusy);
+                        this.getTopProductData(this.urllist.getTopProduct, this.TopProductTableBusy);
+                    },
+                    mounted() {
+
+                    },
+                    methods: {
+                        ChartBusyState(name, value) {
+                            this[name] = value;
+                        },
+                        //取得商品簡化版清單
+                        getStatisticsInfoData(uri, busyobj) {
+                            busyobj.PageBusy = true;
+                            let cfg = {
+                                method: 'get',
+                                headers: {
+                                    'Content-type': 'application/json',
+                                    'Authorization': GenCurrentAuthBarerFormat(),
+                                },
+                                url: uri
+                            };
+                            axios(cfg)
+                                .then(res => {
+                                    if (res.status == 200) {
+                                        switch (res.data.status) {
+                                            case 0:
+                                                this.StatisticsInfo = res.data.result;
+                                                break;
+                                            default:
+                                                console.warn(res);
+                                                break;
+                                        }
+                                    }
+                                    else {
+                                        throw new UserException('Unknown Error');
+                                    }
+                                })
+                                .catch(err => {
+                                    if (err.response.status === 401) {
+                                        LoginInvalidRedirect();
+                                    }
+                                    console.dir(err);
+                                })
+                                .finally(() => {
+                                    busyobj.PageBusy = false;
+                                });
+                        },
+                        getTopProductData(uri, busyobj) {
+                            busyobj.PageBusy = true;
+                            let cfg = {
+                                method: 'get',
+                                headers: {
+                                    'Content-type': 'application/json',
+                                    'Authorization': GenCurrentAuthBarerFormat(),
+                                },
+                                url: uri
+                            };
+                            axios(cfg)
+                                .then(res => {
+                                    if (res.status == 200) {
+                                        switch (res.data.status) {
+                                            case 0:
+                                                this.TopProductTable = res.data.result;
+                                                break;
+                                            default:
+                                                console.warn(res);
+                                                break;
+                                        }
+                                    }
+                                    else {
+                                        throw new UserException('Unknown Error');
+                                    }
+                                })
+                                .catch(err => {
+                                    if (err.response.status === 401) {
+                                        LoginInvalidRedirect();
+                                    }
+                                    console.dir(err);
+                                })
+                                .finally(() => {
+                                    busyobj.PageBusy = false;
+                                });
+                        },
+
+                    }
+                });
+
+            </script>
+
+
+
+
+</body>
+
+</html>

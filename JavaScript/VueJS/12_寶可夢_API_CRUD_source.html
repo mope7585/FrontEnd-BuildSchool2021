@@ -1,0 +1,300 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-10-18 14:42:05
+ * @LastEditTime: 2021-10-20 13:51:09
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \程式碼範例\12_寶可夢_API_CRUD.html
+-->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- VueJS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <!-- toastr -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+</head>
+
+<body>
+    <div id="app" class="container">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between my-4">
+                <h1>我的寶可夢</h1>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#create-modal">新增寶可夢</button>
+            </div>
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>##</th>
+                        <th>寶可夢</th>
+                        <th>暱稱</th>
+                        <th>功能</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="pokemon in pokemonList">
+                        <td class="align-middle">{{pokemon.Id}}</td>
+                        <td class="align-middle"><img class="w-25" :src="pokemon.Image" alt=""></td>
+                        <td class="align-middle">{{pokemon.Name}}</td>
+                        <td class="align-middle">{{pokemon.NickName}}</td>
+                        <td class="align-middle">
+                            <button v-on:click="selectEdit(pokemon)" class="btn btn-primary" data-toggle="modal"
+                                data-target="#edit-modal">編輯</button>
+                            <button v-on:click="deletePokemon(pokemon)" class="btn btn-danger">刪除</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 新增Modal -->
+        <div class="modal fade" id="create-modal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="createModalLabel">新增寶可夢</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body container">
+                        <div class="row">
+                            <div class="col-12 col-md-6 mb-3">
+                                <label>名稱</label>
+                                <input v-model="createPokemonData.Name" class="form-control" type="text">
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label>暱稱</label>
+                                <input v-model="createPokemonData.NickName" class="form-control" type="text">
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label>類型</label>
+                                <input v-model="createPokemonData.Type" class="form-control" type="text">
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label>圖片網址</label>
+                                <input v-model="createPokemonData.Image" class="form-control" type="text">
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label>生命值</label>
+                                <input v-model="createPokemonData.Hp" class="form-control" type="text">
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label>速度</label>
+                                <input v-model="createPokemonData.Speed" class="form-control" type="text">
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label>攻擊</label>
+                                <input v-model="createPokemonData.Attack" class="form-control" type="text">
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label>防禦</label>
+                                <input v-model="createPokemonData.Defanse" class="form-control" type="text">
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label>特攻</label>
+                                <input v-model="createPokemonData.Defanse" class="form-control" type="text">
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label>特防</label>
+                                <input v-model="createPokemonData.Defanse" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                        <button v-on:click="createPokemon" type="button" class="btn btn-primary">新增</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 編輯Modal -->
+        <div class="modal fade" id="edit-modal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- <h5 class="modal-title" id="editModalLabel"></h5> -->
+                        <div class="custom-control custom-switch">
+                            <input v-model="enableEdit" type="checkbox" class="custom-control-input" id="customSwitch1">
+                            <label class="custom-control-label" for="customSwitch1">啟用以編輯</label>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body container">
+                        <div class="row">
+                            <div class="col-12 col-md-6 mb-3">
+                                <label>名稱</label>
+                                <input readonly v-model="currentPokemon.Name" class="form-control" type="text">
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label>暱稱</label>
+                                <input :readonly="!enableEdit" v-model="currentPokemon.NickName" class="form-control"
+                                    type="text">
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label>類型</label>
+                                <input :readonly="!enableEdit" v-model="currentPokemon.Type" class="form-control"
+                                    type="text">
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label>生命值</label>
+                                <input readonly v-model="currentPokemon.Hp" class="form-control" type="text">
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label>速度</label>
+                                <input readonly v-model="currentPokemon.Speed" class="form-control" type="text">
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label>攻擊</label>
+                                <input readonly v-model="currentPokemon.Attack" class="form-control" type="text">
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label>防禦</label>
+                                <input readonly v-model="currentPokemon.Defanse" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                        <button v-on:click="updatePokemon" type="button" class="btn btn-primary">更新</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- toastr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous"></script>
+
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                pokemonList: [],
+                //新增
+                createPokemonData: {
+                    Id: 1,
+                    Name: "皮卡丘",
+                    NickName: "皮皮",
+                    Type: "鼠寶可夢",
+                    Image: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png",
+                    Hp: 35,
+                    Speed: 90,
+                    Attack: 55,
+                    Defanse: 40,
+                    SpAttack: 50,
+                    SpDefense: 50,
+                },
+                //編輯
+                currentPokemon: {},
+                enableEdit: false,
+            },
+            created() {
+                this.getAllPokemon();
+            },
+            methods: {
+                getAllPokemon() {
+                    axios.get('https://localhost:44346/api/Pokemon/GetAllPokemon')
+                        .then(res => {
+                            console.log(res)
+                            console.log(res.data.Status)
+                            if (res.data.Status == 0) {
+                                this.pokemonList = res.data.Result
+                            }
+                        })
+                    this.enableEdit = true;
+                },
+                selectEdit(pokemon) {
+                    this.enableEdit = false;
+                    let copyPokemon = {
+                        Id: pokemon.Id,
+                        Name: pokemon.Name,
+                        NickName: pokemon.NickName,
+                        Type: pokemon.Type,
+                        Image: pokemon.Image,
+                        Hp: pokemon.Hp,
+                        Speed: pokemon.Speed,
+                        Attack: pokemon.Attack,
+                        Defanse: pokemon.Defanse,
+                        SpAttack: pokemon.SpAttack,
+                        SpDefense: pokemon.SpDefense,
+                    }
+                    this.currentPokemon = copyPokemon;
+                },
+                createPokemon() {
+                    axios.post('https://localhost:44346/api/Pokemon/CreatePokemon', this.createPokemonData)
+                        .then(res => {
+                            if (res.data.Status == 0 && res.data.Result == true) {
+                                toastr.success('新增成功');
+                                this.getAllPokemon();
+                                $('#create-modal').modal('hide')
+                            }
+                            else {
+                                toastr.error('新增失敗')
+                            }
+                        })
+                },
+                updatePokemon() {
+                    axios.post('https://localhost:44346/api/Pokemon/UpdatePokemon', this.currentPokemon)
+                        .then(res => {
+                            console.log(res);
+                            if (res.data.Status == 0 && res.data.Result == true) {
+                                toastr.success('更新成功');
+                                this.getAllPokemon();
+                                $('#edit-modal').modal('hide')
+                            }
+                            else {
+                                toastr.error('更新失敗')
+                            }
+                        })
+                },
+                deletePokemon(pokemon) {
+                    axios.post('https://localhost:44346/api/Pokemon/DeletePokemon', pokemon)
+                        .then(res => {
+                            if (res.data.Status == 0 && res.data.Result == true) {
+                                toastr.success('刪除成功');
+                                this.getAllPokemon();
+                            }
+                            else {
+                                toastr.error('刪除失敗')
+                            }
+                        })
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>

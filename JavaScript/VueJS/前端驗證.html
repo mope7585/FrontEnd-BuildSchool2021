@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" id="app">
+            <form class="row">
+            <div class="form-group col-md-6 col-12">
+                <label for="exampleInputEmail1">Account</label>
+                <!-- v-bind  => :class(屬性名稱)="{'class內容 : 當error的時候'}" -->
+                <input type="text" v-model="inputData.account" class="form-control" :class="{ 'is-invalid' : inputDataCheck.accountError}" id="exampleInputPassword1">
+                <div class="text-danger small mt-1">
+                    {{inputDataCheck.accountErrorMsg}}
+                </div>
+            </div>
+            <div class="form-group col-md-6 col-12">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" v-model="inputData.password" class="form-control" id="exampleInputPassword1" :class="{ 'is-invalid' : inputDataCheck.passwordError}">
+                <div class="text-danger small mt-1">
+                    {{inputDataCheck.passwordErrorMsg}}
+                </div>
+            </div>
+            <div class="form-group col-md-6 col-12">
+                <label for="exampleInputEmail1">check Password</label>
+                <input type="password" v-model="inputData.checkPassword" class="form-control" id="exampleInputPassword1" >
+                <div class="text-danger small mt-1">
+                    {{inputDataCheck.checkPasswordMsg}}
+                </div>
+            </div>
+            <div class="form-group col-md-6 col-12">
+                <label for="exampleInputPassword1">Name</label>
+                <input type="text" v-model="inputData.name" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="form-group col-md-6 col-12">
+                <label for="exampleInputEmail1">tel</label>
+                <input type="text" v-model="inputData.tel" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="form-group col-md-6 col-12">
+                <label for="exampleInputPassword1">address</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" v-model="inputData.address">
+            </div>
+            <button type="submit" :disabled="!isVerify" class="btn btn-primary">Submit</button>
+            </form> 
+    </div>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script>
+        let app = new Vue({
+            el:'#app',
+            data:{
+                isVerify:true,
+                inputData:{
+                    account:'',
+                    password:'',
+                    checkPassword:'',
+                    name:'',
+                    tel:'',
+                    address:''
+                },
+                inputDataCheck:{
+                    // false時不觸發
+                    accountError:false,
+                    accountErrorMsg:'',
+                    passwordError:false,
+                    passwordErrorMsg:'',
+                    checkPassword:false,
+                    checkPasswordMsg:''
+                }
+            },
+            watch:{
+                'inputData.account': {
+                    immediate:true,
+                    handler(){
+                        //不能空值
+                        //長度不能小於8碼
+                        if(this.inputData.account == ''){
+                            // 如果空值 accountcheck的accountError 變為true，並帶出訊息
+                            this.inputDataCheck.accountError = true;
+                            this.inputDataCheck.accountErrorMsg = '帳號不得為空'
+                        }
+                        else if(this.inputData.account.length < 8){
+                            this.inputDataCheck.accountError = true;
+                            this.inputDataCheck.accountErrorMsg = '帳號不得小於8位!'
+                        }
+                        else{
+                            this.inputDataCheck.accountError = false;
+                            this.inputDataCheck.accountErrorMsg = '';
+                        }
+                        this.checkVerify();
+                    }
+                },
+                'inputData.password':{
+                    immediate:true,
+                    handler(){
+                        // 正規表示式
+                        let passwordRegexp = /^[0-9]{1}[0-9]*$/
+
+                        if(! passwordRegexp.test(this.inputData.password)){
+                            this.inputDataCheck.passwordError = true;
+                            this.inputDataCheck.passwordErrorMsg = '密碼只能為數字';
+                        }
+                        else{
+                            this.inputDataCheck.passwordError = false;
+                            this.inputDataCheck.passwordErrorMsg = '';
+                        }
+                    }
+                }
+            },
+            methods:{
+                checkVerify(){
+                    //JS for迴圈可以跑物件
+                    for(let prop in this.inputDataCheck){
+                        if(this.inputDataCheck[prop] == true){
+                            this.isVerify = false;
+                            return;
+                        }
+                    }
+                    this.isVerify = true;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
