@@ -1,5 +1,8 @@
 body {
     margin: auto;
+    background-image: url('https://en.pimg.jp/058/259/720/1/58259720.jpg');
+    background-position: right bottom;
+    background-repeat: repeat-x;
 }
 
 nav {
@@ -26,7 +29,7 @@ th {
 
 h1 {
     font-weight: 900;
-    color: #aaa;
+    color: #80afd9;
     font-size: 60px;
 }
 
