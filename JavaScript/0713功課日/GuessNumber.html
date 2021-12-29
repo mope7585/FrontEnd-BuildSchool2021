@@ -17,8 +17,16 @@
         td span {
             padding-left: 20px;
         }
-        
     </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F2443BCEJ6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-F2443BCEJ6');
+    </script>
 </head>
 
 <body>
@@ -63,12 +71,12 @@
         //產出亂數
         let AnswerArray = [];
         function Start() {
-            while(AnswerArray.length < 4){
+            while (AnswerArray.length < 4) {
                 let random = Math.floor(Math.random() * 10).toString();
-                if(!AnswerArray.includes(random)){
+                if (!AnswerArray.includes(random)) {
                     AnswerArray.push(random);
                 }
-            } 
+            }
             console.dir(AnswerArray)
             Startbtn.disabled = true;
             Resetbtn.disabled = false;
@@ -94,7 +102,7 @@
 
         //放棄重來
         let Resetbtn = document.querySelector('.btn-group button:nth-child(2)')
-        Resetbtn.addEventListener('click',()=>{
+        Resetbtn.addEventListener('click', () => {
             alert(`答案是: ${AnswerArray}`);
             Clean();
             AnswerArray = [];
@@ -114,12 +122,12 @@
         function Input() {
             inputArray = Array.from(input.value);
             let inputSet = new Set(inputArray);
-            if(inputArray.length == 4 && inputSet.size ==4){
+            if (inputArray.length == 4 && inputSet.size == 4) {
                 AB();
                 CreatItem();
                 input.value = '';
             }
-            else{
+            else {
                 alert('輸入格式不正確')
                 input.value = '';
             }
@@ -134,7 +142,7 @@
         //生成tbody
         let table = document.querySelector('table')
         let tbody = document.querySelector('tbody')
-        
+
         //生成tr td
         function CreatItem() {
             let tr = document.createElement('tr');
@@ -148,14 +156,14 @@
             //生成span
             let span = document.createElement('span')
             td.appendChild(span);
-            if( A == 4 ){
-                btn.classList.add('btn','btn-outline-success');
+            if (A == 4) {
+                btn.classList.add('btn', 'btn-outline-success');
                 btn.innerText = `${A}A${B}B`;
                 span.innerText = inputArray;
                 alert('恭喜你答對了')
             }
-            else{
-                btn.classList.add('btn','btn-outline-danger');
+            else {
+                btn.classList.add('btn', 'btn-outline-danger');
                 btn.innerText = `${A}A${B}B`;
                 span.innerText = inputArray;
             }
@@ -170,11 +178,11 @@
             B = 0;
             result = inputArray.filter(nub => AnswerArray.includes(nub));
             result.forEach(item => {
-                if(inputArray.indexOf(item) == AnswerArray.indexOf(item)){
+                if (inputArray.indexOf(item) == AnswerArray.indexOf(item)) {
                     A++;
                     console.log(A)
                 }
-                else{
+                else {
                     B++;
                     console.log(B)
                 }
